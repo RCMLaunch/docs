@@ -36,12 +36,6 @@
           {
             "group": "Mod Kits",
             "pages": [
-              {
-                "group": "Revival Kit Guides",
-                "pages": [
-                  "xplorer-revival-kit-guide"
-                ]
-              },
               "guides/mod-kits/revival-kit",
               "guides/mod-kits/diy-solder-kit",
               "guides/mod-kits/legacy-solderless-kit"
@@ -52,6 +46,21 @@
             "pages": [
               "guides/other-products/starbar",
               "guides/other-products/soya"
+            ]
+          },
+          {
+            "group": "Instructional Material",
+            "pages": [
+              {
+                "group": "Revival Kit Installation Guides",
+                "pages": [
+                  "XPRevKitv1"
+                ]
+              },
+              {
+                "group": "DIY Solder Kit Installation Guides",
+                "pages": []
+              }
             ]
           }
         ]
