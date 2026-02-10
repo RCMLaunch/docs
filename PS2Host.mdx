@@ -1,0 +1,236 @@
+---
+title: "PS2 Host Adapter Documentation"
+sidebarTitle: "PS2 Host Adapter"
+icon: "h"
+mode: "default"
+description: "The PS2 Host Adapter is a device for using USB Guitars and Gamepads on the Playstation 2."
+---
+
+## Supported Controllers
+
+<AccordionGroup>
+  <Accordion title="Modern Era">
+    - PDP Riffmaster (both platform variants)
+    - CRKD
+      - **MULTIPLATFORM or SG**, USE P3 MODE, KNOB 1
+      - **XBOX EDITION LES PAUL**, USE PC MODE, KNOB 8
+  </Accordion>
+  <Accordion title="Guitar Hero Controllers">
+    - **Wired**
+      - RetroCultMods Revival Kit Guitar
+      - RetroCultMods DIY Kit Guitar
+      - RedOctane Guitar Hero 2/3 Xplorer for Xbox 360
+      - Kiosk/Arcade Guitar Hero controller (needs testing)
+    - \*\*Using \*\*[**360 Wireless Receiver**](https://shop.retrocultmods.com/products/360-wireless-receiver-for-controllers-guitars-etc)
+      - RedOctane Guitar Hero 3/A Les Paul for Xbox 360
+      - RedOctane Guitar Hero World Tour Sunburst for Xbox 360
+      - RedOctane “Guitar Hero 5/Band Hero” for Xbox 360
+      - RedOctane Warriors of Rock guitar for Xbox 360
+    - **Using included PS3 wireless dongle**
+      - RedOctane Guitar Hero 3/A Les Paul for PS3
+      - RedOctane Guitar Hero World Tour Sunburst for PS3
+      - RedOctane “Guitar Hero 5/Band Hero” for PS3
+      - RedOctane Warriors of Rock guitar for PS3
+  </Accordion>
+  <Accordion title="Rock Band Controllers">
+    - **Wired**
+      - RB1 Wired Stratocaster for Xbox 360
+      - Rock Band 3 Precision Bass Wired for Xbox 360
+    - **Using** [**360 Wireless Receiver**](https://shop.retrocultmods.com/products/360-wireless-receiver-for-controllers-guitars-etc)
+      - RB1, RB2, RB3, RBB wireless Stratocaster for Xbox 360
+      - RB Beatles Hoffner for fox Xbox 360
+      - RB Beatles Gretsch for Xbox 360
+      - Logitech Stratocaster for Xbox 360
+      - RB3 Telecaster for Xbox 360
+      - RB3 Precision Bass Wireless for Xbox 360
+    - **Using included PS3 wireless dongle**
+      - RB1, RB2, RB3, RBB Stratocaster for PS3
+      - RB Beatles Hoffner for PS3
+      - RB Beatles Gretsch for PS3
+      - Logitech Stratocaster for PS3 (requires special dongle)
+      - RB3 Telecaster for PS3
+      - Rock Band Precision Bass for PS3
+    - **Using included Wii wireless dongle**
+      - RB1, RB2, RB3, RBB Stratocaster for Wii
+      - RB Beatles Hoffner for Wii
+      - RB Beatles Gretsch for Wii
+      - RB3 Precision Bass Wireless for Wii
+  </Accordion>
+  <Accordion title="Gamepads">
+    Most USB Gamepads will work, but YMMV. (some third party gamepads will not work)
+
+    - Stock console gamepads (Xbox 360, PS4, etc)
+  </Accordion>
+</AccordionGroup>
+
+## Setup
+
+<Card title="Requirements">
+  - PS2 Host Adapter
+  - A compatible controller
+  - Included short USB-A to USB-C cable for power
+  - \*A computer that uses Windows, macOS, or Linux
+  - \*The latest revision of the [RCM Programming Tool](https://retrocultmods.com/programming-tool/)
+
+  \*only required if reprogramming or calibration is needed
+</Card>
+
+### Playstation 2 Setup
+
+<Steps>
+  <Step title="">
+    Plug the male PS2 connector into your console.
+
+    <img
+      src="/images/ps2h1.png"
+      alt="Ps2h1"
+      title="Ps2h1"
+      style={{ width:"37%" }}
+    />
+  </Step>
+  <Step title="">
+    Plug the USB-C cable into the USB-C port on the bottom of the PS2 Host.
+
+    <img
+      src="/images/ps2h2.png"
+      alt="Ps2h2"
+      title="Ps2h2"
+      style={{ width:"72%" }}
+    />
+  </Step>
+  <Step title="">
+    Plug your USB controller into the port on the top of the PS2 Host.
+
+    <img
+      src="/images/ps2h3.png"
+      alt="Ps2h3"
+      title="Ps2h3"
+      style={{ width:"38%" }}
+    />
+  </Step>
+</Steps>
+
+### Programming
+
+<Accordion title="PS2 Host Adapter Programming Guide">
+  To change the preset of your PS2 Host Adapter, you must use the RCM Programming Tool. Click here to be taken to the download page.
+
+  <Steps>
+    <Step>
+      Open the PS2 Host adapter, the housing opens top and bottom. There is a USB-C port hidden inside of the housing. That USB port is intended for programming only. **DO NOT plug in both USB-C ports at the same time.**
+    </Step>
+    <Step>
+      Plug the PS2 Host Adapter into your computer using the USB-C port revealed in the previous step.
+    </Step>
+    <Step>
+      Open the RCM Programming Tool on your computer. You will see it appear with “Configure” and “Reset to factory” buttons. Click “Configure“
+    </Step>
+    <Step>
+      You will be brought to this screen in the Programming Tool
+
+      If you are attempting to change to a different preset, click the dropdown on the left side, then select that preset. After, click “Save Settings“.
+    </Step>
+    <Step>
+      Wait until the bar at the bottom reaches 100% and says Status: Done.
+
+      <img
+        src="/images/ProgramDone.png"
+        alt="Program Done"
+        title="Program Done"
+        className="mx-auto"
+        style={{ width:"41%" }}
+      />
+    </Step>
+    <Step>
+      Unplug the PS2 Host Adapter from your computer, then reassemble the housing.
+    </Step>
+    <Step title="">
+      Final notes: You may need to adjust the whammy tune or thumbstick deadzone calibration. See the next section.
+    </Step>
+  </Steps>
+  ## 
+</Accordion>
+
+## Tuning and Calibration
+
+<AccordionGroup>
+  <Accordion title="Whammy Calibration/Tuning">
+    1. Open the USB Host Inputs dropdown menu.
+
+       <img
+         src="/images/image-3.png"
+         alt="Image"
+         title="Image"
+         className="mx-auto"
+         style={{ width:"50%" }}
+       />
+    2. Scroll down to the guitar whammy section. You’ll see this:
+
+       <img
+         src="/images/image-4.png"
+         alt="Image"
+         title="Image"
+         className="mx-auto"
+         style={{ width:"88%" }}
+       />
+    3. Click Calibrate!
+    4. Then, don’t touch your whammy bar and then click Next.
+    5. After that, push your whammy bar down as far as it can go without overdoing it. Hold it there, then click Next.
+    6. Now you have to set Deadzone. Push the whammy bar in a little bit and you can see the value go up a little bit. Look for a point where the whammy won’t activate on it’s own. Hold it there, then click Next.
+    7. You’re done! Click Save Settings on the left side. After it’s done, give it a try! You can manually adjust the deadzone with the sliders as well if you’d like to tweak your settings.
+
+       <img
+         src="/images/image-5.png"
+         alt="Image"
+         title="Image"
+         className="mx-auto"
+         style={{ width:"98%" }}
+       />
+  </Accordion>
+  <Accordion title="Gamepad Thumbstick Tuning">
+    <Steps>
+      <Step title="">
+        Before even attempting to calibrate the V3 Adapter for Gamepads, make sure you’re on the preset for your controller. [Click here to be taken to the programming section.](https://retrocultmods.mintlify.app/guides/adapters/ace-adapter#programming) You can find out what preset you’re on in the main menu of the programming tool.
+      </Step>
+      <Step title="">
+        Plug in your gamepad. You should see “**1 Devices connected**” appear next to either USB Host Inputs or Wii Extension Input, depending on what type of gamepad you plugged in.
+
+        <img
+          src="/images/image-1.png"
+          alt="Image 1"
+          title="Image 1"
+          style={{ width:"35%" }}
+        />
+      </Step>
+      <Step title="">
+        Click the dropdown with whichever type of input you plugged in, then scroll to the thumbsticks. There should only be four inputs. X and Y axis for both thumbsticks.
+
+        ![Thumbstickcalibration](/images/thumbstickcalibration.png)
+      </Step>
+      <Step title="">
+        Move both stick around and see the values that they idle at once you release. Adjust the deadzone to be a bit higher than the idling number. Once you set this, click **Save Settings** on the left side of the window. You can also use the Calibrate feature, which you then just need to follow the steps of.
+
+        ![Deadzonethumbsticks](/images/deadzonethumbsticks.png)
+
+        Optionally, you can set deadzones for triggers if those are experiencing any erratic change in idle value.
+      </Step>
+    </Steps>
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="My MiniHost Adapter is not appearing in the RCM Programming Tool">
+    There are multiple potential reasons for this occurring.
+
+    - The instrument plugged into your MiniHost Adapter may be causing the adapter to go into a different mode. Unplug the instrument, then plug the MiniHost adapter back into your computer on its own.
+    - Faulty USB port. Try a different one.
+    - Lastly, you may just need to hard reset the device. Holding the reset button while plugging the adapter in will put it into recovery mode, which you can then open the [RCM Programming Tool](https://retrocultmods.com/programming-tool/) and erase and reset to factory.
+
+    If you continue to run into issues, send us an email at [support@retrocultmods.com](mailto:support@retrocultmods.com)
+  </Accordion>
+  <Accordion title="New Accordion" icon="sparkles">
+    
+  </Accordion>
+</AccordionGroup>

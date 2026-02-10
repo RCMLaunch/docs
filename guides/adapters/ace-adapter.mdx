@@ -1,0 +1,262 @@
+---
+title: "ACE Adapter Quickstart Guide"
+icon: "a"
+sidebarTitle: "ACE Adapter"
+description: "The ACE Adapter (All-Console Ekit Adapter) is an adapter specifically designed for using electronic drum kits (Ekits) with games like Rock Band, Guitar Hero, Clone Hero, and YARG!"
+---
+
+## Supported Platforms and Games
+
+Note: Only Rock Band 3 and YARG support Pro Keys.
+
+<Tabs>
+  <Tab title="PC">
+    - Clone Hero
+    - YARG
+    - Guitar Hero World Tour Definitive Edition
+    - Gitadora
+    - Emulators
+      - RPCS3
+      - PCSX2
+      - Dolphin
+      - Xenia (not tested)
+  </Tab>
+  <Tab title="Playstation 2">
+    - Guitar Hero World Tour
+    - Guitar Hero Metallica
+    - Guitar Hero Smash Hits
+    - Band Hero
+    - Guitar Hero 5
+    - Guitar Hero Van Halen
+    - Rock Band
+    - Rock Band 2 (and DX)
+    - Rock Band Track Packs (not tested)
+  </Tab>
+  <Tab title="Playstation 3">
+    - Guitar Hero World Tour
+    - Gutiar Hero Metallica
+    - Guitar Hero Smash Hits
+    - Band Hero
+    - Guitar Hero 5
+    - Guitar Hero Warriors of Rock
+    - Rock Band
+    - Rock Band 2 (and DX)
+    - Rock Band 3 (and DX)
+    - Lego Rock Band
+    - The Beatles: Rock Band
+    - Green Day: Rock Band
+    - Rock Band Track Packs (not tested)
+  </Tab>
+  <Tab title="Playstation 4/5">
+    - Rock Band 4
+  </Tab>
+  <Tab title="Xbox 360">
+    - Guitar Hero World Tour
+    - Guitar Hero Metallica
+    - Guitar Hero Smash Hits
+    - Band Hero
+    - Guitar Hero 5
+    - Guitar Hero Warriors of Rock
+    - Rock Band
+    - Rock Band 2 (and DX)
+    - Rock Band 3 (and DX)
+    - Lego Rock Band
+    - The Beatles: Rock Band
+    - Green Day: Rock Band
+    - Rock Band Track Packs (not tested)
+  </Tab>
+  <Tab title="Xbox One/Series">
+    - Rock Band 4 (authentication required)
+  </Tab>
+  <Tab title="Wii">
+    - Rock Band 2
+    - Rock Band 3
+    - Lego Rock Band
+    - The Beatles: Rock Band
+    - Green Day: Rock Band
+  </Tab>
+</Tabs>
+
+## Unsupported Games
+
+<Tabs>
+  <Tab title="Wii">
+    - Rock Band 1
+    - Rock Band Track Pack 1
+    - Rock Band Track Pack 2
+    - Other trackpacks may also be broken, testing needed
+  </Tab>
+</Tabs>
+
+## Setup
+
+<Card title="Requirements">
+  - ACE Adapter
+  - A computer that uses Windows, macOS, or Linux
+  - The latest revision of [RCM Programming Tool](https://retrocultmods.com/programming-tool/)
+  - A compatible controller or electronic drum kit
+</Card>
+
+### Programming
+
+The ACE Adapter requires specific presets for different controllers/games.
+
+Rock Band games require the **RB Pro Drums**/**RB Pro Drums (Swap Cymbals)** or **RB Pro Keys** presets.
+
+Guitar Hero games require the **GH Drums** preset.
+
+<Accordion title="ACE Adapter Programming Guide">
+  To change the preset of your ACE Adapter, you must use the RCM Programming Tool. Click here to be taken to the download page.
+
+  <Steps>
+    <Step>
+      Open the RCM Programming Tool.
+    </Step>
+    <Step>
+      Plug your ACE Adapter into your computer. You will see it appear with “Configure” and “Reset to factory” buttons.
+
+      <img
+        src="/images/DrumTuning1.png"
+        alt="Drum Tuning1"
+        title="Drum Tuning1"
+        style={{ width:"76%" }}
+      />
+    </Step>
+    <Step>
+      Click “Configure“
+    </Step>
+    <Step>
+      You will be brought to this screen in the Programming Tool
+
+      ![RCM Prog Config ACE](/images/RCMProgConfigACE.png)
+
+      If you are attempting to change to a different preset, click the dropdown on the left side, then select that preset. After, click “Save Settings“.
+
+      <img
+        src="/images/ACEPresets.png"
+        alt="ACE Presets"
+        title="ACE Presets"
+        className="mx-auto"
+        style={{ width:"36%" }}
+      />
+    </Step>
+    <Step>
+      Wait until the bar at the bottom reaches 100% and says Status: Done.
+
+      <img
+        src="/images/ProgramDone.png"
+        alt="Program Done"
+        title="Program Done"
+        className="mx-auto"
+        style={{ width:"31%" }}
+      />
+    </Step>
+    <Step>
+      Final notes: You may need to adjust the hit sensitivity of your instrument. The following section will help you through that calibration/tuning process.
+    </Step>
+  </Steps>
+</Accordion>
+
+### Instrument Setup
+
+<Card title="ACE Adapter Ports" img="/images/Ace-Ports.png">
+  To use the ACE Adapter with your input device, you must connect the device to the adapter using either USB-MIDI or standard MIDI. Some devices may be compatible with both.
+
+  <Callout icon="midi" iconType="regular" color="#FF0000">
+    Red circled input is standard MIDI
+  </Callout>
+  <Callout icon="usb" iconType="regular" color="#00FF00">
+    Green circled input is for USB-MIDI
+  </Callout>
+</Card>
+
+## Calibration/Tuning
+
+<AccordionGroup>
+  <Accordion title="Drum Tuning">
+    <Steps>
+      <Step>
+        Before even attempting to play a game, make sure you’re on the preset for your intended game. [Click here to be taken to the programming section.](#programming) You can find out what preset you’re on in the main menu of the programming tool.
+
+        ![Drum Tuning1](/images/DrumTuning1.png)
+      </Step>
+      <Step>
+        Click Configure.
+      </Step>
+      <Step>
+        Plug in your controller or electronic drum kit.
+
+        - If you are using USB-MIDI, you should see “1 Devices connected” next to USB Host Inputs.
+      </Step>
+      <Step>
+        Click the MIDI Inputs dropdown, then start tapping on your drums while looking through the inputs to find if they are appearing. It may be useful to write down the MIDI note value for each of your pads/cymbals for easy future reference.
+      </Step>
+      <Step>
+        <Card img="/images/DrumTuning2.png">
+          Refer to the picture above. Value shows the signal sent from your drums to the ACE Adapter. Hit the pads to see the bar move and number go up! There are two modifiers you can change, Threshold and Sensitivity.
+
+          - Threshold is how hard you have to hit before the game detects an input. Raising this requires you to hit harder. You want to change this if your light hit starts at a high number.
+          - Sensitivity defines the max range of detection. It determines the loudness or hardness of the hit that the game detects. Lowering this allows hits with less strength to hit louder. You want to change this if your hard hits do not get close to maxing out the Value meter.
+        </Card>
+      </Step>
+      <Step>
+        Some pads are more sensitive than others, so we suggest going through each pad/cymbal/input and adjusting to your liking.
+      </Step>
+      <Step>
+        Once you’re satisfied with calibration, click “Save Settings” on the left side of the window. Once the programming tool has finished writing the firmware, it will show “Status: Done” and 100%. Close the software.
+      </Step>
+      <Step>
+        Load up your favorite game and play! Or plug into your console and play!
+
+        - If you are attempting to play Rock Band 4 on Xbox One/Series, you will have to authenticate. Click here to learn how to do that!
+      </Step>
+    </Steps>
+  </Accordion>
+  <Accordion title="Pro Keys Tuning">
+    <Steps>
+      <Step>
+        Before even attempting to play a game, make sure you’re on the preset for your intended game. [Click here to be taken to the programming section.](#programming) You can find out what preset you’re on in the main menu of the programming tool.
+
+        ![Image](/images/image-6.png)
+      </Step>
+      <Step>
+        Click Configure.
+      </Step>
+      <Step>
+        Plug in your keyboard.
+
+        - If you are using standard MIDI connection, make sure that the keyboard you’re using it plugged in either by a battery, USB power connection, or wall power. It will not function without that.
+        - If you are using USB-MIDI, you should see “1 Devices connected” next to USB Host Inputs when you plug it in.
+      </Step>
+      <Step>
+        Click the MIDI Inputs dropdown, then start pressing keys down and look around the inputs to see if inputs are coming through.
+
+        ![Keys Tuning2](/images/KeysTuning2.png)
+      </Step>
+      <Step>
+        Once you’ve verified that inputs are going through, there is nothing to calibrate in the programming tool. You can now plug into a console and start playing!
+
+        - If you are using the Rock Band 3 keytar with standard MIDI as opposed to USB-MIDI, you will have to navigate the menus with the ACE Adapter buttons as opposed to the ones on the controller.
+      </Step>
+    </Steps>
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="ACE Adapter not appearing in the RCM Programming Tool">
+    There are various reasons that the ACE Adapter may not be appearing in the RCM Programming Tool. The following are possible remedies:
+
+    - The ACE Adapter must be in "D" mode to appear in the RCM Programming Tool. Make sure that the switch on the adapter is set to that.
+    - Sometimes just unplugging it and plugging it back in will help or restarting the programming tool.
+    - You may need to hard reset the device. Holding the reset button (small little button on the bottom right of the face) while plugging the adapter in will put it into recovery mode, which you can then open the RCM Programming Tool and erase and reset to factory.
+
+    If this doesn’t work, send us an email at [support@retrocultmods.com](mailto:support@retrocultmods.com)
+  </Accordion>
+  <Accordion title="Blue and green cymbals are swapped">
+    You need to swap the preset to “RB Drums (Swap Cymbals)” in the RCM Programming Tool!
+
+    Or RB3 Drums (Swap Cymbals).
+  </Accordion>
+</AccordionGroup>
