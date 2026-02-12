@@ -1,0 +1,595 @@
+---
+title: "Xbox/Playstation Les Paul Revival Kit Installation Guide"
+sidebarTitle: "XB/PS Les Paul"
+description: "Now with both video and written instructions!"
+---
+
+# Introduction
+
+This is an instructional guide for the RetroCultMods Revival Kit for the Xbox 360/Playstation 3 Les Paul. This build can be completed in under an hour and a half, but can take longer if you are thorough with the cleaning process. If you run into any issues during the build or have questions, [click here!](https://retrocultmods.freshdesk.com/support/tickets/new)
+
+## Parts Included
+
+- Revival Kit Zeroboard (Strumboard/PCB)
+- Revival Kit Fretboard
+- 3D Printed Translucent Strumbar for Xplorer
+- 5x 3D Printed Translucent Frets
+- 3D Printed Kit Hardware
+- New Whammy Assembly
+- Switch Puller
+- Color Coded Wires and Auth Cable
+- 10 foot nylon braided USB-A to USB-C cable
+- Tube of lubricant
+
+<Accordion title="Images of all parts" icon="">
+  Revival Kit Zeroboard
+</Accordion>
+
+## Required Tools (not included)
+
+- [Screwdriver with PH1, PH2, T10, and T6(sometimes) bits](https://www.amazon.com/gp/product/B0CCTNX9GY)
+- [Flush Cutters (optional)](https://www.amazon.com/IGAN-P6-Precision-Clippers-Spring-loaded-Handmade/dp/B087P191LP)
+
+# Step-by-Step Installation Guide
+
+## 1. Opening the Guitar
+
+Flip the controller over so the **Red Octane** sticker on the back of the body is visible. The type of screws used on the outside shells will depend on the model of your guitar:\
+**95055/95605 – PH1/PH2 Screws**\
+**95157.805 – T10 Screws**
+
+<Columns cols={2}>
+  <Card title="Body Screws" img="/images/XPScrewsBody.png">
+    <Danger>
+      The screw marked in red is sometimes **longer** than the others; remember this for when you put everything back together!
+    </Danger>
+    <Tip>
+      Rear body shell –**11x screws**
+    </Tip>
+  </Card>
+  <Card title="Neck Screws" img="/images/XPScrewsNeck.png">
+    <Warning>
+      Rear neck shell – **5x screws**
+    </Warning>
+  </Card>
+</Columns>
+
+Ensure that **all** screws are removed, and open the shell.\
+\
+Once the shell begins to open, slowly move down the rest of the shell until it pops open completely.\
+Repeat this process for the neck, using the opening at the neck connector and working towards the headstock.
+
+If the shell seems to gets stuck, **DO NOT FORCE IT**. Check to make sure you have removed **all** of the screws before continuing to pry the shell.
+
+## 2. Removal of Original Parts
+
+Now its time to remove the stock boards that will be replaced with the new boards included in the kit.
+
+<Columns cols={2}>
+  <Card title="Internal Body Screws" img="/images/XPScrewsInternalBody.png">
+    <Callout icon="screwdriver" iconType="regular" color="#FF0000">
+      Remove the **4x screws** on the stock Strumboard.
+    </Callout>
+    <Callout icon="screwdriver" iconType="regular" color="#FFEA00">
+      Remove the **2x screws** on the RJ11 port. (This board will not be replaced, so if you’d like to leave it in so there is no open hole in the shell after completing the kit, leave this board installed and cut the wires coming from it instead)
+    </Callout>
+    <Callout icon="screwdriver" iconType="regular" color="#009DFF">
+      Remove the **4x screws** on the stock input board.
+    </Callout>
+    <Callout icon="screwdriver" iconType="regular" color="#FFAE00">
+      Remove the **2x screws** on the headset port.
+    </Callout>
+  </Card>
+  <Card title="Internal Neck Screws" img="/images/XPScrewsInternalNeck.png">
+    <Callout icon="screwdriver" iconType="regular" color="#09FF00">
+      Remove the **2x screws** from the stock Fretboard.
+    </Callout>
+  </Card>
+</Columns>
+
+Once all the screws are removed, remove all of the stock boards along with the whammy assembly from the shell.
+
+**You will need to keep the following parts of the whammy assembly:**
+
+## 3. (Optional) Clean Your Guitar
+
+In this step, I took a little bit of time to clean some parts of the guitar. I suggest being more thorough in your build, as your guitar may have finger grime from way back in the day!
+
+A bit of rubbing alcohol and/or soap and water can go a long way. Make sure the parts are fully dry if you clean with soap and water.
+
+Pro tip: Toothbrush, Dawn soap, and water.
+
+## 4. Test Your Revival Kit
+
+Before installing the Revival Zeroboard/Strumboard and Revival Fretboard, they should be tested for proper functionality.
+
+<Steps>
+  <Step title="">
+    Plug the Revival Fretboard into the Revival Zeroboard/Strumboard using the three included white cables. Make sure that each connection goes to the proper port. It is suggested to go one by one while installing.
+
+    <Columns cols={2}>
+      <Card title="." icon="sparkles" img="/images/testkit1.png">
+        .
+      </Card>
+      <Card title="1" icon="sparkles" img="/images/testkit2.png">
+        1
+      </Card>
+    </Columns>
+  </Step>
+  <Step title="">
+    Plug your Revival Zeroboard/Strumboard into your computer, using the USB-C to USB-A cable included in the Revival Kit. You will plug it into the vertical USB-C port on the Zeroboard.
+
+    <img
+      src="/images/testkit3.png"
+      alt="Testkit3"
+      title="Testkit3"
+      className="mx-auto"
+      style={{ width:"41%" }}
+    />
+  </Step>
+  <Step title="">
+    Open the [RCM Programming Tool (click here to go to the download page)](https://retrocultmods.com/programming-tool/). If the following screen appears for you, make sure to switch the DEVICE TYPE to **“Revival Kit”.** Click Erase and Configure. Do not touch the device while it is being programmed.
+
+    <img
+      src="/images/testkit4.png"
+      alt="Testkit4"
+      title="Testkit4"
+      className="mx-auto"
+      style={{ width:"77%" }}
+    />
+  </Step>
+  <Step title="">
+    Once the firmware writing is complete, this screen will appear:
+
+    <img
+      src="/images/testkit5.png"
+      alt="Testkit5"
+      title="Testkit5"
+      className="mx-auto"
+      style={{ width:"75%" }}
+    />
+  </Step>
+  <Step title="">
+    Scroll down to the list of all inputs and then start pressing the fret and strum switches. The respective switches will light up and so will the input in the RCM Programming Tool. Verify that all of the inputs and switches work properly. If not, contact support.
+
+    <img
+      src="/images/testkit6.png"
+      alt="Testkit6"
+      title="Testkit6"
+      className="mx-auto"
+      style={{ width:"77%" }}
+    />
+  </Step>
+</Steps>
+
+## 5. Prepping the New Strumbar (RGB Only)
+
+**IF YOU DID NOT ORDER THE 3D PRINTED CLEAR STRUM BAR, SKIP THIS STEP.**
+
+Before installing the new Strumboard, we need to transfer some pieces of the stock strumbar over to the new one:
+
+<Steps>
+  <Step title="">
+    Remove the metal strumrod by pulling it out of the stock strumbar.
+
+    <img
+      src="/images/rgbstrumbar1.png"
+      alt="Rgbstrumbar1"
+      title="Rgbstrumbar1"
+      className="mx-auto"
+      style={{ width:"33%" }}
+    />
+  </Step>
+  <Step title="">
+    Remove both of the circular spacers on each end of the strumbar. You can easily remove these by pushing them out with your finger from the inside of the strumbar.
+
+    <img
+      src="/images/rgbstrumbar2.png"
+      alt="Rgbstrumbar2"
+      title="Rgbstrumbar2"
+      className="mx-auto"
+      style={{ width:"30%" }}
+    />
+  </Step>
+  <Step title="">
+    Remove the four rubber pads on each foot of the strumbar. These can be lifted straight out of their slots.
+
+    <img
+      src="/images/rgbstrumbar3.png"
+      alt="Rgbstrumbar3"
+      title="Rgbstrumbar3"
+      className="mx-auto"
+      style={{ width:"36%" }}
+    />
+  </Step>
+  <Step title="">
+    Make sure you have all the stock parts you need:
+
+    - 1x Metal strumrod
+    - 2x Circular spacers
+    - 4x Rubber pads
+
+    <img
+      src="/images/rgbstrumbar4.png"
+      alt="Rgbstrumbar4"
+      title="Rgbstrumbar4"
+      className="mx-auto"
+      style={{ width:"41%" }}
+    />
+  </Step>
+  <Step title="">
+    Find the white tube of lubricant and apply a very small amount on each end of the metal strumrod, where it makes contacts with the circular spacers. Use for finger or a qtip to spread the lubricant out; we want only a thin layer of lubricant on the ends of the strumrod!
+
+    <img
+      src="/images/rgbstrumbar5.png"
+      alt="Rgbstrumbar5"
+      title="Rgbstrumbar5"
+      className="mx-auto"
+      style={{ width:"55%" }}
+    />
+  </Step>
+  <Step title="">
+    Put all of these parts into the new strumbar, in the same places as the stock strumbar. Insert the rubber pads into the slots in each of the feet of the new strumbar, insert the spacers into the circular cutouts on each end of the new strumbar, then insert the metal strumrod through the spacers.
+
+    <img
+      src="/images/rgbstrumbar6.png"
+      alt="Rgbstrumbar6"
+      title="Rgbstrumbar6"
+      className="mx-auto"
+      style={{ width:"49%" }}
+    />
+  </Step>
+  <Step title="">
+    If the strumbar slides up and down the metal rod too much for your liking, then you can install the wide, thin spacers included on the end of the component piece to fill in the gap. Place these under the stock strumbar spacers. You may need to stack multiple on each end to get your desired tolerance!
+
+    <img
+      src="/images/rgbstrumbar7.png"
+      alt="Rgbstrumbar7"
+      title="Rgbstrumbar7"
+      className="mx-auto"
+      style={{ width:"51%" }}
+    />
+  </Step>
+</Steps>
+
+## 6. Installing the Revival Zeroboard (strumboard)
+
+k
+
+<Steps>
+  <Step title="">
+    Slide the metal rod into the new strumbar. Then place the new strumbar into the slot that the stock strumbar sat in. Put the black brackets back into place.
+
+    <img
+      src="/images/revzbinstall1.png"
+      alt="Revzbinstall1"
+      title="Revzbinstall1"
+      className="mx-auto"
+      style={{ width:"62%" }}
+    />
+  </Step>
+  <Step title="">
+    Separate the small strum keycaps from the component piece and slot them into the stems of the strum switches. This is needed for a tighter strumbar feel.
+
+    <img
+      src="/images/revzbinstall2.png"
+      alt="Revzbinstall2"
+      title="Revzbinstall2"
+      className="mx-auto"
+      style={{ width:"65%" }}
+    />
+  </Step>
+  <Step title="">
+    Place the new strumboard on top of the black brackets, then screw in the new strumboard. If the stock screws are stripped, you can use the replacement Long Screws provided in the kit. Make sure each screw is snug, but do not over-tighten them, or you may scratch away the soldermask of the new strumboard!
+
+    <img
+      src="/images/revzbinstall3.png"
+      alt="Revzbinstall3"
+      title="Revzbinstall3"
+      className="mx-auto"
+      style={{ width:"64%" }}
+    />
+  </Step>
+</Steps>
+
+## 7. Installing the Revival Fretboard
+
+<Steps>
+  <Step title="">
+    Gather the Revival Kit Fretboard, Translucent Frets, 3 White Wires, and 2 Long Screws.
+  </Step>
+  <Step title="">
+    Connect one end of each of the White Wires into the RGB, FRET1, and FRET2 connectors on the Fretboard. Connect the other end of each White Wire to the corresponding RGB, FRET1, and FRET2 connectors on the Strumboard. I recommend doing one wire at a time to prevent mixing them up.
+  </Step>
+  <Step title="">
+    Remove the stock silicone pad and frets if they are still in the fret slots. Wipe the inside of the fret slots clean if they are dirty. Then apply a small amount of lubricant to your finger or a qtip and lightly coat the inside of the fret slots with lubricant. Make sure to wipe away any excess lubricant that my have spilled to the front of the neck shell!
+
+    <img
+      src="/images/cleanfrets.png"
+      alt="Cleanfrets"
+      title="Cleanfrets"
+      className="mx-auto"
+      style={{ width:"58%" }}
+    />
+  </Step>
+  <Step title="">
+    Insert the **translucent 3D printed frets** provided in the kit. These frets **must** be used even if you do not want to use LEDs; the stock frets will **not** fit with the new Fretboard.\
+    Model **95065** Xplorers will need to use the included fret shims to fit properly. Other models will not need shims.
+
+    <img
+      src="/images/clearfrets.png"
+      alt="Clearfrets"
+      title="Clearfrets"
+      className="mx-auto"
+      style={{ width:"47%" }}
+    />
+  </Step>
+  <Step title="">
+    Place the new Fretboard onto the screw standoffs that the stock fretboard used to sit on (the red switches and white connectors should be facing down towards the Translucent Frets. Use 2 Long Screws to secure the new Fretboard.
+
+    <img
+      src="/images/fretboardinstall.png"
+      alt="Fretboardinstall"
+      title="Fretboardinstall"
+      className="mx-auto"
+      style={{ width:"68%" }}
+    />
+  </Step>
+  <Step title="">
+    Route the White Wires through the neck and down through the body. Make sure they are clear of any screw standoffs so they are not damaged when reinstalling the neck shell. Using a bit of tape to hold down the wires internally can help with management.
+
+    <img
+      src="/images/cablemanage.png"
+      alt="Cablemanage"
+      title="Cablemanage"
+      className="mx-auto"
+      style={{ width:"53%" }}
+    />
+  </Step>
+</Steps>
+
+## 8. Installing the Xplorer Breakout Board
+
+<Steps>
+  <Step title="">
+    Gather the Xplorer Breakout board (labelled 1X) and 4 Long Screws. Stock screws can also be used if they are not stripped
+  </Step>
+  <Step title="">
+    Make sure the rubber dome pads are still in place, then install the Xplorer Breakout board where the stock input board used to sit. Use the stock screws or included Long Screws to secure it.
+
+    <img
+      src="/images/breakout1.png"
+      alt="Breakout1"
+      title="Breakout1"
+      className="mx-auto"
+      style={{ width:"60%" }}
+    />
+  </Step>
+  <Step title="">
+    Connect three red wires into the three white connectors on the Xplorer Breakout board.
+
+    <img
+      src="/images/breakout2.png"
+      alt="Breakout2"
+      title="Breakout2"
+      className="mx-auto"
+      style={{ width:"56%" }}
+    />
+  </Step>
+  <Step title="">
+    Connect the other ends of the red wires into their matching connectors on the Zeroboard. Double check the labels on each board and make sure the wires are going to matching connectors!
+
+    <img
+      src="/images/breakout3.png"
+      alt="Breakout3"
+      title="Breakout3"
+      className="mx-auto"
+      style={{ width:"60%" }}
+    />
+  </Step>
+</Steps>
+
+## 9. Assembling and Installing the Whammy
+
+## 10. Installing the Authentication Cable and USB-C Port
+
+<Steps>
+  <Step title="">
+    Break the Auth/USB-C bracket apart into two separate pieces.
+
+    <img
+      src="/images/auth1.png"
+      alt="Auth1"
+      title="Auth1"
+      className="mx-auto"
+      style={{ width:"53%" }}
+    />
+  </Step>
+  <Step title="">
+    Slot the bottom bracket into the opening that the headset port used to sit in (**use the picture for reference on the orientation of the bracket**).
+
+    <img
+      src="/images/auth2.png"
+      alt="Auth2"
+      title="Auth2"
+      className="mx-auto"
+      style={{ width:"58%" }}
+    />
+  </Step>
+  <Step title="">
+    Slot the Authentication Cable vertically into the wide slot of the bracket. The strain relief should slot between the two existing screw standoffs on the body shell to hold it in place.
+
+    <img
+      src="/images/auth3.png"
+      alt="Auth3"
+      title="Auth3"
+      className="mx-auto"
+      style={{ width:"62%" }}
+    />
+  </Step>
+  <Step title="">
+    Using the yellow cable and the USB-C port board, plug the yellow wire into the connector on the USB-C port board.
+
+    <img
+      src="/images/auth4.png"
+      alt="Auth4"
+      title="Auth4"
+      className="mx-auto"
+      style={{ width:"69%" }}
+    />
+  </Step>
+  <Step title="">
+    Slot the USB-C port into the bracket in the orientation as shown in the picture. Wrap the yellow wire around the nearest standoff and route it towards the Zeroboard.
+
+    <img
+      src="/images/auth5.png"
+      alt="Auth5"
+      title="Auth5"
+      className="mx-auto"
+      style={{ width:"64%" }}
+    />
+  </Step>
+  <Step title="">
+    Slot the top bracket into place, making sure everything is lined up correctly.
+
+    <img
+      src="/images/auth6.png"
+      alt="Auth6"
+      title="Auth6"
+      className="mx-auto"
+      style={{ width:"63%" }}
+    />
+  </Step>
+  <Step title="">
+    Plug the yellow wire into the **USB** connector on the Zeroboard, then connect the Authentication cable into the **AUTH** connector on the Zeroboard.
+
+    <img
+      src="/images/auth7.png"
+      alt="Auth7"
+      title="Auth7"
+      className="mx-auto"
+      style={{ width:"64%" }}
+    />
+  </Step>
+</Steps>
+
+## 11. Test Inputs
+
+<Steps>
+  <Step title="">
+    Plug your guitar into your computer using the new USB-C port you installed!
+  </Step>
+  <Step title="">
+    Open the [RCM Programming Tool on your computer (click here to go to the download page)](https://retrocultmods.com/programming-tool/) If the following screen appears for you, make sure to switch the DEVICE TYPE to **“Revival Kit”.** Click Erase and Configure. Do not touch the device while it is being programmed.
+
+    <img
+      src="/images/testkit4.png"
+      alt="Testkit4"
+      title="Testkit4"
+      className="mx-auto"
+      style={{ width:"85%" }}
+    />
+  </Step>
+  <Step title="">
+    You will then be brought to this screen, click Configure.
+
+    <img
+      src="/images/testkit5.png"
+      alt="Testkit5"
+      title="Testkit5"
+      className="mx-auto"
+      style={{ width:"81%" }}
+    />
+  </Step>
+  <Step title="">
+    Scroll down to the list of all inputs and then start pressing the frets and clicking the strum bar. The respective switches will light up and so will the input in the RCM Programming Tool. Verify that all of the inputs and switches work properly. If not, contact support.
+
+    <img
+      src="/images/testkit6.png"
+      alt="Testkit6"
+      title="Testkit6"
+      className="mx-auto"
+      style={{ width:"88%" }}
+    />
+  </Step>
+</Steps>
+
+## 12. Closing the Guitar
+
+You’re almost done! Once you have ensured that each input works, we can close up the guitar!
+
+Make sure none of the wires are in the way of any plastic standoffs, as this will damage them when closing the shell. I would recommend taping down the wires to ensure they are out of the way and not draped across any of the boards.
+
+With the front body and neck shell facing down, put the rear neck shell onto the front neck shell. You may need to apply pressure to close the shell. If you feel like part of the shell will not snap into place, open it up and double check that there is nothing blocking the standoffs. Repeat for the body shell.
+
+**DON’T FORGET THE STRAP PEGS!**
+
+After both sides of the body are connected, install all of the screws you removed earlier:
+
+<Columns cols={2}>
+  <Card title="Body Screws" img="/images/XPScrewsBody.png">
+    <Danger>
+      The screw marked in red is sometimes **longer** than the others; remember this for when you put everything back together!
+    </Danger>
+    <Tip>
+      Rear body shell –**11x screws**
+    </Tip>
+  </Card>
+  <Card title="Neck Screws" img="/images/XPScrewsNeck.png">
+    <Warning>
+      Rear neck shell – **5x screws**
+    </Warning>
+  </Card>
+</Columns>
+
+## 13. Calibrate Tilt and Whammy
+
+Plug the guitar back into your computer and open RCM Programming Tool. Click Configure.
+
+## 14. Configure Fret and Strum Bar Colors
+
+<Steps>
+  <Step title="">
+    Open RCM Programming Tool if you do not already have it open
+  </Step>
+  <Step title="">
+    Scroll to the fret and strum inputs and click the arrow to reveal the color selectors for your chosen input.
+
+    <img
+      src="/images/colors1.png"
+      alt="colors1"
+      title="colors1"
+      className="mx-auto"
+      style={{ width:"70%" }}
+    />
+
+    <img
+      src="/images/colors3.png"
+      alt="colors3"
+      title="colors3"
+      className="mx-auto"
+      style={{ width:"88%" }}
+    />
+  </Step>
+  <Step title="">
+    Click on the arrow for the pressed or released LED color to open the color picker menu:
+
+    <img
+      src="/images/colors2.png"
+      alt="color picker"
+      title="colors2"
+      className="mx-auto"
+      style={{ width:"58%" }}
+    />
+  </Step>
+  <Step title="">
+    Change this to whatever color you want!
+  </Step>
+  <Step title="">
+    Click Save Settings when you’ve configured all of the colors that you want.
+  </Step>
+</Steps>
+
+## 15. Finishing Up, Factory Resets and Updates
+
+To wrap up this installation, the last things to know are how to factory reset and/or update the guitar.
