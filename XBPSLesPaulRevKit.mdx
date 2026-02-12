@@ -12,6 +12,9 @@ This is an instructional guide for the RetroCultMods Revival Kit for the Xbox 36
 
 - Revival Kit Zeroboard (Strumboard/PCB)
 - Revival Kit Fretboard
+- Replacement D-Pad Board for XB/PS Les Paul
+- Replacement Start/Select board for XB/PS Les Paul
+- USB-C Port Assembly for Les Paul
 - 3D Printed Translucent Strumbar for Les Paul
 - 5x 3D Printed Translucent Frets
 - 3D Printed Kit Hardware
@@ -34,23 +37,18 @@ This is an instructional guide for the RetroCultMods Revival Kit for the Xbox 36
 
 ## 1. Opening the Guitar
 
-Flip the controller over so the **Red Octane** sticker on the back of the body is visible. The type of screws used on the outside shells will depend on the model of your guitar:\
-**95055/95605 – PH1/PH2 Screws**\
-**95157.805 – T10 Screws**
+Flip the controller over so the **Red Octane** sticker on the back of the body is visible. The type of screws used on the outside shells will depend on the model of your guitar:
 
 <Columns cols={2}>
-  <Card title="Body Screws" img="/images/XPScrewsBody.png">
-    <Danger>
-      The screw marked in red is sometimes **longer** than the others; remember this for when you put everything back together!
-    </Danger>
+  <Card title="Body Screws" img="/images/xbpslp_body_screws.png">
     <Tip>
-      Rear body shell –**11x screws**
+      Rear body shell – **11x T10 screws**
     </Tip>
   </Card>
-  <Card title="Neck Screws" img="/images/XPScrewsNeck.png">
-    <Warning>
-      Rear neck shell – **5x screws**
-    </Warning>
+  <Card title="Neck Screws" img="/images/xbpslp_body_screws2.png">
+    <Danger>
+      Rear neck shell – **5x T10 screws**
+    </Danger>
   </Card>
 </Columns>
 
@@ -66,22 +64,22 @@ If the shell seems to gets stuck, **DO NOT FORCE IT**. Check to make sure you ha
 Now its time to remove the stock boards that will be replaced with the new boards included in the kit.
 
 <Columns cols={2}>
-  <Card title="Internal Body Screws" img="/images/XPScrewsInternalBody.png">
+  <Card title="Internal Body Screws">
     <Callout icon="screwdriver" iconType="regular" color="#FF0000">
       Remove the **4x screws** on the stock Strumboard.
     </Callout>
-    <Callout icon="screwdriver" iconType="regular" color="#FFEA00">
-      Remove the **2x screws** on the RJ11 port. (This board will not be replaced, so if you’d like to leave it in so there is no open hole in the shell after completing the kit, leave this board installed and cut the wires coming from it instead)
+    <Callout icon="screwdriver" iconType="regular" color="#FFAE00">
+      Remove the **2x screws** on the stock Start/Select Board.
     </Callout>
     <Callout icon="screwdriver" iconType="regular" color="#009DFF">
-      Remove the **4x screws** on the stock input board.
+      Remove the **4x screws** on the stock D-Pad Input board.
     </Callout>
-    <Callout icon="screwdriver" iconType="regular" color="#FFAE00">
-      Remove the **2x screws** on the headset port.
+    <Callout icon="screwdriver" iconType="regular" color="#008000">
+      Remove the **2x screws** on the RJ11 port.
     </Callout>
   </Card>
-  <Card title="Internal Neck Screws" img="/images/XPScrewsInternalNeck.png">
-    <Callout icon="screwdriver" iconType="regular" color="#09FF00">
+  <Card title="Internal Neck Screws">
+    <Callout icon="screwdriver" iconType="regular" color="#FFEA00">
       Remove the **2x screws** from the stock Fretboard.
     </Callout>
   </Card>
@@ -259,14 +257,6 @@ k
 <Steps>
   <Step title="">
     Slide the metal rod into the new strumbar. Then place the new strumbar into the slot that the stock strumbar sat in. Put the black brackets back into place.
-
-    <img
-      src="/images/revzbinstall1.png"
-      alt="Revzbinstall1"
-      title="Revzbinstall1"
-      className="mx-auto"
-      style={{ width:"62%" }}
-    />
   </Step>
   <Step title="">
     Separate the small strum keycaps from the component piece and slot them into the stems of the strum switches. This is needed for a tighter strumbar feel.
@@ -315,14 +305,6 @@ k
   <Step title="">
     Insert the **translucent 3D printed frets** provided in the kit. These frets **must** be used even if you do not want to use LEDs; the stock frets will **not** fit with the new Fretboard.\
     Model **95065** Xplorers will need to use the included fret shims to fit properly. Other models will not need shims.
-
-    <img
-      src="/images/clearfrets.png"
-      alt="Clearfrets"
-      title="Clearfrets"
-      className="mx-auto"
-      style={{ width:"47%" }}
-    />
   </Step>
   <Step title="">
     Place the new Fretboard onto the screw standoffs that the stock fretboard used to sit on (the red switches and white connectors should be facing down towards the Translucent Frets. Use 2 Long Screws to secure the new Fretboard.
@@ -337,14 +319,6 @@ k
   </Step>
   <Step title="">
     Route the White Wires through the neck and down through the body. Make sure they are clear of any screw standoffs so they are not damaged when reinstalling the neck shell. Using a bit of tape to hold down the wires internally can help with management.
-
-    <img
-      src="/images/cablemanage.png"
-      alt="Cablemanage"
-      title="Cablemanage"
-      className="mx-auto"
-      style={{ width:"53%" }}
-    />
   </Step>
 </Steps>
 
@@ -391,44 +365,20 @@ k
 
 ## 9. Assembling and Installing the Whammy
 
-## 10. Installing the Authentication Cable and USB-C Port
+## 10. Installing the USB-C Port
 
 <Steps>
   <Step title="">
-    Break the Auth/USB-C bracket apart into two separate pieces.
-
-    <img
-      src="/images/auth1.png"
-      alt="Auth1"
-      title="Auth1"
-      className="mx-auto"
-      style={{ width:"53%" }}
-    />
+    a
   </Step>
   <Step title="">
-    Slot the bottom bracket into the opening that the headset port used to sit in (**use the picture for reference on the orientation of the bracket**).
-
-    <img
-      src="/images/auth2.png"
-      alt="Auth2"
-      title="Auth2"
-      className="mx-auto"
-      style={{ width:"58%" }}
-    />
+    a
   </Step>
   <Step title="">
-    Slot the Authentication Cable vertically into the wide slot of the bracket. The strain relief should slot between the two existing screw standoffs on the body shell to hold it in place.
-
-    <img
-      src="/images/auth3.png"
-      alt="Auth3"
-      title="Auth3"
-      className="mx-auto"
-      style={{ width:"62%" }}
-    />
+    a
   </Step>
   <Step title="">
-    Using the yellow cable and the USB-C port board, plug the yellow wire into the connector on the USB-C port board.
+    a
 
     <img
       src="/images/auth4.png"
@@ -439,37 +389,13 @@ k
     />
   </Step>
   <Step title="">
-    Slot the USB-C port into the bracket in the orientation as shown in the picture. Wrap the yellow wire around the nearest standoff and route it towards the Zeroboard.
-
-    <img
-      src="/images/auth5.png"
-      alt="Auth5"
-      title="Auth5"
-      className="mx-auto"
-      style={{ width:"64%" }}
-    />
+    a
   </Step>
   <Step title="">
-    Slot the top bracket into place, making sure everything is lined up correctly.
-
-    <img
-      src="/images/auth6.png"
-      alt="Auth6"
-      title="Auth6"
-      className="mx-auto"
-      style={{ width:"63%" }}
-    />
+    a
   </Step>
   <Step title="">
-    Plug the yellow wire into the **USB** connector on the Zeroboard, then connect the Authentication cable into the **AUTH** connector on the Zeroboard.
-
-    <img
-      src="/images/auth7.png"
-      alt="Auth7"
-      title="Auth7"
-      className="mx-auto"
-      style={{ width:"64%" }}
-    />
+    a
   </Step>
 </Steps>
 
