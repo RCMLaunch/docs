@@ -11,31 +11,31 @@ mode: "default"
 ### Wiimote Nunchuk Connection
 
 <Columns cols={3}>
-  <Card title="Les Paul" img="/images/LP.png">
+  <Card img="/images/LP.png" title="Les Paul">
     Guitar Hero 3\
     Guitar Hero Aerosmith
   </Card>
-  <Card title="Sunburst / World Tour" img="/images/sunburst.png">
+  <Card img="/images/sunburst.png" title="Sunburst / World Tour">
     Guitar Hero World Tour\
     Guitar Hero Metallica
   </Card>
-  <Card title="GH5" img="/images/gh5.png">
+  <Card img="/images/gh5.png" title="GH5">
     Guitar Hero 5\
     Band Hero
   </Card>
 </Columns>
 
 <Columns cols={3}>
-  <Card title="WoRtar" img="/images/WoR.png">
+  <Card img="/images/WoR.png" title="WoRtar">
     Guitar Hero Warriors of Rock
   </Card>
-  <Card title="Guitar Hero Drums" img="/images/drums.png">
+  <Card img="/images/drums.png" title="Guitar Hero Drums">
     Guitar Hero World Tour\
     Guitar Hero 5\
     Band Hero\
     Guitar Hero Warriors of Rock
   </Card>
-  <Card title="DJ Hero Turntable" img="/images/djh.png">
+  <Card img="/images/djh.png" title="DJ Hero Turntable">
     DJ Hero\
     DJ Hero 2
   </Card>
@@ -304,10 +304,10 @@ mode: "default"
         Fit the V3 Adapter into your guitar, there may be little silicone pads in the remote slot that will allow your adapter to fit snug.
 
         <Columns cols={2}>
-          <Card title='"Righty"' img="/images/V3OrientationRighty-1.png">
+          <Card img="/images/V3OrientationRighty-1.png" title='"Righty"'>
             Fretting with your left hand, strumming with your right hand.
           </Card>
-          <Card title='"Lefty"' img="/images/V3OrientationLefty.png">
+          <Card img="/images/V3OrientationLefty.png" title='"Lefty"'>
             Fretting with your right hand, strumming with your left hand.
           </Card>
         </Columns>
@@ -340,17 +340,17 @@ mode: "default"
       <Step>
         If you have not already programmed the V3 Adapter to support GH Drums, you will need to do so. [Click here to be taken to the V3 Adapter Programming Guide.](#Programming)
       </Step>
-      <Step title="">
+      <Step>
         <Card img="/images/djhtt.jpg">
           Plug the V3 Adapter into your DJ Hero Turntable
         </Card>
       </Step>
-      <Step title="">
+      <Step>
         <Card img="/images/V3Usb.png">
           Plug in a USB-C cable into the V3 Adapter. The smaller USB-C end will go into the V3 Adapter, while the USB-A end will go into your PC to continue the setup process.
         </Card>
       </Step>
-      <Step title="">
+      <Step>
         Move onto the Turntable Tuning guide in the next section.
       </Step>
     </Steps>
@@ -360,7 +360,7 @@ mode: "default"
 ## Tuning and Calibration
 
 <AccordionGroup>
-  <Accordion title="Tilt Calibration/Tuning" description="*You will ONLY need to do this with USB guitars. Wiimote Nunchuk connected guitars rely on the V3’s internal tilt sensors.">
+  <Accordion description="*You will ONLY need to do this with USB guitars. Wiimote Nunchuk connected guitars rely on the V3’s internal tilt sensors." title="Tilt Calibration/Tuning">
     Click here for a step-by-step Tilt Tuning guide.
 
     1. First, we must open the USB Host Inputs dropdown menu.
@@ -438,7 +438,7 @@ mode: "default"
         - If you are using USB-MIDI, you should see “1 Devices connected” next to USB Host Inputs.
       </Step>
       <Step>
-        Click the MIDI Inputs dropdown, then start tapping on your drums while looking through the inputs to find if they are appearing. It may be useful to write down the MIDI note value for each of your pads/cymbals for easy future referd Tence.
+        Click the MIDI Inputs dropdown, then start tapping on your drums while looking through the inputs to find if they are appearing. It may be useful to write down the MIDI note value for each of your pads/cymbals for easy future reference.
 
         <img
           src="/images/Screenshot 2026-02-02 at 8.10.24 PM.png"
@@ -470,10 +470,10 @@ mode: "default"
   </Accordion>
   <Accordion title="Turntable Tuning">
     <Steps>
-      <Step title="">
+      <Step>
         Before even attempting to calibrate the V3 Adapter for Turntables, make sure you’re on the preset for your controller. [Click here to be taken to the programming section.](https://retrocultmods.mintlify.app/guides/adapters/ace-adapter#programming) You can find out what preset you’re on in the main menu of the programming tool.
       </Step>
-      <Step title="">
+      <Step>
         Now that you've installed the adapter into your turntable and plugged it back into your computer, you must calibrate the device.\
         \
         If you are using a Wii turntable, click on the "Wii Extension Inputs" dropdown and configure from there.
@@ -494,24 +494,24 @@ mode: "default"
           style={{ width:"43%" }}
         />
       </Step>
-      <Step title="">
+      <Step>
         You will have to calibrate the Fade and Effects knob, as well as the turntable multiplier You may have to adjust the settings a few times to figure out what works best for you.
 
         ![Ttfader](/images/ttfader.png)
 
         ![Ttknob](/images/ttknob.png)
       </Step>
-      <Step title="">
+      <Step>
         Once you’re satisfied with calibration, click “Save Settings” on the left side of the window. Once the programming tool has finished writing the firmware, it will show “Status: Done” and 100%. Close the software.
       </Step>
     </Steps>
   </Accordion>
   <Accordion title="Gamepad Thumbstick Tuning">
     <Steps>
-      <Step title="">
+      <Step>
         Before even attempting to calibrate the V3 Adapter for Gamepads, make sure you’re on the preset for your controller. [Click here to be taken to the programming section.](https://retrocultmods.mintlify.app/guides/adapters/ace-adapter#programming) You can find out what preset you’re on in the main menu of the programming tool.
       </Step>
-      <Step title="">
+      <Step>
         Plug in your gamepad. You should see “**1 Devices connected**” appear next to either USB Host Inputs or Wii Extension Input, depending on what type of gamepad you plugged in.
 
         <img
@@ -521,7 +521,7 @@ mode: "default"
           style={{ width:"51%" }}
         />
       </Step>
-      <Step title="">
+      <Step>
         Click the dropdown with whichever type of input you plugged in, then scroll to the thumbsticks. There should only be four inputs. X and Y axis for both thumbsticks.
 
         ![Thumbstickcalibration](/images/thumbstickcalibration.png)
@@ -530,7 +530,7 @@ mode: "default"
 
         ![Wiithumbstick](/images/wiithumbstick.png)
       </Step>
-      <Step title="">
+      <Step>
         Move both stick around and see the values that they idle at once you release. Adjust the deadzone to be a bit higher than the idling number. Once you set this, click **Save Settings** on the left side of the window. You can also use the Calibrate feature, which you then just need to follow the steps of.
 
         ![Deadzonethumbsticks](/images/deadzonethumbsticks.png)
@@ -544,15 +544,23 @@ mode: "default"
 ## Console-Specifics
 
 <AccordionGroup>
-  <Accordion title="Playstation 2 (GH1, GH2, GH3, Aerosmith)" icon="sparkles">
-    fdfdf
+  <Accordion title="Playstation 2 (GH1, GH2, GH3, Aerosmith)">
+    The following games can be played with one of our [PS2 Host Adapters](https://shop.retrocultmods.com/products/ps2-host-usb-to-ps2-controller) or a modded PS2 using OPL Nightly's PADEMU feature. However, they will not work natively with a USB guitar.
+
+    - Guitar Hero
+    - Guitar Hero II
+    - Guitar Hero III
+    - Guitar Hero Aerosmith
+  </Accordion>
+  <Accordion title="Nintendo Switch (Fortnite Festival)">
+    
   </Accordion>
 </AccordionGroup>
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="My V3 Adapter is not appearing in the RCM Programming Tool" icon="sparkles">
+  <Accordion icon="sparkles" title="My V3 Adapter is not appearing in the RCM Programming Tool">
     There are multiple potential reasons for this occurring.
 
     - The instrument plugged into your V3 Adapter may be causing the adapter to go into a different mode. Unplug the instrument, then plug the V3 adapter back into your computer.
