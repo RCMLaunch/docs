@@ -85,7 +85,7 @@
     ],
   "primary": {
       "type": "button",
-      "label": "Dashboard",
+      "label": "Funk",
       "href": "https://dashboard.mintlify.com"
     }
   },
