@@ -77,16 +77,12 @@
       {
         "label": "Support",
         "href": "https://retrocultmods.freshdesk.com/support/tickets/new"
-      },
-      {
-        "label": "Store",
-        "href": "https://shop.retrocultmods.com"
       }
     ],
   "primary": {
       "type": "button",
-      "label": "Funk",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Store",
+      "href": "https://shop.retrocultmods.com"
     }
   },
   "contextual": {
