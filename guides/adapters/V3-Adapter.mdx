@@ -381,9 +381,17 @@ mode: "default"
     <Steps>
       <Step>
         First, we must open the USB Host Inputs dropdown menu in the RCM Programing Tool.
+
+        <Frame>
+          ![Usbhostinputs](/images/Programmer/usbhostinputs.png)
+        </Frame>
       </Step>
       <Step>
-        Scroll down to the guitar tilt section. You’ll see this:
+        Scroll down to the guitar tilt section and click the empty space or the dropdown arrow. This menu will appear:
+
+        <Frame>
+          ![Tiltcalibration](/images/Programmer/tiltcalibration.png)
+        </Frame>
       </Step>
       <Step>
         Click Calibrate!
@@ -403,9 +411,22 @@ mode: "default"
     <Steps>
       <Step>
         First, we must open the Wii Extensions Inputs or USB Host Inputs dropdown menu.
+
+        <Frame>
+          ![V3inputsfound](/images/V3-Adapter/v3inputsfound.png)
+        </Frame>
       </Step>
       <Step>
         Scroll down to the guitar whammy section. You’ll see this:
+
+        <Frame>
+          <img
+            src="/images/Programmer/whammy calibration.png"
+            alt="Whammy Calibration"
+            title="Whammy Calibration"
+            className="mx-auto"
+          />
+        </Frame>
       </Step>
       <Step>
         Click Calibrate!
@@ -421,6 +442,15 @@ mode: "default"
       </Step>
       <Step>
         You’re done! Click Save Settings on the left side. After it’s done, give it a try! You can manually adjust the deadzone with the sliders as well if you’d like to tweak your settings.
+
+        <Frame>
+          <img
+            src="/images/Programmer/whammy deadzone.png"
+            alt="Whammy Deadzone"
+            title="Whammy Deadzone"
+            className="mx-auto"
+          />
+        </Frame>
       </Step>
     </Steps>
   </Accordion>
@@ -436,16 +466,9 @@ mode: "default"
       </Step>
       <Step>
         Click the MIDI Inputs dropdown, then start tapping on your drums while looking through the inputs to find if they are appearing. It may be useful to write down the MIDI note value for each of your pads/cymbals for easy future reference.
-
-        <img
-          src="/images/Screenshot 2026-02-02 at 8.10.24 PM.png"
-          alt="Screenshot 2026 02 02 At 8 10 24 PM"
-          title="Screenshot 2026 02 02 At 8 10 24 PM"
-          style={{ width:"46%" }}
-        />
       </Step>
       <Step>
-        <Card img="/images/DrumTuning2.png">
+        <Card img="/images/Programmer/Drums/DrumTuning2.png">
           Refer to the picture above. Value shows the signal sent from your drums to the ACE Adapter. Hit the pads to see the bar move and number go up! There are two modifiers you can change, Threshold and Sensitivity.
 
           - Threshold is how hard you have to hit before the game detects an input. Raising this requires you to hit harder. You want to change this if your light hit starts at a high number.
