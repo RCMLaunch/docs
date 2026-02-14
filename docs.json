@@ -24,11 +24,11 @@
           {
             "group": "Adapters",
             "pages": [
-              "V3-Adapter",
-              "MiniHost",
-              "RCM360WR",
-              "PS2ToUSB",
-              "PS2Host",
+              "guides/adapters/V3-Adapter",
+              "guides/adapters/MiniHost",
+              "guides/adapters/RCM360WR",
+              "guides/adapters/PS2ToUSB",
+              "guides/adapters/PS2Host",
               "guides/adapters/ace-adapter"
             ]
           },
@@ -53,8 +53,8 @@
               {
                 "group": "Revival Kit Installation Guides",
                 "pages": [
-                  "xp-rev-kit",
-                  "XBPSLesPaulRevKit"
+                  "/guides/kitguides/Revival/XplorerRevKit",
+                  "/guides/kitguides/Revival/XBPSLesPaulRevKit"
                 ]
               },
               {
