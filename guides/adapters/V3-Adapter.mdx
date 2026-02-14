@@ -11,31 +11,31 @@ mode: "default"
 ### Wiimote Nunchuk Connection
 
 <Columns cols={3}>
-  <Card img="/images/LP.png" title="Les Paul">
+  <Card img="/images/Instruments/WiiLesPaul.png" title="Les Paul">
     Guitar Hero 3\
     Guitar Hero Aerosmith
   </Card>
-  <Card img="/images/sunburst.png" title="Sunburst / World Tour">
+  <Card img="/images/Instruments/WiiSunburst.png" title="Sunburst / World Tour">
     Guitar Hero World Tour\
     Guitar Hero Metallica
   </Card>
-  <Card img="/images/gh5.png" title="GH5">
+  <Card img="/images/Instruments/WiiGH5.png" title="GH5">
     Guitar Hero 5\
     Band Hero
   </Card>
 </Columns>
 
 <Columns cols={3}>
-  <Card img="/images/WoR.png" title="WoRtar">
+  <Card img="/images/Instruments/WiiWoR.png" title="WoRtar">
     Guitar Hero Warriors of Rock
   </Card>
-  <Card img="/images/drums.png" title="Guitar Hero Drums">
+  <Card img="/images/Instruments/WiiGHDrums.png" title="Guitar Hero Drums">
     Guitar Hero World Tour\
     Guitar Hero 5\
     Band Hero\
     Guitar Hero Warriors of Rock
   </Card>
-  <Card img="/images/djh.png" title="DJ Hero Turntable">
+  <Card img="/images/Instruments/djh.png" title="DJ Hero Turntable">
     DJ Hero\
     DJ Hero 2
   </Card>
@@ -47,8 +47,9 @@ mode: "default"
   <Accordion title="Modern Era">
     - PDP Riffmaster (both platform variants)
     - CRKD
-      - **MULTIPLATFORM or SG**, USE P3 MODE, KNOB 1
+      - **MULTIPLATFORM**, USE P3 MODE, KNOB 1
       - **XBOX EDITION LES PAUL**, USE PC MODE, KNOB 8
+      - **SG**, use Legacy Mode
   </Accordion>
   <Accordion title="Guitar Hero Controllers">
     - **Wired**
@@ -247,7 +248,15 @@ mode: "default"
     <Step>
       Plug your V3 Adapter into your computer. You will see it appear with “Configure” and “Reset to factory” buttons.
 
-      ![V3RCM Prog Home](/images/V3RCMProgHome.png)
+      <Frame>
+        <img
+          src="/images/V3-Adapter/V3RCMProgHome.png"
+          alt="V3RCM Prog Home"
+          title="V3RCM Prog Home"
+          className="mx-auto"
+          style={{ width:"88%" }}
+        />
+      </Frame>
     </Step>
     <Step>
       Click “Configure“
@@ -255,28 +264,32 @@ mode: "default"
     <Step>
       You will be brought to this screen in the Programming Tool
 
-      ![V3configure Screen](/images/V3ConfigureScreen.png)
-
+      <Frame>
+        <img
+          src="/images/V3-Adapter/V3ConfigureScreen.png"
+          alt="V3configure Screen"
+          title="V3configure Screen"
+          className="mx-auto"
+        />
+      </Frame>
       If you are attempting to change to a different preset, click the dropdown on the left side, then select that preset. After, click “Save Settings“.
 
-      <img
-        src="/images/V3Presets.png"
-        alt="V3presets"
-        title="V3presets"
-        className="mx-auto"
-        style={{ width:"33%" }}
-      />
+      <Frame>
+        <img
+          src="/images/V3-Adapter/V3Presets.png"
+          alt="V3presets"
+          title="V3presets"
+          className="mx-auto"
+          style={{ width:"41%" }}
+        />
+      </Frame>
     </Step>
     <Step>
       Wait until the bar at the bottom reaches 100% and says Status: Done.
 
-      <img
-        src="/images/ProgramDone.png"
-        alt="Program Done"
-        title="Program Done"
-        className="mx-auto"
-        style={{ width:"41%" }}
-      />
+      <Frame>
+        ![Program Done](/images/Programmer/ProgramDone.png)
+      </Frame>
     </Step>
     <Step>
       Final notes: You may need to adjust the hit sensitivity of your instrument. The following section breaks down each type of instrument and how to install the V3 into them.
@@ -292,22 +305,24 @@ mode: "default"
       <Step>
         Plug in the cable coming out of the guitar into the V3 Adapter. (white cable below) This can only go in one way. Plug in a USB-C cable into the V3 Adapter, making sure to plug the USB-C end into the adapter and not the USB-A port. (black cable below)
 
-        <img
-          src="/images/V3Usb.png"
-          alt="V3usb"
-          title="V3usb"
-          className="mx-auto"
-          style={{ width:"51%" }}
-        />
+        <Frame>
+          <img
+            src="/images/V3-Adapter/V3Usb.png"
+            alt="V3usb"
+            title="V3usb"
+            className="mx-auto"
+            style={{ width:"50%" }}
+          />
+        </Frame>
       </Step>
       <Step>
         Fit the V3 Adapter into your guitar, there may be little silicone pads in the remote slot that will allow your adapter to fit snug.
 
         <Columns cols={2}>
-          <Card img="/images/V3OrientationRighty-1.png" title='"Righty"'>
+          <Card img="/images/V3-Adapter/V3OrientationRighty.png" title='"Righty"'>
             Fretting with your left hand, strumming with your right hand.
           </Card>
-          <Card img="/images/V3OrientationLefty.png" title='"Lefty"'>
+          <Card img="/images/V3-Adapter/V3OrientationLefty.png" title='"Lefty"'>
             Fretting with your right hand, strumming with your left hand.
           </Card>
         </Columns>
@@ -326,7 +341,7 @@ mode: "default"
         If you have not already programmed the V3 Adapter to support GH Drums, you will need to do so. [Click here to be taken to the V3 Adapter Programming Guide.](#Programming)
       </Step>
       <Step>
-        <Card img="/images/V3GHDrums.jpg">
+        <Card img="/images/V3-Adapter/Drums/V3GHDrums.jpg">
           Plug the V3 Adapter into the Wii GH Drum kit via the Wiimote Nunchuk cable.
         </Card>
       </Step>
@@ -341,12 +356,12 @@ mode: "default"
         If you have not already programmed the V3 Adapter to support GH Drums, you will need to do so. [Click here to be taken to the V3 Adapter Programming Guide.](#Programming)
       </Step>
       <Step>
-        <Card img="/images/djhtt.jpg">
+        <Card img="/images/V3-Adapter/DJHero-V3-Plug.jpg">
           Plug the V3 Adapter into your DJ Hero Turntable
         </Card>
       </Step>
       <Step>
-        <Card img="/images/V3Usb.png">
+        <Card img="/images/V3-Adapter/V3Usb.png">
           Plug in a USB-C cable into the V3 Adapter. The smaller USB-C end will go into the V3 Adapter, while the USB-A end will go into your PC to continue the setup process.
         </Card>
       </Step>
@@ -363,69 +378,51 @@ mode: "default"
   <Accordion description="*You will ONLY need to do this with USB guitars. Wiimote Nunchuk connected guitars rely on the V3’s internal tilt sensors." title="Tilt Calibration/Tuning">
     Click here for a step-by-step Tilt Tuning guide.
 
-    1. First, we must open the USB Host Inputs dropdown menu.
-
-       <img
-         src="/images/image-1.png"
-         alt="Image"
-         title="Image"
-         className="mx-auto"
-         style={{ width:"35%" }}
-       />
-    2. Scroll down to the guitar tilt section. You’ll see this:
-
-       <img
-         src="/images/image.png"
-         alt="Image"
-         title="Image"
-         className="mx-auto"
-         style={{ width:"69%" }}
-       />
-    3. Click Calibrate!
-    4. Then, position your guitar in the position you play in. Click Next.
-    5. After that, tilt your guitar up to the position you would like tilt to activate. Hold it there and click next.
-    6. You’re done! Click Save Settings on the left side. After it’s done, give it a try! You can recalibrate it to your liking just by clicking Calibrate again.
+    <Steps>
+      <Step>
+        First, we must open the USB Host Inputs dropdown menu in the RCM Programing Tool.
+      </Step>
+      <Step>
+        Scroll down to the guitar tilt section. You’ll see this:
+      </Step>
+      <Step>
+        Click Calibrate!
+      </Step>
+      <Step>
+        Then, position your guitar in the position you play in. Click Next.
+      </Step>
+      <Step>
+        After that, tilt your guitar up to the position you would like tilt to activate. Hold it there and click next.
+      </Step>
+      <Step>
+        You’re done! Click Save Settings on the left side. After it’s done, give it a try! You can recalibrate it to your liking just by clicking Calibrate again.
+      </Step>
+    </Steps>
   </Accordion>
   <Accordion title="Whammy Calibration/Tuning">
-    1. First, we must open the Wii Extensions Inputs or USB Host Inputs dropdown menu.
-
-       <img
-         src="/images/image-2.png"
-         alt="Image"
-         title="Image"
-         className="mx-auto"
-         style={{ width:"50%" }}
-       />
-
-       <img
-         src="/images/image-3.png"
-         alt="Image"
-         title="Image"
-         className="mx-auto"
-         style={{ width:"50%" }}
-       />
-    2. Scroll down to the guitar whammy section. You’ll see this:
-
-       <img
-         src="/images/image-4.png"
-         alt="Image"
-         title="Image"
-         className="mx-auto"
-         style={{ width:"88%" }}
-       />
-    3. Click Calibrate!
-    4. Then, don’t touch your whammy bar and then click Next.
-    5. After that, push your whammy bar down as far as it can go without overdoing it. Hold it there, then click Next.
-    6. Now you have to set Deadzone. Push the whammy bar in a little bit and you can see the value go up a little bit. Look for a point where the whammy won’t activate on it’s own. Hold it there, then click Next.
-    7. You’re done! Click Save Settings on the left side. After it’s done, give it a try! You can manually adjust the deadzone with the sliders as well if you’d like to tweak your settings.
-
-       <img
-         src="/images/image-5.png"
-         alt="Image"
-         title="Image"
-         className="mx-auto"
-         style={{ width:"98%" }}
-       />
+    <Steps>
+      <Step>
+        First, we must open the Wii Extensions Inputs or USB Host Inputs dropdown menu.
+      </Step>
+      <Step>
+        Scroll down to the guitar whammy section. You’ll see this:
+      </Step>
+      <Step>
+        Click Calibrate!
+      </Step>
+      <Step>
+        Then, don’t touch your whammy bar and then click Next.
+      </Step>
+      <Step>
+        After that, push your whammy bar down as far as it can go without overdoing it. Hold it there, then click Next.
+      </Step>
+      <Step>
+        Now you have to set Deadzone. Push the whammy bar in a little bit and you can see the value go up a little bit. Look for a point where the whammy won’t activate on it’s own. Hold it there, then click Next.
+      </Step>
+      <Step>
+        You’re done! Click Save Settings on the left side. After it’s done, give it a try! You can manually adjust the deadzone with the sliders as well if you’d like to tweak your settings.
+      </Step>
+    </Steps>
   </Accordion>
   <Accordion title="Drum Tuning">
     <Steps>
