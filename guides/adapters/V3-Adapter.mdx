@@ -403,7 +403,11 @@ mode: "default"
         After that, tilt your guitar up to the position you would like tilt to activate. Hold it there and click next.
       </Step>
       <Step>
-        You’re done! Click Save Settings on the left side. After it’s done, give it a try! You can recalibrate it to your liking just by clicking Calibrate again.
+        Once you’re satisfied with calibration, click “Save Settings” on the left side of the window. Once the programming tool has finished writing the firmware, it will show “Status: Done” and 100%. Close the software.
+
+        <Frame>
+          ![Program Done](/images/Programmer/ProgramDone.png)
+        </Frame>
       </Step>
     </Steps>
   </Accordion>
@@ -441,7 +445,12 @@ mode: "default"
         Now you have to set Deadzone. Push the whammy bar in a little bit and you can see the value go up a little bit. Look for a point where the whammy won’t activate on it’s own. Hold it there, then click Next.
       </Step>
       <Step>
-        You’re done! Click Save Settings on the left side. After it’s done, give it a try! You can manually adjust the deadzone with the sliders as well if you’d like to tweak your settings.
+        You’re done! Click Save Settings on the left side and wait for the status bar at the bottom of the window to reach 100%.
+
+        <Frame>
+          ![Program Done](/images/Programmer/ProgramDone.png)
+        </Frame>
+        After it’s done, give it a try! You can manually adjust the deadzone with the sliders as well if you’d like to tweak your settings.
 
         <Frame>
           <img
@@ -480,6 +489,10 @@ mode: "default"
       </Step>
       <Step>
         Once you’re satisfied with calibration, click “Save Settings” on the left side of the window. Once the programming tool has finished writing the firmware, it will show “Status: Done” and 100%. Close the software.
+
+        <Frame>
+          ![Program Done](/images/Programmer/ProgramDone.png)
+        </Frame>
       </Step>
       <Step>
         Load up your favorite game and play! Or plug into your console and play!
@@ -498,31 +511,48 @@ mode: "default"
         \
         If you are using a Wii turntable, click on the "Wii Extension Inputs" dropdown and configure from there.
 
-        <img
-          src="/images/image-2.png"
-          alt="Image 2"
-          title="Image 2"
-          style={{ width:"43%" }}
-        />
-
+        <Frame>
+          <img
+            src="/images/V3-Adapter/wiiextensioninputs.png"
+            alt="Wiiextensioninputs"
+            title="Wiiextensioninputs"
+            className="mx-auto"
+            style={{ width:"49%" }}
+          />
+        </Frame>
         If you are using a Playstation or Xbox turntable, click on the "Usb Host Inputs" dropdown and configure from there.
 
-        <img
-          src="/images/image-1.png"
-          alt="Image 1"
-          title="Image 1"
-          style={{ width:"43%" }}
-        />
+        <Frame>
+          ![Usbhostinputs](/images/Programmer/usbhostinputs.png)
+        </Frame>
       </Step>
       <Step>
         You will have to calibrate the Fade and Effects knob, as well as the turntable multiplier You may have to adjust the settings a few times to figure out what works best for you.
 
-        ![Ttfader](/images/ttfader.png)
+        <Frame>
+          <img
+            src="/images/V3-Adapter/DJHero-Fader.png"
+            alt="DJ Hero Fader"
+            title="DJ Hero Fader"
+            className="mx-auto"
+            style={{ width:"97%" }}
+          />
 
-        ![Ttknob](/images/ttknob.png)
+          <img
+            src="/images/V3-Adapter/DJHero-Effects-Knob.png"
+            alt="DJ Hero Effects Knob"
+            title="DJ Hero Effects Knob"
+            className="mx-auto"
+            style={{ width:"97%" }}
+          />
+        </Frame>
       </Step>
       <Step>
         Once you’re satisfied with calibration, click “Save Settings” on the left side of the window. Once the programming tool has finished writing the firmware, it will show “Status: Done” and 100%. Close the software.
+
+        <Frame>
+          ![Program Done](/images/Programmer/ProgramDone.png)
+        </Frame>
       </Step>
     </Steps>
   </Accordion>
@@ -534,28 +564,60 @@ mode: "default"
       <Step>
         Plug in your gamepad. You should see “**1 Devices connected**” appear next to either USB Host Inputs or Wii Extension Input, depending on what type of gamepad you plugged in.
 
-        <img
-          src="/images/v3inputsfound-1.png"
-          alt="V3inputsfound 1"
-          title="V3inputsfound 1"
-          style={{ width:"51%" }}
-        />
+        <Frame>
+          <img
+            src="/images/V3-Adapter/v3inputsfound.png"
+            alt="V3inputsfound"
+            title="V3inputsfound"
+            className="mx-auto"
+            style={{ width:"91%" }}
+          />
+        </Frame>
       </Step>
       <Step>
         Click the dropdown with whichever type of input you plugged in, then scroll to the thumbsticks. There should only be four inputs. X and Y axis for both thumbsticks.
 
-        ![Thumbstickcalibration](/images/thumbstickcalibration.png)
-
+        <Frame>
+          <img
+            src="/images/Programmer/thumbstick-calibration.png"
+            alt="Thumbstick Calibration"
+            title="Thumbstick Calibration"
+            className="mx-auto"
+            style={{ width:"96%" }}
+          />
+        </Frame>
         If you are using a Wii Classic Controller, you will see this instead:
 
-        ![Wiithumbstick](/images/wiithumbstick.png)
+        <Frame>
+          <img
+            src="/images/V3-Adapter/wiithumbstick.png"
+            alt="Wiithumbstick"
+            title="Wiithumbstick"
+            className="mx-auto"
+            style={{ width:"96%" }}
+          />
+        </Frame>
       </Step>
       <Step>
         Move both stick around and see the values that they idle at once you release. Adjust the deadzone to be a bit higher than the idling number. Once you set this, click **Save Settings** on the left side of the window. You can also use the Calibrate feature, which you then just need to follow the steps of.
 
-        ![Deadzonethumbsticks](/images/deadzonethumbsticks.png)
-
+        <Frame>
+          <img
+            src="/images/Programmer/deadzonethumbsticks.png"
+            alt="Deadzonethumbsticks"
+            title="Deadzonethumbsticks"
+            className="mx-auto"
+            style={{ width:"96%" }}
+          />
+        </Frame>
         Optionally, you can set deadzones for triggers if those are experiencing any erratic change in idle value.
+      </Step>
+      <Step>
+        Once you’re satisfied with calibration, click “Save Settings” on the left side of the window. Once the programming tool has finished writing the firmware, it will show “Status: Done” and 100%. Close the software.
+
+        <Frame>
+          ![Program Done](/images/Programmer/ProgramDone.png)
+        </Frame>
       </Step>
     </Steps>
   </Accordion>
@@ -573,6 +635,20 @@ mode: "default"
     - Guitar Hero Aerosmith
   </Accordion>
   <Accordion title="Nintendo Switch (Fortnite Festival)">
+    
+  </Accordion>
+  <Accordion title="Xbox One/Series (Rock Band 4)">
+    
+  </Accordion>
+</AccordionGroup>
+
+## Game-Specifics
+
+<AccordionGroup>
+  <Accordion title="Fortnite Festival (PC, Playstation, Xbox)">
+    
+  </Accordion>
+  <Accordion>
     
   </Accordion>
 </AccordionGroup>
