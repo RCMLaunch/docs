@@ -6,16 +6,17 @@ description: "Written instructions, video coming soon!"
 
 # Introduction
 
-This is an instructional guide for the RetroCultMods Revival Kit for the Xbox 360/Playstation 3 Les Paul. This build can be completed in under an hour and a half, but can take longer if you are thorough with the cleaning process. If you run into any issues during the build or have questions, [click here!](https://retrocultmods.freshdesk.com/support/tickets/new)
+This is an instructional guide for the RetroCultMods Revival Kit for the Xbox 360/Playstation 3 GH5 Guitar Hero Controller. This build can be completed in under an hour and a half, but can take longer if you are thorough with the cleaning process. If you run into any issues during the build or have questions, [click here!](https://retrocultmods.freshdesk.com/support/tickets/new)
 
 ## Parts Included
 
 - Revival Kit Zeroboard (Strumboard/PCB)
 - Revival Kit Fretboard
-- Replacement D-Pad Board for XB/PS Les Paul
-- Replacement Start/Select board for XB/PS Les Paul
-- USB-C Port Assembly for Les Paul
-- 3D Printed Translucent Strumbar for Les Paul
+- Replacement D-Pad Board for XB/PS GH5
+- Replacement Start/Select board for XB/PS GH5
+- USB-C Port Assembly for GH5
+- 3D Printed Translucent Strumbar for GH5
+- 3D Printed Strum Pegs for GH5
 - 5x 3D Printed Translucent Frets
 - 3D Printed Kit Hardware
 - New Whammy Assembly
@@ -37,27 +38,34 @@ This is an instructional guide for the RetroCultMods Revival Kit for the Xbox 36
 
 ## 1. Opening the Guitar
 
-Flip the controller over so the **Red Octane** sticker on the back of the body is visible. The type of screws used on the outside shells will depend on the model of your guitar:
+Flip the controller over so the **Red Octane** sticker on the back of the body is visible.
 
-<Columns cols={2}>
-  <Card img="/images/xbpslp_body_screws.png" title="Body Screws">
-    <Tip>
-      Rear body shell – **11x T10 screws**
-    </Tip>
-  </Card>
-  <Card img="/images/xbpslp_body_screws2.png" title="Neck Screws">
-    <Danger>
-      Rear neck shell – **5x T10 screws**
-    </Danger>
-  </Card>
-</Columns>
+<Steps>
+  <Step>
+    Flip the controller over so the **Red Octane** sticker on the back of the body is visible. Move the faceplate latch to the unlocked position on the back of the guitar body, then remove the faceplate by pulling upwards from the neck slot.
 
-Ensure that **all** screws are removed, and open the shell.\
-\
-Once the shell begins to open, slowly move down the rest of the shell until it pops open completely.\
-Repeat this process for the neck, using the opening at the neck connector and working towards the headstock.
+    (image)
+  </Step>
+  <Step>
+    <Columns cols={2}>
+      <Card img="/images/xbpslp_body_screws.png" title="Body Screws">
+        <Tip>
+          Rear body shell – **11x T10 screws**
+        </Tip>
+      </Card>
+      <Card img="/images/xbpslp_body_screws2.png" title="Neck Screws">
+        <Danger>
+          Rear neck shell – **5x T10 screws**
+        </Danger>
+      </Card>
+    </Columns>
+    **Ensure that all screws are removed**, and open the shell.
 
-If the shell seems to gets stuck, **DO NOT FORCE IT**. Check to make sure you have removed **all** of the screws before continuing to pry the shell.
+    Once the shell begins to open, slowly move down the rest of the shell until it pops open completely. Repeat this process for the neck, using the opening at the neck connector and working towards the headstock.
+
+    If the shell seems to gets stuck, **DO NOT FORCE IT**. Check to make sure you have removed all of the screws before continuing to pry the shell.
+  </Step>
+</Steps>
 
 ## 2. Removal of Original Parts
 
@@ -66,21 +74,20 @@ Now its time to remove the stock boards that will be replaced with the new board
 <Columns cols={2}>
   <Card img="/images/xbpslp_internal1.png" title="Internal Body Screws">
     <Callout icon="screwdriver" iconType="regular" color="#FF0000">
-      Remove the **4x screws** on the stock Strumboard.
-    </Callout>
-    <Callout icon="screwdriver" iconType="regular" color="#FFAE00">
-      Remove the **2x screws** on the stock Start/Select Board.
-    </Callout>
-    <Callout icon="screwdriver" iconType="regular" color="#009DFF">
-      Remove the **4x screws** on the stock D-Pad Input board.
-    </Callout>
-    <Callout icon="screwdriver" iconType="regular" color="#008000">
-      Remove the **2x screws** on the RJ11 port.
+      Remove the **16-18x screws** on the stock boards:
+
+      - Strumboard
+      - Start/Select bracket
+      - D-Pad Board
+      - Motherboard
+      - RJ-11 Board
+      - Battery Compartment
+      - Headset Port Board (Xbox models only)
     </Callout>
   </Card>
   <Card img="/images/xbpslp_internal2.png" title="Internal Neck Screws">
     <Callout icon="screwdriver" iconType="regular" color="#FFEA00">
-      Remove the **2x screws** from the stock Fretboard.
+      Remove the **1x screw** from the stock Fretboard.
     </Callout>
   </Card>
 </Columns>
@@ -178,76 +185,6 @@ Before installing the new Strumboard, we need to transfer some pieces of the sto
       style={{ width:"33%" }}
     />
   </Step>
-  <Step>
-    Remove both of the circular spacers on each end of the strumbar. You can easily remove these by pushing them out with your finger from the inside of the strumbar.
-
-    <img
-      src="/images/Revival-Kit-Installation/Xplorer/Xplorer-Rev-RGB-Strumbar-Install/rgbstrumbar2.png"
-      alt="Rgbstrumbar2"
-      title="Rgbstrumbar2"
-      className="mx-auto"
-      style={{ width:"30%" }}
-    />
-  </Step>
-  <Step>
-    Remove the four rubber pads on each foot of the strumbar. These can be lifted straight out of their slots.
-
-    <img
-      src="/images/Revival-Kit-Installation/Xplorer/Xplorer-Rev-RGB-Strumbar-Install/rgbstrumbar3.png"
-      alt="Rgbstrumbar3"
-      title="Rgbstrumbar3"
-      className="mx-auto"
-      style={{ width:"36%" }}
-    />
-  </Step>
-  <Step>
-    Make sure you have all the stock parts you need:
-
-    - 1x Metal strumrod
-    - 2x Circular spacers
-    - 4x Rubber pads
-
-    <img
-      src="/images/Revival-Kit-Installation/Xplorer/Xplorer-Rev-RGB-Strumbar-Install/rgbstrumbar4.png"
-      alt="Rgbstrumbar4"
-      title="Rgbstrumbar4"
-      className="mx-auto"
-      style={{ width:"41%" }}
-    />
-  </Step>
-  <Step>
-    Find the white tube of lubricant and apply a very small amount on each end of the metal strumrod, where it makes contacts with the circular spacers. Use for finger or a qtip to spread the lubricant out; we want only a thin layer of lubricant on the ends of the strumrod!
-
-    <img
-      src="/images/Revival-Kit-Installation/Xplorer/Xplorer-Rev-RGB-Strumbar-Install/rgbstrumbar5.png"
-      alt="Rgbstrumbar5"
-      title="Rgbstrumbar5"
-      className="mx-auto"
-      style={{ width:"55%" }}
-    />
-  </Step>
-  <Step>
-    Put all of these parts into the new strumbar, in the same places as the stock strumbar. Insert the rubber pads into the slots in each of the feet of the new strumbar, insert the spacers into the circular cutouts on each end of the new strumbar, then insert the metal strumrod through the spacers.
-
-    <img
-      src="/images/Revival-Kit-Installation/Xplorer/Xplorer-Rev-RGB-Strumbar-Install/rgbstrumbar6.png"
-      alt="Rgbstrumbar6"
-      title="Rgbstrumbar6"
-      className="mx-auto"
-      style={{ width:"49%" }}
-    />
-  </Step>
-  <Step>
-    If the strumbar slides up and down the metal rod too much for your liking, then you can install the wide, thin spacers included on the end of the component piece to fill in the gap. Place these under the stock strumbar spacers. You may need to stack multiple on each end to get your desired tolerance!
-
-    <img
-      src="/images/Revival-Kit-Installation/Xplorer/Xplorer-Rev-RGB-Strumbar-Install/rgbstrumbar7.png"
-      alt="Rgbstrumbar7"
-      title="Rgbstrumbar7"
-      className="mx-auto"
-      style={{ width:"51%" }}
-    />
-  </Step>
 </Steps>
 
 ## 6. Installing the Revival Zeroboard (strumboard)
@@ -256,29 +193,7 @@ k
 
 <Steps>
   <Step>
-    Slide the metal rod into the new strumbar. Then place the new strumbar into the slot that the stock strumbar sat in. Put the black brackets back into place.
-  </Step>
-  <Step>
-    Separate the small strum keycaps from the component piece and slot them into the stems of the strum switches. This is needed for a tighter strumbar feel.
-
-    <img
-      src="/images/revzbinstall2.png"
-      alt="Revzbinstall2"
-      title="Revzbinstall2"
-      className="mx-auto"
-      style={{ width:"65%" }}
-    />
-  </Step>
-  <Step>
-    Place the new strumboard on top of the black brackets, then screw in the new strumboard. If the stock screws are stripped, you can use the replacement Long Screws provided in the kit. Make sure each screw is snug, but do not over-tighten them, or you may scratch away the soldermask of the new strumboard!
-
-    <img
-      src="/images/revzbinstall3.png"
-      alt="Revzbinstall3"
-      title="Revzbinstall3"
-      className="mx-auto"
-      style={{ width:"64%" }}
-    />
+    
   </Step>
 </Steps>
 
