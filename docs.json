@@ -98,5 +98,8 @@
     "socials": {
       "x": "https://x.com/retrocultmods"
     }
+  },
+  "appearance": {
+    "default": "dark"
   }
 }

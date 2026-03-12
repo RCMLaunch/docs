@@ -66,7 +66,7 @@ Note: Only Rock Band 3 and YARG support Pro Keys.
     - Rock Band Track Packs (not tested)
   </Tab>
   <Tab title="Xbox One/Series">
-    - Rock Band 4 (authentication required)
+    - Rock Band 4 [(AUTHENTICATION REQUIRED. Click to be taken to the RB4 Authentication section)](#Authentication)
   </Tab>
   <Tab title="Wii">
     - Rock Band 2
@@ -74,17 +74,6 @@ Note: Only Rock Band 3 and YARG support Pro Keys.
     - Lego Rock Band
     - The Beatles: Rock Band
     - Green Day: Rock Band
-  </Tab>
-</Tabs>
-
-## Unsupported Games
-
-<Tabs>
-  <Tab title="Wii">
-    - Rock Band 1
-    - Rock Band Track Pack 1
-    - Rock Band Track Pack 2
-    - Other trackpacks may also be broken, testing needed
   </Tab>
 </Tabs>
 
@@ -190,7 +179,14 @@ Guitar Hero games require the **GH Drums** preset.
             src="/images/ACE-Adapter/DrumTuning1.png"
             alt="Drum Tuning1"
             title="Drum Tuning1"
-            className="mx-auto"
+            className="mx-auto hidden dark:block"
+            style={{ width:"72%" }}
+          />
+          <img
+            src="/images/Programmer/Drums/DrumTuning1.png"
+            alt="Drum Tuning1"
+            title="Drum Tuning1"
+            className="mx-auto dark:hidden"
             style={{ width:"72%" }}
           />
         </Frame>
@@ -211,7 +207,7 @@ Guitar Hero games require the **GH Drums** preset.
         Click the MIDI Inputs dropdown, then start tapping on your drums while looking through the inputs to find if they are appearing. It may be useful to write down the MIDI note value for each of your pads/cymbals for easy future reference.
       </Step>
       <Step>
-        <Card img="/images/ACE-Adapter/DrumTuning2.png">
+        <Card img="/images/Programmer/Drums/DrumTuning2.png">
           Refer to the picture above. Value shows the signal sent from your drums to the ACE Adapter. Hit the pads to see the bar move and number go up! There are two modifiers you can change, Threshold and Sensitivity.
 
           - Threshold is how hard you have to hit before the game detects an input. Raising this requires you to hit harder. You want to change this if your light hit starts at a high number.
@@ -276,6 +272,53 @@ Guitar Hero games require the **GH Drums** preset.
         - If you are using the Rock Band 3 keytar with standard MIDI as opposed to USB-MIDI, you will have to navigate the menus with the ACE Adapter buttons as opposed to the ones on the controller.
       </Step>
     </Steps>
+  </Accordion>
+</AccordionGroup>
+
+### Authentication
+
+<AccordionGroup>
+  <Accordion title="Xbox One/Series (Rock Band 4)">
+    To play Rock Band 4 on your Xbox with a ACE Adapter, you will have to authenticate the ACE with a licensed Xbox One or Xbox Series controller.
+
+    <Steps>
+      <Step>
+        Turn on the Xbox One/Series, then using your Xbox controller, load into Rock Band 4.
+      </Step>
+      <Step>
+        Disconnect the Xbox controller from your Xbox One/Series. (Pop out batteries)
+      </Step>
+      <Step>
+        Connect the licensed Xbox controller into the female USB-A port (circled green) on the ACE Adapter.
+
+        <Tip>
+          - **Xbox One – models 1537, 1697, and 1698**
+          - **Xbox One S – models 1708 and 1797**
+          - **Xbox Series S/X – model 1914**
+        </Tip>
+        <Frame>
+          ![Ace Ports](/images/ACE-Adapter/Ace-Ports.png)
+        </Frame>
+      </Step>
+      <Step>
+        Plug the adapter into the console with the gamepad plugged in.
+      </Step>
+      <Step>
+        Wait a moment, then press start on the gamepad to verify the connection is made. On the “Join” screen, a guitar player should appear.
+      </Step>
+      <Step>
+        Unplug the licensed Xbox controller from your device.
+      </Step>
+      <Step>
+        Plug in your e-kit, if needed.
+      </Step>
+      <Step>
+        Play the game!
+      </Step>
+    </Steps>
+    If your controller is connected under the profile you want to use for the guitar, you’ll need to “drop out” the controller before assigning that profile to the guitar.
+
+    (image)
   </Accordion>
 </AccordionGroup>
 
