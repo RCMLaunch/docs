@@ -48,6 +48,7 @@ If you ever want to switch between the two, make sure that the controller you we
   <Tab title="PC">
     - Clone Hero
     - YARG
+    - Fortnite Festival [(Click here to be taken to the Fortnite Festival setup section)](#fortnite-festival)
     - Guitar Hero 3/BetterGH3
     - Guitar Hero World Tour Definitive Edition
     - Gitadora
@@ -89,7 +90,7 @@ If you ever want to switch between the two, make sure that the controller you we
     - Rock Band Track Packs (not tested)
   </Tab>
   <Tab title="Playstation 4/5">
-    - Fortnite Festival (keyboard mode)
+    - Fortnite Festival [(Click here to be taken to the Fortnite Festival setup section)](#fortnite-festival)
     - Rock Band 4
   </Tab>
   <Tab title="Xbox 360">
@@ -111,8 +112,8 @@ If you ever want to switch between the two, make sure that the controller you we
     - Rock Band Track Packs (not tested)
   </Tab>
   <Tab title="Xbox One/Series">
-    - Fortnite Festival (keyboard mode)
-    - Rock Band 4 (authentication required)
+    - Fortnite Festival [(Click here to be taken to the Fortnite Festival setup section)](#fortnite-festival)
+    - Rock Band 4 [(AUTHENTICATION REQUIRED. Click to be taken to the RB4 Authentication section)](#Authentication)
   </Tab>
   <Tab title="Wii">
     If using a guitar, the adapter must be set to the RB Guitar preset, regardless of game.
@@ -124,36 +125,7 @@ If you ever want to switch between the two, make sure that the controller you we
     - Green Day: Rock Band
   </Tab>
   <Tab title="Switch">
-    - Fortnite Festival (see Switch section)
-  </Tab>
-</Tabs>
-
-## Troublesome Games
-
-<Tabs>
-  <Tab title="Playstation 2">
-    The following games can be played with one of our [PS2 Host Adapters](https://shop.retrocultmods.com/products/ps2-host-usb-to-ps2-controller) or a modded PS2 using OPL Nightly's PADEMU feature. However, they will not work natively with a USB guitar.
-
-    - Guitar Hero
-    - Guitar Hero II
-    - Guitar Hero III
-    - Guitar Hero Aerosmith
-  </Tab>
-  <Tab title="Wii">
-    These games can be played on a homebrewed Wii along with [this plugin.](https://github.com/Santroller/santroller-bslug/releases/tag/v1.14) However, they may not work natively.
-
-    - Guitar Hero 3
-    - Guitar Hero Aerosmith
-    - Guitar Hero World Tour
-    - Guitar hero Metallica
-    - Guitar Hero Smash Hits
-    - Band Hero
-    - Guitar Hero 5
-    - Guitar Hero Warriors of Rock
-
-    The follow games cannot be played using any sort of USB guitar at this time.
-
-    - Rock Band Track Packs
+    - Fortnite Festival [(Click here to be taken to the Fortnite Festival setup section)](#fortnite-festival)
   </Tab>
 </Tabs>
 
@@ -370,6 +342,135 @@ If you ever want to switch between the two, make sure that the controller you we
         ![Deadzonethumbsticks](/images/deadzonethumbsticks.png)
 
         Optionally, you can set deadzones for triggers if those are experiencing any erratic change in idle value.
+      </Step>
+    </Steps>
+  </Accordion>
+</AccordionGroup>
+
+### Authentication
+
+<AccordionGroup>
+  <Accordion title="Xbox One/Series (Rock Band 4)">
+    To play Rock Band 4 on your Xbox with a MiniHost Adapter, you will have to authenticate the MiniHost with a licensed Xbox One or Xbox Series controller.
+
+    <Steps>
+      <Step>
+        Turn on the Xbox One/Series, then using your Xbox controller, load into Rock Band 4.
+      </Step>
+      <Step>
+        Disconnect the Xbox controller from your Xbox One/Series. (Pop out batteries)
+      </Step>
+      <Step>
+        Connect the licensed Xbox controller into the female USB-A port on the V3 Adapter.
+
+        <Tip>
+          - **Xbox One – models 1537, 1697, and 1698**
+          - **Xbox One S – models 1708 and 1797**
+          - **Xbox Series S/X – model 1914**
+        </Tip>
+        <Frame>
+          <img
+            src="/images/MiniHost-Adapter/MiniHostAuthPort.png"
+            alt="Mini Host Auth Port"
+            title="Mini Host Auth Port"
+            style={{ width:"54%" }}
+          />
+        </Frame>
+      </Step>
+      <Step>
+        Plug the adapter into the console with the gamepad plugged in.
+      </Step>
+      <Step>
+        Wait a moment, then press start on the gamepad to verify the connection is made. On the “Join” screen, a guitar player should appear.
+      </Step>
+      <Step>
+        Unplug the licensed Xbox controller from your device.
+      </Step>
+      <Step>
+        Plug in your guitar, if applicable.
+      </Step>
+      <Step>
+        Play the game!
+      </Step>
+    </Steps>
+    If your controller is connected under the profile you want to use for the guitar, you’ll need to “drop out” the controller before assigning that profile to the guitar.
+
+    (image)
+  </Accordion>
+</AccordionGroup>
+
+### Fortnite Festival
+
+<AccordionGroup>
+  <Accordion iconType="regular" title="PC, Playstation 4/5, Xbox One/Series - Keyboard Mode">
+    **NOTE: EPIC HAS CHANGED A SETTING IN FORTNITE THAT HIDES PRO MODES NORMALLY. YOU WILL WANT TO ADJUST THIS TO ALWAYS HAVE PRO MODES SHOWING. TO FIX THIS:**
+
+    **GO TO Settings \> GAME \> scroll to bottom \> change “Always Display Pro Parts” to ON.**
+
+    <Frame>
+      <img
+        src="/images/fortnitefestivalsettings.png"
+        alt="Fortnitefestivalsettings"
+        title="Fortnitefestivalsettings"
+        className="mx-auto"
+        style={{ width:"55%" }}
+      />
+    </Frame>
+    <Tip>
+      ## Move the RCM 360 Wireless Receiver's keyboard toggle switch to "ON" (next to the "U" shaped button) and mode switch set to whichever one you have guitar set to. Default is mode "A".
+    </Tip>
+    This will put your guitar into keyboard mode, where your inputs will be assigned to the default Fortnite Festival Pro Lead Keyboard settings:
+
+    - 1-5 for frets
+    - Right Ctrl & Right Shift for strum
+    - Forward Slash (/) for whammy
+    - Page Down for overdrive
+
+    You will know it's working if your instrument changes when you press the frets in the Festival Main Stage Lobby.
+
+    _Note that you will have to control your menus/character movement with keyboard & mouse/other controller, but once you load into the game from the Festival Main Stage, the guitar will function as intended!_\
+    **Have fun!**
+  </Accordion>
+  <Accordion title="Nintendo Switch">
+    **NOTE: You will have to switch between two modes while navigating and playing, so be ready to do that often.**
+
+    **MODE SWITCH BUTTON COMBO:**
+
+    <Warning>
+      # <u>YELLOW + START</u>
+
+      _(press and hold yellow first, then tap start once)_
+    </Warning>
+    <Steps>
+      <Step>
+        **You want your RCM 360 Wireless Receiver  to be on the Default (GH Guitar) preset with the instrument switch set to whichever your guitar mode is. Default guitar preset mode switch "A".** If you have changed yours to be something different, please download the latest [RCM Programming Tool](https://retrocultmods.com/programming-tool/) and factory reset it back to Default. You will have to calibrate your whammy (and tilt if needed).
+      </Step>
+      <Step>
+        **Turn on your Nintendo Switch and plug your RCM 360 Wireless Receiver in! After, pair your guitar to the receiver.** It should be able to navigate the NS menu immediately. If not, unplug and plug in the adapter/guitar again.
+      </Step>
+      <Step>
+        Once you have confirmed that your guitar is working on the Switch, **open Fortnite Festival.**
+      </Step>
+      <Step>
+        Once the game is open, **you should be able to navigate the game with the guitar**, at least somewhat.
+      </Step>
+      <Step>
+        Open your game settings, then switch to the GAME tab. Scroll to the bottom and **switch the “ALWAYS DISPLAY PRO PARTS” to ON.**
+
+        <Frame>
+          <img
+            src="/images/fortnitefestivalsettings.png"
+            alt="Fortnitefestivalsettings"
+            title="Fortnitefestivalsettings"
+            style={{ width:"44%" }}
+          />
+        </Frame>
+      </Step>
+      <Step>
+        Load into Fortnite Festival Main Stage, then select your songs. **Once you ready up, HOLD YELLOW then tap START**. Your guitar should then function to for play!
+      </Step>
+      <Step>
+        After your song is over, do the **YELLOW+START combo again to be able to navigate**.
       </Step>
     </Steps>
   </Accordion>
