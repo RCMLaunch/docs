@@ -63,7 +63,8 @@
   .progress-track { height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
   .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent2), var(--accent3)); border-radius: 2px; transition: width 0.4s cubic-bezier(0.4,0,0.2,1); }
 
-  .quiz-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; box-shadow: 0 2px 12px rgba(26,26,46,0.06), 0 1px 3px rgba(26,26,46,0.04); animation: cardIn 0.3s cubic-bezier(0.4,0,0.2,1); transition: background 0.2s, border-color 0.2s; }
+  .quiz-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; box-shadow: 0 2px 12px rgba(26,26,46,0.06), 0 1px 3px rgba(26,26,46,0.04); transition: background 0.2s, border-color 0.2s; }
+  .quiz-card.animate-in { animation: cardIn 0.3s cubic-bezier(0.4,0,0.2,1); }
   @keyframes cardIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
   .question-num { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; color: var(--accent3); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 12px; }
@@ -970,7 +971,7 @@ function renderSingleQuestion(q) {
       <div class="progress-info"><span>Step ${step}</span><span>${pct}% complete</span></div>
       <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
     </div>
-    <div class="quiz-card">
+    <div class="quiz-card animate-in">
       <div class="question-num">Question ${step}</div>
       <div class="question-text">${q.text}</div>
       <div class="answers-grid">${answersHTML}</div>
@@ -985,7 +986,7 @@ function pickSingle(nextId) {
 }
 
 // ─── MULTI SELECT ─────────────────────────────────────────────────────────────
-function renderMultiQuestion(q) {
+function renderMultiQuestion(q, animate = true) {
   const step = history.length + 1;
   const pct = Math.min(100, Math.round((history.length / totalSteps) * 100));
   const count = multiSelected.size;
@@ -1001,12 +1002,12 @@ function renderMultiQuestion(q) {
       <div class="progress-info"><span>Step ${step}</span><span>${pct}% complete</span></div>
       <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
     </div>
-    <div class="quiz-card">
+    <div class="quiz-card${animate ? ' animate-in' : ''}">
       <div class="question-num">Question ${step}</div>
       <div class="question-text">${q.text}</div>
       <div class="multi-hint">☑ Select all that apply, then click Next</div>
-      <div class="multi-answers-grid">${itemsHTML}</div>
-      <button class="multi-next-btn" onclick="submitMulti()" ${count === 0 ? 'disabled' : ''}>
+      <div class="multi-answers-grid" id="multiGrid">${itemsHTML}</div>
+      <button class="multi-next-btn" id="multiNextBtn" onclick="submitMulti()" ${count === 0 ? 'disabled' : ''}>
         Next →
         ${count > 0 ? `<span class="count-badge">${count} selected</span>` : ''}
       </button>
@@ -1017,7 +1018,22 @@ function renderMultiQuestion(q) {
 function toggleMulti(idx) {
   if (multiSelected.has(idx)) multiSelected.delete(idx);
   else multiSelected.add(idx);
-  renderMultiQuestion(findQuestion(currentId));
+
+  // Update only the checkboxes and button in place — no full re-render
+  const grid = document.getElementById('multiGrid');
+  if (grid) {
+    grid.querySelectorAll('.multi-answer-item').forEach((el, i) => {
+      const checked = multiSelected.has(i);
+      el.classList.toggle('checked', checked);
+      el.querySelector('.multi-checkbox').textContent = checked ? '✓' : '';
+    });
+  }
+  const btn = document.getElementById('multiNextBtn');
+  if (btn) {
+    const count = multiSelected.size;
+    btn.disabled = count === 0;
+    btn.innerHTML = `Next → ${count > 0 ? `<span class="count-badge">${count} selected</span>` : ''}`;
+  }
 }
 
 function submitMulti() {
@@ -1062,7 +1078,7 @@ function renderResult(r) {
   const ctaHTML = r.link ? `<a class="cta-btn" href="${r.link}" target="_blank">View Product →</a>` : '';
 
   document.getElementById('quizRoot').innerHTML = `
-    <div class="quiz-card">
+    <div class="quiz-card animate-in">
       <div class="result-badge">✓ Our Recommendation</div>
       ${imgHTML}
       <div class="result-title">${r.title}</div>
