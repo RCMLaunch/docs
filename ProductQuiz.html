@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Quiz</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+  :root {
+    --bg: #faf9f7;
+    --surface: #ffffff;
+    --border: #e8e4de;
+    --border2: #d4cfc8;
+    --accent: #1a1a2e;
+    --accent2: #16A34A;
+    --accent3: #07C983;
+    --text: #1a1a2e;
+    --muted: #6b6675;
+    --tag-bg: #e8f8ef;
+    --success: #2d7a4f;
+    --success-bg: #edfaf3;
+    --multi-bg: #fef9ec;
+    --multi-border: #f5d97a;
+    --multi-text: #7a5a00;
+    --radius: 14px;
+  }
+
+  :root.dark {
+    --bg: #0f0f13;
+    --surface: #1a1a22;
+    --border: #2a2a38;
+    --border2: #3a3a4a;
+    --accent: #e8e8f8;
+    --accent2: #16A34A;
+    --accent3: #15803D;
+    --text: #e8e8f8;
+    --muted: #8080a0;
+    --tag-bg: #0e2018;
+    --success: #4ade80;
+    --success-bg: #0f2a1a;
+    --multi-bg: #1e1a0a;
+    --multi-border: #5a4a10;
+    --multi-text: #c8a840;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding: 24px 16px 40px; transition: background 0.2s, color 0.2s; }
+
+  /* Day / Night toggle */
+  .theme-toggle { position: fixed; top: 16px; right: 16px; z-index: 999; width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .theme-toggle:hover { border-color: var(--accent3); color: var(--accent3); transform: scale(1.08); }
+
+  .quiz-wrap { width: 100%; max-width: 580px; }
+
+  .quiz-header { text-align: center; margin-bottom: 32px; }
+  .quiz-eyebrow { display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; color: var(--accent3); letter-spacing: 1px; text-transform: uppercase; background: var(--tag-bg); padding: 5px 12px; border-radius: 20px; margin-bottom: 14px; }
+  .quiz-title { font-family: 'Inter', sans-serif; font-size: clamp(22px, 5vw, 32px); font-weight: 700; line-height: 1.2; letter-spacing: -0.5px; color: var(--text); margin-bottom: 10px; }
+  .quiz-subtitle { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 420px; margin: 0 auto; }
+
+  .progress-bar-wrap { margin-bottom: 28px; }
+  .progress-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 12px; color: var(--muted); font-family: 'Inter', sans-serif; font-weight: 500; }
+  .progress-track { height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent2), var(--accent3)); border-radius: 2px; transition: width 0.4s cubic-bezier(0.4,0,0.2,1); }
+
+  .quiz-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; box-shadow: 0 2px 12px rgba(26,26,46,0.06), 0 1px 3px rgba(26,26,46,0.04); animation: cardIn 0.3s cubic-bezier(0.4,0,0.2,1); transition: background 0.2s, border-color 0.2s; }
+  @keyframes cardIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+  .question-num { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; color: var(--accent3); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 12px; }
+  .question-text { font-family: 'Inter', sans-serif; font-size: clamp(17px, 4vw, 22px); font-weight: 600; line-height: 1.35; color: var(--text); margin-bottom: 20px; }
+
+  .multi-hint { display: inline-flex; align-items: center; gap: 6px; background: var(--multi-bg); border: 1px solid var(--multi-border); border-radius: 6px; padding: 6px 12px; font-size: 12px; font-family: 'Inter', sans-serif; color: var(--multi-text); font-weight: 500; margin-bottom: 20px; }
+
+  .answers-grid { display: flex; flex-direction: column; gap: 10px; }
+  .answer-btn { width: 100%; text-align: left; padding: 14px 18px; background: var(--bg); border: 1.5px solid var(--border); border-radius: 10px; color: var(--text); font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.18s cubic-bezier(0.4,0,0.2,1); display: flex; align-items: center; gap: 12px; }
+  .answer-btn:hover { border-color: var(--accent3); transform: translateX(3px); }
+  .answer-indicator { width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid var(--border2); display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; color: var(--muted); flex-shrink: 0; transition: all 0.18s; }
+  .answer-btn:hover .answer-indicator { border-color: var(--accent3); color: var(--accent3); }
+
+  .multi-answers-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+  .multi-answer-item { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--bg); border: 1.5px solid var(--border); border-radius: 10px; cursor: pointer; transition: all 0.18s; user-select: none; }
+  .multi-answer-item:hover { border-color: var(--accent3); }
+  .multi-answer-item.checked { border-color: var(--accent2); background: var(--tag-bg); }
+  .multi-checkbox { width: 20px; height: 20px; border-radius: 5px; border: 1.5px solid var(--border2); background: var(--surface); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.18s; color: white; font-size: 11px; font-weight: 700; }
+  .multi-answer-item.checked .multi-checkbox { background: var(--accent2); border-color: var(--accent2); }
+  .multi-answer-item:hover .multi-checkbox { border-color: var(--accent3); }
+  .multi-answer-label { font-size: 14px; font-weight: 500; font-family: 'Inter', sans-serif; color: var(--text); }
+  .multi-answer-item.checked .multi-answer-label { color: var(--accent2); }
+
+  .multi-next-btn { width: 100%; padding: 14px; background: var(--accent2); color: white; border: none; border-radius: 10px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.18s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .multi-next-btn:hover:not(:disabled) { opacity: 0.88; transform: translateY(-1px); }
+  .multi-next-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+  .count-badge { background: rgba(255,255,255,0.22); border-radius: 12px; padding: 2px 8px; font-size: 12px; }
+
+  .back-btn { display: inline-flex; align-items: center; gap: 6px; background: none; border: none; color: var(--muted); font-family: 'Inter', sans-serif; font-size: 13px; cursor: pointer; padding: 8px 0; margin-top: 20px; transition: color 0.15s; }
+  .back-btn:hover { color: var(--text); }
+
+  .result-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--success-bg); color: var(--success); border: 1px solid rgba(45,122,79,0.2); border-radius: 20px; padding: 5px 14px; font-size: 12px; font-weight: 600; margin-bottom: 16px; font-family: 'Inter', sans-serif; }
+  .result-img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 20px; border: 1px solid var(--border); }
+  .result-title { font-family: 'Inter', sans-serif; font-size: 26px; font-weight: 700; line-height: 1.2; margin-bottom: 6px; letter-spacing: -0.3px; }
+  .result-subtitle { font-size: 13px; font-weight: 600; color: var(--accent3); margin-bottom: 14px; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
+  .result-description { font-size: 14px; font-family: 'Inter', sans-serif; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+  .result-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--accent2); color: white; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.18s; }
+  .cta-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+  .restart-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; background: none; color: var(--muted); border: 1.5px solid var(--border); border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.18s; }
+  .restart-btn:hover { border-color: var(--accent2); color: var(--accent2); }
+  .divider { height: 1px; background: var(--border); margin: 20px 0; }
+
+  .error-box { background: #fff5f5; border: 1px solid #fecaca; border-radius: 10px; padding: 20px; font-size: 13px; font-family: 'Inter', sans-serif; color: #991b1b; line-height: 1.6; }
+  .error-box code { font-family: 'Inter', monospace; font-size: 11px; background: rgba(0,0,0,0.05); padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn" title="Toggle dark/light mode">🌙</button>
+<div class="quiz-wrap">
+  <div class="quiz-header">
+    <div class="quiz-eyebrow">✦ Find Your Match</div>
+    <h1 class="quiz-title">Which product is right for you?</h1>
+    <p class="quiz-subtitle">Answer a few quick questions and we'll point you to the perfect fit.</p>
+  </div>
+  <div id="quizRoot"></div>
+</div>
+
+<script>
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  QUIZ DATA — paste your exported JSON from the builder here (replace everything
+//  between the curly braces, keeping the "const QUIZ_DATA =" and the semicolon)
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+const QUIZ_DATA = {
+  "startId": "Q1",
+  "questions": [
+    {
+      "id": "Q1",
+      "text": "What platforms will you be playing on?",
+      "multiSelect": true,
+      "answers": [
+        {
+          "label": "Xbox 360",
+          "next": "Q3"
+        },
+        {
+          "label": "Xbox One/Series",
+          "next": "R7"
+        },
+        {
+          "label": "Playstation 2",
+          "next": null
+        },
+        {
+          "label": "Playstation 3",
+          "next": null
+        },
+        {
+          "label": "Playstation 4/5",
+          "next": null
+        },
+        {
+          "label": "Nintendo Wii",
+          "next": null
+        },
+        {
+          "label": "Nintendo Switch (Guitar Only)",
+          "next": null
+        },
+        {
+          "label": "PC/Mac",
+          "next": null
+        }
+      ],
+      "comboRules": [
+        {
+          "selectedIds": [
+            "2"
+          ],
+          "next": "Q9",
+          "mode": "includes"
+        },
+        {
+          "selectedIds": [
+            "6"
+          ],
+          "next": "Q17",
+          "mode": "exact"
+        }
+      ],
+      "fallback": "Q16"
+    },
+    {
+      "id": "Q9",
+      "text": "Do you plan on playing any of the following games?\n- Guitar Hero (the first one)\n- Guitar Hero II\n- Guitar Hero III\n- Guitar Hero Encore: Rock the 80s\n- Guitar Hero Aerosmith\n- Dance Dance Revolution (any)",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes",
+          "next": "R10"
+        },
+        {
+          "label": "No",
+          "next": "Q16"
+        }
+      ]
+    },
+    {
+      "id": "Q16",
+      "text": "What type of controller do you plan on using? (retake quiz if you plan on using more than one)",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Guitar",
+          "next": "Q17"
+        },
+        {
+          "label": "Rock Band Drums",
+          "next": "Q26"
+        },
+        {
+          "label": "Guitar Hero Drums",
+          "next": "Q29"
+        },
+        {
+          "label": "Pro Drums (e-kit) / Pro Keys (full size midi keyboard)",
+          "next": "R15"
+        },
+        {
+          "label": "Keytar",
+          "next": "Q26"
+        },
+        {
+          "label": "Pro Guitar",
+          "next": "Q26"
+        },
+        {
+          "label": "Dance Pad",
+          "next": "Q28"
+        },
+        {
+          "label": "DJ Hero Turntable",
+          "next": "Q29"
+        }
+      ]
+    },
+    {
+      "id": "Q17",
+      "text": "Are you planning on modding a guitar or using a guitar with an adapter?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Modding a guitar",
+          "next": "Q22"
+        },
+        {
+          "label": "Using a Wii Guitar Hero controller (wiimote nunchuk connection)",
+          "next": "R12"
+        },
+        {
+          "label": "Using a USB Guitar (or a guitar with a wireless USB Dongle)",
+          "next": "R11"
+        },
+        {
+          "label": "Using a PS2 guitar controller (9 pin PS2 connector)",
+          "next": "R13"
+        },
+        {
+          "label": "Using a wireless Xbox 360 guitar",
+          "next": "R14"
+        }
+      ]
+    },
+    {
+      "id": "Q21",
+      "text": "Do you know how to solder/do you want to solder?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "No",
+          "next": "R25"
+        },
+        {
+          "label": "Yes",
+          "next": "Q24"
+        }
+      ]
+    },
+    {
+      "id": "Q22",
+      "text": "Do you want RGB strum bar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes (Revival Kit Only)",
+          "next": "R18"
+        },
+        {
+          "label": "No",
+          "next": "Q21"
+        }
+      ]
+    },
+    {
+      "id": "Q24",
+      "text": "Do you want RGB or Stock frets?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "RGB",
+          "next": "R19"
+        },
+        {
+          "label": "Stock",
+          "next": "R23"
+        }
+      ]
+    },
+    {
+      "id": "Q26",
+      "text": "Will you be using a WIRELESS Xbox 360 version of the controller?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes",
+          "next": "R14"
+        },
+        {
+          "label": "No",
+          "next": "R11"
+        }
+      ]
+    },
+    {
+      "id": "Q28",
+      "text": "Are you planning on using a PS1/PS2 Dance Pad or USB Dance Pad?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS1/PS2 Dance Pad (9-pin Playstation connector)",
+          "next": "R13"
+        },
+        {
+          "label": "USB Dancepad",
+          "next": "R11"
+        }
+      ]
+    },
+    {
+      "id": "Q29",
+      "text": "Are you going to be using the Playstation, Xbox 360, or Wii version of the controller?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Playstation",
+          "next": "R11"
+        },
+        {
+          "label": "Xbox 360",
+          "next": "R14"
+        },
+        {
+          "label": "Wii",
+          "next": "R12"
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "R10",
+      "title": "PS2 Host Adapter",
+      "subtitle": "",
+      "description": "",
+      "image": "",
+      "link": "https://shop.retrocultmods.com/products/ps2-host-usb-to-ps2-controller"
+    },
+    {
+      "id": "R11",
+      "title": "MiniHost Adapter",
+      "subtitle": "",
+      "description": "",
+      "image": "",
+      "link": ""
+    },
+    {
+      "id": "R12",
+      "title": "V3 Adapter",
+      "subtitle": "",
+      "description": "",
+      "image": "",
+      "link": ""
+    },
+    {
+      "id": "R13",
+      "title": "PS2 to USB Adapter",
+      "subtitle": "",
+      "description": "",
+      "image": "",
+      "link": ""
+    },
+    {
+      "id": "R14",
+      "title": "RCM 360 Wireless Receiver                                ",
+      "subtitle": "",
+      "description": "",
+      "image": "",
+      "link": ""
+    },
+    {
+      "id": "R15",
+      "title": "ACE Adapter",
+      "subtitle": "",
+      "description": "",
+      "image": "",
+      "link": ""
+    },
+    {
+      "id": "R18",
+      "title": "Solderless Revival Kit - RGB Strum Bar",
+      "subtitle": "",
+      "description": "",
+      "image": "",
+      "link": ""
+    },
+    {
+      "id": "R19",
+      "title": "DIY Solder Mod Kit - RGB Frets",
+      "subtitle": "",
+      "description": "",
+      "image": "",
+      "link": ""
+    },
+    {
+      "id": "R23",
+      "title": "DIY Solder Kit Mod - Standard Frets",
+      "subtitle": "",
+      "description": "",
+      "image": "",
+      "link": ""
+    },
+    {
+      "id": "R25",
+      "title": "Solderless Revival Kit - No Strumbar",
+      "subtitle": "",
+      "description": "",
+      "image": "",
+      "link": ""
+    }
+  ],
+  "_builder": {
+    "nodes": [
+      {
+        "id": "Q1",
+        "type": "question-multi",
+        "x": -280.18518518518516,
+        "y": 163.33333333333331,
+        "text": "What platforms will you be playing on?",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Xbox 360",
+            "target": "Q3"
+          },
+          {
+            "label": "Xbox One/Series",
+            "target": "R7"
+          },
+          {
+            "label": "Playstation 2",
+            "target": ""
+          },
+          {
+            "label": "Playstation 3",
+            "target": ""
+          },
+          {
+            "label": "Playstation 4/5",
+            "target": ""
+          },
+          {
+            "label": "Nintendo Wii",
+            "target": ""
+          },
+          {
+            "label": "Nintendo Switch (Guitar Only)",
+            "target": ""
+          },
+          {
+            "label": "PC/Mac",
+            "target": ""
+          }
+        ],
+        "comboRules": [
+          {
+            "selectedIds": [
+              "2"
+            ],
+            "target": "Q9",
+            "mode": "includes"
+          },
+          {
+            "selectedIds": [
+              "6"
+            ],
+            "target": "Q17",
+            "mode": "exact"
+          }
+        ],
+        "fallback": "Q16"
+      },
+      {
+        "id": "Q9",
+        "type": "question",
+        "x": 13.36579765813668,
+        "y": 14.742470224972434,
+        "text": "Do you plan on playing any of the following games?\n- Guitar Hero (the first one)\n- Guitar Hero II\n- Guitar Hero III\n- Guitar Hero Encore: Rock the 80s\n- Guitar Hero Aerosmith\n- Dance Dance Revolution (any)",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Yes",
+            "target": "R10"
+          },
+          {
+            "label": "No",
+            "target": "Q16"
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "R10",
+        "type": "result",
+        "x": 376.50895968991534,
+        "y": -98.1276040953334,
+        "text": "PS2 Host Adapter",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "https://shop.retrocultmods.com/products/ps2-host-usb-to-ps2-controller",
+        "answers": [],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "R11",
+        "type": "result",
+        "x": 940.13556053879,
+        "y": -5.275147128916782,
+        "text": "MiniHost Adapter",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "R12",
+        "type": "result",
+        "x": 935.526764645349,
+        "y": 153.36329624124173,
+        "text": "V3 Adapter",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "R13",
+        "type": "result",
+        "x": 1031.9933427620635,
+        "y": 390.28771555252655,
+        "text": "PS2 to USB Adapter",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "R14",
+        "type": "result",
+        "x": 1027.096811213504,
+        "y": 641.5136032190784,
+        "text": "RCM 360 Wireless Receiver                                ",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "R15",
+        "type": "result",
+        "x": 1030.410865134466,
+        "y": 520.9498324500963,
+        "text": "ACE Adapter",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q16",
+        "type": "question",
+        "x": 45.129860722669484,
+        "y": 437.450433061338,
+        "text": "What type of controller do you plan on using? (retake quiz if you plan on using more than one)",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Guitar",
+            "target": "Q17"
+          },
+          {
+            "label": "Rock Band Drums",
+            "target": "Q26"
+          },
+          {
+            "label": "Guitar Hero Drums",
+            "target": "Q29"
+          },
+          {
+            "label": "Pro Drums (e-kit) / Pro Keys (full size midi keyboard)",
+            "target": "R15"
+          },
+          {
+            "label": "Keytar",
+            "target": "Q26"
+          },
+          {
+            "label": "Pro Guitar",
+            "target": "Q26"
+          },
+          {
+            "label": "Dance Pad",
+            "target": "Q28"
+          },
+          {
+            "label": "DJ Hero Turntable",
+            "target": "Q29"
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q17",
+        "type": "question",
+        "x": 308.35279680682646,
+        "y": 130.94831358533673,
+        "text": "Are you planning on modding a guitar or using a guitar with an adapter?",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Modding a guitar",
+            "target": "Q22"
+          },
+          {
+            "label": "Using a Wii Guitar Hero controller (wiimote nunchuk connection)",
+            "target": "R12"
+          },
+          {
+            "label": "Using a USB Guitar (or a guitar with a wireless USB Dongle)",
+            "target": "R11"
+          },
+          {
+            "label": "Using a PS2 guitar controller (9 pin PS2 connector)",
+            "target": "R13"
+          },
+          {
+            "label": "Using a wireless Xbox 360 guitar",
+            "target": "R14"
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "R18",
+        "type": "result",
+        "x": 1154.336468633394,
+        "y": 926.3267769927553,
+        "text": "Solderless Revival Kit - RGB Strum Bar",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "R19",
+        "type": "result",
+        "x": 1660.845116140083,
+        "y": 1250.980025553985,
+        "text": "DIY Solder Mod Kit - RGB Frets",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q21",
+        "type": "question",
+        "x": 1037.8984954828038,
+        "y": 1280.5525631129342,
+        "text": "Do you know how to solder/do you want to solder?",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "No",
+            "target": "R25"
+          },
+          {
+            "label": "Yes",
+            "target": "Q24"
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q22",
+        "type": "question",
+        "x": 742.8976609444372,
+        "y": 915.6193211612195,
+        "text": "Do you want RGB strum bar?",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Yes (Revival Kit Only)",
+            "target": "R18"
+          },
+          {
+            "label": "No",
+            "target": "Q21"
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "R23",
+        "type": "result",
+        "x": 1650.08871220575,
+        "y": 1505.9988017485352,
+        "text": "DIY Solder Kit Mod - Standard Frets",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q24",
+        "type": "question",
+        "x": 1350.4952967821473,
+        "y": 1287.2757680473271,
+        "text": "Do you want RGB or Stock frets?",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "RGB",
+            "target": "R19"
+          },
+          {
+            "label": "Stock",
+            "target": "R23"
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "R25",
+        "type": "result",
+        "x": 1152.1544531873556,
+        "y": 1064.5123922436378,
+        "text": "Solderless Revival Kit - No Strumbar",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q26",
+        "type": "question",
+        "x": 351.66642840487947,
+        "y": 1037.0288773680702,
+        "text": "Will you be using a WIRELESS Xbox 360 version of the controller?",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Yes",
+            "target": "R14"
+          },
+          {
+            "label": "No",
+            "target": "R11"
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q28",
+        "type": "question",
+        "x": -11.803898077050446,
+        "y": 983.190422230154,
+        "text": "Are you planning on using a PS1/PS2 Dance Pad or USB Dance Pad?",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "PS1/PS2 Dance Pad (9-pin Playstation connector)",
+            "target": "R13"
+          },
+          {
+            "label": "USB Dancepad",
+            "target": "R11"
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q29",
+        "type": "question",
+        "x": 347.93097816058537,
+        "y": 764.646149221702,
+        "text": "Are you going to be using the Playstation, Xbox 360, or Wii version of the controller?",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Playstation",
+            "target": "R11"
+          },
+          {
+            "label": "Xbox 360",
+            "target": "R14"
+          },
+          {
+            "label": "Wii",
+            "target": "R12"
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      }
+    ]
+  }
+};
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  END OF QUIZ DATA — do not edit below this line unless you know what you're doing
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+let history = [];
+let currentId = null;
+let totalSteps = 0;
+let multiSelected = new Set();
+
+function startQuiz() {
+  history = [];
+  currentId = QUIZ_DATA.startId;
+  multiSelected = new Set();
+  totalSteps = estimateSteps();
+  goTo(currentId);
+}
+
+function estimateSteps() {
+  const visited = new Set();
+  const queue = [QUIZ_DATA.startId];
+  let depth = 0;
+  while (queue.length) {
+    const id = queue.shift();
+    if (visited.has(id)) continue;
+    visited.add(id); depth++;
+    const q = findQuestion(id);
+    if (q) q.answers.forEach(a => { if (a.next) queue.push(a.next); });
+  }
+  return Math.max(depth, 3);
+}
+
+function goTo(id) {
+  currentId = id;
+  multiSelected = new Set();
+  const question = findQuestion(id);
+  const result = findResult(id);
+  if (question) {
+    if (question.multiSelect) renderMultiQuestion(question);
+    else renderSingleQuestion(question);
+  } else if (result) {
+    renderResult(result);
+  } else {
+    showError(`Node "${id}" not found. Re-export your quiz from the builder and paste the updated JSON above.`);
+  }
+}
+
+function goBack() {
+  if (!history.length) return;
+  currentId = history.pop();
+  goTo(currentId);
+}
+
+// ─── SINGLE SELECT ────────────────────────────────────────────────────────────
+function renderSingleQuestion(q) {
+  const step = history.length + 1;
+  const pct = Math.min(100, Math.round((history.length / totalSteps) * 100));
+  const indicators = 'ABCDEFGH';
+
+  const answersHTML = q.answers.map((a, i) => `
+    <button class="answer-btn" onclick="pickSingle('${a.next}')">
+      <div class="answer-indicator">${indicators[i]}</div>
+      <span>${a.label}</span>
+    </button>`).join('');
+
+  document.getElementById('quizRoot').innerHTML = `
+    <div class="progress-bar-wrap">
+      <div class="progress-info"><span>Step ${step}</span><span>${pct}% complete</span></div>
+      <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+    </div>
+    <div class="quiz-card">
+      <div class="question-num">Question ${step}</div>
+      <div class="question-text">${q.text}</div>
+      <div class="answers-grid">${answersHTML}</div>
+      ${history.length > 0 ? `<button class="back-btn" onclick="goBack()">← Back</button>` : ''}
+    </div>`;
+}
+
+function pickSingle(nextId) {
+  if (!nextId) return;
+  history.push(currentId);
+  goTo(nextId);
+}
+
+// ─── MULTI SELECT ─────────────────────────────────────────────────────────────
+function renderMultiQuestion(q) {
+  const step = history.length + 1;
+  const pct = Math.min(100, Math.round((history.length / totalSteps) * 100));
+  const count = multiSelected.size;
+
+  const itemsHTML = q.answers.map((a, i) => `
+    <div class="multi-answer-item ${multiSelected.has(i) ? 'checked' : ''}" onclick="toggleMulti(${i})">
+      <div class="multi-checkbox">${multiSelected.has(i) ? '✓' : ''}</div>
+      <span class="multi-answer-label">${a.label}</span>
+    </div>`).join('');
+
+  document.getElementById('quizRoot').innerHTML = `
+    <div class="progress-bar-wrap">
+      <div class="progress-info"><span>Step ${step}</span><span>${pct}% complete</span></div>
+      <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+    </div>
+    <div class="quiz-card">
+      <div class="question-num">Question ${step}</div>
+      <div class="question-text">${q.text}</div>
+      <div class="multi-hint">☑ Select all that apply, then click Next</div>
+      <div class="multi-answers-grid">${itemsHTML}</div>
+      <button class="multi-next-btn" onclick="submitMulti()" ${count === 0 ? 'disabled' : ''}>
+        Next →
+        ${count > 0 ? `<span class="count-badge">${count} selected</span>` : ''}
+      </button>
+      ${history.length > 0 ? `<button class="back-btn" onclick="goBack()">← Back</button>` : ''}
+    </div>`;
+}
+
+function toggleMulti(idx) {
+  if (multiSelected.has(idx)) multiSelected.delete(idx);
+  else multiSelected.add(idx);
+  renderMultiQuestion(findQuestion(currentId));
+}
+
+function submitMulti() {
+  if (multiSelected.size === 0) return;
+  const q = findQuestion(currentId);
+  const selectedSorted = [...multiSelected].map(String).sort();
+
+  // Collect all matching rules, then pick the most specific (most selectedIds)
+  const matchingRules = (q.comboRules || []).filter(rule => {
+    const mode = rule.mode || 'exact';
+    const ruleIds = [...rule.selectedIds].sort();
+    if (mode === 'exact') {
+      // User selection must match the rule ids precisely
+      return ruleIds.length === selectedSorted.length &&
+             ruleIds.every(id => selectedSorted.includes(id));
+    } else {
+      // 'includes' — user must have selected at least these ids (can have extras)
+      return ruleIds.every(id => selectedSorted.includes(id));
+    }
+  }).filter(r => r.next);
+
+  // Most specific = most selectedIds defined in the rule
+  matchingRules.sort((a, b) => b.selectedIds.length - a.selectedIds.length);
+  let matched = matchingRules[0]?.next || null;
+
+  if (!matched && q.fallback) matched = q.fallback;
+
+  if (!matched) {
+    showError(`No matching rule for this combination and no fallback is set on question "${q.id}". Open the builder and add a fallback.`);
+    return;
+  }
+
+  history.push(currentId);
+  goTo(matched);
+}
+
+// ─── RESULT ───────────────────────────────────────────────────────────────────
+function renderResult(r) {
+  const imgHTML = r.image ? `<img class="result-img" src="${r.image}" alt="${r.title}">` : '';
+  const subtitleHTML = r.subtitle ? `<div class="result-subtitle">${r.subtitle}</div>` : '';
+  const descHTML = r.description ? `<div class="result-description">${r.description}</div>` : '';
+  const ctaHTML = r.link ? `<a class="cta-btn" href="${r.link}" target="_blank">View Product →</a>` : '';
+
+  document.getElementById('quizRoot').innerHTML = `
+    <div class="quiz-card">
+      <div class="result-badge">✓ Our Recommendation</div>
+      ${imgHTML}
+      <div class="result-title">${r.title}</div>
+      ${subtitleHTML}${descHTML}
+      <div class="divider"></div>
+      <div class="result-actions">
+        ${ctaHTML}
+        <button class="restart-btn" onclick="startQuiz()">↺ Start over</button>
+      </div>
+    </div>`;
+}
+
+// ─── HELPERS ──────────────────────────────────────────────────────────────────
+function findQuestion(id) { return QUIZ_DATA.questions?.find(q => q.id === id) || null; }
+function findResult(id)   { return QUIZ_DATA.results?.find(r => r.id === id) || null; }
+
+function showError(msg) {
+  document.getElementById('quizRoot').innerHTML = `
+    <div class="error-box">
+      <strong>Quiz error</strong><br><br>${msg}
+    </div>`;
+}
+
+// ─── THEME TOGGLE ─────────────────────────────────────────────────────────────
+function toggleTheme() {
+  const isDark = document.documentElement.classList.toggle('dark');
+  document.getElementById('themeBtn').textContent = isDark ? '☀️' : '🌙';
+  localStorage.setItem('quizTheme', isDark ? 'dark' : 'light');
+}
+
+// Restore saved theme preference
+(function() {
+  const saved = localStorage.getItem('quizTheme');
+  if (saved === 'dark') {
+    document.documentElement.classList.add('dark');
+    document.getElementById('themeBtn').textContent = '☀️';
+  }
+})();
+
+// ─── START ────────────────────────────────────────────────────────────────────
+startQuiz();
+
+</script>
+</body>
+</html>
