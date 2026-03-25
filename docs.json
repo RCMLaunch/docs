@@ -26,10 +26,10 @@
             "pages": [
               "guides/adapters/V3-Adapter",
               "guides/adapters/MiniHost",
+              "guides/adapters/ace-adapter",
               "guides/adapters/RCM360WR",
               "guides/adapters/PS2ToUSB",
-              "guides/adapters/PS2Host",
-              "guides/adapters/ace-adapter"
+              "guides/adapters/PS2Host"
             ]
           },
           {
@@ -62,6 +62,12 @@
                 "group": "DIY Solder Kit Installation Guides",
                 "pages": []
               }
+            ]
+          },
+          {
+            "group": "Game Setup",
+            "pages": [
+              "xbox-one-series"
             ]
           }
         ]
