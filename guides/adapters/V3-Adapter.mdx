@@ -781,24 +781,78 @@ Let's get the V3 Adapter working on those games and emulators!
   <Accordion title="Clone Hero">
     <Steps>
       <Step>
-        Open Clone Hero
+        Open Clone Hero.
       </Step>
       <Step>
-        Press the SPACE BAR on your keyboard to open the controls/binds menu
+        Press the** SPACE BAR **on your keyboard to open the controls/binds menu.
+
+        <Frame>
+          <img
+            src="/images/Game-Setup/Clone-Hero/Clone-Hero-Spacebar.png"
+            alt="Clone Hero Spacebar"
+            title="Clone Hero Spacebar"
+            className="mx-auto"
+            style={{ width:"77%" }}
+          />
+        </Frame>
       </Step>
       <Step>
         If you haven't already, plug in your V3 Adapter with instrument attached. You will see the V3 Adapter appear here:
+
+        <Frame>
+          <img
+            src="/images/Game-Setup/Clone-Hero/Clone-Hero-Binds-Menu.png"
+            alt="Clone Hero Binds Menu"
+            title="Clone Hero Binds Menu"
+            className="mx-auto"
+            style={{ width:"84%" }}
+          />
+        </Frame>
       </Step>
       <Step>
-        If you are playing on with a guitar, you will need to calibrate tilt and/or whammy.
+        **If you are playing on with a guitar,** you may need to calibrate tilt and/or whammy. Click the **Calibrate** button.
+
+        <Frame>
+          <img
+            src="/images/Game-Setup/Clone-Hero/Clone-Hero-Calibrate-Button.png"
+            alt="Clone Hero Calibrate Button"
+            title="Clone Hero Calibrate Button"
+            className="mx-auto"
+            style={{ width:"79%" }}
+          />
+        </Frame>
+
+        You will be taken to this menu:
+
+        <Frame>
+          <img
+            src="/images/Game-Setup/Clone-Hero/Clone-Hero-Calibration.png"
+            alt="Clone Hero Calibration"
+            title="Clone Hero Calibration"
+            className="mx-auto"
+            style={{ width:"64%" }}
+          />
+        </Frame>
+
+        Axis 0 tends to pertain to whammy while Axis 1 is usually for tilt. Click **Calibrate** and follow the directions. Once you've calibrate, click **Done**.
       </Step>
       <Step>
-      </Step>
-      <Step>
-        On the right side of the main binds menu, there are blank spaces for each input. Click on the inputs that apply to your instrument and follow the setup instructions.
+        On the right side of the main binds menu, there are blank spaces for each input. Click on the inputs that apply to your instrument and follow the setup instructions. Once you've bound all applicable inputs, click **Done** at the top left of the screen.
+
+        <Frame>
+          <img
+            src="/images/Game-Setup/Clone-Hero/Clone-Hero-Binds.png"
+            alt="Clone Hero Binds"
+            title="Clone Hero Binds"
+            className="mx-auto"
+            style={{ width:"84%" }}
+          />
+        </Frame>
       </Step>
       <Step>
         Once binds are set, jump into a song and test out your inputs!
+      </Step>
+      <Step>
       </Step>
     </Steps>
   </Accordion>
@@ -821,10 +875,10 @@ Let's get the V3 Adapter working on those games and emulators!
         If you are using an instrument aside from a guitar, change the "Game Mode"
       </Step>
       <Step>
-        Click the binds menu, the navigate to the \_ tab
+        Click the binds menu, the navigate to the Binds tab
       </Step>
       <Step>
-        Go through each applicable input and create a new bind for each one, setting up the buttons as you go!
+        Go through each applicable input and create a new bind for each one, setting up the buttons as you go! Some instruments might not need this, so do as needed.
       </Step>
       <Step>
         Once you have the binds set up, you're ready to play!
@@ -881,5 +935,13 @@ Let's get the V3 Adapter working on those games and emulators!
     - Lastly, you may just need to hard reset the device. Holding the reset button (small button inside pinhole on the front of the V3 Adapter) while plugging the adapter in will put it into recovery mode, which you can then open the [RCM Programming Tool](https://retrocultmods.com/programming-tool/) and erase and reset to factory.
 
     If you continue to run into issues, send us an email at [support@retrocultmods.com](mailto:support@retrocultmods.com)
+  </Accordion>
+
+  <Accordion title="My V3 Adapter is not working in BetterGH3 on SteamOS/Bazzite">
+    If you haven't done this already, add this to your Steam Launch Options:
+
+    <Info>
+      WINEDLLOVERRIDES="xinput1\_3=n,b" %command%
+    </Info>
   </Accordion>
 </AccordionGroup>
