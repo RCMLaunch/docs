@@ -53,19 +53,32 @@
               {
                 "group": "Revival Kit Installation Guides",
                 "pages": [
-                  "/revival-kit-guides/XplorerRevKit",
-                  "/revival-kit-guides/XBPSLesPaulRevKit",
-                  "/revival-kit-guides/XBPSGH5RevKit",
-                  "/revival-kit-guides/WiiLesPaulRevKit",
-                  "/revival-kit-guides/WiiGH5RevKit",
-                  "/revival-kit-guides/SGRevKit",
+                  "/revival-kit-guides/KramerRevKit",
                   "/revival-kit-guides/MayFlashRevKit",
-                  "/revival-kit-guides/KramerRevKit"
+                  "/revival-kit-guides/SGRevKit",
+                  "/revival-kit-guides/WiiGH5RevKit",
+                  "/revival-kit-guides/WiiLesPaulRevKit",
+                  "/revival-kit-guides/WiiWorldTourRevKit",
+                  "/revival-kit-guides/XBPSGH5RevKit",
+                  "/revival-kit-guides/XBPSLesPaulRevKit",
+                  "/revival-kit-guides/XBPSWorldTourRevKit",
+                  "/revival-kit-guides/XplorerRevKit"
                 ]
               },
               {
                 "group": "DIY Solder Kit Installation Guides",
-                "pages": []
+                "pages": [
+                  "/diy-kit-guides/KramerDIYKit",
+                  "/diy-kit-guides/MayFlashDIYKit",
+                  "/diy-kit-guides/SGDIYKit",
+                  "/diy-kit-guides/WiiGH5DIYKit",
+                  "/diy-kit-guides/WiiLesPaulDIYKit",
+                  "/diy-kit-guides/WiiWorldTourDIYKit",
+                  "/diy-kit-guides/XBPSGH5DIYKit",
+                  "/diy-kit-guides/XBPSLesPaulDIYKit",
+                  "/diy-kit-guides/XBPSWorldTourDIYKit",
+                  "/diy-kit-guides/XplorerDIYKit"
+                ]
               }
             ]
           },
