@@ -53,10 +53,10 @@
               {
                 "group": "Revival Kit Installation Guides",
                 "pages": [
-                  "/guides/kitguides/Revival/XplorerRevKit",
-                  "/guides/kitguides/Revival/XBPSLesPaulRevKit",
-                  "/guides/kitguides/Revival/XBPSGH5RevKit",
-                  "/guides/kitguides/Revival/WiiLesPaul"
+                  "/revival-kit-guides/XplorerRevKit",
+                  "/revival-kit-guides/XBPSLesPaulRevKit",
+                  "/revival-kit-guides/WiiLesPaul",
+                  "/revival-kit-guides/XBPSGH5RevKit"
                 ]
               },
               {
