@@ -53,15 +53,15 @@
               {
                 "group": "Revival Kit Installation Guides",
                 "pages": [
-                  "/revival-kit-guides/KramerRevKit",
-                  "/revival-kit-guides/MayFlashRevKit",
+                  "revival-kit-guides/KramerRevKit",
+                  "revival-kit-guides/MayFlashRevKit",
                   "revival-kit-guides/SGRevKit",
-                  "/revival-kit-guides/WiiGH5RevKit",
-                  "/revival-kit-guides/WiiLesPaulRevKit",
-                  "/revival-kit-guides/WiiWorldTourRevKit",
+                  "revival-kit-guides/WiiGH5RevKit",
+                  "revival-kit-guides/WiiLesPaulRevKit",
+                  "revival-kit-guides/WiiWorldTourRevKit",
                   "/revival-kit-guides/XBPSGH5RevKit",
-                  "/revival-kit-guides/XBPSLesPaulRevKit",
-                  "/revival-kit-guides/XBPSWorldTourRevKit",
+                  "revival-kit-guides/XBPSLesPaulRevKit",
+                  "revival-kit-guides/XBPSWorldTourRevKit",
                   "/revival-kit-guides/XplorerRevKit"
                 ]
               },
