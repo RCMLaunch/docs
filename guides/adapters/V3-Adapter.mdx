@@ -1002,9 +1002,76 @@ Setup on Windows is usually easy as plug-and-play, but sometimes things have to 
 
     <Steps>
       <Step>
-        Open PCSX2 and click **Tools **\> Click “**Open Data Directory**“. Drag the PCSX2 Controller Preset file into into the “**inputprofiles**” folder. This will open a file explorer window of your PCSX2 Installation folder.
+        Open PCSX2 and click \*\*Tools \*\*\> Click “**Open Data Directory**“
+
+        <Frame>
+          ![Pcsx2nav](/images/Game-Setup/PCSX2-Win/pcsx2nav.png)
+        </Frame>
+
+        This will open a file explorer window of your PCSX2 Installation folder.
+      </Step>
+      <Step>
+        Drag the PCSX2 Controller Preset file into into the “**inputprofiles**” folder. 
+
+        <Frame>
+          <img
+            src="/images/Game-Setup/PCSX2-Win/pcsx2files.png"
+            alt="Pcsx2files"
+            title="Pcsx2files"
+            className="mx-auto"
+            style={{ width:"82%" }}
+          />
+        </Frame>
+      </Step>
+      <Step>
+        Once the preset file is in the ‘**inputprofiles**’ folder, close PCSX2 and reopen it. Navigate to **Settings**\> **Controllers**. On the bottom left, click the dropdown menu next to “Editing Profile:” and change it to “**RCM\_PCSX2\_Profile**“
+
+        <Frame>
+          ![Pcsx2profile](/images/Game-Setup/PCSX2-Win/pcsx2profile.png)
+        </Frame>
+      </Step>
+      <Step>
+        Click on “Controller Port 1 – Guitar” in the left menu. This screen will appear. If it does not look like this, double check to make sure that the Editing Profile is set to "RCM\_PCSX2\_Profile".
+
+        <Frame>
+          ![Pcsx2winbuttons](/images/Game-Setup/PCSX2-Win/pcsx2winbuttons.png)
+        </Frame>
+      </Step>
+      <Step>
+        Close the window and test the inputs in a game!
+
+        If it does not work, make sure no other controllers are plugged into your computer.\
+        If it still doesn't work, see the following section.
       </Step>
     </Steps>
+
+    <Accordion title="If the preset doesn't work for you, you can manually bind inputs. Click here to learn how">
+      <Steps>
+        <Step>
+          Open the **Settings**\>**Controllers** menu.
+
+          You will see multiple input types, including SDL, XInput, and DInput
+
+          (image)
+        </Step>
+        <Step>
+          Uncheck SDL, and check XInput
+        </Step>
+        <Step>
+          Observe the Detected Devices section on the right side of the window. If you haven't plugged your V3 Adapter in yet, do so. It should appear in that list. Click on it.
+        </Step>
+        <Step>
+          Navigate to Controller Port 1 on the left side of the window.
+
+          If you do not see a guitar there already, change the controller type from Dualshock 2 (or whatever it may currently be) to Guitar.
+        </Step>
+        <Step>
+          Hold SHIFT, then click each input, then add your designated input bind.
+
+          Once you have them all inputted, close the window and test them in a game!
+        </Step>
+      </Steps>
+    </Accordion>
   </Accordion>
 
   <Accordion title="RPCS3">
