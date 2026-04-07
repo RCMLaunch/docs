@@ -1088,8 +1088,72 @@ Setup on Windows is usually easy as plug-and-play, but sometimes things have to 
       <Step title="You must first navigate to where RPCS3 is installed. This can be done two ways.">
         This can be done by either searching for the folder yourself or by right clicking an installed game, hover “Open Folder”, then click “Open Custom Config Folder”. \
         This will open up a window that contains your game configurations.
+
+        <Frame>
+          <img
+            src="/images/Game-Setup/RPCS3-Win/rpcs3navfolder.png"
+            alt="Rpcs3navfolder"
+            title="Rpcs3navfolder"
+            className="mx-auto"
+            style={{ width:"66%" }}
+          />
+        </Frame>
+
+        Click the “config” folder.
+
+        <Frame>
+          ![Rpcs3configfolder](/images/Game-Setup/RPCS3-Win/rpcs3configfolder.png)
+        </Frame>
+
+        <Frame>
+          ![Rpcs3navfolder2](/images/Game-Setup/RPCS3-Win/rpcs3navfolder2.png)
+        </Frame>
+
+        Open the “input\_configs” folder. If this folder doesn’t exist, create it.
+
+        <Frame>
+          ![Rpcs3navfolder3](/images/Game-Setup/RPCS3-Win/rpcs3navfolder3.png)
+        </Frame>
+
+        Open the “global” folder. If this folder doesn’t exist, create it.
+
+        <Frame>
+          ![Rpcs3navfolder4](/images/Game-Setup/RPCS3-Win/rpcs3navfolder4.png)
+        </Frame>
+
+        Lastly, drag the “RCM RPCS3.yml” file into the global folder.
+
+        <Frame>
+          ![Rpcs3navfolder5](/images/Game-Setup/RPCS3-Win/rpcs3navfolder5.png)
+        </Frame>
+
+        You can now close out of the File Explorer window.
       </Step>
       <Step>
+        Returning to RPCS3, click on the “Pads” button at the top. This will open the controller configuration menu.
+      </Step>
+      <Step>
+        At the top right of the menu, click on the Configuration Files dropdown menu and switch it to “RCM RPCS3 Profile”.
+      </Step>
+      <Step>
+        At the top middle of the menu, your device should have changed to “XInput Pad #1”. If it shows “(disconnected)” beside it, unplug and plug the guitar back in. Then, click the dropdown and see if there is a device without the disconnected tag. If you don’t see XInput Pads at all, change the handler in the top left to XInput. If you need further support with this part, let us know.
+      </Step>
+      <Step>
+        You can verify that everything is set correctly by comparing to this image. 
+
+        - Your XInput Pad #1 is selected
+        - Your Configuration Preset is set to “RCM RPCS3 Profile”
+        - Triangle is set to X
+        - Square is set to Y
+        - Device Class is set to Guitar
+      </Step>
+      <Step>
+        Hit **Save**. This window will pop up. Hit **Yes**.
+
+        The popup happens because we have to map tilt to select, as RPCS3 does not have guitar hero controller passthru _YET_.
+      </Step>
+      <Step>
+        **Boot your game and have fun!**
       </Step>
     </Steps>
   </Accordion>
