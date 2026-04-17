@@ -73,15 +73,27 @@
   .multi-hint { display: inline-flex; align-items: center; gap: 6px; background: var(--multi-bg); border: 1px solid var(--multi-border); border-radius: 6px; padding: 6px 12px; font-size: 12px; font-family: 'Inter', sans-serif; color: var(--multi-text); font-weight: 500; margin-bottom: 20px; }
 
   .answers-grid { display: flex; flex-direction: column; gap: 10px; }
+
+  /* Grid layout when images present */
+  .answers-grid.has-images { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .answer-btn { width: 100%; text-align: left; padding: 14px 18px; background: var(--bg); border: 1.5px solid var(--border); border-radius: 10px; color: var(--text); font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.18s cubic-bezier(0.4,0,0.2,1); display: flex; align-items: center; gap: 12px; }
   .answer-btn:hover { border-color: var(--accent3); transform: translateX(3px); }
+  .answers-grid.has-images .answer-btn { flex-direction: column; align-items: flex-start; padding: 0; gap: 0; transform: none; overflow: hidden; }
+  .answers-grid.has-images .answer-btn:hover { border-color: var(--accent3); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+  .ans-img { width: 100%; height: 130px; object-fit: cover; display: block; background: var(--border); }
+  .ans-img-label { padding: 10px 14px; display: flex; align-items: center; gap: 8px; width: 100%; }
   .answer-indicator { width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid var(--border2); display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; color: var(--muted); flex-shrink: 0; transition: all 0.18s; }
   .answer-btn:hover .answer-indicator { border-color: var(--accent3); color: var(--accent3); }
+  .answers-grid.has-images .answer-btn.selected-grid { border-color: var(--accent2); background: var(--tag-bg); }
 
   .multi-answers-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+  .multi-answers-grid.has-images { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .multi-answer-item { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--bg); border: 1.5px solid var(--border); border-radius: 10px; cursor: pointer; transition: all 0.18s; user-select: none; }
   .multi-answer-item:hover { border-color: var(--accent3); }
   .multi-answer-item.checked { border-color: var(--accent2); background: var(--tag-bg); }
+  .multi-answers-grid.has-images .multi-answer-item { flex-direction: column; align-items: flex-start; padding: 0; gap: 0; overflow: hidden; }
+  .multi-answers-grid.has-images .multi-answer-item:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+  .multi-img-label { padding: 10px 14px; display: flex; align-items: center; gap: 8px; width: 100%; }
   .multi-checkbox { width: 20px; height: 20px; border-radius: 5px; border: 1.5px solid var(--border2); background: var(--surface); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.18s; color: white; font-size: 11px; font-weight: 700; }
   .multi-answer-item.checked .multi-checkbox { background: var(--accent2); border-color: var(--accent2); }
   .multi-answer-item:hover .multi-checkbox { border-color: var(--accent3); }
@@ -117,7 +129,7 @@
 <div class="quiz-wrap">
   <div class="quiz-header">
     <div class="quiz-eyebrow">✦ Find Your Match</div>
-    <h1 class="quiz-title">Which RCM product is right for you?</h1>
+    <h1 class="quiz-title">Which product is right for you?</h1>
     <p class="quiz-subtitle">Answer a few quick questions and we'll point you to the perfect fit.</p>
   </div>
   <div id="quizRoot"></div>
@@ -140,35 +152,43 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Xbox 360",
-          "next": "Q3"
+          "next": "Q3",
+          "image": null
         },
         {
           "label": "Xbox One/Series",
-          "next": "R7"
+          "next": "R7",
+          "image": null
         },
         {
           "label": "Playstation 2",
-          "next": null
+          "next": null,
+          "image": null
         },
         {
           "label": "Playstation 3",
-          "next": null
+          "next": null,
+          "image": null
         },
         {
           "label": "Playstation 4/5",
-          "next": null
+          "next": null,
+          "image": null
         },
         {
           "label": "Nintendo Wii",
-          "next": null
+          "next": null,
+          "image": null
         },
         {
           "label": "Nintendo Switch (Guitar Only)",
-          "next": null
+          "next": null,
+          "image": null
         },
         {
           "label": "PC/Mac",
-          "next": null
+          "next": null,
+          "image": null
         }
       ],
       "comboRules": [
@@ -183,7 +203,7 @@ const QUIZ_DATA = {
           "selectedIds": [
             "6"
           ],
-          "next": "Q17",
+          "next": "Q30",
           "mode": "exact"
         }
       ],
@@ -196,11 +216,13 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Yes",
-          "next": "R10"
+          "next": "R10",
+          "image": null
         },
         {
           "label": "No",
-          "next": "Q16"
+          "next": "Q16",
+          "image": null
         }
       ]
     },
@@ -211,62 +233,60 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Guitar",
-          "next": "Q17"
+          "next": "Q30",
+          "image": null
         },
         {
           "label": "Rock Band Drums",
-          "next": "Q26"
+          "next": "Q26",
+          "image": null
         },
         {
           "label": "Guitar Hero Drums",
-          "next": "Q29"
+          "next": "Q29",
+          "image": null
         },
         {
           "label": "Pro Drums (e-kit) / Pro Keys (full size midi keyboard)",
-          "next": "R15"
+          "next": "R15",
+          "image": null
         },
         {
           "label": "Keytar",
-          "next": "Q26"
+          "next": "Q26",
+          "image": null
         },
         {
           "label": "Pro Guitar",
-          "next": "Q26"
+          "next": "Q26",
+          "image": null
         },
         {
           "label": "Dance Pad",
-          "next": "Q28"
+          "next": "Q28",
+          "image": null
         },
         {
           "label": "DJ Hero Turntable",
-          "next": "Q29"
+          "next": "Q29",
+          "image": null
         }
       ]
     },
     {
       "id": "Q17",
-      "text": "Are you planning on modding a guitar or using a guitar with an adapter?",
+      "text": "Are you planning on modding your guitar (Les Paul, World Tour, GH5) or keeping it stock??",
       "multiSelect": false,
       "answers": [
         {
-          "label": "Modding a guitar",
-          "next": "Q22"
+          "label": "Modding the guitar",
+          "next": "Q22",
+          "image": null
         },
         {
-          "label": "Using a Wii Guitar Hero controller (wiimote nunchuk connection)",
-          "next": "R12"
-        },
-        {
-          "label": "Using a USB Guitar (or a guitar with a wireless USB Dongle)",
-          "next": "R11"
-        },
-        {
-          "label": "Using a PS2 guitar controller (9 pin PS2 connector)",
-          "next": "R13"
-        },
-        {
-          "label": "Using a wireless Xbox 360 guitar",
-          "next": "R14"
+          "label": "Keeping it Stock",
+          "next": "Q32",
+          "image": null
         }
       ]
     },
@@ -277,11 +297,13 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "No/I don't want to",
-          "next": "R25"
+          "next": "R25",
+          "image": null
         },
         {
           "label": "Yes",
-          "next": "Q24"
+          "next": "Q24",
+          "image": null
         }
       ]
     },
@@ -292,11 +314,13 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Yes (Revival Kit Only)",
-          "next": "R18"
+          "next": "R18",
+          "image": null
         },
         {
           "label": "No",
-          "next": "Q21"
+          "next": "Q21",
+          "image": null
         }
       ]
     },
@@ -307,11 +331,13 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "RGB",
-          "next": "R19"
+          "next": "R19",
+          "image": null
         },
         {
           "label": "Stock",
-          "next": "R23"
+          "next": "R23",
+          "image": null
         }
       ]
     },
@@ -322,11 +348,13 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Yes",
-          "next": "R14"
+          "next": "R14",
+          "image": null
         },
         {
           "label": "No",
-          "next": "R11"
+          "next": "R11",
+          "image": null
         }
       ]
     },
@@ -337,11 +365,13 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "PS1/PS2 Dance Pad (9-pin Playstation connector)",
-          "next": "R13"
+          "next": "R13",
+          "image": null
         },
         {
           "label": "USB Dancepad",
-          "next": "R11"
+          "next": "R11",
+          "image": null
         }
       ]
     },
@@ -352,15 +382,180 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Playstation",
-          "next": "R11"
+          "next": "R11",
+          "image": null
         },
         {
           "label": "Xbox 360",
-          "next": "R14"
+          "next": "R14",
+          "image": null
         },
         {
           "label": "Wii",
-          "next": "R12"
+          "next": "R12",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "Q30",
+      "text": "Which model of guitar are you using?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Les Paul",
+          "next": "Q17",
+          "image": null
+        },
+        {
+          "label": "World Tour",
+          "next": "Q17",
+          "image": null
+        },
+        {
+          "label": "GH5",
+          "next": "Q17",
+          "image": null
+        },
+        {
+          "label": "Xplorer",
+          "next": "Q31",
+          "image": null
+        },
+        {
+          "label": "SG",
+          "next": "Q33",
+          "image": null
+        },
+        {
+          "label": "Kramer",
+          "next": "Q33",
+          "image": null
+        },
+        {
+          "label": "MayFlash",
+          "next": "Q33",
+          "image": null
+        },
+        {
+          "label": "Warriors of Rock",
+          "next": "Q35",
+          "image": null
+        },
+        {
+          "label": "Rock Band Style Guitar (ex. Stratocaster)",
+          "next": "Q34",
+          "image": null
+        },
+        {
+          "label": "CRKD/Riffmaster (Modern Guitars)",
+          "next": "R11",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "Q31",
+      "text": "Are you planning on modding your Xplorer or using it stock?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Modding the Xplorer",
+          "next": "Q22",
+          "image": null
+        },
+        {
+          "label": "Stock",
+          "next": "R11",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "Q32",
+      "text": "Which console variant is your guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Wii",
+          "next": "R12",
+          "image": null
+        },
+        {
+          "label": "PS2",
+          "next": "R13",
+          "image": null
+        },
+        {
+          "label": "PS3",
+          "next": "R11",
+          "image": null
+        },
+        {
+          "label": "Xbox 360",
+          "next": "R14",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "Q33",
+      "text": "Are you planning on modding your guitar (SG/Kramer/Mayflash) or using it stock?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Modding the guitar",
+          "next": "Q22",
+          "image": null
+        },
+        {
+          "label": "Stock",
+          "next": "R13",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "Q34",
+      "text": "Which console variant of Rock Band guitar do you have?\nPlaystation and Wii variants will require their included dongle.",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2/PS3",
+          "next": "R11",
+          "image": null
+        },
+        {
+          "label": "Xbox 360",
+          "next": "R14",
+          "image": null
+        },
+        {
+          "label": "Wii",
+          "next": "R11",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "Q35",
+      "text": "Which console variant of the Warriors of Rock guitar do you have?\nPlaystation will require it's included dongle.",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS3",
+          "next": "R11",
+          "image": null
+        },
+        {
+          "label": "Xbox 360",
+          "next": "R14",
+          "image": null
+        },
+        {
+          "label": "Wii",
+          "next": "R12",
+          "image": null
         }
       ]
     }
@@ -453,7 +648,7 @@ const QUIZ_DATA = {
         "id": "Q1",
         "type": "question-multi",
         "x": -280.18518518518516,
-        "y": 163.33333333333331,
+        "y": 13.333333333333288,
         "text": "What platforms will you be playing on?",
         "subtitle": "",
         "description": "",
@@ -462,35 +657,43 @@ const QUIZ_DATA = {
         "answers": [
           {
             "label": "Xbox 360",
-            "target": "Q3"
+            "target": "Q3",
+            "image": ""
           },
           {
             "label": "Xbox One/Series",
-            "target": "R7"
+            "target": "R7",
+            "image": ""
           },
           {
             "label": "Playstation 2",
-            "target": ""
+            "target": "",
+            "image": ""
           },
           {
             "label": "Playstation 3",
-            "target": ""
+            "target": "",
+            "image": ""
           },
           {
             "label": "Playstation 4/5",
-            "target": ""
+            "target": "",
+            "image": ""
           },
           {
             "label": "Nintendo Wii",
-            "target": ""
+            "target": "",
+            "image": ""
           },
           {
             "label": "Nintendo Switch (Guitar Only)",
-            "target": ""
+            "target": "",
+            "image": ""
           },
           {
             "label": "PC/Mac",
-            "target": ""
+            "target": "",
+            "image": ""
           }
         ],
         "comboRules": [
@@ -505,7 +708,7 @@ const QUIZ_DATA = {
             "selectedIds": [
               "6"
             ],
-            "target": "Q17",
+            "target": "Q30",
             "mode": "exact"
           }
         ],
@@ -514,8 +717,8 @@ const QUIZ_DATA = {
       {
         "id": "Q9",
         "type": "question",
-        "x": 13.36579765813668,
-        "y": 14.742470224972434,
+        "x": -58.27599338663942,
+        "y": -7.645589476520109,
         "text": "Do you plan on playing any of the following games?\n- Guitar Hero (the first one)\n- Guitar Hero II\n- Guitar Hero III\n- Guitar Hero Encore: Rock the 80s\n- Guitar Hero Aerosmith\n- Dance Dance Revolution (any)",
         "subtitle": "",
         "description": "",
@@ -524,11 +727,13 @@ const QUIZ_DATA = {
         "answers": [
           {
             "label": "Yes",
-            "target": "R10"
+            "target": "R10",
+            "image": ""
           },
           {
             "label": "No",
-            "target": "Q16"
+            "target": "Q16",
+            "image": ""
           }
         ],
         "comboRules": [],
@@ -538,7 +743,7 @@ const QUIZ_DATA = {
         "id": "R10",
         "type": "result",
         "x": 376.50895968991534,
-        "y": -96.699032666762,
+        "y": -96.69903266676201,
         "text": "PS2 Host Adapter",
         "subtitle": "For converting USB controllers to play on a Playstation 2 through the Playstation Controller Port",
         "description": "This adapter also allows for USB gamepads and dance pads to be used on a PS2 natively!",
@@ -551,8 +756,8 @@ const QUIZ_DATA = {
       {
         "id": "R11",
         "type": "result",
-        "x": 940.13556053879,
-        "y": -5.275147128916782,
+        "x": 1184.5800049832344,
+        "y": 2.5026306488609884,
         "text": "MiniHost Adapter",
         "subtitle": "For bridging the gap between platforms for USB controllers",
         "description": "The MiniHost is a compact, easy to use USB adapter primarily designed for use with plastic instrument controllers such as Guitar Hero and Rock Band guitars and drum kits!",
@@ -565,8 +770,8 @@ const QUIZ_DATA = {
       {
         "id": "R12",
         "type": "result",
-        "x": 935.526764645349,
-        "y": 153.36329624124173,
+        "x": 1191.0823202009049,
+        "y": 146.696629574575,
         "text": "V3 Adapter",
         "subtitle": "It's like a MiniHost, but with support for Wii Nunchuk connected controllers!",
         "description": "The V3 Adapter is an adapter specifically designed for using both Wii and USB controllers with games like Guitar Hero, Rock Band, Clone Hero, Yarg, and more!",
@@ -579,8 +784,8 @@ const QUIZ_DATA = {
       {
         "id": "R13",
         "type": "result",
-        "x": 1031.9933427620635,
-        "y": 390.28771555252655,
+        "x": 1569.136199904921,
+        "y": 371.71628698109794,
         "text": "PS2 to USB Adapter",
         "subtitle": "",
         "description": "Convert your PS2 Guitars, Dancepads, and PS1/PS2 Gamepads for use on other consoles!",
@@ -593,8 +798,8 @@ const QUIZ_DATA = {
       {
         "id": "R14",
         "type": "result",
-        "x": 1027.096811213504,
-        "y": 641.5136032190784,
+        "x": 1569.9539540706476,
+        "y": 674.3707460762213,
         "text": "RCM 360 Wireless Receiver                                ",
         "subtitle": "",
         "description": "The RCM 360 Wireless Receiver allows you to connect your wireless 360 controllers to nearly any platform, plug and play! Featuring a dual mode selector switch for on the fly swapping between Guitar and Drums, either mode can be changed to whatever you like via our Programming Tool!",
@@ -607,7 +812,7 @@ const QUIZ_DATA = {
       {
         "id": "R15",
         "type": "result",
-        "x": 1030.410865134466,
+        "x": 1553.2680079916092,
         "y": 520.9498324500963,
         "text": "ACE Adapter",
         "subtitle": "ACE MIDI/USB Adapter for Rock Band and Guitar Hero",
@@ -631,35 +836,43 @@ const QUIZ_DATA = {
         "answers": [
           {
             "label": "Guitar",
-            "target": "Q17"
+            "target": "Q30",
+            "image": ""
           },
           {
             "label": "Rock Band Drums",
-            "target": "Q26"
+            "target": "Q26",
+            "image": ""
           },
           {
             "label": "Guitar Hero Drums",
-            "target": "Q29"
+            "target": "Q29",
+            "image": ""
           },
           {
             "label": "Pro Drums (e-kit) / Pro Keys (full size midi keyboard)",
-            "target": "R15"
+            "target": "R15",
+            "image": ""
           },
           {
             "label": "Keytar",
-            "target": "Q26"
+            "target": "Q26",
+            "image": ""
           },
           {
             "label": "Pro Guitar",
-            "target": "Q26"
+            "target": "Q26",
+            "image": ""
           },
           {
             "label": "Dance Pad",
-            "target": "Q28"
+            "target": "Q28",
+            "image": ""
           },
           {
             "label": "DJ Hero Turntable",
-            "target": "Q29"
+            "target": "Q29",
+            "image": ""
           }
         ],
         "comboRules": [],
@@ -668,33 +881,23 @@ const QUIZ_DATA = {
       {
         "id": "Q17",
         "type": "question",
-        "x": 308.35279680682646,
-        "y": 130.94831358533673,
-        "text": "Are you planning on modding a guitar or using a guitar with an adapter?",
+        "x": 668.363242414287,
+        "y": -83.56795787123336,
+        "text": "Are you planning on modding your guitar (Les Paul, World Tour, GH5) or keeping it stock??",
         "subtitle": "",
         "description": "",
         "image": "",
         "link": "",
         "answers": [
           {
-            "label": "Modding a guitar",
-            "target": "Q22"
+            "label": "Modding the guitar",
+            "target": "Q22",
+            "image": ""
           },
           {
-            "label": "Using a Wii Guitar Hero controller (wiimote nunchuk connection)",
-            "target": "R12"
-          },
-          {
-            "label": "Using a USB Guitar (or a guitar with a wireless USB Dongle)",
-            "target": "R11"
-          },
-          {
-            "label": "Using a PS2 guitar controller (9 pin PS2 connector)",
-            "target": "R13"
-          },
-          {
-            "label": "Using a wireless Xbox 360 guitar",
-            "target": "R14"
+            "label": "Keeping it Stock",
+            "target": "Q32",
+            "image": ""
           }
         ],
         "comboRules": [],
@@ -741,11 +944,13 @@ const QUIZ_DATA = {
         "answers": [
           {
             "label": "No/I don't want to",
-            "target": "R25"
+            "target": "R25",
+            "image": ""
           },
           {
             "label": "Yes",
-            "target": "Q24"
+            "target": "Q24",
+            "image": ""
           }
         ],
         "comboRules": [],
@@ -754,8 +959,8 @@ const QUIZ_DATA = {
       {
         "id": "Q22",
         "type": "question",
-        "x": 742.8976609444372,
-        "y": 915.6193211612195,
+        "x": 915.7548038015804,
+        "y": 961.3336068755053,
         "text": "Do you want RGB strum bar?",
         "subtitle": "",
         "description": "",
@@ -764,11 +969,13 @@ const QUIZ_DATA = {
         "answers": [
           {
             "label": "Yes (Revival Kit Only)",
-            "target": "R18"
+            "target": "R18",
+            "image": ""
           },
           {
             "label": "No",
-            "target": "Q21"
+            "target": "Q21",
+            "image": ""
           }
         ],
         "comboRules": [],
@@ -801,11 +1008,13 @@ const QUIZ_DATA = {
         "answers": [
           {
             "label": "RGB",
-            "target": "R19"
+            "target": "R19",
+            "image": ""
           },
           {
             "label": "Stock",
-            "target": "R23"
+            "target": "R23",
+            "image": ""
           }
         ],
         "comboRules": [],
@@ -828,8 +1037,8 @@ const QUIZ_DATA = {
       {
         "id": "Q26",
         "type": "question",
-        "x": 351.66642840487947,
-        "y": 1037.0288773680702,
+        "x": 323.75945166069346,
+        "y": 1120.7498076006284,
         "text": "Will you be using a WIRELESS Xbox 360 version of the controller?",
         "subtitle": "",
         "description": "",
@@ -838,11 +1047,13 @@ const QUIZ_DATA = {
         "answers": [
           {
             "label": "Yes",
-            "target": "R14"
+            "target": "R14",
+            "image": ""
           },
           {
             "label": "No",
-            "target": "R11"
+            "target": "R11",
+            "image": ""
           }
         ],
         "comboRules": [],
@@ -861,11 +1072,13 @@ const QUIZ_DATA = {
         "answers": [
           {
             "label": "PS1/PS2 Dance Pad (9-pin Playstation connector)",
-            "target": "R13"
+            "target": "R13",
+            "image": ""
           },
           {
             "label": "USB Dancepad",
-            "target": "R11"
+            "target": "R11",
+            "image": ""
           }
         ],
         "comboRules": [],
@@ -884,15 +1097,228 @@ const QUIZ_DATA = {
         "answers": [
           {
             "label": "Playstation",
-            "target": "R11"
+            "target": "R11",
+            "image": ""
           },
           {
             "label": "Xbox 360",
-            "target": "R14"
+            "target": "R14",
+            "image": ""
           },
           {
             "label": "Wii",
-            "target": "R12"
+            "target": "R12",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q30",
+        "type": "question",
+        "x": 297.84164859934526,
+        "y": 60.159600889384016,
+        "text": "Which model of guitar are you using?",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Les Paul",
+            "target": "Q17",
+            "image": ""
+          },
+          {
+            "label": "World Tour",
+            "target": "Q17",
+            "image": ""
+          },
+          {
+            "label": "GH5",
+            "target": "Q17",
+            "image": ""
+          },
+          {
+            "label": "Xplorer",
+            "target": "Q31",
+            "image": ""
+          },
+          {
+            "label": "SG",
+            "target": "Q33",
+            "image": ""
+          },
+          {
+            "label": "Kramer",
+            "target": "Q33",
+            "image": ""
+          },
+          {
+            "label": "MayFlash",
+            "target": "Q33",
+            "image": ""
+          },
+          {
+            "label": "Warriors of Rock",
+            "target": "Q35",
+            "image": ""
+          },
+          {
+            "label": "Rock Band Style Guitar (ex. Stratocaster)",
+            "target": "Q34",
+            "image": ""
+          },
+          {
+            "label": "CRKD/Riffmaster (Modern Guitars)",
+            "target": "R11",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q31",
+        "type": "question",
+        "x": 664.8637990956845,
+        "y": 199.18795263036648,
+        "text": "Are you planning on modding your Xplorer or using it stock?",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Modding the Xplorer",
+            "target": "Q22",
+            "image": ""
+          },
+          {
+            "label": "Stock",
+            "target": "R11",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q32",
+        "type": "question",
+        "x": 939.6142842640709,
+        "y": -82.8225231242078,
+        "text": "Which console variant is your guitar?",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Wii",
+            "target": "R12",
+            "image": ""
+          },
+          {
+            "label": "PS2",
+            "target": "R13",
+            "image": ""
+          },
+          {
+            "label": "PS3",
+            "target": "R11",
+            "image": ""
+          },
+          {
+            "label": "Xbox 360",
+            "target": "R14",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q33",
+        "type": "question",
+        "x": 661.9490848976475,
+        "y": 467.12309815179754,
+        "text": "Are you planning on modding your guitar (SG/Kramer/Mayflash) or using it stock?",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Modding the guitar",
+            "target": "Q22",
+            "image": ""
+          },
+          {
+            "label": "Stock",
+            "target": "R13",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q34",
+        "type": "question",
+        "x": 658.817396175683,
+        "y": 734.4180818901629,
+        "text": "Which console variant of Rock Band guitar do you have?\nPlaystation and Wii variants will require their included dongle.",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "PS2/PS3",
+            "target": "R11",
+            "image": ""
+          },
+          {
+            "label": "Xbox 360",
+            "target": "R14",
+            "image": ""
+          },
+          {
+            "label": "Wii",
+            "target": "R11",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q35",
+        "type": "question",
+        "x": 1084.2186377447317,
+        "y": 387.54827551214277,
+        "text": "Which console variant of the Warriors of Rock guitar do you have?\nPlaystation will require it's included dongle.",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "PS3",
+            "target": "R11",
+            "image": ""
+          },
+          {
+            "label": "Xbox 360",
+            "target": "R14",
+            "image": ""
+          },
+          {
+            "label": "Wii",
+            "target": "R12",
+            "image": ""
           }
         ],
         "comboRules": [],
@@ -900,7 +1326,7 @@ const QUIZ_DATA = {
       }
     ]
   }
-};
+}
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 //  END OF QUIZ DATA — do not edit below this line unless you know what you're doing
@@ -958,13 +1384,26 @@ function goBack() {
 function renderSingleQuestion(q) {
   const step = history.length + 1;
   const pct = Math.min(100, Math.round((history.length / totalSteps) * 100));
-  const indicators = 'ABCDEFGH';
+  const indicators = 'ABCDEFGHIJ';
+  const hasImages = q.answers.some(a => a.image);
 
-  const answersHTML = q.answers.map((a, i) => `
-    <button class="answer-btn" onclick="pickSingle('${a.next}')">
-      <div class="answer-indicator">${indicators[i]}</div>
-      <span>${a.label}</span>
-    </button>`).join('');
+  const answersHTML = q.answers.map((a, i) => {
+    if (hasImages) {
+      return `
+        <button class="answer-btn" onclick="pickSingle('${a.next}')">
+          ${a.image ? `<img class="ans-img" src="${a.image}" alt="${a.label}">` : `<div class="ans-img" style="display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:11px">No image</div>`}
+          <div class="ans-img-label">
+            <div class="answer-indicator">${indicators[i]}</div>
+            <span>${a.label}</span>
+          </div>
+        </button>`;
+    }
+    return `
+      <button class="answer-btn" onclick="pickSingle('${a.next}')">
+        <div class="answer-indicator">${indicators[i]}</div>
+        <span>${a.label}</span>
+      </button>`;
+  }).join('');
 
   document.getElementById('quizRoot').innerHTML = `
     <div class="progress-bar-wrap">
@@ -974,7 +1413,7 @@ function renderSingleQuestion(q) {
     <div class="quiz-card animate-in">
       <div class="question-num">Question ${step}</div>
       <div class="question-text">${q.text}</div>
-      <div class="answers-grid">${answersHTML}</div>
+      <div class="answers-grid${hasImages ? ' has-images' : ''}">${answersHTML}</div>
       ${history.length > 0 ? `<button class="back-btn" onclick="goBack()">← Back</button>` : ''}
     </div>`;
 }
@@ -990,12 +1429,26 @@ function renderMultiQuestion(q, animate = true) {
   const step = history.length + 1;
   const pct = Math.min(100, Math.round((history.length / totalSteps) * 100));
   const count = multiSelected.size;
+  const hasImages = q.answers.some(a => a.image);
 
-  const itemsHTML = q.answers.map((a, i) => `
-    <div class="multi-answer-item ${multiSelected.has(i) ? 'checked' : ''}" onclick="toggleMulti(${i})">
-      <div class="multi-checkbox">${multiSelected.has(i) ? '✓' : ''}</div>
-      <span class="multi-answer-label">${a.label}</span>
-    </div>`).join('');
+  const itemsHTML = q.answers.map((a, i) => {
+    const checked = multiSelected.has(i);
+    if (hasImages) {
+      return `
+        <div class="multi-answer-item${checked ? ' checked' : ''}" onclick="toggleMulti(${i})">
+          ${a.image ? `<img class="ans-img" src="${a.image}" alt="${a.label}">` : `<div class="ans-img" style="display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:11px">No image</div>`}
+          <div class="multi-img-label">
+            <div class="multi-checkbox">${checked ? '✓' : ''}</div>
+            <span class="multi-answer-label">${a.label}</span>
+          </div>
+        </div>`;
+    }
+    return `
+      <div class="multi-answer-item${checked ? ' checked' : ''}" onclick="toggleMulti(${i})">
+        <div class="multi-checkbox">${checked ? '✓' : ''}</div>
+        <span class="multi-answer-label">${a.label}</span>
+      </div>`;
+  }).join('');
 
   document.getElementById('quizRoot').innerHTML = `
     <div class="progress-bar-wrap">
@@ -1006,7 +1459,7 @@ function renderMultiQuestion(q, animate = true) {
       <div class="question-num">Question ${step}</div>
       <div class="question-text">${q.text}</div>
       <div class="multi-hint">☑ Select all that apply, then click Next</div>
-      <div class="multi-answers-grid" id="multiGrid">${itemsHTML}</div>
+      <div class="multi-answers-grid${hasImages ? ' has-images' : ''}" id="multiGrid">${itemsHTML}</div>
       <button class="multi-next-btn" id="multiNextBtn" onclick="submitMulti()" ${count === 0 ? 'disabled' : ''}>
         Next →
         ${count > 0 ? `<span class="count-badge">${count} selected</span>` : ''}
@@ -1019,13 +1472,13 @@ function toggleMulti(idx) {
   if (multiSelected.has(idx)) multiSelected.delete(idx);
   else multiSelected.add(idx);
 
-  // Update only the checkboxes and button in place — no full re-render
   const grid = document.getElementById('multiGrid');
   if (grid) {
     grid.querySelectorAll('.multi-answer-item').forEach((el, i) => {
       const checked = multiSelected.has(i);
       el.classList.toggle('checked', checked);
-      el.querySelector('.multi-checkbox').textContent = checked ? '✓' : '';
+      const box = el.querySelector('.multi-checkbox');
+      if (box) box.textContent = checked ? '✓' : '';
     });
   }
   const btn = document.getElementById('multiNextBtn');
