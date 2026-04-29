@@ -80,11 +80,11 @@
   .answer-btn:hover { border-color: var(--accent3); transform: translateX(3px); }
   .answers-grid.has-images .answer-btn { flex-direction: column; align-items: flex-start; padding: 0; gap: 0; transform: none; overflow: hidden; }
   .answers-grid.has-images .answer-btn:hover { border-color: var(--accent3); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
-  .ans-img { width: 100%; height: 130px; object-fit: cover; display: block; background: var(--border); }
+  .ans-img-wrap { width: 100%; height: 130px; background: var(--border2); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .ans-img { width: 100%; height: 100%; object-fit: contain; display: block; }
   .ans-img-label { padding: 10px 14px; display: flex; align-items: center; gap: 8px; width: 100%; }
   .answer-indicator { width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid var(--border2); display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; color: var(--muted); flex-shrink: 0; transition: all 0.18s; }
   .answer-btn:hover .answer-indicator { border-color: var(--accent3); color: var(--accent3); }
-  .answers-grid.has-images .answer-btn.selected-grid { border-color: var(--accent2); background: var(--tag-bg); }
 
   .multi-answers-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
   .multi-answers-grid.has-images { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -211,7 +211,7 @@ const QUIZ_DATA = {
     },
     {
       "id": "Q9",
-      "text": "Do you plan on playing any of the following games?\n- Guitar Hero (the first one)\n- Guitar Hero II\n- Guitar Hero III\n- Guitar Hero Encore: Rock the 80s\n- Guitar Hero Aerosmith\n- Dance Dance Revolution (any)",
+      "text": "Do you plan on playing any of the following Playstation 2 games?\n- Guitar Hero (the first one)\n- Guitar Hero II\n- Guitar Hero III\n- Guitar Hero Encore: Rock the 80s\n- Guitar Hero Aerosmith\n- Dance Dance Revolution (any)",
       "multiSelect": false,
       "answers": [
         {
@@ -275,7 +275,7 @@ const QUIZ_DATA = {
     },
     {
       "id": "Q17",
-      "text": "Are you planning on modding your guitar (Les Paul, World Tour, GH5) or keeping it stock??",
+      "text": "Are you planning on modding your PS3 Les Paul guitar or keeping it stock??",
       "multiSelect": false,
       "answers": [
         {
@@ -285,7 +285,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "Keeping it Stock",
-          "next": "Q32",
+          "next": "R11",
           "image": null
         }
       ]
@@ -404,53 +404,53 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Les Paul",
-          "next": "Q17",
-          "image": null
+          "next": "Q32",
+          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/XBPSLesPaul.png"
         },
         {
           "label": "World Tour",
-          "next": "Q17",
-          "image": null
+          "next": "Q36",
+          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/XBPSSunburst.png"
         },
         {
           "label": "GH5",
-          "next": "Q17",
-          "image": null
+          "next": "Q37",
+          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/XBPSGH5.png"
         },
         {
           "label": "Xplorer",
           "next": "Q31",
-          "image": null
+          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/xplorer.png"
         },
         {
           "label": "SG",
           "next": "Q33",
-          "image": null
+          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/sg.png"
         },
         {
           "label": "Kramer",
           "next": "Q33",
-          "image": null
+          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/kramer.png"
         },
         {
           "label": "MayFlash",
           "next": "Q33",
-          "image": null
+          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/mayflash.png"
         },
         {
           "label": "Warriors of Rock",
           "next": "Q35",
-          "image": null
+          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/WiiWoR.png"
         },
         {
           "label": "Rock Band Style Guitar (ex. Stratocaster)",
           "next": "Q34",
-          "image": null
+          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/Strat.png"
         },
         {
           "label": "CRKD/Riffmaster (Modern Guitars)",
           "next": "R11",
-          "image": null
+          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/CRKD.png"
         }
       ]
     },
@@ -473,27 +473,22 @@ const QUIZ_DATA = {
     },
     {
       "id": "Q32",
-      "text": "Which console variant is your guitar?",
+      "text": "Which console variant is your Les Paul guitar?",
       "multiSelect": false,
       "answers": [
         {
-          "label": "Wii",
-          "next": "R12",
-          "image": null
-        },
-        {
-          "label": "PS2",
-          "next": "R13",
-          "image": null
-        },
-        {
           "label": "PS3",
-          "next": "R11",
+          "next": "Q17",
           "image": null
+        },
+        {
+          "label": "Wii",
+          "next": "Q38",
+          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/WiiLesPaul.png"
         },
         {
           "label": "Xbox 360",
-          "next": "R14",
+          "next": "Q39",
           "image": null
         }
       ]
@@ -558,6 +553,208 @@ const QUIZ_DATA = {
           "image": null
         }
       ]
+    },
+    {
+      "id": "Q36",
+      "text": "Which console variant is your World Tour/Sunburst guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2",
+          "next": "Q43",
+          "image": null
+        },
+        {
+          "label": "PS3",
+          "next": "Q40",
+          "image": null
+        },
+        {
+          "label": "Wii",
+          "next": "Q41",
+          "image": null
+        },
+        {
+          "label": "Xbox 360",
+          "next": "Q42",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "Q37",
+      "text": "Which console variant is your GH5 (red/white) guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2/PS3",
+          "next": "Q44",
+          "image": null
+        },
+        {
+          "label": "Wii",
+          "next": "Q45",
+          "image": null
+        },
+        {
+          "label": "Xbox 360",
+          "next": "Q46",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "Q38",
+      "text": "Are you planning on modding your Wii Les Paul guitar or keeping it stock??",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Modding the guitar",
+          "next": "Q22",
+          "image": null
+        },
+        {
+          "label": "Keeping it Stock",
+          "next": "R12",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "Q39",
+      "text": "Are you planning on modding your Xbox 360 Les Paul guitar or keeping it stock??",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Modding the guitar",
+          "next": "Q22",
+          "image": null
+        },
+        {
+          "label": "Keeping it Stock",
+          "next": "R14",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "Q40",
+      "text": "Are you planning on modding your PS3 World Tour/Sunburst guitar or keeping it stock??",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Modding the guitar",
+          "next": "Q22",
+          "image": null
+        },
+        {
+          "label": "Keeping it Stock",
+          "next": "R11",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "Q41",
+      "text": "Are you planning on modding your Wii World Tour/Sunburst guitar or keeping it stock??",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Modding the guitar",
+          "next": "Q22",
+          "image": null
+        },
+        {
+          "label": "Keeping it Stock",
+          "next": "R12",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "Q42",
+      "text": "Are you planning on modding your Xbox 360 World Tour/Sunburst guitar or keeping it stock??",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Modding the guitar",
+          "next": "Q22",
+          "image": null
+        },
+        {
+          "label": "Keeping it Stock",
+          "next": "R14",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "Q43",
+      "text": "Are you planning on modding your PS2 World Tour/Sunburst guitar or keeping it stock??",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Modding the guitar",
+          "next": "Q22",
+          "image": null
+        },
+        {
+          "label": "Keeping it Stock",
+          "next": "R13",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "Q44",
+      "text": "Are you planning on modding your PS2/PS3 GH5 guitar or keeping it stock??",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Modding the guitar",
+          "next": "Q22",
+          "image": null
+        },
+        {
+          "label": "Keeping it Stock",
+          "next": "R11",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "Q45",
+      "text": "Are you planning on modding your Wii GH5 guitar or keeping it stock??",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Modding the guitar",
+          "next": "Q22",
+          "image": null
+        },
+        {
+          "label": "Keeping it Stock",
+          "next": "R12",
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "Q46",
+      "text": "Are you planning on modding your Xbox 360 GH5 guitar or keeping it stock??",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Modding the guitar",
+          "next": "Q22",
+          "image": null
+        },
+        {
+          "label": "Keeping it Stock",
+          "next": "R14",
+          "image": null
+        }
+      ]
     }
   ],
   "results": [
@@ -565,7 +762,7 @@ const QUIZ_DATA = {
       "id": "R10",
       "title": "PS2 Host Adapter",
       "subtitle": "For converting USB controllers to play on a Playstation 2 through the Playstation Controller Port",
-      "description": "This adapter also allows for USB gamepads and dance pads to be used on a PS2 natively!",
+      "description": "This adapter also allows for USB gamepads and dance pads to be used on a PS2 natively!\n\nIf you plan on playing on different platforms aside from PS2, please retake this quiz and DO NOT select PS2.",
       "image": "",
       "link": "https://shop.retrocultmods.com/products/ps2-host-usb-to-ps2-controller"
     },
@@ -717,9 +914,9 @@ const QUIZ_DATA = {
       {
         "id": "Q9",
         "type": "question",
-        "x": -58.27599338663942,
-        "y": -7.645589476520109,
-        "text": "Do you plan on playing any of the following games?\n- Guitar Hero (the first one)\n- Guitar Hero II\n- Guitar Hero III\n- Guitar Hero Encore: Rock the 80s\n- Guitar Hero Aerosmith\n- Dance Dance Revolution (any)",
+        "x": -10.58014085207727,
+        "y": -274.00503648112834,
+        "text": "Do you plan on playing any of the following Playstation 2 games?\n- Guitar Hero (the first one)\n- Guitar Hero II\n- Guitar Hero III\n- Guitar Hero Encore: Rock the 80s\n- Guitar Hero Aerosmith\n- Dance Dance Revolution (any)",
         "subtitle": "",
         "description": "",
         "image": "",
@@ -742,11 +939,11 @@ const QUIZ_DATA = {
       {
         "id": "R10",
         "type": "result",
-        "x": 376.50895968991534,
-        "y": -96.69903266676201,
+        "x": 31.94504093244827,
+        "y": -411.0956873859974,
         "text": "PS2 Host Adapter",
         "subtitle": "For converting USB controllers to play on a Playstation 2 through the Playstation Controller Port",
-        "description": "This adapter also allows for USB gamepads and dance pads to be used on a PS2 natively!",
+        "description": "This adapter also allows for USB gamepads and dance pads to be used on a PS2 natively!\n\nIf you plan on playing on different platforms aside from PS2, please retake this quiz and DO NOT select PS2.",
         "image": "",
         "link": "https://shop.retrocultmods.com/products/ps2-host-usb-to-ps2-controller",
         "answers": [],
@@ -881,9 +1078,9 @@ const QUIZ_DATA = {
       {
         "id": "Q17",
         "type": "question",
-        "x": 668.363242414287,
-        "y": -83.56795787123336,
-        "text": "Are you planning on modding your guitar (Les Paul, World Tour, GH5) or keeping it stock??",
+        "x": 623.580987632032,
+        "y": -899.8316941349696,
+        "text": "Are you planning on modding your PS3 Les Paul guitar or keeping it stock??",
         "subtitle": "",
         "description": "",
         "image": "",
@@ -896,7 +1093,7 @@ const QUIZ_DATA = {
           },
           {
             "label": "Keeping it Stock",
-            "target": "Q32",
+            "target": "R11",
             "image": ""
           }
         ],
@@ -906,8 +1103,8 @@ const QUIZ_DATA = {
       {
         "id": "R18",
         "type": "result",
-        "x": 1154.336468633394,
-        "y": 926.3267769927553,
+        "x": 1951.110662181781,
+        "y": 856.971938283078,
         "text": "Solderless Revival Kit - RGB Strum Bar",
         "subtitle": "Bring your completely broken, breaking, or old Guitar Hero controller back to life with the Revival Kit!",
         "description": "The \"RGB Strumbar\" option includes a new 3D printed translucent strumbar that allows LEDs from the new strumboard to shine brightly and vibrantly!",
@@ -959,8 +1156,8 @@ const QUIZ_DATA = {
       {
         "id": "Q22",
         "type": "question",
-        "x": 915.7548038015804,
-        "y": 961.3336068755053,
+        "x": 762.5289973499674,
+        "y": 1119.3981230045376,
         "text": "Do you want RGB strum bar?",
         "subtitle": "",
         "description": "",
@@ -1023,8 +1220,8 @@ const QUIZ_DATA = {
       {
         "id": "R25",
         "type": "result",
-        "x": 1152.1544531873556,
-        "y": 1064.5123922436378,
+        "x": 1932.7996144776785,
+        "y": 1033.8672309533151,
         "text": "Solderless Revival Kit - No Strumbar",
         "subtitle": "Bring your completely broken, breaking, or old Guitar Hero controller back to life with the Revival Kit!",
         "description": "The \"No Strumbar\" option is more affordable, but does not come with a new 3D printed strumbar; the stock strumbar will be used instead.",
@@ -1117,8 +1314,8 @@ const QUIZ_DATA = {
       {
         "id": "Q30",
         "type": "question",
-        "x": 297.84164859934526,
-        "y": 60.159600889384016,
+        "x": 297.8416485993453,
+        "y": 60.15960088938404,
         "text": "Which model of guitar are you using?",
         "subtitle": "",
         "description": "",
@@ -1127,53 +1324,53 @@ const QUIZ_DATA = {
         "answers": [
           {
             "label": "Les Paul",
-            "target": "Q17",
-            "image": ""
+            "target": "Q32",
+            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/XBPSLesPaul.png"
           },
           {
             "label": "World Tour",
-            "target": "Q17",
-            "image": ""
+            "target": "Q36",
+            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/XBPSSunburst.png"
           },
           {
             "label": "GH5",
-            "target": "Q17",
-            "image": ""
+            "target": "Q37",
+            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/XBPSGH5.png"
           },
           {
             "label": "Xplorer",
             "target": "Q31",
-            "image": ""
+            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/xplorer.png"
           },
           {
             "label": "SG",
             "target": "Q33",
-            "image": ""
+            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/sg.png"
           },
           {
             "label": "Kramer",
             "target": "Q33",
-            "image": ""
+            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/kramer.png"
           },
           {
             "label": "MayFlash",
             "target": "Q33",
-            "image": ""
+            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/mayflash.png"
           },
           {
             "label": "Warriors of Rock",
             "target": "Q35",
-            "image": ""
+            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/WiiWoR.png"
           },
           {
             "label": "Rock Band Style Guitar (ex. Stratocaster)",
             "target": "Q34",
-            "image": ""
+            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/Strat.png"
           },
           {
             "label": "CRKD/Riffmaster (Modern Guitars)",
             "target": "R11",
-            "image": ""
+            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/CRKD.png"
           }
         ],
         "comboRules": [],
@@ -1182,8 +1379,8 @@ const QUIZ_DATA = {
       {
         "id": "Q31",
         "type": "question",
-        "x": 664.8637990956845,
-        "y": 199.18795263036648,
+        "x": 626.1541216763296,
+        "y": 66.92988811423749,
         "text": "Are you planning on modding your Xplorer or using it stock?",
         "subtitle": "",
         "description": "",
@@ -1207,32 +1404,27 @@ const QUIZ_DATA = {
       {
         "id": "Q32",
         "type": "question",
-        "x": 939.6142842640709,
-        "y": -82.8225231242078,
-        "text": "Which console variant is your guitar?",
+        "x": 370.92705751232785,
+        "y": -672.7965276143414,
+        "text": "Which console variant is your Les Paul guitar?",
         "subtitle": "",
         "description": "",
         "image": "",
         "link": "",
         "answers": [
           {
-            "label": "Wii",
-            "target": "R12",
-            "image": ""
-          },
-          {
-            "label": "PS2",
-            "target": "R13",
-            "image": ""
-          },
-          {
             "label": "PS3",
-            "target": "R11",
+            "target": "Q17",
             "image": ""
+          },
+          {
+            "label": "Wii",
+            "target": "Q38",
+            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/WiiLesPaul.png"
           },
           {
             "label": "Xbox 360",
-            "target": "R14",
+            "target": "Q39",
             "image": ""
           }
         ],
@@ -1242,8 +1434,8 @@ const QUIZ_DATA = {
       {
         "id": "Q33",
         "type": "question",
-        "x": 661.9490848976475,
-        "y": 467.12309815179754,
+        "x": 632.9168268331314,
+        "y": 359.0585820227653,
         "text": "Are you planning on modding your guitar (SG/Kramer/Mayflash) or using it stock?",
         "subtitle": "",
         "description": "",
@@ -1297,8 +1489,8 @@ const QUIZ_DATA = {
       {
         "id": "Q35",
         "type": "question",
-        "x": 1084.2186377447317,
-        "y": 387.54827551214277,
+        "x": 1036.7827403088343,
+        "y": 376.0098139736812,
         "text": "Which console variant of the Warriors of Rock guitar do you have?\nPlaystation will require it's included dongle.",
         "subtitle": "",
         "description": "",
@@ -1318,6 +1510,296 @@ const QUIZ_DATA = {
           {
             "label": "Wii",
             "target": "R12",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q36",
+        "type": "question",
+        "x": 985.3526593449387,
+        "y": -708.7143121733568,
+        "text": "Which console variant is your World Tour/Sunburst guitar?",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "PS2",
+            "target": "Q43",
+            "image": ""
+          },
+          {
+            "label": "PS3",
+            "target": "Q40",
+            "image": ""
+          },
+          {
+            "label": "Wii",
+            "target": "Q41",
+            "image": ""
+          },
+          {
+            "label": "Xbox 360",
+            "target": "Q42",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q37",
+        "type": "question",
+        "x": 1651.6601421302337,
+        "y": -890.4433309271988,
+        "text": "Which console variant is your GH5 (red/white) guitar?",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "PS2/PS3",
+            "target": "Q44",
+            "image": ""
+          },
+          {
+            "label": "Wii",
+            "target": "Q45",
+            "image": ""
+          },
+          {
+            "label": "Xbox 360",
+            "target": "Q46",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q38",
+        "type": "question",
+        "x": 623.393679917441,
+        "y": -641.3420211882535,
+        "text": "Are you planning on modding your Wii Les Paul guitar or keeping it stock??",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Modding the guitar",
+            "target": "Q22",
+            "image": ""
+          },
+          {
+            "label": "Keeping it Stock",
+            "target": "R12",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q39",
+        "type": "question",
+        "x": 622.3357483911417,
+        "y": -380.586886937628,
+        "text": "Are you planning on modding your Xbox 360 Les Paul guitar or keeping it stock??",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Modding the guitar",
+            "target": "Q22",
+            "image": ""
+          },
+          {
+            "label": "Keeping it Stock",
+            "target": "R14",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q40",
+        "type": "question",
+        "x": 1233.0762324627833,
+        "y": -895.4647911145194,
+        "text": "Are you planning on modding your PS3 World Tour/Sunburst guitar or keeping it stock??",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Modding the guitar",
+            "target": "Q22",
+            "image": ""
+          },
+          {
+            "label": "Keeping it Stock",
+            "target": "R11",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q41",
+        "type": "question",
+        "x": 1237.513074377739,
+        "y": -636.2338219007872,
+        "text": "Are you planning on modding your Wii World Tour/Sunburst guitar or keeping it stock??",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Modding the guitar",
+            "target": "Q22",
+            "image": ""
+          },
+          {
+            "label": "Keeping it Stock",
+            "target": "R12",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q42",
+        "type": "question",
+        "x": 1237.723538255925,
+        "y": -380.2001509508307,
+        "text": "Are you planning on modding your Xbox 360 World Tour/Sunburst guitar or keeping it stock??",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Modding the guitar",
+            "target": "Q22",
+            "image": ""
+          },
+          {
+            "label": "Keeping it Stock",
+            "target": "R14",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q43",
+        "type": "question",
+        "x": 1230.7086363006613,
+        "y": -1153.3827371590535,
+        "text": "Are you planning on modding your PS2 World Tour/Sunburst guitar or keeping it stock??",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Modding the guitar",
+            "target": "Q22",
+            "image": ""
+          },
+          {
+            "label": "Keeping it Stock",
+            "target": "R13",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q44",
+        "type": "question",
+        "x": 1919.563817667443,
+        "y": -1159.4559530120089,
+        "text": "Are you planning on modding your PS2/PS3 GH5 guitar or keeping it stock??",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Modding the guitar",
+            "target": "Q22",
+            "image": ""
+          },
+          {
+            "label": "Keeping it Stock",
+            "target": "R11",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q45",
+        "type": "question",
+        "x": 1917.8717616415217,
+        "y": -905.9277791795284,
+        "text": "Are you planning on modding your Wii GH5 guitar or keeping it stock??",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Modding the guitar",
+            "target": "Q22",
+            "image": ""
+          },
+          {
+            "label": "Keeping it Stock",
+            "target": "R12",
+            "image": ""
+          }
+        ],
+        "comboRules": [],
+        "fallback": ""
+      },
+      {
+        "id": "Q46",
+        "type": "question",
+        "x": 1918.4319823171447,
+        "y": -640.4297938139669,
+        "text": "Are you planning on modding your Xbox 360 GH5 guitar or keeping it stock??",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "answers": [
+          {
+            "label": "Modding the guitar",
+            "target": "Q22",
+            "image": ""
+          },
+          {
+            "label": "Keeping it Stock",
+            "target": "R14",
             "image": ""
           }
         ],
@@ -1391,7 +1873,9 @@ function renderSingleQuestion(q) {
     if (hasImages) {
       return `
         <button class="answer-btn" onclick="pickSingle('${a.next}')">
-          ${a.image ? `<img class="ans-img" src="${a.image}" alt="${a.label}">` : `<div class="ans-img" style="display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:11px">No image</div>`}
+          <div class="ans-img-wrap">
+            ${a.image ? `<img class="ans-img" src="${a.image}" alt="${a.label}">` : `<span style="font-size:11px;color:var(--muted)">No image</span>`}
+          </div>
           <div class="ans-img-label">
             <div class="answer-indicator">${indicators[i]}</div>
             <span>${a.label}</span>
@@ -1436,7 +1920,9 @@ function renderMultiQuestion(q, animate = true) {
     if (hasImages) {
       return `
         <div class="multi-answer-item${checked ? ' checked' : ''}" onclick="toggleMulti(${i})">
-          ${a.image ? `<img class="ans-img" src="${a.image}" alt="${a.label}">` : `<div class="ans-img" style="display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:11px">No image</div>`}
+          <div class="ans-img-wrap">
+            ${a.image ? `<img class="ans-img" src="${a.image}" alt="${a.label}">` : `<span style="font-size:11px;color:var(--muted)">No image</span>`}
+          </div>
           <div class="multi-img-label">
             <div class="multi-checkbox">${checked ? '✓' : ''}</div>
             <span class="multi-answer-label">${a.label}</span>
