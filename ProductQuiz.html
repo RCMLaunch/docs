@@ -1948,7 +1948,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Yes \u2014 mod it",
-          "next": "Q_RGB_STRUM",
+          "next": "Q_PS2_NATIVE_MOD",
           "image": null,
           "flags": [
             "mod-wt"
@@ -2017,7 +2017,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Yes \u2014 mod it",
-          "next": "Q_RGB_STRUM",
+          "next": "Q_PS2_NATIVE_MOD",
           "image": null,
           "flags": [
             "mod-sg"
@@ -2040,7 +2040,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Yes \u2014 mod it",
-          "next": "Q_RGB_STRUM",
+          "next": "Q_PS2_NATIVE_MOD",
           "image": null,
           "flags": [
             "mod-kramer"
@@ -2063,7 +2063,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Yes \u2014 mod it",
-          "next": "Q_RGB_STRUM",
+          "next": "Q_PS2_NATIVE_MOD",
           "image": null,
           "flags": [
             "mod-mayflash"
@@ -2223,6 +2223,84 @@ const QUIZ_DATA = {
         {
           "label": "No \u2014 standard frets",
           "next": "R_DIY_STANDARD",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_PS2_NATIVE_MOD",
+      "text": "Would you like to mod your guitar?\n\nNote: Modding converts your guitar to USB. If you're playing Guitar Hero, Guitar Hero 2, Guitar Hero Encore: Rock the 80s, Guitar Hero 3, or Guitar Hero Aerosmith on PS2, you'll also need the PS2 Host Adapter since those games don't support USB controllers.",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 mod it (I understand I'll also need the PS2 Host Adapter)",
+          "next": "Q_PS2_RGB_STRUM",
+          "image": null,
+          "flags": [
+            "ps2-mod-needs-host"
+          ]
+        },
+        {
+          "label": "No \u2014 keep it stock (no adapter needed)",
+          "next": "R_NATIVE_NO_ADAPTER",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_PS2_RGB_STRUM",
+      "text": "Would you like an RGB Strum Bar in your mod kit?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 RGB Strum Bar",
+          "next": "R_PS2_SOLDERLESS_RGB",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "No \u2014 standard strum bar",
+          "next": "Q_PS2_SOLDER",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_PS2_SOLDER",
+      "text": "Are you comfortable with soldering?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 I can solder (DIY kit)",
+          "next": "Q_PS2_RGB_FRETS",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "No \u2014 solderless kit please",
+          "next": "R_PS2_SOLDERLESS_NORGB",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_PS2_RGB_FRETS",
+      "text": "Would you like RGB Frets in your DIY mod kit?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 RGB Frets",
+          "next": "R_PS2_DIY_RGB",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "No \u2014 standard frets",
+          "next": "R_PS2_DIY_STANDARD",
           "image": null,
           "flags": null
         }
@@ -2437,6 +2515,86 @@ const QUIZ_DATA = {
           "label": "Shop DIY Standard Kit",
           "url": "https://www.retrocultmods.com/collections/diy-kits",
           "style": "primary"
+        }
+      ]
+    },
+    {
+      "id": "R_PS2_SOLDERLESS_RGB",
+      "title": "Solderless Revival Mod Kit (RGB Strum Bar) + PS2 Host Adapter",
+      "subtitle": "No soldering required \u00b7 RGB Strum Bar \u00b7 PS2 Host Adapter required",
+      "description": "Since modding your guitar converts it to USB, you'll need both the Solderless Revival Mod Kit with RGB Strum Bar and the PS2 Host Adapter to play Guitar Hero, Guitar Hero 2, Guitar Hero Encore: Rock the 80s, Guitar Hero 3, and Guitar Hero Aerosmith on PS2.",
+      "image": "",
+      "flagNotes": [],
+      "ctas": [
+        {
+          "label": "Shop Solderless RGB Strum Bar Kit",
+          "url": "https://www.retrocultmods.com/collections/solderless-kits",
+          "style": "primary"
+        },
+        {
+          "label": "Shop PS2 Host Adapter",
+          "url": "https://www.retrocultmods.com/products/ps2-host-adapter",
+          "style": "secondary"
+        }
+      ]
+    },
+    {
+      "id": "R_PS2_SOLDERLESS_NORGB",
+      "title": "Solderless Revival Mod Kit (Standard Strum Bar) + PS2 Host Adapter",
+      "subtitle": "No soldering required \u00b7 Standard Strum Bar \u00b7 PS2 Host Adapter required",
+      "description": "Since modding your guitar converts it to USB, you'll need both the Solderless Revival Mod Kit with standard strum bar and the PS2 Host Adapter to play Guitar Hero, Guitar Hero 2, Guitar Hero Encore: Rock the 80s, Guitar Hero 3, and Guitar Hero Aerosmith on PS2.",
+      "image": "",
+      "flagNotes": [],
+      "ctas": [
+        {
+          "label": "Shop Solderless Standard Kit",
+          "url": "https://www.retrocultmods.com/collections/solderless-kits",
+          "style": "primary"
+        },
+        {
+          "label": "Shop PS2 Host Adapter",
+          "url": "https://www.retrocultmods.com/products/ps2-host-adapter",
+          "style": "secondary"
+        }
+      ]
+    },
+    {
+      "id": "R_PS2_DIY_RGB",
+      "title": "DIY Mod Kit (RGB Frets) + PS2 Host Adapter",
+      "subtitle": "Soldering required \u00b7 RGB Frets \u00b7 PS2 Host Adapter required",
+      "description": "Since modding your guitar converts it to USB, you'll need both the DIY Mod Kit with RGB Frets and the PS2 Host Adapter to play Guitar Hero, Guitar Hero 2, Guitar Hero Encore: Rock the 80s, Guitar Hero 3, and Guitar Hero Aerosmith on PS2.",
+      "image": "",
+      "flagNotes": [],
+      "ctas": [
+        {
+          "label": "Shop DIY RGB Fret Kit",
+          "url": "https://www.retrocultmods.com/collections/diy-kits",
+          "style": "primary"
+        },
+        {
+          "label": "Shop PS2 Host Adapter",
+          "url": "https://www.retrocultmods.com/products/ps2-host-adapter",
+          "style": "secondary"
+        }
+      ]
+    },
+    {
+      "id": "R_PS2_DIY_STANDARD",
+      "title": "DIY Mod Kit (Standard Frets) + PS2 Host Adapter",
+      "subtitle": "Soldering required \u00b7 Standard Frets \u00b7 PS2 Host Adapter required",
+      "description": "Since modding your guitar converts it to USB, you'll need both the DIY Mod Kit with standard frets and the PS2 Host Adapter to play Guitar Hero, Guitar Hero 2, Guitar Hero Encore: Rock the 80s, Guitar Hero 3, and Guitar Hero Aerosmith on PS2.",
+      "image": "",
+      "flagNotes": [],
+      "ctas": [
+        {
+          "label": "Shop DIY Standard Kit",
+          "url": "https://www.retrocultmods.com/collections/diy-kits",
+          "style": "primary"
+        },
+        {
+          "label": "Shop PS2 Host Adapter",
+          "url": "https://www.retrocultmods.com/products/ps2-host-adapter",
+          "style": "secondary"
         }
       ]
     }
