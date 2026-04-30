@@ -188,7 +188,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "Nintendo Switch",
-          "next": "R_SWITCH",
+          "next": "Q_GUITAR_MODEL_SWITCH",
           "image": null,
           "flags": null
         },
@@ -376,18 +376,6 @@ const QUIZ_DATA = {
           "next": "R_ACE",
           "image": null,
           "flags": null
-        },
-        {
-          "label": "Dance Pad",
-          "next": "Q_DANCE_PAD_PS45",
-          "image": null,
-          "flags": null
-        },
-        {
-          "label": "DJ Hero Turntable",
-          "next": "Q_DJ_PS45",
-          "image": null,
-          "flags": null
         }
       ]
     },
@@ -472,12 +460,6 @@ const QUIZ_DATA = {
         {
           "label": "Pro Drums or Pro Keyboard (MIDI)",
           "next": "R_ACE",
-          "image": null,
-          "flags": null
-        },
-        {
-          "label": "Dance Pad",
-          "next": "Q_DANCE_PAD_XONE",
           "image": null,
           "flags": null
         }
@@ -914,50 +896,6 @@ const QUIZ_DATA = {
     {
       "id": "Q_GH_DRUMS_PS45",
       "text": "Which Guitar Hero Drums variant do you have?",
-      "multiSelect": false,
-      "answers": [
-        {
-          "label": "PS2 / PS3 (wireless USB dongle)",
-          "next": "R_MINIHOST",
-          "image": null,
-          "flags": null
-        },
-        {
-          "label": "Xbox 360 (wireless, proprietary)",
-          "next": "R_360_RECEIVER",
-          "image": null,
-          "flags": null
-        },
-        {
-          "label": "Wii (wireless via Wiimote Nunchuk)",
-          "next": "R_V3",
-          "image": null,
-          "flags": null
-        }
-      ]
-    },
-    {
-      "id": "Q_DANCE_PAD_PS45",
-      "text": "Which type of Dance Pad do you have?",
-      "multiSelect": false,
-      "answers": [
-        {
-          "label": "PS2 9-pin connector",
-          "next": "R_PS2_TO_USB",
-          "image": null,
-          "flags": null
-        },
-        {
-          "label": "USB connection",
-          "next": "R_MINIHOST",
-          "image": null,
-          "flags": null
-        }
-      ]
-    },
-    {
-      "id": "Q_DJ_PS45",
-      "text": "Which DJ Hero Turntable variant do you have?",
       "multiSelect": false,
       "answers": [
         {
@@ -2305,6 +2243,85 @@ const QUIZ_DATA = {
           "flags": null
         }
       ]
+    },
+    {
+      "id": "Q_GUITAR_MODEL_SWITCH",
+      "text": "Which guitar model do you have?\n\nNote: Nintendo Switch only supports guitar controllers on Fortnite Festival at this time.",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Les Paul Guitar (PS3 variant \u2014 USB dongle)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "World Tour Guitar (PS3 variant \u2014 USB dongle)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "GH5 Guitar (PS3 variant \u2014 USB dongle)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Warriors of Rock Guitar (PS3 variant \u2014 USB dongle)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Stratocaster (PS3 or Wii variant \u2014 USB dongle)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Les Paul Guitar (Wii variant \u2014 Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "World Tour Guitar (Wii variant \u2014 Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "GH5 Guitar (Wii variant \u2014 Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Warriors of Rock Guitar (Wii variant \u2014 Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Stratocaster (Wii variant \u2014 Nunchuk/USB)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xplorer Guitar (Xbox 360 \u2014 wired USB)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Riffmaster (wireless USB dongle)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        }
+      ]
     }
   ],
   "results": [
@@ -2435,26 +2452,6 @@ const QUIZ_DATA = {
           "label": "Shop ACE Adapter",
           "url": "https://www.retrocultmods.com/products/ace-adapter",
           "style": "primary"
-        }
-      ]
-    },
-    {
-      "id": "R_SWITCH",
-      "title": "Nintendo Switch \u2014 Guitar Support",
-      "subtitle": "Fortnite Festival \u00b7 Guitar only",
-      "description": "The Nintendo Switch currently only supports Fortnite Festival, and only guitar is supported at this time. Most USB-dongle guitars will work via the MiniHost Adapter. Wii Nunchuk-based guitars require the V3 Adapter.",
-      "image": "",
-      "flagNotes": [],
-      "ctas": [
-        {
-          "label": "Shop MiniHost Adapter",
-          "url": "https://www.retrocultmods.com/products/minihost-adapter",
-          "style": "primary"
-        },
-        {
-          "label": "Shop V3 Adapter",
-          "url": "https://www.retrocultmods.com/products/v3-adapter",
-          "style": "secondary"
         }
       ]
     },
