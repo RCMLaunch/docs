@@ -145,543 +145,2091 @@
 const QUIZ_DATA = {
   "startId": "Q_CONSOLE",
   "questions": [
-
     {
       "id": "Q_CONSOLE",
       "text": "Which platform are you playing on?",
       "multiSelect": false,
       "answers": [
-        { "label": "PlayStation 2", "next": "Q_PS2_GAMES", "image": null, "flags": null },
-        { "label": "PlayStation 3", "next": "Q_CONTROLLER_PS3", "image": null, "flags": null },
-        { "label": "PlayStation 4 or 5", "next": "Q_CONTROLLER_PS45", "image": null, "flags": null },
-        { "label": "Xbox 360", "next": "Q_CONTROLLER_X360", "image": null, "flags": null },
-        { "label": "Xbox One or Series", "next": "Q_CONTROLLER_XONE", "image": null, "flags": null },
-        { "label": "Nintendo Wii", "next": "Q_CONTROLLER_WII", "image": null, "flags": null },
-        { "label": "Nintendo Switch", "next": "R_SWITCH", "image": null, "flags": null },
-        { "label": "PC or Mac", "next": "Q_CONTROLLER_PC", "image": null, "flags": null }
+        {
+          "label": "PlayStation 2",
+          "next": "Q_PS2_GAMES",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PlayStation 3",
+          "next": "Q_CONTROLLER_PS3",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PlayStation 4 or 5",
+          "next": "Q_CONTROLLER_PS45",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360",
+          "next": "Q_CONTROLLER_X360",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox One or Series",
+          "next": "Q_CONTROLLER_XONE",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Nintendo Wii",
+          "next": "Q_CONTROLLER_WII",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Nintendo Switch",
+          "next": "R_SWITCH",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PC or Mac",
+          "next": "Q_CONTROLLER_PC",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
     {
       "id": "Q_PS2_GAMES",
       "text": "Are you playing any of these games?\n\nGuitar Hero, Guitar Hero 2, Guitar Hero Encore: Rock the 80s, Guitar Hero 3, or Guitar Hero Aerosmith",
       "multiSelect": false,
       "answers": [
-        { "label": "Yes — at least one of those games", "next": "Q_PS2_PROBLEM_CONTROLLER", "image": null, "flags": null },
-        { "label": "No — other PS2 titles only", "next": "Q_CONTROLLER_PS2", "image": null, "flags": null }
+        {
+          "label": "Yes \u2014 at least one of those games",
+          "next": "Q_PS2_GUITAR_NATIVE",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "No \u2014 other PS2 titles only",
+          "next": "Q_CONTROLLER_PS2",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
-    {
-      "id": "Q_PS2_PROBLEM_CONTROLLER",
-      "text": "What type of controller are you using to play those games?",
-      "multiSelect": false,
-      "answers": [
-        { "label": "Guitar", "next": "Q_PS2_GUITAR_NATIVE", "image": null, "flags": null },
-        { "label": "Drums, Dance Pad, or other", "next": "R_PS2_HOST", "image": null, "flags": null }
-      ]
-    },
-
     {
       "id": "Q_PS2_GUITAR_NATIVE",
       "text": "Which guitar are you using?",
       "multiSelect": false,
       "answers": [
-        { "label": "SG Guitar (wired PS2 connector)", "next": "Q_CONTROLLER_PS2", "image": null, "flags": null },
-        { "label": "World Tour Guitar (PS2 wireless dongle)", "next": "Q_CONTROLLER_PS2", "image": null, "flags": null },
-        { "label": "Kramer Guitar (PS2 wireless dongle)", "next": "Q_CONTROLLER_PS2", "image": null, "flags": null },
-        { "label": "MayFlash Guitar (PS2 wireless dongle)", "next": "Q_CONTROLLER_PS2", "image": null, "flags": null },
-        { "label": "A different guitar (USB or other)", "next": "R_PS2_HOST", "image": null, "flags": null }
+        {
+          "label": "SG Guitar (wired PS2 connector)",
+          "next": "Q_CONTROLLER_PS2",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "World Tour Guitar (PS2 wireless dongle)",
+          "next": "Q_CONTROLLER_PS2",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Kramer Guitar (PS2 wireless dongle)",
+          "next": "Q_CONTROLLER_PS2",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "MayFlash Guitar (PS2 wireless dongle)",
+          "next": "Q_CONTROLLER_PS2",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "A different guitar (USB or other)",
+          "next": "R_PS2_HOST",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
     {
       "id": "Q_CONTROLLER_PS2",
       "text": "Which type of controller are you using on PS2?",
       "multiSelect": false,
       "answers": [
-        { "label": "Guitar", "next": "Q_GUITAR_MODEL_PS2", "image": null, "flags": null },
-        { "label": "Rock Band Drums", "next": "Q_RB_DRUMS_PS2", "image": null, "flags": null },
-        { "label": "Guitar Hero Drums", "next": "Q_GH_DRUMS_PS2", "image": null, "flags": null },
-        { "label": "Dance Pad", "next": "Q_DANCE_PAD_PS2", "image": null, "flags": null },
-        { "label": "DJ Hero Turntable", "next": "Q_DJ_PS2", "image": null, "flags": null }
+        {
+          "label": "Guitar",
+          "next": "Q_GUITAR_MODEL_PS2",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Drums",
+          "next": "Q_RB_DRUMS_PS2",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Guitar Hero Drums",
+          "next": "Q_GH_DRUMS_PS2",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Dance Pad",
+          "next": "Q_DANCE_PAD_PS2",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "DJ Hero Turntable",
+          "next": "Q_DJ_PS2",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
     {
       "id": "Q_CONTROLLER_PS3",
       "text": "Which type of controller are you using on PS3?",
       "multiSelect": false,
       "answers": [
-        { "label": "Guitar", "next": "Q_GUITAR_MODEL_PS3", "image": null, "flags": null },
-        { "label": "Rock Band Drums", "next": "Q_RB_DRUMS_PS3", "image": null, "flags": null },
-        { "label": "Guitar Hero Drums", "next": "Q_GH_DRUMS_PS3", "image": null, "flags": null },
-        { "label": "Pro Drums or Pro Keyboard (MIDI)", "next": "Q_PRO_MIDI_PS3", "image": null, "flags": null },
-        { "label": "Keytar", "next": "Q_KEYTAR_PS3", "image": null, "flags": null },
-        { "label": "Pro Guitar", "next": "Q_PRO_GUITAR_PS3", "image": null, "flags": null },
-        { "label": "Dance Pad", "next": "Q_DANCE_PAD_PS3", "image": null, "flags": null },
-        { "label": "DJ Hero Turntable", "next": "Q_DJ_PS3", "image": null, "flags": null }
+        {
+          "label": "Guitar",
+          "next": "Q_GUITAR_MODEL_PS3",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Drums",
+          "next": "Q_RB_DRUMS_PS3",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Guitar Hero Drums",
+          "next": "Q_GH_DRUMS_PS3",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Pro Drums or Pro Keyboard (MIDI)",
+          "next": "Q_PRO_MIDI_PS3",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Keytar",
+          "next": "Q_KEYTAR_PS3",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Pro Guitar",
+          "next": "Q_PRO_GUITAR_PS3",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Dance Pad",
+          "next": "Q_DANCE_PAD_PS3",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "DJ Hero Turntable",
+          "next": "Q_DJ_PS3",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
     {
       "id": "Q_CONTROLLER_PS45",
       "text": "Which type of controller are you using on PS4 or PS5?",
       "multiSelect": false,
       "answers": [
-        { "label": "Guitar", "next": "Q_GUITAR_MODEL_PS45", "image": null, "flags": null },
-        { "label": "Rock Band Drums", "next": "Q_RB_DRUMS_PS45", "image": null, "flags": null },
-        { "label": "Guitar Hero Drums", "next": "Q_GH_DRUMS_PS45", "image": null, "flags": null },
-        { "label": "Pro Drums or Pro Keyboard (MIDI)", "next": "R_ACE", "image": null, "flags": null },
-        { "label": "Dance Pad", "next": "Q_DANCE_PAD_PS45", "image": null, "flags": null },
-        { "label": "DJ Hero Turntable", "next": "Q_DJ_PS45", "image": null, "flags": null }
+        {
+          "label": "Guitar",
+          "next": "Q_GUITAR_MODEL_PS45",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Drums",
+          "next": "Q_RB_DRUMS_PS45",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Guitar Hero Drums",
+          "next": "Q_GH_DRUMS_PS45",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Pro Drums or Pro Keyboard (MIDI)",
+          "next": "R_ACE",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Dance Pad",
+          "next": "Q_DANCE_PAD_PS45",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "DJ Hero Turntable",
+          "next": "Q_DJ_PS45",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
     {
       "id": "Q_CONTROLLER_X360",
       "text": "Which type of controller are you using on Xbox 360?",
       "multiSelect": false,
       "answers": [
-        { "label": "Guitar", "next": "Q_GUITAR_MODEL_X360", "image": null, "flags": null },
-        { "label": "Rock Band Drums", "next": "Q_RB_DRUMS_X360", "image": null, "flags": null },
-        { "label": "Guitar Hero Drums", "next": "Q_GH_DRUMS_X360", "image": null, "flags": null },
-        { "label": "Pro Drums or Pro Keyboard (MIDI)", "next": "Q_PRO_MIDI_X360", "image": null, "flags": null },
-        { "label": "Keytar", "next": "Q_KEYTAR_X360", "image": null, "flags": null },
-        { "label": "Pro Guitar", "next": "Q_PRO_GUITAR_X360", "image": null, "flags": null },
-        { "label": "Dance Pad", "next": "Q_DANCE_PAD_X360", "image": null, "flags": null },
-        { "label": "DJ Hero Turntable", "next": "Q_DJ_X360", "image": null, "flags": null }
+        {
+          "label": "Guitar",
+          "next": "Q_GUITAR_MODEL_X360",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Drums",
+          "next": "Q_RB_DRUMS_X360",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Guitar Hero Drums",
+          "next": "Q_GH_DRUMS_X360",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Pro Drums or Pro Keyboard (MIDI)",
+          "next": "Q_PRO_MIDI_X360",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Keytar",
+          "next": "Q_KEYTAR_X360",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Pro Guitar",
+          "next": "Q_PRO_GUITAR_X360",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Dance Pad",
+          "next": "Q_DANCE_PAD_X360",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "DJ Hero Turntable",
+          "next": "Q_DJ_X360",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
     {
       "id": "Q_CONTROLLER_XONE",
       "text": "Which type of controller are you using on Xbox One or Series?",
       "multiSelect": false,
       "answers": [
-        { "label": "Guitar", "next": "Q_GUITAR_MODEL_XONE", "image": null, "flags": null },
-        { "label": "Rock Band Drums", "next": "Q_RB_DRUMS_XONE", "image": null, "flags": null },
-        { "label": "Guitar Hero Drums", "next": "Q_GH_DRUMS_XONE", "image": null, "flags": null },
-        { "label": "Pro Drums or Pro Keyboard (MIDI)", "next": "R_ACE", "image": null, "flags": null },
-        { "label": "Dance Pad", "next": "Q_DANCE_PAD_XONE", "image": null, "flags": null }
+        {
+          "label": "Guitar",
+          "next": "Q_GUITAR_MODEL_XONE",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Drums",
+          "next": "Q_RB_DRUMS_XONE",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Guitar Hero Drums",
+          "next": "Q_GH_DRUMS_XONE",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Pro Drums or Pro Keyboard (MIDI)",
+          "next": "R_ACE",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Dance Pad",
+          "next": "Q_DANCE_PAD_XONE",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
     {
       "id": "Q_CONTROLLER_WII",
       "text": "Which type of controller are you using on Wii?",
       "multiSelect": false,
       "answers": [
-        { "label": "Guitar", "next": "Q_GUITAR_MODEL_WII", "image": null, "flags": null },
-        { "label": "Rock Band Drums", "next": "Q_RB_DRUMS_WII", "image": null, "flags": null },
-        { "label": "Guitar Hero Drums", "next": "Q_GH_DRUMS_WII", "image": null, "flags": null },
-        { "label": "Pro Drums or Pro Keyboard (MIDI)", "next": "Q_PRO_MIDI_WII", "image": null, "flags": null },
-        { "label": "Keytar", "next": "Q_KEYTAR_WII", "image": null, "flags": null },
-        { "label": "Pro Guitar", "next": "Q_PRO_GUITAR_WII", "image": null, "flags": null },
-        { "label": "Dance Pad", "next": "Q_DANCE_PAD_WII", "image": null, "flags": null },
-        { "label": "DJ Hero Turntable", "next": "Q_DJ_WII", "image": null, "flags": null }
+        {
+          "label": "Guitar",
+          "next": "Q_GUITAR_MODEL_WII",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Drums",
+          "next": "Q_RB_DRUMS_WII",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Guitar Hero Drums",
+          "next": "Q_GH_DRUMS_WII",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Pro Drums or Pro Keyboard (MIDI)",
+          "next": "Q_PRO_MIDI_WII",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Keytar",
+          "next": "Q_KEYTAR_WII",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Pro Guitar",
+          "next": "Q_PRO_GUITAR_WII",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Dance Pad",
+          "next": "Q_DANCE_PAD_WII",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "DJ Hero Turntable",
+          "next": "Q_DJ_WII",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
     {
       "id": "Q_CONTROLLER_PC",
       "text": "Which type of controller are you using on PC or Mac?",
       "multiSelect": false,
       "answers": [
-        { "label": "Guitar", "next": "Q_GUITAR_MODEL_PC", "image": null, "flags": null },
-        { "label": "Rock Band Drums", "next": "Q_RB_DRUMS_PC", "image": null, "flags": null },
-        { "label": "Guitar Hero Drums", "next": "Q_GH_DRUMS_PC", "image": null, "flags": null },
-        { "label": "Pro Drums or Pro Keyboard (MIDI)", "next": "R_ACE", "image": null, "flags": null },
-        { "label": "Keytar", "next": "Q_KEYTAR_PC", "image": null, "flags": null },
-        { "label": "Pro Guitar", "next": "Q_PRO_GUITAR_PC", "image": null, "flags": null },
-        { "label": "Dance Pad", "next": "Q_DANCE_PAD_PC", "image": null, "flags": null },
-        { "label": "DJ Hero Turntable", "next": "Q_DJ_PC", "image": null, "flags": null }
+        {
+          "label": "Guitar",
+          "next": "Q_GUITAR_MODEL_PC",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Drums",
+          "next": "Q_RB_DRUMS_PC",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Guitar Hero Drums",
+          "next": "Q_GH_DRUMS_PC",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Pro Drums or Pro Keyboard (MIDI)",
+          "next": "R_ACE",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Keytar",
+          "next": "Q_KEYTAR_PC",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Pro Guitar",
+          "next": "Q_PRO_GUITAR_PC",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Dance Pad",
+          "next": "Q_DANCE_PAD_PC",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "DJ Hero Turntable",
+          "next": "Q_DJ_PC",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
-    { "id": "Q_RB_DRUMS_PS2", "text": "Which Rock Band Drums variant do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 / PS3 — Wired USB", "next": "R_NATIVE_NO_ADAPTER", "image": null, "flags": null },
-      { "label": "PS2 / PS3 — Wireless (USB dongle)", "next": "R_NATIVE_NO_ADAPTER", "image": null, "flags": null },
-      { "label": "Xbox 360 — Wireless (proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Xbox 360 — Wired USB", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Wii — Wired USB or wireless dongle", "next": "R_MINIHOST", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_GH_DRUMS_PS2", "text": "Which Guitar Hero Drums variant do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_NATIVE_NO_ADAPTER", "image": null, "flags": null },
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_DANCE_PAD_PS2", "text": "Which type of Dance Pad do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 9-pin connector", "next": "R_NATIVE_NO_ADAPTER", "image": null, "flags": null },
-      { "label": "USB connection", "next": "R_MINIHOST", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_DJ_PS2", "text": "Which DJ Hero Turntable variant do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_NATIVE_NO_ADAPTER", "image": null, "flags": null },
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_RB_DRUMS_PS3", "text": "Which Rock Band Drums variant do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 / PS3 — Wired USB", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "PS2 / PS3 — Wireless (USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "Xbox 360 — Wireless (proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Xbox 360 — Wired USB", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Wii — Wired USB or wireless dongle", "next": "R_MINIHOST", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_GH_DRUMS_PS3", "text": "Which Guitar Hero Drums variant do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_PRO_MIDI_PS3", "text": "How are you connecting your MIDI instrument?", "multiSelect": false, "answers": [
-      { "label": "USB-MIDI connection", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Standard MIDI (5-pin DIN)", "next": "R_ACE", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_KEYTAR_PS3", "text": "Which Keytar variant do you have?", "multiSelect": false, "answers": [
-      { "label": "PS3 (wireless USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null },
-      { "label": "Via MIDI connection", "next": "R_ACE", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_PRO_GUITAR_PS3", "text": "How are you connecting your Pro Guitar?", "multiSelect": false, "answers": [
-      { "label": "USB connection", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "Standard MIDI (5-pin DIN)", "next": "R_ACE", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_DANCE_PAD_PS3", "text": "Which type of Dance Pad do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 9-pin connector", "next": "R_PS2_TO_USB", "image": null, "flags": null },
-      { "label": "USB connection", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_DJ_PS3", "text": "Which DJ Hero Turntable variant do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_RB_DRUMS_PS45", "text": "Which Rock Band Drums variant do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 / PS3 — Wired USB", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "PS2 / PS3 — Wireless (USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Xbox 360 — Wireless (proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Xbox 360 — Wired USB", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Wii — Wired USB or wireless dongle", "next": "R_MINIHOST", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_GH_DRUMS_PS45", "text": "Which Guitar Hero Drums variant do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_DANCE_PAD_PS45", "text": "Which type of Dance Pad do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 9-pin connector", "next": "R_PS2_TO_USB", "image": null, "flags": null },
-      { "label": "USB connection", "next": "R_MINIHOST", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_DJ_PS45", "text": "Which DJ Hero Turntable variant do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_RB_DRUMS_X360", "text": "Which Rock Band Drums variant do you have?", "multiSelect": false, "answers": [
-      { "label": "Xbox 360 — Wired USB", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "Xbox 360 — Wireless (proprietary)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "PS2 / PS3 — Wired or wireless USB", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Wii — Wired or wireless USB", "next": "R_MINIHOST", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_GH_DRUMS_X360", "text": "Which Guitar Hero Drums variant do you have?", "multiSelect": false, "answers": [
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_PRO_MIDI_X360", "text": "How are you connecting your MIDI instrument?", "multiSelect": false, "answers": [
-      { "label": "USB-MIDI connection", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Standard MIDI (5-pin DIN)", "next": "R_ACE", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_KEYTAR_X360", "text": "Which Keytar variant do you have?", "multiSelect": false, "answers": [
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null },
-      { "label": "Via MIDI connection", "next": "R_ACE", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_PRO_GUITAR_X360", "text": "How are you connecting your Pro Guitar?", "multiSelect": false, "answers": [
-      { "label": "USB connection", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "Standard MIDI (5-pin DIN)", "next": "R_ACE", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_DANCE_PAD_X360", "text": "Which type of Dance Pad do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 9-pin connector", "next": "R_PS2_TO_USB", "image": null, "flags": null },
-      { "label": "USB connection", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_DJ_X360", "text": "Which DJ Hero Turntable variant do you have?", "multiSelect": false, "answers": [
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_RB_DRUMS_XONE", "text": "Which Rock Band Drums variant do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 / PS3 — Wired or wireless USB", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Xbox 360 — Wireless (proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Xbox 360 — Wired USB", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Wii — Wired or wireless USB", "next": "R_MINIHOST", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_GH_DRUMS_XONE", "text": "Which Guitar Hero Drums variant do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_DANCE_PAD_XONE", "text": "Which type of Dance Pad do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 9-pin connector", "next": "R_PS2_TO_USB", "image": null, "flags": null },
-      { "label": "USB connection", "next": "R_MINIHOST", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_RB_DRUMS_WII", "text": "Which Rock Band Drums variant do you have?", "multiSelect": false, "answers": [
-      { "label": "Wii — Wired USB", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "Wii — Wireless (USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "PS2 / PS3 — Wired or wireless USB", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Xbox 360 — Wireless (proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Xbox 360 — Wired USB", "next": "R_MINIHOST", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_GH_DRUMS_WII", "text": "Which Guitar Hero Drums variant do you have?", "multiSelect": false, "answers": [
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_PRO_MIDI_WII", "text": "How are you connecting your MIDI instrument?", "multiSelect": false, "answers": [
-      { "label": "USB-MIDI connection", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Standard MIDI (5-pin DIN)", "next": "R_ACE", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_KEYTAR_WII", "text": "Which Keytar variant do you have?", "multiSelect": false, "answers": [
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Via MIDI connection", "next": "R_ACE", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_PRO_GUITAR_WII", "text": "How are you connecting your Pro Guitar?", "multiSelect": false, "answers": [
-      { "label": "USB connection", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Standard MIDI (5-pin DIN)", "next": "R_ACE", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_DANCE_PAD_WII", "text": "Which type of Dance Pad do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 9-pin connector", "next": "R_PS2_TO_USB", "image": null, "flags": null },
-      { "label": "USB connection", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_DJ_WII", "text": "Which DJ Hero Turntable variant do you have?", "multiSelect": false, "answers": [
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_RB_DRUMS_PC", "text": "Which Rock Band Drums variant do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 / PS3 — Wired USB", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "PS2 / PS3 — Wireless (USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "Wii — Wired USB", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "Wii — Wireless (USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "Xbox 360 — Wired USB", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "Xbox 360 — Wireless (proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_GH_DRUMS_PC", "text": "Which Guitar Hero Drums variant do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_KEYTAR_PC", "text": "Which Keytar variant do you have?", "multiSelect": false, "answers": [
-      { "label": "PS3 (wireless USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null },
-      { "label": "Via MIDI connection", "next": "R_ACE", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_PRO_GUITAR_PC", "text": "How are you connecting your Pro Guitar?", "multiSelect": false, "answers": [
-      { "label": "USB connection", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "Standard MIDI (5-pin DIN)", "next": "R_ACE", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_DANCE_PAD_PC", "text": "Which type of Dance Pad do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 9-pin connector", "next": "R_PS2_TO_USB", "image": null, "flags": null },
-      { "label": "USB connection", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_DJ_PC", "text": "Which DJ Hero Turntable variant do you have?", "multiSelect": false, "answers": [
-      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
-      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
-      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
-    ]},
-
     {
-      "id": "Q_ALSO_ANOTHER_PLATFORM",
-      "text": "Your controller works natively on your platform — no adapter needed!\n\nWould you also like to use it on another platform?",
+      "id": "Q_RB_DRUMS_PS2",
+      "text": "Which Rock Band Drums variant do you have?",
       "multiSelect": false,
       "answers": [
-        { "label": "Yes — I want to use it elsewhere too", "next": "Q_SECOND_PLATFORM", "image": null, "flags": null },
-        { "label": "No — I'm all set!", "next": "R_NATIVE_NO_ADAPTER", "image": null, "flags": null }
+        {
+          "label": "PS2 / PS3 \u2014 Wired USB",
+          "next": "R_NATIVE_NO_ADAPTER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PS2 / PS3 \u2014 Wireless (USB dongle)",
+          "next": "R_NATIVE_NO_ADAPTER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 \u2014 Wireless (proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 \u2014 Wired USB",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii \u2014 Wired USB or wireless dongle",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
+    {
+      "id": "Q_GH_DRUMS_PS2",
+      "text": "Which Guitar Hero Drums variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 / PS3 (wireless USB dongle)",
+          "next": "R_NATIVE_NO_ADAPTER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_DANCE_PAD_PS2",
+      "text": "Which type of Dance Pad do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 9-pin connector",
+          "next": "R_NATIVE_NO_ADAPTER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "USB connection",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_DJ_PS2",
+      "text": "Which DJ Hero Turntable variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 / PS3 (wireless USB dongle)",
+          "next": "R_NATIVE_NO_ADAPTER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_RB_DRUMS_PS3",
+      "text": "Which Rock Band Drums variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 / PS3 \u2014 Wired USB",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PS2 / PS3 \u2014 Wireless (USB dongle)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 \u2014 Wireless (proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 \u2014 Wired USB",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii \u2014 Wired USB or wireless dongle",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_GH_DRUMS_PS3",
+      "text": "Which Guitar Hero Drums variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 / PS3 (wireless USB dongle)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_PRO_MIDI_PS3",
+      "text": "How are you connecting your MIDI instrument?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "USB-MIDI connection",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Standard MIDI (5-pin DIN)",
+          "next": "R_ACE",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_KEYTAR_PS3",
+      "text": "Which Keytar variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS3 (wireless USB dongle)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Via MIDI connection",
+          "next": "R_ACE",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_PRO_GUITAR_PS3",
+      "text": "How are you connecting your Pro Guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "USB connection",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Standard MIDI (5-pin DIN)",
+          "next": "R_ACE",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_DANCE_PAD_PS3",
+      "text": "Which type of Dance Pad do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 9-pin connector",
+          "next": "R_PS2_TO_USB",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "USB connection",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_DJ_PS3",
+      "text": "Which DJ Hero Turntable variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 / PS3 (wireless USB dongle)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_RB_DRUMS_PS45",
+      "text": "Which Rock Band Drums variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 / PS3 \u2014 Wired USB",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PS2 / PS3 \u2014 Wireless (USB dongle)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 \u2014 Wireless (proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 \u2014 Wired USB",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii \u2014 Wired USB or wireless dongle",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_GH_DRUMS_PS45",
+      "text": "Which Guitar Hero Drums variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 / PS3 (wireless USB dongle)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_DANCE_PAD_PS45",
+      "text": "Which type of Dance Pad do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 9-pin connector",
+          "next": "R_PS2_TO_USB",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "USB connection",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_DJ_PS45",
+      "text": "Which DJ Hero Turntable variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 / PS3 (wireless USB dongle)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_RB_DRUMS_X360",
+      "text": "Which Rock Band Drums variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Xbox 360 \u2014 Wired USB",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 \u2014 Wireless (proprietary)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PS2 / PS3 \u2014 Wired or wireless USB",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii \u2014 Wired or wireless USB",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_GH_DRUMS_X360",
+      "text": "Which Guitar Hero Drums variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PS2 / PS3 (wireless USB dongle)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_PRO_MIDI_X360",
+      "text": "How are you connecting your MIDI instrument?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "USB-MIDI connection",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Standard MIDI (5-pin DIN)",
+          "next": "R_ACE",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_KEYTAR_X360",
+      "text": "Which Keytar variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PS3 (wireless USB dongle)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Via MIDI connection",
+          "next": "R_ACE",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_PRO_GUITAR_X360",
+      "text": "How are you connecting your Pro Guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "USB connection",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Standard MIDI (5-pin DIN)",
+          "next": "R_ACE",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_DANCE_PAD_X360",
+      "text": "Which type of Dance Pad do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 9-pin connector",
+          "next": "R_PS2_TO_USB",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "USB connection",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_DJ_X360",
+      "text": "Which DJ Hero Turntable variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PS2 / PS3 (wireless USB dongle)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_RB_DRUMS_XONE",
+      "text": "Which Rock Band Drums variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 / PS3 \u2014 Wired or wireless USB",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 \u2014 Wireless (proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 \u2014 Wired USB",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii \u2014 Wired or wireless USB",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_GH_DRUMS_XONE",
+      "text": "Which Guitar Hero Drums variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 / PS3 (wireless USB dongle)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_DANCE_PAD_XONE",
+      "text": "Which type of Dance Pad do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 9-pin connector",
+          "next": "R_PS2_TO_USB",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "USB connection",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_RB_DRUMS_WII",
+      "text": "Which Rock Band Drums variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Wii \u2014 Wired USB",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii \u2014 Wireless (USB dongle)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PS2 / PS3 \u2014 Wired or wireless USB",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 \u2014 Wireless (proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 \u2014 Wired USB",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_GH_DRUMS_WII",
+      "text": "Which Guitar Hero Drums variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PS2 / PS3 (wireless USB dongle)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_PRO_MIDI_WII",
+      "text": "How are you connecting your MIDI instrument?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "USB-MIDI connection",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Standard MIDI (5-pin DIN)",
+          "next": "R_ACE",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_KEYTAR_WII",
+      "text": "Which Keytar variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PS3 (wireless USB dongle)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Via MIDI connection",
+          "next": "R_ACE",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_PRO_GUITAR_WII",
+      "text": "How are you connecting your Pro Guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "USB connection",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Standard MIDI (5-pin DIN)",
+          "next": "R_ACE",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_DANCE_PAD_WII",
+      "text": "Which type of Dance Pad do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 9-pin connector",
+          "next": "R_PS2_TO_USB",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "USB connection",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_DJ_WII",
+      "text": "Which DJ Hero Turntable variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PS2 / PS3 (wireless USB dongle)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_RB_DRUMS_PC",
+      "text": "Which Rock Band Drums variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 / PS3 \u2014 Wired USB",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PS2 / PS3 \u2014 Wireless (USB dongle)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii \u2014 Wired USB",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii \u2014 Wireless (USB dongle)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 \u2014 Wired USB",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 \u2014 Wireless (proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_GH_DRUMS_PC",
+      "text": "Which Guitar Hero Drums variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 / PS3 (wireless USB dongle)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_KEYTAR_PC",
+      "text": "Which Keytar variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS3 (wireless USB dongle)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Via MIDI connection",
+          "next": "R_ACE",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_PRO_GUITAR_PC",
+      "text": "How are you connecting your Pro Guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "USB connection",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Standard MIDI (5-pin DIN)",
+          "next": "R_ACE",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_DANCE_PAD_PC",
+      "text": "Which type of Dance Pad do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 9-pin connector",
+          "next": "R_PS2_TO_USB",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "USB connection",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_DJ_PC",
+      "text": "Which DJ Hero Turntable variant do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "PS2 / PS3 (wireless USB dongle)",
+          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 (wireless, proprietary)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Wii (wireless via Wiimote Nunchuk)",
+          "next": "R_V3",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_ALSO_ANOTHER_PLATFORM",
+      "text": "Your controller works natively on your platform \u2014 no adapter needed!\n\nWould you also like to use it on another platform?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 I want to use it elsewhere too",
+          "next": "Q_SECOND_PLATFORM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "No \u2014 I'm all set!",
+          "next": "R_NATIVE_NO_ADAPTER",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
     {
       "id": "Q_SECOND_PLATFORM",
       "text": "Which other platform do you want to use it on?",
       "multiSelect": false,
       "answers": [
-        { "label": "PlayStation (PS3 / PS4 / PS5)", "next": "R_MINIHOST", "image": null, "flags": null },
-        { "label": "Xbox One / Series", "next": "R_MINIHOST", "image": null, "flags": null },
-        { "label": "Nintendo Switch", "next": "R_MINIHOST", "image": null, "flags": null },
-        { "label": "PC or Mac", "next": "R_MINIHOST", "image": null, "flags": null },
-        { "label": "Xbox 360 (wireless controller)", "next": "R_360_RECEIVER", "image": null, "flags": null }
+        {
+          "label": "PlayStation (PS3 / PS4 / PS5)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox One / Series",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Nintendo Switch",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PC or Mac",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox 360 (wireless controller)",
+          "next": "R_360_RECEIVER",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
     {
       "id": "Q_GUITAR_MODEL_PS2",
       "text": "Which guitar model do you have?",
       "multiSelect": false,
       "answers": [
-        { "label": "SG Guitar", "next": "Q_MOD_SG", "image": null, "flags": null },
-        { "label": "World Tour Guitar", "next": "Q_MOD_WT", "image": null, "flags": null },
-        { "label": "GH5 Guitar", "next": "Q_MOD_GH5", "image": null, "flags": null },
-        { "label": "Kramer Guitar", "next": "Q_MOD_KRAMER", "image": null, "flags": null },
-        { "label": "MayFlash Guitar", "next": "Q_MOD_MAYFLASH", "image": null, "flags": null },
-        { "label": "Rock Band Stratocaster", "next": "Q_MOD_RBSTRAT", "image": null, "flags": null }
+        {
+          "label": "SG Guitar",
+          "next": "Q_MOD_SG",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "World Tour Guitar",
+          "next": "Q_MOD_WT",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "GH5 Guitar",
+          "next": "Q_MOD_GH5",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Kramer Guitar",
+          "next": "Q_MOD_KRAMER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "MayFlash Guitar",
+          "next": "Q_MOD_MAYFLASH",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Stratocaster",
+          "next": "Q_MOD_RBSTRAT",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
     {
       "id": "Q_GUITAR_MODEL_PS3",
       "text": "Which guitar model do you have?",
       "multiSelect": false,
       "answers": [
-        { "label": "Les Paul Guitar", "next": "Q_MOD_LP", "image": null, "flags": null },
-        { "label": "World Tour Guitar", "next": "Q_MOD_WT", "image": null, "flags": null },
-        { "label": "GH5 Guitar", "next": "Q_MOD_GH5", "image": null, "flags": null },
-        { "label": "Warriors of Rock Guitar", "next": "Q_MOD_WOR", "image": null, "flags": null },
-        { "label": "Rock Band Stratocaster", "next": "Q_MOD_RBSTRAT", "image": null, "flags": null }
+        {
+          "label": "Les Paul Guitar",
+          "next": "Q_MOD_LP",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "World Tour Guitar",
+          "next": "Q_MOD_WT",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "GH5 Guitar",
+          "next": "Q_MOD_GH5",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Warriors of Rock Guitar",
+          "next": "Q_MOD_WOR",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Stratocaster",
+          "next": "Q_MOD_RBSTRAT",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
     {
       "id": "Q_GUITAR_MODEL_PS45",
       "text": "Which guitar model do you have?",
       "multiSelect": false,
       "answers": [
-        { "label": "Riffmaster", "next": "Q_MOD_RIFFMASTER", "image": null, "flags": null },
-        { "label": "CRKD Guitar", "next": "Q_MOD_CRKD", "image": null, "flags": null },
-        { "label": "Les Paul Guitar (PS3 variant)", "next": "Q_MOD_LP", "image": null, "flags": null },
-        { "label": "World Tour Guitar (PS3 variant)", "next": "Q_MOD_WT", "image": null, "flags": null },
-        { "label": "GH5 Guitar (PS3 variant)", "next": "Q_MOD_GH5", "image": null, "flags": null },
-        { "label": "Rock Band Stratocaster (PS3 variant)", "next": "Q_MOD_RBSTRAT", "image": null, "flags": null }
+        {
+          "label": "Riffmaster",
+          "next": "Q_MOD_RIFFMASTER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "CRKD Guitar",
+          "next": "Q_MOD_CRKD",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Les Paul Guitar (PS3 variant)",
+          "next": "Q_MOD_LP",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "World Tour Guitar (PS3 variant)",
+          "next": "Q_MOD_WT",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "GH5 Guitar (PS3 variant)",
+          "next": "Q_MOD_GH5",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Stratocaster (PS3 variant)",
+          "next": "Q_MOD_RBSTRAT",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
     {
       "id": "Q_GUITAR_MODEL_X360",
       "text": "Which guitar model do you have?",
       "multiSelect": false,
       "answers": [
-        { "label": "Les Paul Guitar", "next": "Q_MOD_LP", "image": null, "flags": null },
-        { "label": "World Tour Guitar", "next": "Q_MOD_WT", "image": null, "flags": null },
-        { "label": "GH5 Guitar", "next": "Q_MOD_GH5", "image": null, "flags": null },
-        { "label": "Xplorer Guitar", "next": "Q_MOD_XPLORER", "image": null, "flags": null },
-        { "label": "Warriors of Rock Guitar", "next": "Q_MOD_WOR", "image": null, "flags": null },
-        { "label": "Rock Band Stratocaster", "next": "Q_MOD_RBSTRAT", "image": null, "flags": null }
+        {
+          "label": "Les Paul Guitar",
+          "next": "Q_MOD_LP",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "World Tour Guitar",
+          "next": "Q_MOD_WT",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "GH5 Guitar",
+          "next": "Q_MOD_GH5",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xplorer Guitar",
+          "next": "Q_MOD_XPLORER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Warriors of Rock Guitar",
+          "next": "Q_MOD_WOR",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Stratocaster",
+          "next": "Q_MOD_RBSTRAT",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
     {
       "id": "Q_GUITAR_MODEL_XONE",
       "text": "Which guitar model do you have?",
       "multiSelect": false,
       "answers": [
-        { "label": "Riffmaster", "next": "Q_MOD_RIFFMASTER", "image": null, "flags": null },
-        { "label": "CRKD Guitar", "next": "Q_MOD_CRKD", "image": null, "flags": null },
-        { "label": "Les Paul Guitar (PS3 variant)", "next": "Q_MOD_LP", "image": null, "flags": null },
-        { "label": "World Tour Guitar (PS3 variant)", "next": "Q_MOD_WT", "image": null, "flags": null },
-        { "label": "Rock Band Stratocaster (PS3 variant)", "next": "Q_MOD_RBSTRAT", "image": null, "flags": null }
+        {
+          "label": "Riffmaster",
+          "next": "Q_MOD_RIFFMASTER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "CRKD Guitar",
+          "next": "Q_MOD_CRKD",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Les Paul Guitar (PS3 variant)",
+          "next": "Q_MOD_LP",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "World Tour Guitar (PS3 variant)",
+          "next": "Q_MOD_WT",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Stratocaster (PS3 variant)",
+          "next": "Q_MOD_RBSTRAT",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
     {
       "id": "Q_GUITAR_MODEL_WII",
       "text": "Which guitar model do you have?",
       "multiSelect": false,
       "answers": [
-        { "label": "Les Paul Guitar", "next": "Q_MOD_LP", "image": null, "flags": null },
-        { "label": "World Tour Guitar", "next": "Q_MOD_WT", "image": null, "flags": null },
-        { "label": "GH5 Guitar", "next": "Q_MOD_GH5", "image": null, "flags": null },
-        { "label": "Warriors of Rock Guitar", "next": "Q_MOD_WOR", "image": null, "flags": null },
-        { "label": "Rock Band Stratocaster", "next": "Q_MOD_RBSTRAT", "image": null, "flags": null }
+        {
+          "label": "Les Paul Guitar",
+          "next": "Q_MOD_LP",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "World Tour Guitar",
+          "next": "Q_MOD_WT",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "GH5 Guitar",
+          "next": "Q_MOD_GH5",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Warriors of Rock Guitar",
+          "next": "Q_MOD_WOR",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Stratocaster",
+          "next": "Q_MOD_RBSTRAT",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
     {
       "id": "Q_GUITAR_MODEL_PC",
       "text": "Which guitar model do you have?",
       "multiSelect": false,
       "answers": [
-        { "label": "Les Paul Guitar (PS3 variant)", "next": "Q_MOD_LP", "image": null, "flags": null },
-        { "label": "World Tour Guitar (PS3 variant)", "next": "Q_MOD_WT", "image": null, "flags": null },
-        { "label": "GH5 Guitar (PS3 variant)", "next": "Q_MOD_GH5", "image": null, "flags": null },
-        { "label": "Xplorer Guitar", "next": "Q_MOD_XPLORER", "image": null, "flags": null },
-        { "label": "Rock Band Stratocaster (PS3 or Wii variant)", "next": "Q_MOD_RBSTRAT", "image": null, "flags": null },
-        { "label": "Riffmaster", "next": "Q_MOD_RIFFMASTER", "image": null, "flags": null },
-        { "label": "CRKD Guitar", "next": "Q_MOD_CRKD", "image": null, "flags": null },
-        { "label": "Kramer Guitar (PS2 variant)", "next": "Q_MOD_KRAMER", "image": null, "flags": null },
-        { "label": "MayFlash Guitar (PS2 variant)", "next": "Q_MOD_MAYFLASH", "image": null, "flags": null }
+        {
+          "label": "Les Paul Guitar (PS3 variant)",
+          "next": "Q_MOD_LP",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "World Tour Guitar (PS3 variant)",
+          "next": "Q_MOD_WT",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "GH5 Guitar (PS3 variant)",
+          "next": "Q_MOD_GH5",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xplorer Guitar",
+          "next": "Q_MOD_XPLORER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Stratocaster (PS3 or Wii variant)",
+          "next": "Q_MOD_RBSTRAT",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Riffmaster",
+          "next": "Q_MOD_RIFFMASTER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "CRKD Guitar",
+          "next": "Q_MOD_CRKD",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Kramer Guitar (PS2 variant)",
+          "next": "Q_MOD_KRAMER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "MayFlash Guitar (PS2 variant)",
+          "next": "Q_MOD_MAYFLASH",
+          "image": null,
+          "flags": null
+        }
       ]
     },
-
-    { "id": "Q_MOD_LP",       "text": "Would you like to mod your Les Paul Guitar?",           "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-lp"] },       { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-lp"] }] },
-    { "id": "Q_MOD_WT",       "text": "Would you like to mod your World Tour Guitar?",         "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-wt"] },       { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-wt"] }] },
-    { "id": "Q_MOD_GH5",      "text": "Would you like to mod your GH5 Guitar?",                "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-gh5"] },      { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-gh5"] }] },
-    { "id": "Q_MOD_XPLORER",  "text": "Would you like to mod your Xplorer Guitar?",            "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-xplorer"] },  { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-xplorer"] }] },
-    { "id": "Q_MOD_SG",       "text": "Would you like to mod your SG Guitar?",                  "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-sg"] },       { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-sg"] }] },
-    { "id": "Q_MOD_KRAMER",   "text": "Would you like to mod your Kramer Guitar?",              "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-kramer"] },   { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-kramer"] }] },
-    { "id": "Q_MOD_MAYFLASH", "text": "Would you like to mod your MayFlash Guitar?",            "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-mayflash"] }, { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-mayflash"] }] },
-    { "id": "Q_MOD_WOR",      "text": "Would you like to mod your Warriors of Rock Guitar?",    "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-wor"] },      { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-wor"] }] },
-    { "id": "Q_MOD_RBSTRAT",  "text": "Would you like to mod your Rock Band Stratocaster?",     "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-rbstrat"] },  { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-rbstrat"] }] },
-    { "id": "Q_MOD_RIFFMASTER","text": "Would you like to mod your Riffmaster?",                "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-riffmaster"] },{ "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-riffmaster"] }] },
-    { "id": "Q_MOD_CRKD",     "text": "Would you like to mod your CRKD Guitar?",                "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-crkd"] },     { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-crkd"] }] },
-
-    { "id": "Q_RGB_STRUM", "text": "Would you like an RGB Strum Bar in your mod kit?", "multiSelect": false, "answers": [
-      { "label": "Yes — RGB Strum Bar", "next": "R_SOLDERLESS_RGB", "image": null, "flags": null },
-      { "label": "No — standard strum bar", "next": "Q_SOLDER", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_SOLDER", "text": "Are you comfortable with soldering?", "multiSelect": false, "answers": [
-      { "label": "Yes — I can solder (DIY kit)", "next": "Q_RGB_FRETS", "image": null, "flags": null },
-      { "label": "No — solderless kit please", "next": "R_SOLDERLESS_NORGB", "image": null, "flags": null }
-    ]},
-
-    { "id": "Q_RGB_FRETS", "text": "Would you like RGB Frets in your DIY mod kit?", "multiSelect": false, "answers": [
-      { "label": "Yes — RGB Frets", "next": "R_DIY_RGB", "image": null, "flags": null },
-      { "label": "No — standard frets", "next": "R_DIY_STANDARD", "image": null, "flags": null }
-    ]}
-
+    {
+      "id": "Q_MOD_LP",
+      "text": "Would you like to mod your Les Paul Guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 mod it",
+          "next": "Q_RGB_STRUM",
+          "image": null,
+          "flags": [
+            "mod-lp"
+          ]
+        },
+        {
+          "label": "No \u2014 keep it stock",
+          "next": "R_STOCK_GUITAR",
+          "image": null,
+          "flags": [
+            "stock-lp"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q_MOD_WT",
+      "text": "Would you like to mod your World Tour Guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 mod it",
+          "next": "Q_RGB_STRUM",
+          "image": null,
+          "flags": [
+            "mod-wt"
+          ]
+        },
+        {
+          "label": "No \u2014 keep it stock",
+          "next": "R_STOCK_GUITAR",
+          "image": null,
+          "flags": [
+            "stock-wt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q_MOD_GH5",
+      "text": "Would you like to mod your GH5 Guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 mod it",
+          "next": "Q_RGB_STRUM",
+          "image": null,
+          "flags": [
+            "mod-gh5"
+          ]
+        },
+        {
+          "label": "No \u2014 keep it stock",
+          "next": "R_STOCK_GUITAR",
+          "image": null,
+          "flags": [
+            "stock-gh5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q_MOD_XPLORER",
+      "text": "Would you like to mod your Xplorer Guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 mod it",
+          "next": "Q_RGB_STRUM",
+          "image": null,
+          "flags": [
+            "mod-xplorer"
+          ]
+        },
+        {
+          "label": "No \u2014 keep it stock",
+          "next": "R_STOCK_GUITAR",
+          "image": null,
+          "flags": [
+            "stock-xplorer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q_MOD_SG",
+      "text": "Would you like to mod your SG Guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 mod it",
+          "next": "Q_RGB_STRUM",
+          "image": null,
+          "flags": [
+            "mod-sg"
+          ]
+        },
+        {
+          "label": "No \u2014 keep it stock",
+          "next": "R_STOCK_GUITAR",
+          "image": null,
+          "flags": [
+            "stock-sg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q_MOD_KRAMER",
+      "text": "Would you like to mod your Kramer Guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 mod it",
+          "next": "Q_RGB_STRUM",
+          "image": null,
+          "flags": [
+            "mod-kramer"
+          ]
+        },
+        {
+          "label": "No \u2014 keep it stock",
+          "next": "R_STOCK_GUITAR",
+          "image": null,
+          "flags": [
+            "stock-kramer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q_MOD_MAYFLASH",
+      "text": "Would you like to mod your MayFlash Guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 mod it",
+          "next": "Q_RGB_STRUM",
+          "image": null,
+          "flags": [
+            "mod-mayflash"
+          ]
+        },
+        {
+          "label": "No \u2014 keep it stock",
+          "next": "R_STOCK_GUITAR",
+          "image": null,
+          "flags": [
+            "stock-mayflash"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q_MOD_WOR",
+      "text": "Would you like to mod your Warriors of Rock Guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 mod it",
+          "next": "Q_RGB_STRUM",
+          "image": null,
+          "flags": [
+            "mod-wor"
+          ]
+        },
+        {
+          "label": "No \u2014 keep it stock",
+          "next": "R_STOCK_GUITAR",
+          "image": null,
+          "flags": [
+            "stock-wor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q_MOD_RBSTRAT",
+      "text": "Would you like to mod your Rock Band Stratocaster?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 mod it",
+          "next": "Q_RGB_STRUM",
+          "image": null,
+          "flags": [
+            "mod-rbstrat"
+          ]
+        },
+        {
+          "label": "No \u2014 keep it stock",
+          "next": "R_STOCK_GUITAR",
+          "image": null,
+          "flags": [
+            "stock-rbstrat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q_MOD_RIFFMASTER",
+      "text": "Would you like to mod your Riffmaster?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 mod it",
+          "next": "Q_RGB_STRUM",
+          "image": null,
+          "flags": [
+            "mod-riffmaster"
+          ]
+        },
+        {
+          "label": "No \u2014 keep it stock",
+          "next": "R_STOCK_GUITAR",
+          "image": null,
+          "flags": [
+            "stock-riffmaster"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q_MOD_CRKD",
+      "text": "Would you like to mod your CRKD Guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 mod it",
+          "next": "Q_RGB_STRUM",
+          "image": null,
+          "flags": [
+            "mod-crkd"
+          ]
+        },
+        {
+          "label": "No \u2014 keep it stock",
+          "next": "R_STOCK_GUITAR",
+          "image": null,
+          "flags": [
+            "stock-crkd"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Q_RGB_STRUM",
+      "text": "Would you like an RGB Strum Bar in your mod kit?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 RGB Strum Bar",
+          "next": "R_SOLDERLESS_RGB",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "No \u2014 standard strum bar",
+          "next": "Q_SOLDER",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_SOLDER",
+      "text": "Are you comfortable with soldering?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 I can solder (DIY kit)",
+          "next": "Q_RGB_FRETS",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "No \u2014 solderless kit please",
+          "next": "R_SOLDERLESS_NORGB",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_RGB_FRETS",
+      "text": "Would you like RGB Frets in your DIY mod kit?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 RGB Frets",
+          "next": "R_DIY_RGB",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "No \u2014 standard frets",
+          "next": "R_DIY_STANDARD",
+          "image": null,
+          "flags": null
+        }
+      ]
+    }
   ],
-
   "results": [
-
     {
       "id": "R_NATIVE_NO_ADAPTER",
       "title": "You're All Set!",
@@ -690,36 +2238,53 @@ const QUIZ_DATA = {
       "image": "",
       "flagNotes": [],
       "ctas": [
-        { "label": "Browse All Products", "url": "https://www.retrocultmods.com", "style": "primary" }
+        {
+          "label": "Browse All Products",
+          "url": "https://www.retrocultmods.com",
+          "style": "primary"
+        }
       ]
     },
-
     {
       "id": "R_STOCK_GUITAR",
-      "title": "Stock Guitar — Connection Info",
+      "title": "Stock Guitar \u2014 Connection Info",
       "subtitle": "No mod selected",
       "description": "Here's what you need to know about connecting your guitar. PS3 and Wii USB-dongle guitars work natively on their own consoles and on PC/Mac. Xbox 360 guitars work natively on Xbox 360. For cross-platform use, see the adapter options below.",
       "image": "",
       "flagNotes": [],
       "ctas": [
-        { "label": "Shop V3 Adapter (Wii / USB)", "url": "https://www.retrocultmods.com/products/v3-adapter", "style": "primary" },
-        { "label": "Shop MiniHost Adapter (USB)", "url": "https://www.retrocultmods.com/products/minihost-adapter", "style": "secondary" },
-        { "label": "Shop RCM 360 Receiver (Xbox 360 wireless)", "url": "https://www.retrocultmods.com/products/rcm-360-wireless-receiver", "style": "secondary" }
+        {
+          "label": "Shop V3 Adapter (Wii / USB)",
+          "url": "https://www.retrocultmods.com/products/v3-adapter",
+          "style": "primary"
+        },
+        {
+          "label": "Shop MiniHost Adapter (USB)",
+          "url": "https://www.retrocultmods.com/products/minihost-adapter",
+          "style": "secondary"
+        },
+        {
+          "label": "Shop RCM 360 Receiver (Xbox 360 wireless)",
+          "url": "https://www.retrocultmods.com/products/rcm-360-wireless-receiver",
+          "style": "secondary"
+        }
       ]
     },
-
     {
       "id": "R_PS2_HOST",
       "title": "PS2 Host Adapter",
       "subtitle": "Connect USB controllers to PlayStation 2",
-      "description": "The PS2 Host Adapter is the solution for playing Guitar Hero, Guitar Hero 2, Guitar Hero Encore: Rock the 80s, Guitar Hero 3, and Guitar Hero Aerosmith on PS2 with a USB controller. These games only support the PS2's proprietary 9-pin connector — the PS2 Host Adapter bridges that gap.",
+      "description": "The PS2 Host Adapter is the solution for playing Guitar Hero, Guitar Hero 2, Guitar Hero Encore: Rock the 80s, Guitar Hero 3, and Guitar Hero Aerosmith on PS2 with a USB controller. These games only support the PS2's proprietary 9-pin connector \u2014 the PS2 Host Adapter bridges that gap.",
       "image": "",
       "flagNotes": [],
       "ctas": [
-        { "label": "Shop PS2 Host Adapter", "url": "https://www.retrocultmods.com/products/ps2-host-adapter", "style": "primary" }
+        {
+          "label": "Shop PS2 Host Adapter",
+          "url": "https://www.retrocultmods.com/products/ps2-host-adapter",
+          "style": "primary"
+        }
       ]
     },
-
     {
       "id": "R_PS2_TO_USB",
       "title": "PS2 to USB Adapter",
@@ -728,10 +2293,13 @@ const QUIZ_DATA = {
       "image": "",
       "flagNotes": [],
       "ctas": [
-        { "label": "Shop PS2 to USB Adapter", "url": "https://www.retrocultmods.com/products/ps2-to-usb-adapter", "style": "primary" }
+        {
+          "label": "Shop PS2 to USB Adapter",
+          "url": "https://www.retrocultmods.com/products/ps2-to-usb-adapter",
+          "style": "primary"
+        }
       ]
     },
-
     {
       "id": "R_V3",
       "title": "V3 Adapter",
@@ -740,22 +2308,28 @@ const QUIZ_DATA = {
       "image": "",
       "flagNotes": [],
       "ctas": [
-        { "label": "Shop V3 Adapter", "url": "https://www.retrocultmods.com/products/v3-adapter", "style": "primary" }
+        {
+          "label": "Shop V3 Adapter",
+          "url": "https://www.retrocultmods.com/products/v3-adapter",
+          "style": "primary"
+        }
       ]
     },
-
     {
       "id": "R_MINIHOST",
       "title": "MiniHost Adapter",
       "subtitle": "USB controller support across platforms",
-      "description": "The MiniHost Adapter supports USB controllers — both wired and wireless via USB dongle. Ideal for PS3 and Wii Rock Band and Guitar Hero instruments, Pro Guitars, Keytars, DJ Turntables, and other USB-based controllers you want to use on a different platform.",
+      "description": "The MiniHost Adapter supports USB controllers \u2014 both wired and wireless via USB dongle. Ideal for PS3 and Wii Rock Band and Guitar Hero instruments, Pro Guitars, Keytars, DJ Turntables, and other USB-based controllers you want to use on a different platform.",
       "image": "",
       "flagNotes": [],
       "ctas": [
-        { "label": "Shop MiniHost Adapter", "url": "https://www.retrocultmods.com/products/minihost-adapter", "style": "primary" }
+        {
+          "label": "Shop MiniHost Adapter",
+          "url": "https://www.retrocultmods.com/products/minihost-adapter",
+          "style": "primary"
+        }
       ]
     },
-
     {
       "id": "R_360_RECEIVER",
       "title": "RCM 360 Wireless Receiver",
@@ -764,10 +2338,13 @@ const QUIZ_DATA = {
       "image": "",
       "flagNotes": [],
       "ctas": [
-        { "label": "Shop RCM 360 Wireless Receiver", "url": "https://www.retrocultmods.com/products/rcm-360-wireless-receiver", "style": "primary" }
+        {
+          "label": "Shop RCM 360 Wireless Receiver",
+          "url": "https://www.retrocultmods.com/products/rcm-360-wireless-receiver",
+          "style": "primary"
+        }
       ]
     },
-
     {
       "id": "R_ACE",
       "title": "ACE Adapter",
@@ -776,71 +2353,93 @@ const QUIZ_DATA = {
       "image": "",
       "flagNotes": [],
       "ctas": [
-        { "label": "Shop ACE Adapter", "url": "https://www.retrocultmods.com/products/ace-adapter", "style": "primary" }
+        {
+          "label": "Shop ACE Adapter",
+          "url": "https://www.retrocultmods.com/products/ace-adapter",
+          "style": "primary"
+        }
       ]
     },
-
     {
       "id": "R_SWITCH",
-      "title": "Nintendo Switch — Guitar Support",
-      "subtitle": "Fortnite Festival · Guitar only",
+      "title": "Nintendo Switch \u2014 Guitar Support",
+      "subtitle": "Fortnite Festival \u00b7 Guitar only",
       "description": "The Nintendo Switch currently only supports Fortnite Festival, and only guitar is supported at this time. Most USB-dongle guitars will work via the MiniHost Adapter. Wii Nunchuk-based guitars require the V3 Adapter.",
       "image": "",
       "flagNotes": [],
       "ctas": [
-        { "label": "Shop MiniHost Adapter", "url": "https://www.retrocultmods.com/products/minihost-adapter", "style": "primary" },
-        { "label": "Shop V3 Adapter", "url": "https://www.retrocultmods.com/products/v3-adapter", "style": "secondary" }
+        {
+          "label": "Shop MiniHost Adapter",
+          "url": "https://www.retrocultmods.com/products/minihost-adapter",
+          "style": "primary"
+        },
+        {
+          "label": "Shop V3 Adapter",
+          "url": "https://www.retrocultmods.com/products/v3-adapter",
+          "style": "secondary"
+        }
       ]
     },
-
     {
       "id": "R_SOLDERLESS_RGB",
-      "title": "Solderless Revival Mod Kit — RGB Strum Bar",
-      "subtitle": "No soldering required · RGB Strum Bar included",
-      "description": "The Solderless Revival Mod Kit with RGB Strum Bar is the easiest way to breathe new life into your guitar. No soldering required — just swap the parts and you're ready to rock with a glowing strum bar.",
+      "title": "Solderless Revival Mod Kit \u2014 RGB Strum Bar",
+      "subtitle": "No soldering required \u00b7 RGB Strum Bar included",
+      "description": "The Solderless Revival Mod Kit with RGB Strum Bar is the easiest way to breathe new life into your guitar. No soldering required \u2014 just swap the parts and you're ready to rock with a glowing strum bar.",
       "image": "",
       "flagNotes": [],
       "ctas": [
-        { "label": "Shop Solderless RGB Strum Bar Kit", "url": "https://www.retrocultmods.com/collections/solderless-kits", "style": "primary" }
+        {
+          "label": "Shop Solderless RGB Strum Bar Kit",
+          "url": "https://www.retrocultmods.com/collections/solderless-kits",
+          "style": "primary"
+        }
       ]
     },
-
     {
       "id": "R_SOLDERLESS_NORGB",
-      "title": "Solderless Revival Mod Kit — Standard Strum Bar",
-      "subtitle": "No soldering required · Standard Strum Bar",
+      "title": "Solderless Revival Mod Kit \u2014 Standard Strum Bar",
+      "subtitle": "No soldering required \u00b7 Standard Strum Bar",
       "description": "The Solderless Revival Mod Kit with standard strum bar gives your guitar a fresh feel without any soldering tools. A clean, reliable upgrade that's beginner-friendly.",
       "image": "",
       "flagNotes": [],
       "ctas": [
-        { "label": "Shop Solderless Standard Kit", "url": "https://www.retrocultmods.com/collections/solderless-kits", "style": "primary" }
+        {
+          "label": "Shop Solderless Standard Kit",
+          "url": "https://www.retrocultmods.com/collections/solderless-kits",
+          "style": "primary"
+        }
       ]
     },
-
     {
       "id": "R_DIY_RGB",
-      "title": "DIY Mod Kit — RGB Frets",
-      "subtitle": "Soldering required · RGB Frets included",
+      "title": "DIY Mod Kit \u2014 RGB Frets",
+      "subtitle": "Soldering required \u00b7 RGB Frets included",
       "description": "The DIY Mod Kit with RGB Frets is for the hands-on player who wants full control over their build. Solder in the RGB fret buttons for a fully customized, glowing guitar that stands out on stage.",
       "image": "",
       "flagNotes": [],
       "ctas": [
-        { "label": "Shop DIY RGB Fret Kit", "url": "https://www.retrocultmods.com/collections/diy-kits", "style": "primary" }
+        {
+          "label": "Shop DIY RGB Fret Kit",
+          "url": "https://www.retrocultmods.com/collections/diy-kits",
+          "style": "primary"
+        }
       ]
     },
-
     {
       "id": "R_DIY_STANDARD",
-      "title": "DIY Mod Kit — Standard Frets",
-      "subtitle": "Soldering required · Standard Frets",
+      "title": "DIY Mod Kit \u2014 Standard Frets",
+      "subtitle": "Soldering required \u00b7 Standard Frets",
       "description": "The DIY Mod Kit with standard frets gives you a solid upgrade with a classic feel. Perfect for players comfortable with a soldering iron who want a clean, reliable build.",
       "image": "",
       "flagNotes": [],
       "ctas": [
-        { "label": "Shop DIY Standard Kit", "url": "https://www.retrocultmods.com/collections/diy-kits", "style": "primary" }
+        {
+          "label": "Shop DIY Standard Kit",
+          "url": "https://www.retrocultmods.com/collections/diy-kits",
+          "style": "primary"
+        }
       ]
     }
-
   ]
 }
 
