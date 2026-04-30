@@ -143,1671 +143,705 @@
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 const QUIZ_DATA = {
-  "startId": "Q1",
+  "startId": "Q_CONSOLE",
   "questions": [
+
     {
-      "id": "Q1",
-      "text": "What platforms will you be playing on?",
-      "multiSelect": true,
-      "answers": [
-        {
-          "label": "Xbox 360",
-          "next": "Q3",
-          "image": null
-        },
-        {
-          "label": "Xbox One/Series",
-          "next": "R7",
-          "image": null
-        },
-        {
-          "label": "Playstation 2",
-          "next": null,
-          "image": null
-        },
-        {
-          "label": "Playstation 3",
-          "next": null,
-          "image": null
-        },
-        {
-          "label": "Playstation 4/5",
-          "next": null,
-          "image": null
-        },
-        {
-          "label": "Nintendo Wii",
-          "next": null,
-          "image": null
-        },
-        {
-          "label": "Nintendo Switch (Guitar Only)",
-          "next": null,
-          "image": null
-        },
-        {
-          "label": "PC/Mac",
-          "next": null,
-          "image": null
-        }
-      ],
-      "comboRules": [
-        {
-          "selectedIds": [
-            "2"
-          ],
-          "next": "Q9",
-          "mode": "includes"
-        },
-        {
-          "selectedIds": [
-            "6"
-          ],
-          "next": "Q30",
-          "mode": "exact"
-        }
-      ],
-      "fallback": "Q16"
-    },
-    {
-      "id": "Q9",
-      "text": "Do you plan on playing any of the following Playstation 2 games?\n- Guitar Hero (the first one)\n- Guitar Hero II\n- Guitar Hero III\n- Guitar Hero Encore: Rock the 80s\n- Guitar Hero Aerosmith\n- Dance Dance Revolution (any)",
+      "id": "Q_CONSOLE",
+      "text": "Which platform are you playing on?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "Yes",
-          "next": "R10",
-          "image": null
-        },
-        {
-          "label": "No",
-          "next": "Q16",
-          "image": null
-        }
+        { "label": "PlayStation 2", "next": "Q_PS2_GAMES", "image": null, "flags": null },
+        { "label": "PlayStation 3", "next": "Q_CONTROLLER_PS3", "image": null, "flags": null },
+        { "label": "PlayStation 4 or 5", "next": "Q_CONTROLLER_PS45", "image": null, "flags": null },
+        { "label": "Xbox 360", "next": "Q_CONTROLLER_X360", "image": null, "flags": null },
+        { "label": "Xbox One or Series", "next": "Q_CONTROLLER_XONE", "image": null, "flags": null },
+        { "label": "Nintendo Wii", "next": "Q_CONTROLLER_WII", "image": null, "flags": null },
+        { "label": "Nintendo Switch", "next": "R_SWITCH", "image": null, "flags": null },
+        { "label": "PC or Mac", "next": "Q_CONTROLLER_PC", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q16",
-      "text": "What type of controller do you plan on using? (retake quiz if you plan on using more than one)",
+      "id": "Q_PS2_GAMES",
+      "text": "Are you playing any of these games?\n\nGuitar Hero, Guitar Hero 2, Guitar Hero Encore: Rock the 80s, Guitar Hero 3, or Guitar Hero Aerosmith",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "Guitar",
-          "next": "Q30",
-          "image": null
-        },
-        {
-          "label": "Rock Band Drums",
-          "next": "Q26",
-          "image": null
-        },
-        {
-          "label": "Guitar Hero Drums",
-          "next": "Q29",
-          "image": null
-        },
-        {
-          "label": "Pro Drums (e-kit) / Pro Keys (full size midi keyboard)",
-          "next": "R15",
-          "image": null
-        },
-        {
-          "label": "Keytar",
-          "next": "Q26",
-          "image": null
-        },
-        {
-          "label": "Pro Guitar",
-          "next": "Q26",
-          "image": null
-        },
-        {
-          "label": "Dance Pad",
-          "next": "Q28",
-          "image": null
-        },
-        {
-          "label": "DJ Hero Turntable",
-          "next": "Q29",
-          "image": null
-        }
+        { "label": "Yes — at least one of those games", "next": "Q_PS2_PROBLEM_CONTROLLER", "image": null, "flags": null },
+        { "label": "No — other PS2 titles only", "next": "Q_CONTROLLER_PS2", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q17",
-      "text": "Are you planning on modding your PS3 Les Paul guitar or keeping it stock??",
+      "id": "Q_PS2_PROBLEM_CONTROLLER",
+      "text": "What type of controller are you using to play those games?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "Modding the guitar",
-          "next": "Q22",
-          "image": null
-        },
-        {
-          "label": "Keeping it Stock",
-          "next": "R11",
-          "image": null
-        }
+        { "label": "Guitar", "next": "Q_PS2_GUITAR_NATIVE", "image": null, "flags": null },
+        { "label": "Drums, Dance Pad, or other", "next": "R_PS2_HOST", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q21",
-      "text": "Do you know how to solder/do you want to solder?",
+      "id": "Q_PS2_GUITAR_NATIVE",
+      "text": "Which guitar are you using?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "No/I don't want to",
-          "next": "R25",
-          "image": null
-        },
-        {
-          "label": "Yes",
-          "next": "Q24",
-          "image": null
-        }
+        { "label": "SG Guitar (wired PS2 connector)", "next": "Q_CONTROLLER_PS2", "image": null, "flags": null },
+        { "label": "World Tour Guitar (PS2 wireless dongle)", "next": "Q_CONTROLLER_PS2", "image": null, "flags": null },
+        { "label": "Kramer Guitar (PS2 wireless dongle)", "next": "Q_CONTROLLER_PS2", "image": null, "flags": null },
+        { "label": "MayFlash Guitar (PS2 wireless dongle)", "next": "Q_CONTROLLER_PS2", "image": null, "flags": null },
+        { "label": "A different guitar (USB or other)", "next": "R_PS2_HOST", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q22",
-      "text": "Do you want RGB strum bar?",
+      "id": "Q_CONTROLLER_PS2",
+      "text": "Which type of controller are you using on PS2?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "Yes (Revival Kit Only)",
-          "next": "R18",
-          "image": null
-        },
-        {
-          "label": "No",
-          "next": "Q21",
-          "image": null
-        }
+        { "label": "Guitar", "next": "Q_GUITAR_MODEL_PS2", "image": null, "flags": null },
+        { "label": "Rock Band Drums", "next": "Q_RB_DRUMS_PS2", "image": null, "flags": null },
+        { "label": "Guitar Hero Drums", "next": "Q_GH_DRUMS_PS2", "image": null, "flags": null },
+        { "label": "Dance Pad", "next": "Q_DANCE_PAD_PS2", "image": null, "flags": null },
+        { "label": "DJ Hero Turntable", "next": "Q_DJ_PS2", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q24",
-      "text": "Do you want RGB or Stock frets?",
+      "id": "Q_CONTROLLER_PS3",
+      "text": "Which type of controller are you using on PS3?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "RGB",
-          "next": "R19",
-          "image": null
-        },
-        {
-          "label": "Stock",
-          "next": "R23",
-          "image": null
-        }
+        { "label": "Guitar", "next": "Q_GUITAR_MODEL_PS3", "image": null, "flags": null },
+        { "label": "Rock Band Drums", "next": "Q_RB_DRUMS_PS3", "image": null, "flags": null },
+        { "label": "Guitar Hero Drums", "next": "Q_GH_DRUMS_PS3", "image": null, "flags": null },
+        { "label": "Pro Drums or Pro Keyboard (MIDI)", "next": "Q_PRO_MIDI_PS3", "image": null, "flags": null },
+        { "label": "Keytar", "next": "Q_KEYTAR_PS3", "image": null, "flags": null },
+        { "label": "Pro Guitar", "next": "Q_PRO_GUITAR_PS3", "image": null, "flags": null },
+        { "label": "Dance Pad", "next": "Q_DANCE_PAD_PS3", "image": null, "flags": null },
+        { "label": "DJ Hero Turntable", "next": "Q_DJ_PS3", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q26",
-      "text": "Will you be using a WIRELESS Xbox 360 version of the controller?",
+      "id": "Q_CONTROLLER_PS45",
+      "text": "Which type of controller are you using on PS4 or PS5?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "Yes",
-          "next": "R14",
-          "image": null
-        },
-        {
-          "label": "No",
-          "next": "R11",
-          "image": null
-        }
+        { "label": "Guitar", "next": "Q_GUITAR_MODEL_PS45", "image": null, "flags": null },
+        { "label": "Rock Band Drums", "next": "Q_RB_DRUMS_PS45", "image": null, "flags": null },
+        { "label": "Guitar Hero Drums", "next": "Q_GH_DRUMS_PS45", "image": null, "flags": null },
+        { "label": "Pro Drums or Pro Keyboard (MIDI)", "next": "R_ACE", "image": null, "flags": null },
+        { "label": "Dance Pad", "next": "Q_DANCE_PAD_PS45", "image": null, "flags": null },
+        { "label": "DJ Hero Turntable", "next": "Q_DJ_PS45", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q28",
-      "text": "Are you planning on using a PS1/PS2 Dance Pad or USB Dance Pad?",
+      "id": "Q_CONTROLLER_X360",
+      "text": "Which type of controller are you using on Xbox 360?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "PS1/PS2 Dance Pad (9-pin Playstation connector)",
-          "next": "R13",
-          "image": null
-        },
-        {
-          "label": "USB Dancepad",
-          "next": "R11",
-          "image": null
-        }
+        { "label": "Guitar", "next": "Q_GUITAR_MODEL_X360", "image": null, "flags": null },
+        { "label": "Rock Band Drums", "next": "Q_RB_DRUMS_X360", "image": null, "flags": null },
+        { "label": "Guitar Hero Drums", "next": "Q_GH_DRUMS_X360", "image": null, "flags": null },
+        { "label": "Pro Drums or Pro Keyboard (MIDI)", "next": "Q_PRO_MIDI_X360", "image": null, "flags": null },
+        { "label": "Keytar", "next": "Q_KEYTAR_X360", "image": null, "flags": null },
+        { "label": "Pro Guitar", "next": "Q_PRO_GUITAR_X360", "image": null, "flags": null },
+        { "label": "Dance Pad", "next": "Q_DANCE_PAD_X360", "image": null, "flags": null },
+        { "label": "DJ Hero Turntable", "next": "Q_DJ_X360", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q29",
-      "text": "Are you going to be using the Playstation, Xbox 360, or Wii version of the controller?",
+      "id": "Q_CONTROLLER_XONE",
+      "text": "Which type of controller are you using on Xbox One or Series?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "Playstation",
-          "next": "R11",
-          "image": null
-        },
-        {
-          "label": "Xbox 360",
-          "next": "R14",
-          "image": null
-        },
-        {
-          "label": "Wii",
-          "next": "R12",
-          "image": null
-        }
+        { "label": "Guitar", "next": "Q_GUITAR_MODEL_XONE", "image": null, "flags": null },
+        { "label": "Rock Band Drums", "next": "Q_RB_DRUMS_XONE", "image": null, "flags": null },
+        { "label": "Guitar Hero Drums", "next": "Q_GH_DRUMS_XONE", "image": null, "flags": null },
+        { "label": "Pro Drums or Pro Keyboard (MIDI)", "next": "R_ACE", "image": null, "flags": null },
+        { "label": "Dance Pad", "next": "Q_DANCE_PAD_XONE", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q30",
-      "text": "Which model of guitar are you using?",
+      "id": "Q_CONTROLLER_WII",
+      "text": "Which type of controller are you using on Wii?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "Les Paul",
-          "next": "Q32",
-          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/XBPSLesPaul.png"
-        },
-        {
-          "label": "World Tour",
-          "next": "Q36",
-          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/XBPSSunburst.png"
-        },
-        {
-          "label": "GH5",
-          "next": "Q37",
-          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/XBPSGH5.png"
-        },
-        {
-          "label": "Xplorer",
-          "next": "Q31",
-          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/xplorer.png"
-        },
-        {
-          "label": "SG",
-          "next": "Q33",
-          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/sg.png"
-        },
-        {
-          "label": "Kramer",
-          "next": "Q33",
-          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/kramer.png"
-        },
-        {
-          "label": "MayFlash",
-          "next": "Q33",
-          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/mayflash.png"
-        },
-        {
-          "label": "Warriors of Rock",
-          "next": "Q35",
-          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/WiiWoR.png"
-        },
-        {
-          "label": "Rock Band Style Guitar (ex. Stratocaster)",
-          "next": "Q34",
-          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/Strat.png"
-        },
-        {
-          "label": "CRKD/Riffmaster (Modern Guitars)",
-          "next": "R11",
-          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/CRKD.png"
-        }
+        { "label": "Guitar", "next": "Q_GUITAR_MODEL_WII", "image": null, "flags": null },
+        { "label": "Rock Band Drums", "next": "Q_RB_DRUMS_WII", "image": null, "flags": null },
+        { "label": "Guitar Hero Drums", "next": "Q_GH_DRUMS_WII", "image": null, "flags": null },
+        { "label": "Pro Drums or Pro Keyboard (MIDI)", "next": "Q_PRO_MIDI_WII", "image": null, "flags": null },
+        { "label": "Keytar", "next": "Q_KEYTAR_WII", "image": null, "flags": null },
+        { "label": "Pro Guitar", "next": "Q_PRO_GUITAR_WII", "image": null, "flags": null },
+        { "label": "Dance Pad", "next": "Q_DANCE_PAD_WII", "image": null, "flags": null },
+        { "label": "DJ Hero Turntable", "next": "Q_DJ_WII", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q31",
-      "text": "Are you planning on modding your Xplorer or using it stock?",
+      "id": "Q_CONTROLLER_PC",
+      "text": "Which type of controller are you using on PC or Mac?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "Modding the Xplorer",
-          "next": "Q22",
-          "image": null
-        },
-        {
-          "label": "Stock",
-          "next": "R11",
-          "image": null
-        }
+        { "label": "Guitar", "next": "Q_GUITAR_MODEL_PC", "image": null, "flags": null },
+        { "label": "Rock Band Drums", "next": "Q_RB_DRUMS_PC", "image": null, "flags": null },
+        { "label": "Guitar Hero Drums", "next": "Q_GH_DRUMS_PC", "image": null, "flags": null },
+        { "label": "Pro Drums or Pro Keyboard (MIDI)", "next": "R_ACE", "image": null, "flags": null },
+        { "label": "Keytar", "next": "Q_KEYTAR_PC", "image": null, "flags": null },
+        { "label": "Pro Guitar", "next": "Q_PRO_GUITAR_PC", "image": null, "flags": null },
+        { "label": "Dance Pad", "next": "Q_DANCE_PAD_PC", "image": null, "flags": null },
+        { "label": "DJ Hero Turntable", "next": "Q_DJ_PC", "image": null, "flags": null }
       ]
     },
+
+    { "id": "Q_RB_DRUMS_PS2", "text": "Which Rock Band Drums variant do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 / PS3 — Wired USB", "next": "R_NATIVE_NO_ADAPTER", "image": null, "flags": null },
+      { "label": "PS2 / PS3 — Wireless (USB dongle)", "next": "R_NATIVE_NO_ADAPTER", "image": null, "flags": null },
+      { "label": "Xbox 360 — Wireless (proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Xbox 360 — Wired USB", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Wii — Wired USB or wireless dongle", "next": "R_MINIHOST", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_GH_DRUMS_PS2", "text": "Which Guitar Hero Drums variant do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_NATIVE_NO_ADAPTER", "image": null, "flags": null },
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_DANCE_PAD_PS2", "text": "Which type of Dance Pad do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 9-pin connector", "next": "R_NATIVE_NO_ADAPTER", "image": null, "flags": null },
+      { "label": "USB connection", "next": "R_MINIHOST", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_DJ_PS2", "text": "Which DJ Hero Turntable variant do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_NATIVE_NO_ADAPTER", "image": null, "flags": null },
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_RB_DRUMS_PS3", "text": "Which Rock Band Drums variant do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 / PS3 — Wired USB", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "PS2 / PS3 — Wireless (USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "Xbox 360 — Wireless (proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Xbox 360 — Wired USB", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Wii — Wired USB or wireless dongle", "next": "R_MINIHOST", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_GH_DRUMS_PS3", "text": "Which Guitar Hero Drums variant do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_PRO_MIDI_PS3", "text": "How are you connecting your MIDI instrument?", "multiSelect": false, "answers": [
+      { "label": "USB-MIDI connection", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Standard MIDI (5-pin DIN)", "next": "R_ACE", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_KEYTAR_PS3", "text": "Which Keytar variant do you have?", "multiSelect": false, "answers": [
+      { "label": "PS3 (wireless USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null },
+      { "label": "Via MIDI connection", "next": "R_ACE", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_PRO_GUITAR_PS3", "text": "How are you connecting your Pro Guitar?", "multiSelect": false, "answers": [
+      { "label": "USB connection", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "Standard MIDI (5-pin DIN)", "next": "R_ACE", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_DANCE_PAD_PS3", "text": "Which type of Dance Pad do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 9-pin connector", "next": "R_PS2_TO_USB", "image": null, "flags": null },
+      { "label": "USB connection", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_DJ_PS3", "text": "Which DJ Hero Turntable variant do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_RB_DRUMS_PS45", "text": "Which Rock Band Drums variant do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 / PS3 — Wired USB", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "PS2 / PS3 — Wireless (USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Xbox 360 — Wireless (proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Xbox 360 — Wired USB", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Wii — Wired USB or wireless dongle", "next": "R_MINIHOST", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_GH_DRUMS_PS45", "text": "Which Guitar Hero Drums variant do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_DANCE_PAD_PS45", "text": "Which type of Dance Pad do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 9-pin connector", "next": "R_PS2_TO_USB", "image": null, "flags": null },
+      { "label": "USB connection", "next": "R_MINIHOST", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_DJ_PS45", "text": "Which DJ Hero Turntable variant do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_RB_DRUMS_X360", "text": "Which Rock Band Drums variant do you have?", "multiSelect": false, "answers": [
+      { "label": "Xbox 360 — Wired USB", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "Xbox 360 — Wireless (proprietary)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "PS2 / PS3 — Wired or wireless USB", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Wii — Wired or wireless USB", "next": "R_MINIHOST", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_GH_DRUMS_X360", "text": "Which Guitar Hero Drums variant do you have?", "multiSelect": false, "answers": [
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_PRO_MIDI_X360", "text": "How are you connecting your MIDI instrument?", "multiSelect": false, "answers": [
+      { "label": "USB-MIDI connection", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Standard MIDI (5-pin DIN)", "next": "R_ACE", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_KEYTAR_X360", "text": "Which Keytar variant do you have?", "multiSelect": false, "answers": [
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null },
+      { "label": "Via MIDI connection", "next": "R_ACE", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_PRO_GUITAR_X360", "text": "How are you connecting your Pro Guitar?", "multiSelect": false, "answers": [
+      { "label": "USB connection", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "Standard MIDI (5-pin DIN)", "next": "R_ACE", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_DANCE_PAD_X360", "text": "Which type of Dance Pad do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 9-pin connector", "next": "R_PS2_TO_USB", "image": null, "flags": null },
+      { "label": "USB connection", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_DJ_X360", "text": "Which DJ Hero Turntable variant do you have?", "multiSelect": false, "answers": [
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_RB_DRUMS_XONE", "text": "Which Rock Band Drums variant do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 / PS3 — Wired or wireless USB", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Xbox 360 — Wireless (proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Xbox 360 — Wired USB", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Wii — Wired or wireless USB", "next": "R_MINIHOST", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_GH_DRUMS_XONE", "text": "Which Guitar Hero Drums variant do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_DANCE_PAD_XONE", "text": "Which type of Dance Pad do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 9-pin connector", "next": "R_PS2_TO_USB", "image": null, "flags": null },
+      { "label": "USB connection", "next": "R_MINIHOST", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_RB_DRUMS_WII", "text": "Which Rock Band Drums variant do you have?", "multiSelect": false, "answers": [
+      { "label": "Wii — Wired USB", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "Wii — Wireless (USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "PS2 / PS3 — Wired or wireless USB", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Xbox 360 — Wireless (proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Xbox 360 — Wired USB", "next": "R_MINIHOST", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_GH_DRUMS_WII", "text": "Which Guitar Hero Drums variant do you have?", "multiSelect": false, "answers": [
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_PRO_MIDI_WII", "text": "How are you connecting your MIDI instrument?", "multiSelect": false, "answers": [
+      { "label": "USB-MIDI connection", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Standard MIDI (5-pin DIN)", "next": "R_ACE", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_KEYTAR_WII", "text": "Which Keytar variant do you have?", "multiSelect": false, "answers": [
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Via MIDI connection", "next": "R_ACE", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_PRO_GUITAR_WII", "text": "How are you connecting your Pro Guitar?", "multiSelect": false, "answers": [
+      { "label": "USB connection", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Standard MIDI (5-pin DIN)", "next": "R_ACE", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_DANCE_PAD_WII", "text": "Which type of Dance Pad do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 9-pin connector", "next": "R_PS2_TO_USB", "image": null, "flags": null },
+      { "label": "USB connection", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_DJ_WII", "text": "Which DJ Hero Turntable variant do you have?", "multiSelect": false, "answers": [
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "R_MINIHOST", "image": null, "flags": null },
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_RB_DRUMS_PC", "text": "Which Rock Band Drums variant do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 / PS3 — Wired USB", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "PS2 / PS3 — Wireless (USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "Wii — Wired USB", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "Wii — Wireless (USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "Xbox 360 — Wired USB", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "Xbox 360 — Wireless (proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_GH_DRUMS_PC", "text": "Which Guitar Hero Drums variant do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_KEYTAR_PC", "text": "Which Keytar variant do you have?", "multiSelect": false, "answers": [
+      { "label": "PS3 (wireless USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null },
+      { "label": "Via MIDI connection", "next": "R_ACE", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_PRO_GUITAR_PC", "text": "How are you connecting your Pro Guitar?", "multiSelect": false, "answers": [
+      { "label": "USB connection", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "Standard MIDI (5-pin DIN)", "next": "R_ACE", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_DANCE_PAD_PC", "text": "Which type of Dance Pad do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 9-pin connector", "next": "R_PS2_TO_USB", "image": null, "flags": null },
+      { "label": "USB connection", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_DJ_PC", "text": "Which DJ Hero Turntable variant do you have?", "multiSelect": false, "answers": [
+      { "label": "PS2 / PS3 (wireless USB dongle)", "next": "Q_ALSO_ANOTHER_PLATFORM", "image": null, "flags": null },
+      { "label": "Xbox 360 (wireless, proprietary)", "next": "R_360_RECEIVER", "image": null, "flags": null },
+      { "label": "Wii (wireless via Wiimote Nunchuk)", "next": "R_V3", "image": null, "flags": null }
+    ]},
+
     {
-      "id": "Q32",
-      "text": "Which console variant is your Les Paul guitar?",
+      "id": "Q_ALSO_ANOTHER_PLATFORM",
+      "text": "Your controller works natively on your platform — no adapter needed!\n\nWould you also like to use it on another platform?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "PS3",
-          "next": "Q17",
-          "image": null
-        },
-        {
-          "label": "Wii",
-          "next": "Q38",
-          "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/WiiLesPaul.png"
-        },
-        {
-          "label": "Xbox 360",
-          "next": "Q39",
-          "image": null
-        }
+        { "label": "Yes — I want to use it elsewhere too", "next": "Q_SECOND_PLATFORM", "image": null, "flags": null },
+        { "label": "No — I'm all set!", "next": "R_NATIVE_NO_ADAPTER", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q33",
-      "text": "Are you planning on modding your guitar (SG/Kramer/Mayflash) or using it stock?",
+      "id": "Q_SECOND_PLATFORM",
+      "text": "Which other platform do you want to use it on?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "Modding the guitar",
-          "next": "Q22",
-          "image": null
-        },
-        {
-          "label": "Stock",
-          "next": "R13",
-          "image": null
-        }
+        { "label": "PlayStation (PS3 / PS4 / PS5)", "next": "R_MINIHOST", "image": null, "flags": null },
+        { "label": "Xbox One / Series", "next": "R_MINIHOST", "image": null, "flags": null },
+        { "label": "Nintendo Switch", "next": "R_MINIHOST", "image": null, "flags": null },
+        { "label": "PC or Mac", "next": "R_MINIHOST", "image": null, "flags": null },
+        { "label": "Xbox 360 (wireless controller)", "next": "R_360_RECEIVER", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q34",
-      "text": "Which console variant of Rock Band guitar do you have?\nPlaystation and Wii variants will require their included dongle.",
+      "id": "Q_GUITAR_MODEL_PS2",
+      "text": "Which guitar model do you have?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "PS2/PS3",
-          "next": "R11",
-          "image": null
-        },
-        {
-          "label": "Xbox 360",
-          "next": "R14",
-          "image": null
-        },
-        {
-          "label": "Wii",
-          "next": "R11",
-          "image": null
-        }
+        { "label": "SG Guitar", "next": "Q_MOD_SG", "image": null, "flags": null },
+        { "label": "World Tour Guitar", "next": "Q_MOD_WT", "image": null, "flags": null },
+        { "label": "GH5 Guitar", "next": "Q_MOD_GH5", "image": null, "flags": null },
+        { "label": "Kramer Guitar", "next": "Q_MOD_KRAMER", "image": null, "flags": null },
+        { "label": "MayFlash Guitar", "next": "Q_MOD_MAYFLASH", "image": null, "flags": null },
+        { "label": "Rock Band Stratocaster", "next": "Q_MOD_RBSTRAT", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q35",
-      "text": "Which console variant of the Warriors of Rock guitar do you have?\nPlaystation will require it's included dongle.",
+      "id": "Q_GUITAR_MODEL_PS3",
+      "text": "Which guitar model do you have?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "PS3",
-          "next": "R11",
-          "image": null
-        },
-        {
-          "label": "Xbox 360",
-          "next": "R14",
-          "image": null
-        },
-        {
-          "label": "Wii",
-          "next": "R12",
-          "image": null
-        }
+        { "label": "Les Paul Guitar", "next": "Q_MOD_LP", "image": null, "flags": null },
+        { "label": "World Tour Guitar", "next": "Q_MOD_WT", "image": null, "flags": null },
+        { "label": "GH5 Guitar", "next": "Q_MOD_GH5", "image": null, "flags": null },
+        { "label": "Warriors of Rock Guitar", "next": "Q_MOD_WOR", "image": null, "flags": null },
+        { "label": "Rock Band Stratocaster", "next": "Q_MOD_RBSTRAT", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q36",
-      "text": "Which console variant is your World Tour/Sunburst guitar?",
+      "id": "Q_GUITAR_MODEL_PS45",
+      "text": "Which guitar model do you have?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "PS2",
-          "next": "Q43",
-          "image": null
-        },
-        {
-          "label": "PS3",
-          "next": "Q40",
-          "image": null
-        },
-        {
-          "label": "Wii",
-          "next": "Q41",
-          "image": null
-        },
-        {
-          "label": "Xbox 360",
-          "next": "Q42",
-          "image": null
-        }
+        { "label": "Riffmaster", "next": "Q_MOD_RIFFMASTER", "image": null, "flags": null },
+        { "label": "CRKD Guitar", "next": "Q_MOD_CRKD", "image": null, "flags": null },
+        { "label": "Les Paul Guitar (PS3 variant)", "next": "Q_MOD_LP", "image": null, "flags": null },
+        { "label": "World Tour Guitar (PS3 variant)", "next": "Q_MOD_WT", "image": null, "flags": null },
+        { "label": "GH5 Guitar (PS3 variant)", "next": "Q_MOD_GH5", "image": null, "flags": null },
+        { "label": "Rock Band Stratocaster (PS3 variant)", "next": "Q_MOD_RBSTRAT", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q37",
-      "text": "Which console variant is your GH5 (red/white) guitar?",
+      "id": "Q_GUITAR_MODEL_X360",
+      "text": "Which guitar model do you have?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "PS2/PS3",
-          "next": "Q44",
-          "image": null
-        },
-        {
-          "label": "Wii",
-          "next": "Q45",
-          "image": null
-        },
-        {
-          "label": "Xbox 360",
-          "next": "Q46",
-          "image": null
-        }
+        { "label": "Les Paul Guitar", "next": "Q_MOD_LP", "image": null, "flags": null },
+        { "label": "World Tour Guitar", "next": "Q_MOD_WT", "image": null, "flags": null },
+        { "label": "GH5 Guitar", "next": "Q_MOD_GH5", "image": null, "flags": null },
+        { "label": "Xplorer Guitar", "next": "Q_MOD_XPLORER", "image": null, "flags": null },
+        { "label": "Warriors of Rock Guitar", "next": "Q_MOD_WOR", "image": null, "flags": null },
+        { "label": "Rock Band Stratocaster", "next": "Q_MOD_RBSTRAT", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q38",
-      "text": "Are you planning on modding your Wii Les Paul guitar or keeping it stock??",
+      "id": "Q_GUITAR_MODEL_XONE",
+      "text": "Which guitar model do you have?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "Modding the guitar",
-          "next": "Q22",
-          "image": null
-        },
-        {
-          "label": "Keeping it Stock",
-          "next": "R12",
-          "image": null
-        }
+        { "label": "Riffmaster", "next": "Q_MOD_RIFFMASTER", "image": null, "flags": null },
+        { "label": "CRKD Guitar", "next": "Q_MOD_CRKD", "image": null, "flags": null },
+        { "label": "Les Paul Guitar (PS3 variant)", "next": "Q_MOD_LP", "image": null, "flags": null },
+        { "label": "World Tour Guitar (PS3 variant)", "next": "Q_MOD_WT", "image": null, "flags": null },
+        { "label": "Rock Band Stratocaster (PS3 variant)", "next": "Q_MOD_RBSTRAT", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q39",
-      "text": "Are you planning on modding your Xbox 360 Les Paul guitar or keeping it stock??",
+      "id": "Q_GUITAR_MODEL_WII",
+      "text": "Which guitar model do you have?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "Modding the guitar",
-          "next": "Q22",
-          "image": null
-        },
-        {
-          "label": "Keeping it Stock",
-          "next": "R14",
-          "image": null
-        }
+        { "label": "Les Paul Guitar", "next": "Q_MOD_LP", "image": null, "flags": null },
+        { "label": "World Tour Guitar", "next": "Q_MOD_WT", "image": null, "flags": null },
+        { "label": "GH5 Guitar", "next": "Q_MOD_GH5", "image": null, "flags": null },
+        { "label": "Warriors of Rock Guitar", "next": "Q_MOD_WOR", "image": null, "flags": null },
+        { "label": "Rock Band Stratocaster", "next": "Q_MOD_RBSTRAT", "image": null, "flags": null }
       ]
     },
+
     {
-      "id": "Q40",
-      "text": "Are you planning on modding your PS3 World Tour/Sunburst guitar or keeping it stock??",
+      "id": "Q_GUITAR_MODEL_PC",
+      "text": "Which guitar model do you have?",
       "multiSelect": false,
       "answers": [
-        {
-          "label": "Modding the guitar",
-          "next": "Q22",
-          "image": null
-        },
-        {
-          "label": "Keeping it Stock",
-          "next": "R11",
-          "image": null
-        }
+        { "label": "Les Paul Guitar (PS3 variant)", "next": "Q_MOD_LP", "image": null, "flags": null },
+        { "label": "World Tour Guitar (PS3 variant)", "next": "Q_MOD_WT", "image": null, "flags": null },
+        { "label": "GH5 Guitar (PS3 variant)", "next": "Q_MOD_GH5", "image": null, "flags": null },
+        { "label": "Xplorer Guitar", "next": "Q_MOD_XPLORER", "image": null, "flags": null },
+        { "label": "Rock Band Stratocaster (PS3 or Wii variant)", "next": "Q_MOD_RBSTRAT", "image": null, "flags": null },
+        { "label": "Riffmaster", "next": "Q_MOD_RIFFMASTER", "image": null, "flags": null },
+        { "label": "CRKD Guitar", "next": "Q_MOD_CRKD", "image": null, "flags": null },
+        { "label": "Kramer Guitar (PS2 variant)", "next": "Q_MOD_KRAMER", "image": null, "flags": null },
+        { "label": "MayFlash Guitar (PS2 variant)", "next": "Q_MOD_MAYFLASH", "image": null, "flags": null }
       ]
     },
-    {
-      "id": "Q41",
-      "text": "Are you planning on modding your Wii World Tour/Sunburst guitar or keeping it stock??",
-      "multiSelect": false,
-      "answers": [
-        {
-          "label": "Modding the guitar",
-          "next": "Q22",
-          "image": null
-        },
-        {
-          "label": "Keeping it Stock",
-          "next": "R12",
-          "image": null
-        }
-      ]
-    },
-    {
-      "id": "Q42",
-      "text": "Are you planning on modding your Xbox 360 World Tour/Sunburst guitar or keeping it stock??",
-      "multiSelect": false,
-      "answers": [
-        {
-          "label": "Modding the guitar",
-          "next": "Q22",
-          "image": null
-        },
-        {
-          "label": "Keeping it Stock",
-          "next": "R14",
-          "image": null
-        }
-      ]
-    },
-    {
-      "id": "Q43",
-      "text": "Are you planning on modding your PS2 World Tour/Sunburst guitar or keeping it stock??",
-      "multiSelect": false,
-      "answers": [
-        {
-          "label": "Modding the guitar",
-          "next": "Q22",
-          "image": null
-        },
-        {
-          "label": "Keeping it Stock",
-          "next": "R13",
-          "image": null
-        }
-      ]
-    },
-    {
-      "id": "Q44",
-      "text": "Are you planning on modding your PS2/PS3 GH5 guitar or keeping it stock??",
-      "multiSelect": false,
-      "answers": [
-        {
-          "label": "Modding the guitar",
-          "next": "Q22",
-          "image": null
-        },
-        {
-          "label": "Keeping it Stock",
-          "next": "R11",
-          "image": null
-        }
-      ]
-    },
-    {
-      "id": "Q45",
-      "text": "Are you planning on modding your Wii GH5 guitar or keeping it stock??",
-      "multiSelect": false,
-      "answers": [
-        {
-          "label": "Modding the guitar",
-          "next": "Q22",
-          "image": null
-        },
-        {
-          "label": "Keeping it Stock",
-          "next": "R12",
-          "image": null
-        }
-      ]
-    },
-    {
-      "id": "Q46",
-      "text": "Are you planning on modding your Xbox 360 GH5 guitar or keeping it stock??",
-      "multiSelect": false,
-      "answers": [
-        {
-          "label": "Modding the guitar",
-          "next": "Q22",
-          "image": null
-        },
-        {
-          "label": "Keeping it Stock",
-          "next": "R14",
-          "image": null
-        }
-      ]
-    }
+
+    { "id": "Q_MOD_LP",       "text": "Would you like to mod your Les Paul Guitar?",           "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-lp"] },       { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-lp"] }] },
+    { "id": "Q_MOD_WT",       "text": "Would you like to mod your World Tour Guitar?",         "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-wt"] },       { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-wt"] }] },
+    { "id": "Q_MOD_GH5",      "text": "Would you like to mod your GH5 Guitar?",                "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-gh5"] },      { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-gh5"] }] },
+    { "id": "Q_MOD_XPLORER",  "text": "Would you like to mod your Xplorer Guitar?",            "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-xplorer"] },  { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-xplorer"] }] },
+    { "id": "Q_MOD_SG",       "text": "Would you like to mod your SG Guitar?",                  "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-sg"] },       { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-sg"] }] },
+    { "id": "Q_MOD_KRAMER",   "text": "Would you like to mod your Kramer Guitar?",              "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-kramer"] },   { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-kramer"] }] },
+    { "id": "Q_MOD_MAYFLASH", "text": "Would you like to mod your MayFlash Guitar?",            "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-mayflash"] }, { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-mayflash"] }] },
+    { "id": "Q_MOD_WOR",      "text": "Would you like to mod your Warriors of Rock Guitar?",    "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-wor"] },      { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-wor"] }] },
+    { "id": "Q_MOD_RBSTRAT",  "text": "Would you like to mod your Rock Band Stratocaster?",     "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-rbstrat"] },  { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-rbstrat"] }] },
+    { "id": "Q_MOD_RIFFMASTER","text": "Would you like to mod your Riffmaster?",                "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-riffmaster"] },{ "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-riffmaster"] }] },
+    { "id": "Q_MOD_CRKD",     "text": "Would you like to mod your CRKD Guitar?",                "multiSelect": false, "answers": [{ "label": "Yes — mod it", "next": "Q_RGB_STRUM", "image": null, "flags": ["mod-crkd"] },     { "label": "No — keep it stock", "next": "R_STOCK_GUITAR", "image": null, "flags": ["stock-crkd"] }] },
+
+    { "id": "Q_RGB_STRUM", "text": "Would you like an RGB Strum Bar in your mod kit?", "multiSelect": false, "answers": [
+      { "label": "Yes — RGB Strum Bar", "next": "R_SOLDERLESS_RGB", "image": null, "flags": null },
+      { "label": "No — standard strum bar", "next": "Q_SOLDER", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_SOLDER", "text": "Are you comfortable with soldering?", "multiSelect": false, "answers": [
+      { "label": "Yes — I can solder (DIY kit)", "next": "Q_RGB_FRETS", "image": null, "flags": null },
+      { "label": "No — solderless kit please", "next": "R_SOLDERLESS_NORGB", "image": null, "flags": null }
+    ]},
+
+    { "id": "Q_RGB_FRETS", "text": "Would you like RGB Frets in your DIY mod kit?", "multiSelect": false, "answers": [
+      { "label": "Yes — RGB Frets", "next": "R_DIY_RGB", "image": null, "flags": null },
+      { "label": "No — standard frets", "next": "R_DIY_STANDARD", "image": null, "flags": null }
+    ]}
+
   ],
+
   "results": [
+
     {
-      "id": "R10",
+      "id": "R_NATIVE_NO_ADAPTER",
+      "title": "You're All Set!",
+      "subtitle": "No adapter needed",
+      "description": "Your controller works natively on your selected platform. No RetroCultMods adapter is required to get playing.",
+      "image": "",
+      "flagNotes": [],
+      "ctas": [
+        { "label": "Browse All Products", "url": "https://www.retrocultmods.com", "style": "primary" }
+      ]
+    },
+
+    {
+      "id": "R_STOCK_GUITAR",
+      "title": "Stock Guitar — Connection Info",
+      "subtitle": "No mod selected",
+      "description": "Here's what you need to know about connecting your guitar. PS3 and Wii USB-dongle guitars work natively on their own consoles and on PC/Mac. Xbox 360 guitars work natively on Xbox 360. For cross-platform use, see the adapter options below.",
+      "image": "",
+      "flagNotes": [],
+      "ctas": [
+        { "label": "Shop V3 Adapter (Wii / USB)", "url": "https://www.retrocultmods.com/products/v3-adapter", "style": "primary" },
+        { "label": "Shop MiniHost Adapter (USB)", "url": "https://www.retrocultmods.com/products/minihost-adapter", "style": "secondary" },
+        { "label": "Shop RCM 360 Receiver (Xbox 360 wireless)", "url": "https://www.retrocultmods.com/products/rcm-360-wireless-receiver", "style": "secondary" }
+      ]
+    },
+
+    {
+      "id": "R_PS2_HOST",
       "title": "PS2 Host Adapter",
-      "subtitle": "For converting USB controllers to play on a Playstation 2 through the Playstation Controller Port",
-      "description": "This adapter also allows for USB gamepads and dance pads to be used on a PS2 natively!\n\nIf you plan on playing on different platforms aside from PS2, please retake this quiz and DO NOT select PS2.",
+      "subtitle": "Connect USB controllers to PlayStation 2",
+      "description": "The PS2 Host Adapter is the solution for playing Guitar Hero, Guitar Hero 2, Guitar Hero Encore: Rock the 80s, Guitar Hero 3, and Guitar Hero Aerosmith on PS2 with a USB controller. These games only support the PS2's proprietary 9-pin connector — the PS2 Host Adapter bridges that gap.",
       "image": "",
-      "link": "https://shop.retrocultmods.com/products/ps2-host-usb-to-ps2-controller"
+      "flagNotes": [],
+      "ctas": [
+        { "label": "Shop PS2 Host Adapter", "url": "https://www.retrocultmods.com/products/ps2-host-adapter", "style": "primary" }
+      ]
     },
+
     {
-      "id": "R11",
-      "title": "MiniHost Adapter",
-      "subtitle": "For bridging the gap between platforms for USB controllers",
-      "description": "The MiniHost is a compact, easy to use USB adapter primarily designed for use with plastic instrument controllers such as Guitar Hero and Rock Band guitars and drum kits!",
-      "image": "",
-      "link": "https://shop.retrocultmods.com/products/minihost-usb-adapter-by-retrocultmods"
-    },
-    {
-      "id": "R12",
-      "title": "V3 Adapter",
-      "subtitle": "It's like a MiniHost, but with support for Wii Nunchuk connected controllers!",
-      "description": "The V3 Adapter is an adapter specifically designed for using both Wii and USB controllers with games like Guitar Hero, Rock Band, Clone Hero, Yarg, and more!",
-      "image": "",
-      "link": "https://shop.retrocultmods.com/products/v3-wii-adapter-for-clone-hero-and-rb4-rock-band-4"
-    },
-    {
-      "id": "R13",
+      "id": "R_PS2_TO_USB",
       "title": "PS2 to USB Adapter",
-      "subtitle": "",
-      "description": "Convert your PS2 Guitars, Dancepads, and PS1/PS2 Gamepads for use on other consoles!",
+      "subtitle": "Use PS2 controllers on USB platforms",
+      "description": "The PS2 to USB Adapter converts PlayStation 2 controllers with the 9-pin proprietary connector to USB, letting you use them on any platform that supports USB controllers. It can also be used similarly to the MiniHost Adapter for general USB controller support.",
       "image": "",
-      "link": "https://shop.retrocultmods.com/products/ps2-adapter-for-guitar-drum-dancepad-and-gamepad-controllers"
+      "flagNotes": [],
+      "ctas": [
+        { "label": "Shop PS2 to USB Adapter", "url": "https://www.retrocultmods.com/products/ps2-to-usb-adapter", "style": "primary" }
+      ]
     },
+
     {
-      "id": "R14",
-      "title": "RCM 360 Wireless Receiver                                ",
-      "subtitle": "",
-      "description": "The RCM 360 Wireless Receiver allows you to connect your wireless 360 controllers to nearly any platform, plug and play! Featuring a dual mode selector switch for on the fly swapping between Guitar and Drums, either mode can be changed to whatever you like via our Programming Tool!",
+      "id": "R_V3",
+      "title": "V3 Adapter",
+      "subtitle": "Wiimote Nunchuk & USB controller support",
+      "description": "The V3 Adapter is the only RetroCultMods product that supports controllers using the Wiimote Nunchuk connection, in addition to USB controllers via wired or wireless USB dongle. Perfect for Wii Guitar Hero and Rock Band instruments you want to use on other platforms.",
       "image": "",
-      "link": "https://shop.retrocultmods.com/products/360-wireless-receiver-for-controllers-guitars-etc"
+      "flagNotes": [],
+      "ctas": [
+        { "label": "Shop V3 Adapter", "url": "https://www.retrocultmods.com/products/v3-adapter", "style": "primary" }
+      ]
     },
+
     {
-      "id": "R15",
+      "id": "R_MINIHOST",
+      "title": "MiniHost Adapter",
+      "subtitle": "USB controller support across platforms",
+      "description": "The MiniHost Adapter supports USB controllers — both wired and wireless via USB dongle. Ideal for PS3 and Wii Rock Band and Guitar Hero instruments, Pro Guitars, Keytars, DJ Turntables, and other USB-based controllers you want to use on a different platform.",
+      "image": "",
+      "flagNotes": [],
+      "ctas": [
+        { "label": "Shop MiniHost Adapter", "url": "https://www.retrocultmods.com/products/minihost-adapter", "style": "primary" }
+      ]
+    },
+
+    {
+      "id": "R_360_RECEIVER",
+      "title": "RCM 360 Wireless Receiver",
+      "subtitle": "Wireless Xbox 360 controllers on any platform",
+      "description": "The RCM 360 Wireless Receiver converts wireless Xbox 360 controllers using the proprietary Xbox 360 connection to generic USB, so you can use them on other platforms. It is the only RetroCultMods product that handles the Xbox 360 wireless connection directly, and functions similarly to the MiniHost Adapter for USB devices.",
+      "image": "",
+      "flagNotes": [],
+      "ctas": [
+        { "label": "Shop RCM 360 Wireless Receiver", "url": "https://www.retrocultmods.com/products/rcm-360-wireless-receiver", "style": "primary" }
+      ]
+    },
+
+    {
+      "id": "R_ACE",
       "title": "ACE Adapter",
-      "subtitle": "ACE MIDI/USB Adapter for Rock Band and Guitar Hero",
-      "description": "The ACE Adapter (All-Console Ekit Adapter) is an adapter specifically designed for using electronic drum kits (Ekits) with games like Rock Band, Guitar Hero, Clone Hero, and YARG!",
+      "subtitle": "MIDI, USB, and full controller panel",
+      "description": "The ACE Adapter is the most versatile in the lineup. It supports USB controllers, Electronic Drum Kits via MIDI-USB and Standard MIDI, MIDI Keyboards, and Pro Guitars via Standard MIDI. It's the only RetroCultMods adapter with a full controller button panel and Standard MIDI support.\n\nNote: Pro Drums works fully on Rock Band 3, Rock Band 4, YARG, Clone Hero, and Fortnite Festival. Pro Keyboard works on Rock Band 3 and YARG only.",
       "image": "",
-      "link": "https://shop.retrocultmods.com/products/ace-midi-usb-adapter-for-rock-band-and-guitar-hero"
+      "flagNotes": [],
+      "ctas": [
+        { "label": "Shop ACE Adapter", "url": "https://www.retrocultmods.com/products/ace-adapter", "style": "primary" }
+      ]
     },
+
     {
-      "id": "R18",
-      "title": "Solderless Revival Kit - RGB Strum Bar",
-      "subtitle": "Bring your completely broken, breaking, or old Guitar Hero controller back to life with the Revival Kit!",
-      "description": "The \"RGB Strumbar\" option includes a new 3D printed translucent strumbar that allows LEDs from the new strumboard to shine brightly and vibrantly!",
+      "id": "R_SWITCH",
+      "title": "Nintendo Switch — Guitar Support",
+      "subtitle": "Fortnite Festival · Guitar only",
+      "description": "The Nintendo Switch currently only supports Fortnite Festival, and only guitar is supported at this time. Most USB-dongle guitars will work via the MiniHost Adapter. Wii Nunchuk-based guitars require the V3 Adapter.",
       "image": "",
-      "link": "https://shop.retrocultmods.com/products/revival-kit-for-guitar-hero-controllers-by-retrocultmods"
+      "flagNotes": [],
+      "ctas": [
+        { "label": "Shop MiniHost Adapter", "url": "https://www.retrocultmods.com/products/minihost-adapter", "style": "primary" },
+        { "label": "Shop V3 Adapter", "url": "https://www.retrocultmods.com/products/v3-adapter", "style": "secondary" }
+      ]
     },
+
     {
-      "id": "R19",
-      "title": "DIY Solder Mod Kit - RGB Frets",
-      "subtitle": "Shine bright like a diamond!",
-      "description": "This is a kit containing everything you need to convert your official Red Octane Guitar Hero controller into a modded XInput guitar controller that you can use with Clone Hero/YARG/Fortnite Festival on PC, and Guitar Hero/Rock Band on PS3, PS4, and PS5!",
+      "id": "R_SOLDERLESS_RGB",
+      "title": "Solderless Revival Mod Kit — RGB Strum Bar",
+      "subtitle": "No soldering required · RGB Strum Bar included",
+      "description": "The Solderless Revival Mod Kit with RGB Strum Bar is the easiest way to breathe new life into your guitar. No soldering required — just swap the parts and you're ready to rock with a glowing strum bar.",
       "image": "",
-      "link": "https://shop.retrocultmods.com/products/diy-modding-kit-for-guitar-hero-controllers"
+      "flagNotes": [],
+      "ctas": [
+        { "label": "Shop Solderless RGB Strum Bar Kit", "url": "https://www.retrocultmods.com/collections/solderless-kits", "style": "primary" }
+      ]
     },
+
     {
-      "id": "R23",
-      "title": "DIY Solder Kit Mod - Standard Frets",
-      "subtitle": "Sleeper build.",
-      "description": "This is a kit containing everything you need to convert your official Red Octane Guitar Hero controller into a modded XInput guitar controller that you can use with Clone Hero/YARG/Fortnite Festival on PC, and Guitar Hero/Rock Band on PS3, PS4, and PS5!",
+      "id": "R_SOLDERLESS_NORGB",
+      "title": "Solderless Revival Mod Kit — Standard Strum Bar",
+      "subtitle": "No soldering required · Standard Strum Bar",
+      "description": "The Solderless Revival Mod Kit with standard strum bar gives your guitar a fresh feel without any soldering tools. A clean, reliable upgrade that's beginner-friendly.",
       "image": "",
-      "link": "https://shop.retrocultmods.com/products/diy-modding-kit-for-guitar-hero-controllers"
+      "flagNotes": [],
+      "ctas": [
+        { "label": "Shop Solderless Standard Kit", "url": "https://www.retrocultmods.com/collections/solderless-kits", "style": "primary" }
+      ]
     },
+
     {
-      "id": "R25",
-      "title": "Solderless Revival Kit - No Strumbar",
-      "subtitle": "Bring your completely broken, breaking, or old Guitar Hero controller back to life with the Revival Kit!",
-      "description": "The \"No Strumbar\" option is more affordable, but does not come with a new 3D printed strumbar; the stock strumbar will be used instead.",
+      "id": "R_DIY_RGB",
+      "title": "DIY Mod Kit — RGB Frets",
+      "subtitle": "Soldering required · RGB Frets included",
+      "description": "The DIY Mod Kit with RGB Frets is for the hands-on player who wants full control over their build. Solder in the RGB fret buttons for a fully customized, glowing guitar that stands out on stage.",
       "image": "",
-      "link": "https://shop.retrocultmods.com/products/revival-kit-for-guitar-hero-controllers-by-retrocultmods"
+      "flagNotes": [],
+      "ctas": [
+        { "label": "Shop DIY RGB Fret Kit", "url": "https://www.retrocultmods.com/collections/diy-kits", "style": "primary" }
+      ]
+    },
+
+    {
+      "id": "R_DIY_STANDARD",
+      "title": "DIY Mod Kit — Standard Frets",
+      "subtitle": "Soldering required · Standard Frets",
+      "description": "The DIY Mod Kit with standard frets gives you a solid upgrade with a classic feel. Perfect for players comfortable with a soldering iron who want a clean, reliable build.",
+      "image": "",
+      "flagNotes": [],
+      "ctas": [
+        { "label": "Shop DIY Standard Kit", "url": "https://www.retrocultmods.com/collections/diy-kits", "style": "primary" }
+      ]
     }
-  ],
-  "_builder": {
-    "nodes": [
-      {
-        "id": "Q1",
-        "type": "question-multi",
-        "x": -280.18518518518516,
-        "y": 13.333333333333288,
-        "text": "What platforms will you be playing on?",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Xbox 360",
-            "target": "Q3",
-            "image": ""
-          },
-          {
-            "label": "Xbox One/Series",
-            "target": "R7",
-            "image": ""
-          },
-          {
-            "label": "Playstation 2",
-            "target": "",
-            "image": ""
-          },
-          {
-            "label": "Playstation 3",
-            "target": "",
-            "image": ""
-          },
-          {
-            "label": "Playstation 4/5",
-            "target": "",
-            "image": ""
-          },
-          {
-            "label": "Nintendo Wii",
-            "target": "",
-            "image": ""
-          },
-          {
-            "label": "Nintendo Switch (Guitar Only)",
-            "target": "",
-            "image": ""
-          },
-          {
-            "label": "PC/Mac",
-            "target": "",
-            "image": ""
-          }
-        ],
-        "comboRules": [
-          {
-            "selectedIds": [
-              "2"
-            ],
-            "target": "Q9",
-            "mode": "includes"
-          },
-          {
-            "selectedIds": [
-              "6"
-            ],
-            "target": "Q30",
-            "mode": "exact"
-          }
-        ],
-        "fallback": "Q16"
-      },
-      {
-        "id": "Q9",
-        "type": "question",
-        "x": -10.58014085207727,
-        "y": -274.00503648112834,
-        "text": "Do you plan on playing any of the following Playstation 2 games?\n- Guitar Hero (the first one)\n- Guitar Hero II\n- Guitar Hero III\n- Guitar Hero Encore: Rock the 80s\n- Guitar Hero Aerosmith\n- Dance Dance Revolution (any)",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Yes",
-            "target": "R10",
-            "image": ""
-          },
-          {
-            "label": "No",
-            "target": "Q16",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "R10",
-        "type": "result",
-        "x": 31.94504093244827,
-        "y": -411.0956873859974,
-        "text": "PS2 Host Adapter",
-        "subtitle": "For converting USB controllers to play on a Playstation 2 through the Playstation Controller Port",
-        "description": "This adapter also allows for USB gamepads and dance pads to be used on a PS2 natively!\n\nIf you plan on playing on different platforms aside from PS2, please retake this quiz and DO NOT select PS2.",
-        "image": "",
-        "link": "https://shop.retrocultmods.com/products/ps2-host-usb-to-ps2-controller",
-        "answers": [],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "R11",
-        "type": "result",
-        "x": 1184.5800049832344,
-        "y": 2.5026306488609884,
-        "text": "MiniHost Adapter",
-        "subtitle": "For bridging the gap between platforms for USB controllers",
-        "description": "The MiniHost is a compact, easy to use USB adapter primarily designed for use with plastic instrument controllers such as Guitar Hero and Rock Band guitars and drum kits!",
-        "image": "",
-        "link": "https://shop.retrocultmods.com/products/minihost-usb-adapter-by-retrocultmods",
-        "answers": [],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "R12",
-        "type": "result",
-        "x": 1191.0823202009049,
-        "y": 146.696629574575,
-        "text": "V3 Adapter",
-        "subtitle": "It's like a MiniHost, but with support for Wii Nunchuk connected controllers!",
-        "description": "The V3 Adapter is an adapter specifically designed for using both Wii and USB controllers with games like Guitar Hero, Rock Band, Clone Hero, Yarg, and more!",
-        "image": "",
-        "link": "https://shop.retrocultmods.com/products/v3-wii-adapter-for-clone-hero-and-rb4-rock-band-4",
-        "answers": [],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "R13",
-        "type": "result",
-        "x": 1569.136199904921,
-        "y": 371.71628698109794,
-        "text": "PS2 to USB Adapter",
-        "subtitle": "",
-        "description": "Convert your PS2 Guitars, Dancepads, and PS1/PS2 Gamepads for use on other consoles!",
-        "image": "",
-        "link": "https://shop.retrocultmods.com/products/ps2-adapter-for-guitar-drum-dancepad-and-gamepad-controllers",
-        "answers": [],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "R14",
-        "type": "result",
-        "x": 1569.9539540706476,
-        "y": 674.3707460762213,
-        "text": "RCM 360 Wireless Receiver                                ",
-        "subtitle": "",
-        "description": "The RCM 360 Wireless Receiver allows you to connect your wireless 360 controllers to nearly any platform, plug and play! Featuring a dual mode selector switch for on the fly swapping between Guitar and Drums, either mode can be changed to whatever you like via our Programming Tool!",
-        "image": "",
-        "link": "https://shop.retrocultmods.com/products/360-wireless-receiver-for-controllers-guitars-etc",
-        "answers": [],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "R15",
-        "type": "result",
-        "x": 1553.2680079916092,
-        "y": 520.9498324500963,
-        "text": "ACE Adapter",
-        "subtitle": "ACE MIDI/USB Adapter for Rock Band and Guitar Hero",
-        "description": "The ACE Adapter (All-Console Ekit Adapter) is an adapter specifically designed for using electronic drum kits (Ekits) with games like Rock Band, Guitar Hero, Clone Hero, and YARG!",
-        "image": "",
-        "link": "https://shop.retrocultmods.com/products/ace-midi-usb-adapter-for-rock-band-and-guitar-hero",
-        "answers": [],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q16",
-        "type": "question",
-        "x": 45.129860722669484,
-        "y": 437.450433061338,
-        "text": "What type of controller do you plan on using? (retake quiz if you plan on using more than one)",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Guitar",
-            "target": "Q30",
-            "image": ""
-          },
-          {
-            "label": "Rock Band Drums",
-            "target": "Q26",
-            "image": ""
-          },
-          {
-            "label": "Guitar Hero Drums",
-            "target": "Q29",
-            "image": ""
-          },
-          {
-            "label": "Pro Drums (e-kit) / Pro Keys (full size midi keyboard)",
-            "target": "R15",
-            "image": ""
-          },
-          {
-            "label": "Keytar",
-            "target": "Q26",
-            "image": ""
-          },
-          {
-            "label": "Pro Guitar",
-            "target": "Q26",
-            "image": ""
-          },
-          {
-            "label": "Dance Pad",
-            "target": "Q28",
-            "image": ""
-          },
-          {
-            "label": "DJ Hero Turntable",
-            "target": "Q29",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q17",
-        "type": "question",
-        "x": 623.580987632032,
-        "y": -899.8316941349696,
-        "text": "Are you planning on modding your PS3 Les Paul guitar or keeping it stock??",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Modding the guitar",
-            "target": "Q22",
-            "image": ""
-          },
-          {
-            "label": "Keeping it Stock",
-            "target": "R11",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "R18",
-        "type": "result",
-        "x": 1951.110662181781,
-        "y": 856.971938283078,
-        "text": "Solderless Revival Kit - RGB Strum Bar",
-        "subtitle": "Bring your completely broken, breaking, or old Guitar Hero controller back to life with the Revival Kit!",
-        "description": "The \"RGB Strumbar\" option includes a new 3D printed translucent strumbar that allows LEDs from the new strumboard to shine brightly and vibrantly!",
-        "image": "",
-        "link": "https://shop.retrocultmods.com/products/revival-kit-for-guitar-hero-controllers-by-retrocultmods",
-        "answers": [],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "R19",
-        "type": "result",
-        "x": 1659.4562272511942,
-        "y": 1250.980025553985,
-        "text": "DIY Solder Mod Kit - RGB Frets",
-        "subtitle": "Shine bright like a diamond!",
-        "description": "This is a kit containing everything you need to convert your official Red Octane Guitar Hero controller into a modded XInput guitar controller that you can use with Clone Hero/YARG/Fortnite Festival on PC, and Guitar Hero/Rock Band on PS3, PS4, and PS5!",
-        "image": "",
-        "link": "https://shop.retrocultmods.com/products/diy-modding-kit-for-guitar-hero-controllers",
-        "answers": [],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q21",
-        "type": "question",
-        "x": 1037.8984954828038,
-        "y": 1280.5525631129342,
-        "text": "Do you know how to solder/do you want to solder?",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "No/I don't want to",
-            "target": "R25",
-            "image": ""
-          },
-          {
-            "label": "Yes",
-            "target": "Q24",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q22",
-        "type": "question",
-        "x": 762.5289973499674,
-        "y": 1119.3981230045376,
-        "text": "Do you want RGB strum bar?",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Yes (Revival Kit Only)",
-            "target": "R18",
-            "image": ""
-          },
-          {
-            "label": "No",
-            "target": "Q21",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "R23",
-        "type": "result",
-        "x": 1650.0887122057497,
-        "y": 1505.998801748535,
-        "text": "DIY Solder Kit Mod - Standard Frets",
-        "subtitle": "Sleeper build.",
-        "description": "This is a kit containing everything you need to convert your official Red Octane Guitar Hero controller into a modded XInput guitar controller that you can use with Clone Hero/YARG/Fortnite Festival on PC, and Guitar Hero/Rock Band on PS3, PS4, and PS5!",
-        "image": "",
-        "link": "https://shop.retrocultmods.com/products/diy-modding-kit-for-guitar-hero-controllers",
-        "answers": [],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q24",
-        "type": "question",
-        "x": 1350.4952967821473,
-        "y": 1287.2757680473271,
-        "text": "Do you want RGB or Stock frets?",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "RGB",
-            "target": "R19",
-            "image": ""
-          },
-          {
-            "label": "Stock",
-            "target": "R23",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "R25",
-        "type": "result",
-        "x": 1932.7996144776785,
-        "y": 1033.8672309533151,
-        "text": "Solderless Revival Kit - No Strumbar",
-        "subtitle": "Bring your completely broken, breaking, or old Guitar Hero controller back to life with the Revival Kit!",
-        "description": "The \"No Strumbar\" option is more affordable, but does not come with a new 3D printed strumbar; the stock strumbar will be used instead.",
-        "image": "",
-        "link": "https://shop.retrocultmods.com/products/revival-kit-for-guitar-hero-controllers-by-retrocultmods",
-        "answers": [],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q26",
-        "type": "question",
-        "x": 323.75945166069346,
-        "y": 1120.7498076006284,
-        "text": "Will you be using a WIRELESS Xbox 360 version of the controller?",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Yes",
-            "target": "R14",
-            "image": ""
-          },
-          {
-            "label": "No",
-            "target": "R11",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q28",
-        "type": "question",
-        "x": -11.803898077050446,
-        "y": 983.190422230154,
-        "text": "Are you planning on using a PS1/PS2 Dance Pad or USB Dance Pad?",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "PS1/PS2 Dance Pad (9-pin Playstation connector)",
-            "target": "R13",
-            "image": ""
-          },
-          {
-            "label": "USB Dancepad",
-            "target": "R11",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q29",
-        "type": "question",
-        "x": 347.93097816058537,
-        "y": 764.646149221702,
-        "text": "Are you going to be using the Playstation, Xbox 360, or Wii version of the controller?",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Playstation",
-            "target": "R11",
-            "image": ""
-          },
-          {
-            "label": "Xbox 360",
-            "target": "R14",
-            "image": ""
-          },
-          {
-            "label": "Wii",
-            "target": "R12",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q30",
-        "type": "question",
-        "x": 297.8416485993453,
-        "y": 60.15960088938404,
-        "text": "Which model of guitar are you using?",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Les Paul",
-            "target": "Q32",
-            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/XBPSLesPaul.png"
-          },
-          {
-            "label": "World Tour",
-            "target": "Q36",
-            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/XBPSSunburst.png"
-          },
-          {
-            "label": "GH5",
-            "target": "Q37",
-            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/XBPSGH5.png"
-          },
-          {
-            "label": "Xplorer",
-            "target": "Q31",
-            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/xplorer.png"
-          },
-          {
-            "label": "SG",
-            "target": "Q33",
-            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/sg.png"
-          },
-          {
-            "label": "Kramer",
-            "target": "Q33",
-            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/kramer.png"
-          },
-          {
-            "label": "MayFlash",
-            "target": "Q33",
-            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/mayflash.png"
-          },
-          {
-            "label": "Warriors of Rock",
-            "target": "Q35",
-            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/WiiWoR.png"
-          },
-          {
-            "label": "Rock Band Style Guitar (ex. Stratocaster)",
-            "target": "Q34",
-            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/Strat.png"
-          },
-          {
-            "label": "CRKD/Riffmaster (Modern Guitars)",
-            "target": "R11",
-            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/CRKD.png"
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q31",
-        "type": "question",
-        "x": 626.1541216763296,
-        "y": 66.92988811423749,
-        "text": "Are you planning on modding your Xplorer or using it stock?",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Modding the Xplorer",
-            "target": "Q22",
-            "image": ""
-          },
-          {
-            "label": "Stock",
-            "target": "R11",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q32",
-        "type": "question",
-        "x": 370.92705751232785,
-        "y": -672.7965276143414,
-        "text": "Which console variant is your Les Paul guitar?",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "PS3",
-            "target": "Q17",
-            "image": ""
-          },
-          {
-            "label": "Wii",
-            "target": "Q38",
-            "image": "https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Instruments/WiiLesPaul.png"
-          },
-          {
-            "label": "Xbox 360",
-            "target": "Q39",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q33",
-        "type": "question",
-        "x": 632.9168268331314,
-        "y": 359.0585820227653,
-        "text": "Are you planning on modding your guitar (SG/Kramer/Mayflash) or using it stock?",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Modding the guitar",
-            "target": "Q22",
-            "image": ""
-          },
-          {
-            "label": "Stock",
-            "target": "R13",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q34",
-        "type": "question",
-        "x": 658.817396175683,
-        "y": 734.4180818901629,
-        "text": "Which console variant of Rock Band guitar do you have?\nPlaystation and Wii variants will require their included dongle.",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "PS2/PS3",
-            "target": "R11",
-            "image": ""
-          },
-          {
-            "label": "Xbox 360",
-            "target": "R14",
-            "image": ""
-          },
-          {
-            "label": "Wii",
-            "target": "R11",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q35",
-        "type": "question",
-        "x": 1036.7827403088343,
-        "y": 376.0098139736812,
-        "text": "Which console variant of the Warriors of Rock guitar do you have?\nPlaystation will require it's included dongle.",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "PS3",
-            "target": "R11",
-            "image": ""
-          },
-          {
-            "label": "Xbox 360",
-            "target": "R14",
-            "image": ""
-          },
-          {
-            "label": "Wii",
-            "target": "R12",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q36",
-        "type": "question",
-        "x": 985.3526593449387,
-        "y": -708.7143121733568,
-        "text": "Which console variant is your World Tour/Sunburst guitar?",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "PS2",
-            "target": "Q43",
-            "image": ""
-          },
-          {
-            "label": "PS3",
-            "target": "Q40",
-            "image": ""
-          },
-          {
-            "label": "Wii",
-            "target": "Q41",
-            "image": ""
-          },
-          {
-            "label": "Xbox 360",
-            "target": "Q42",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q37",
-        "type": "question",
-        "x": 1651.6601421302337,
-        "y": -890.4433309271988,
-        "text": "Which console variant is your GH5 (red/white) guitar?",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "PS2/PS3",
-            "target": "Q44",
-            "image": ""
-          },
-          {
-            "label": "Wii",
-            "target": "Q45",
-            "image": ""
-          },
-          {
-            "label": "Xbox 360",
-            "target": "Q46",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q38",
-        "type": "question",
-        "x": 623.393679917441,
-        "y": -641.3420211882535,
-        "text": "Are you planning on modding your Wii Les Paul guitar or keeping it stock??",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Modding the guitar",
-            "target": "Q22",
-            "image": ""
-          },
-          {
-            "label": "Keeping it Stock",
-            "target": "R12",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q39",
-        "type": "question",
-        "x": 622.3357483911417,
-        "y": -380.586886937628,
-        "text": "Are you planning on modding your Xbox 360 Les Paul guitar or keeping it stock??",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Modding the guitar",
-            "target": "Q22",
-            "image": ""
-          },
-          {
-            "label": "Keeping it Stock",
-            "target": "R14",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q40",
-        "type": "question",
-        "x": 1233.0762324627833,
-        "y": -895.4647911145194,
-        "text": "Are you planning on modding your PS3 World Tour/Sunburst guitar or keeping it stock??",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Modding the guitar",
-            "target": "Q22",
-            "image": ""
-          },
-          {
-            "label": "Keeping it Stock",
-            "target": "R11",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q41",
-        "type": "question",
-        "x": 1237.513074377739,
-        "y": -636.2338219007872,
-        "text": "Are you planning on modding your Wii World Tour/Sunburst guitar or keeping it stock??",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Modding the guitar",
-            "target": "Q22",
-            "image": ""
-          },
-          {
-            "label": "Keeping it Stock",
-            "target": "R12",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q42",
-        "type": "question",
-        "x": 1237.723538255925,
-        "y": -380.2001509508307,
-        "text": "Are you planning on modding your Xbox 360 World Tour/Sunburst guitar or keeping it stock??",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Modding the guitar",
-            "target": "Q22",
-            "image": ""
-          },
-          {
-            "label": "Keeping it Stock",
-            "target": "R14",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q43",
-        "type": "question",
-        "x": 1230.7086363006613,
-        "y": -1153.3827371590535,
-        "text": "Are you planning on modding your PS2 World Tour/Sunburst guitar or keeping it stock??",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Modding the guitar",
-            "target": "Q22",
-            "image": ""
-          },
-          {
-            "label": "Keeping it Stock",
-            "target": "R13",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q44",
-        "type": "question",
-        "x": 1919.563817667443,
-        "y": -1159.4559530120089,
-        "text": "Are you planning on modding your PS2/PS3 GH5 guitar or keeping it stock??",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Modding the guitar",
-            "target": "Q22",
-            "image": ""
-          },
-          {
-            "label": "Keeping it Stock",
-            "target": "R11",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q45",
-        "type": "question",
-        "x": 1917.8717616415217,
-        "y": -905.9277791795284,
-        "text": "Are you planning on modding your Wii GH5 guitar or keeping it stock??",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Modding the guitar",
-            "target": "Q22",
-            "image": ""
-          },
-          {
-            "label": "Keeping it Stock",
-            "target": "R12",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      },
-      {
-        "id": "Q46",
-        "type": "question",
-        "x": 1918.4319823171447,
-        "y": -640.4297938139669,
-        "text": "Are you planning on modding your Xbox 360 GH5 guitar or keeping it stock??",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "link": "",
-        "answers": [
-          {
-            "label": "Modding the guitar",
-            "target": "Q22",
-            "image": ""
-          },
-          {
-            "label": "Keeping it Stock",
-            "target": "R14",
-            "image": ""
-          }
-        ],
-        "comboRules": [],
-        "fallback": ""
-      }
-    ]
-  }
+
+  ]
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
