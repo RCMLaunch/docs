@@ -271,7 +271,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Guitar",
-          "next": "Q_GUITAR_MODEL",
+          "next": "Q_GUITAR_MODEL_PS2",
           "image": null,
           "flags": null
         },
@@ -363,7 +363,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Guitar",
-          "next": "Q_GUITAR_MODEL",
+          "next": "Q_GUITAR_MODEL_PS45",
           "image": null,
           "flags": null
         },
@@ -449,7 +449,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Guitar",
-          "next": "Q_GUITAR_MODEL",
+          "next": "Q_GUITAR_MODEL_XONE",
           "image": null,
           "flags": null
         },
@@ -1688,7 +1688,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "Riffmaster",
-          "next": "Q_VARIANT_RIFFMASTER",
+          "next": "R_MINIHOST",
           "image": null,
           "flags": null
         }
@@ -2052,37 +2052,72 @@ const QUIZ_DATA = {
       ]
     },
     {
-      "id": "Q_VARIANT_RIFFMASTER",
-      "text": "Which version of the Riffmaster do you have?",
+      "id": "Q_GUITAR_MODEL_PS2",
+      "text": "Which guitar model do you have?",
       "multiSelect": false,
       "answers": [
         {
-          "label": "Xbox Riffmaster",
-          "next": "Q_RIFFMASTER_XBOX",
+          "label": "Les Paul Guitar",
+          "next": "Q_VARIANT_LP",
           "image": null,
           "flags": null
         },
         {
-          "label": "PlayStation Riffmaster",
-          "next": "Q_RIFFMASTER_PS",
-          "image": null,
-          "flags": null
-        }
-      ]
-    },
-    {
-      "id": "Q_RIFFMASTER_XBOX",
-      "text": "Are you playing on Xbox One or Series?",
-      "multiSelect": false,
-      "answers": [
-        {
-          "label": "Yes \u2014 Xbox One or Series",
-          "next": "R_NATIVE_NO_ADAPTER",
+          "label": "World Tour Guitar",
+          "next": "Q_VARIANT_WT",
           "image": null,
           "flags": null
         },
         {
-          "label": "No \u2014 PC, Mac, or another platform",
+          "label": "GH5 Guitar",
+          "next": "Q_VARIANT_GH5",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xplorer Guitar",
+          "next": "Q_VARIANT_XPLORER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "SG Guitar",
+          "next": "Q_VARIANT_SG",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Kramer Guitar",
+          "next": "Q_VARIANT_KRAMER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "MayFlash Guitar",
+          "next": "Q_VARIANT_MAYFLASH",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Warriors of Rock Guitar",
+          "next": "Q_VARIANT_WOR",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Stratocaster",
+          "next": "Q_VARIANT_RBSTRAT",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "CRKD Guitar",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Riffmaster",
           "next": "R_MINIHOST",
           "image": null,
           "flags": null
@@ -2090,18 +2125,157 @@ const QUIZ_DATA = {
       ]
     },
     {
-      "id": "Q_RIFFMASTER_PS",
-      "text": "Are you playing on PlayStation 4 or 5?",
+      "id": "Q_GUITAR_MODEL_XONE",
+      "text": "Which guitar model do you have?",
       "multiSelect": false,
       "answers": [
         {
-          "label": "Yes \u2014 PS4 or PS5",
+          "label": "Les Paul Guitar",
+          "next": "Q_VARIANT_LP",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "World Tour Guitar",
+          "next": "Q_VARIANT_WT",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "GH5 Guitar",
+          "next": "Q_VARIANT_GH5",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xplorer Guitar",
+          "next": "Q_VARIANT_XPLORER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "SG Guitar",
+          "next": "Q_VARIANT_SG",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Kramer Guitar",
+          "next": "Q_VARIANT_KRAMER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "MayFlash Guitar",
+          "next": "Q_VARIANT_MAYFLASH",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Warriors of Rock Guitar",
+          "next": "Q_VARIANT_WOR",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Stratocaster",
+          "next": "Q_VARIANT_RBSTRAT",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "CRKD Guitar",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox Riffmaster (native \u2014 no adapter needed)",
           "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
         {
-          "label": "No \u2014 another platform (MiniHost Adapter required)",
+          "label": "PlayStation Riffmaster",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_GUITAR_MODEL_PS45",
+      "text": "Which guitar model do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Les Paul Guitar",
+          "next": "Q_VARIANT_LP",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "World Tour Guitar",
+          "next": "Q_VARIANT_WT",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "GH5 Guitar",
+          "next": "Q_VARIANT_GH5",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xplorer Guitar",
+          "next": "Q_VARIANT_XPLORER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "SG Guitar",
+          "next": "Q_VARIANT_SG",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Kramer Guitar",
+          "next": "Q_VARIANT_KRAMER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "MayFlash Guitar",
+          "next": "Q_VARIANT_MAYFLASH",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Warriors of Rock Guitar",
+          "next": "Q_VARIANT_WOR",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Rock Band Stratocaster",
+          "next": "Q_VARIANT_RBSTRAT",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "CRKD Guitar",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PlayStation Riffmaster (native \u2014 no adapter needed)",
+          "next": "R_NATIVE_NO_ADAPTER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "Xbox Riffmaster",
           "next": "R_MINIHOST",
           "image": null,
           "flags": null
