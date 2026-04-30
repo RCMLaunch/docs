@@ -113,12 +113,20 @@
   .result-title { font-family: 'Inter', sans-serif; font-size: 26px; font-weight: 700; line-height: 1.2; margin-bottom: 6px; letter-spacing: -0.3px; }
   .result-subtitle { font-size: 13px; font-weight: 600; color: var(--accent3); margin-bottom: 14px; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
   .result-description { font-size: 14px; font-family: 'Inter', sans-serif; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
-  .result-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .result-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
   .cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--accent2); color: white; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.18s; }
   .cta-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+  .cta-btn.secondary { background: none; color: var(--accent2); border: 1.5px solid var(--accent2); }
+  .cta-btn.secondary:hover { background: var(--accent2); color: white; }
   .restart-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; background: none; color: var(--muted); border: 1.5px solid var(--border); border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.18s; }
   .restart-btn:hover { border-color: var(--accent2); color: var(--accent2); }
   .divider { height: 1px; background: var(--border); margin: 20px 0; }
+
+  /* Flag notes on result */
+  .flag-notes { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+  .flag-note { display: flex; align-items: flex-start; gap: 10px; background: var(--multi-bg); border: 1px solid var(--multi-border); border-radius: 8px; padding: 10px 14px; font-size: 13px; color: var(--multi-text); line-height: 1.5; }
+  .flag-note-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+  :root.dark .flag-note { background: var(--multi-bg); border-color: var(--multi-border); }
 
   .error-box { background: #fff5f5; border: 1px solid #fecaca; border-radius: 10px; padding: 20px; font-size: 13px; font-family: 'Inter', sans-serif; color: #991b1b; line-height: 1.6; }
   .error-box code { font-family: 'Inter', monospace; font-size: 11px; background: rgba(0,0,0,0.05); padding: 1px 5px; border-radius: 3px; }
@@ -226,30 +234,30 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "SG Guitar (wired PS2 connector)",
-          "next": "Q_VARIANT_SG",
+          "next": "Q_MOD_PS2_NATIVE",
           "image": null,
           "flags": null
         },
         {
           "label": "World Tour Guitar (PS2 wireless dongle)",
-          "next": "Q_VARIANT_WT_PS2_ONLY",
+          "next": "Q_MOD_PS2_NATIVE",
           "image": null,
           "flags": null
         },
         {
           "label": "Kramer Guitar (PS2 wireless dongle)",
-          "next": "Q_VARIANT_KRAMER",
+          "next": "Q_MOD_PS2_NATIVE",
           "image": null,
           "flags": null
         },
         {
           "label": "MayFlash Guitar (PS2 wireless dongle)",
-          "next": "Q_VARIANT_MAYFLASH",
+          "next": "Q_MOD_PS2_NATIVE",
           "image": null,
           "flags": null
         },
         {
-          "label": "A different guitar (USB or other)",
+          "label": "Any other guitar (Les Paul, GH5, Xplorer, Rock Band Strat, etc.)",
           "next": "R_PS2_HOST",
           "image": null,
           "flags": null
@@ -650,7 +658,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "USB connection",
-          "next": "R_MINIHOST",
+          "next": "R_PS2_HOST",
           "image": null,
           "flags": null
         }
@@ -688,13 +696,13 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "PS2 / PS3 \u2014 Wired USB",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
         {
           "label": "PS2 / PS3 \u2014 Wireless (USB dongle)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -725,7 +733,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "PS2 / PS3 (wireless USB dongle)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -769,7 +777,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "PS3 (wireless USB dongle)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -781,7 +789,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "Wii (wireless via Wiimote Nunchuk)",
-          "next": "R_V3",
+          "next": "R_MINIHOST",
           "image": null,
           "flags": null
         },
@@ -800,7 +808,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "USB connection",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -825,7 +833,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "USB connection",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         }
@@ -838,7 +846,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "PS2 / PS3 (wireless USB dongle)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -925,13 +933,13 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Xbox 360 \u2014 Wired USB",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
         {
           "label": "Xbox 360 \u2014 Wireless (proprietary)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -956,7 +964,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Xbox 360 (wireless, proprietary)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -1000,7 +1008,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Xbox 360 (wireless, proprietary)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -1012,7 +1020,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "Wii (wireless via Wiimote Nunchuk)",
-          "next": "R_V3",
+          "next": "R_MINIHOST",
           "image": null,
           "flags": null
         },
@@ -1031,7 +1039,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "USB connection",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -1056,7 +1064,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "USB connection",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         }
@@ -1069,7 +1077,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Xbox 360 (wireless, proprietary)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -1169,13 +1177,13 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Wii \u2014 Wired USB",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
         {
           "label": "Wii \u2014 Wireless (USB dongle)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -1206,7 +1214,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Wii (wireless via Wiimote Nunchuk)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -1250,7 +1258,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Wii (wireless via Wiimote Nunchuk)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_MINIHOST",
           "image": null,
           "flags": null
         },
@@ -1306,7 +1314,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "USB connection",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         }
@@ -1319,7 +1327,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Wii (wireless via Wiimote Nunchuk)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -1344,31 +1352,31 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "PS2 / PS3 \u2014 Wired USB",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
         {
           "label": "PS2 / PS3 \u2014 Wireless (USB dongle)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
         {
           "label": "Wii \u2014 Wired USB",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
         {
           "label": "Wii \u2014 Wireless (USB dongle)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
         {
           "label": "Xbox 360 \u2014 Wired USB",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -1387,7 +1395,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "PS2 / PS3 (wireless USB dongle)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -1412,7 +1420,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "PS3 (wireless USB dongle)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -1424,7 +1432,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "Wii (wireless via Wiimote Nunchuk)",
-          "next": "R_V3",
+          "next": "R_MINIHOST",
           "image": null,
           "flags": null
         },
@@ -1443,7 +1451,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "USB connection",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -1468,7 +1476,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "USB connection",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         }
@@ -1481,7 +1489,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "PS2 / PS3 (wireless USB dongle)",
-          "next": "Q_ALSO_ANOTHER_PLATFORM",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
           "flags": null
         },
@@ -1494,62 +1502,6 @@ const QUIZ_DATA = {
         {
           "label": "Wii (wireless via Wiimote Nunchuk)",
           "next": "R_V3",
-          "image": null,
-          "flags": null
-        }
-      ]
-    },
-    {
-      "id": "Q_ALSO_ANOTHER_PLATFORM",
-      "text": "Your controller works natively on your platform \u2014 no adapter needed!\n\nWould you also like to use it on another platform?",
-      "multiSelect": false,
-      "answers": [
-        {
-          "label": "Yes \u2014 I want to use it elsewhere too",
-          "next": "Q_SECOND_PLATFORM",
-          "image": null,
-          "flags": null
-        },
-        {
-          "label": "No \u2014 I'm all set!",
-          "next": "R_NATIVE_NO_ADAPTER",
-          "image": null,
-          "flags": null
-        }
-      ]
-    },
-    {
-      "id": "Q_SECOND_PLATFORM",
-      "text": "Which other platform do you want to use it on?",
-      "multiSelect": false,
-      "answers": [
-        {
-          "label": "PlayStation (PS3 / PS4 / PS5)",
-          "next": "R_MINIHOST",
-          "image": null,
-          "flags": null
-        },
-        {
-          "label": "Xbox One / Series",
-          "next": "R_MINIHOST",
-          "image": null,
-          "flags": null
-        },
-        {
-          "label": "Nintendo Switch",
-          "next": "R_MINIHOST",
-          "image": null,
-          "flags": null
-        },
-        {
-          "label": "PC or Mac",
-          "next": "R_MINIHOST",
-          "image": null,
-          "flags": null
-        },
-        {
-          "label": "Xbox 360 (wireless controller)",
-          "next": "R_360_RECEIVER",
           "image": null,
           "flags": null
         }
@@ -1729,14 +1681,14 @@ const QUIZ_DATA = {
           "flags": null
         },
         {
-          "label": "Riffmaster",
-          "next": "Q_VARIANT_RIFFMASTER",
+          "label": "CRKD Guitar",
+          "next": "R_MINIHOST",
           "image": null,
           "flags": null
         },
         {
-          "label": "CRKD Guitar",
-          "next": "Q_VARIANT_CRKD",
+          "label": "Riffmaster",
+          "next": "Q_VARIANT_RIFFMASTER",
           "image": null,
           "flags": null
         }
@@ -1767,7 +1719,7 @@ const QUIZ_DATA = {
       "multiSelect": false,
       "answers": [
         {
-          "label": "Yes \u2014 mod it (I'll also need the PS2 Host Adapter for those games)",
+          "label": "Yes \u2014 mod it (I will also need the PS2 Host Adapter for those games)",
           "next": "Q_PS2_RGB_STRUM",
           "image": null,
           "flags": null
@@ -1787,7 +1739,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Xbox 360 (wireless, proprietary connection)",
-          "next": "Q_MOD_UNIVERSAL",
+          "next": "Q_MOD_X360_WIRELESS",
           "image": null,
           "flags": [
             "lp-x360"
@@ -1803,7 +1755,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "Wii (wireless via Wiimote Nunchuk)",
-          "next": "Q_MOD_UNIVERSAL",
+          "next": "Q_MOD_WII",
           "image": null,
           "flags": [
             "lp-wii"
@@ -1818,7 +1770,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "PlayStation 2 (wireless PS2 dongle)",
-          "next": "Q_MOD_PS2_NATIVE",
+          "next": "Q_MOD_WT_PS2",
           "image": null,
           "flags": [
             "wt-ps2"
@@ -1826,7 +1778,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "Xbox 360 (wireless, proprietary connection)",
-          "next": "Q_MOD_UNIVERSAL",
+          "next": "Q_MOD_X360_WIRELESS",
           "image": null,
           "flags": [
             "wt-x360"
@@ -1842,7 +1794,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "Wii (wireless via Wiimote Nunchuk)",
-          "next": "Q_MOD_UNIVERSAL",
+          "next": "Q_MOD_WII",
           "image": null,
           "flags": [
             "wt-wii"
@@ -1880,7 +1832,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "Xbox 360 (wireless, proprietary connection)",
-          "next": "Q_MOD_UNIVERSAL",
+          "next": "Q_MOD_X360_WIRELESS",
           "image": null,
           "flags": [
             "gh5-x360"
@@ -1888,7 +1840,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "Wii (wireless via Wiimote Nunchuk)",
-          "next": "Q_MOD_UNIVERSAL",
+          "next": "Q_MOD_WII",
           "image": null,
           "flags": [
             "gh5-wii"
@@ -1918,7 +1870,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "PlayStation 2 (wired PS2 connector)",
-          "next": "Q_MOD_PS2_NATIVE",
+          "next": "Q_MOD_UNIVERSAL",
           "image": null,
           "flags": [
             "sg-ps2"
@@ -1933,7 +1885,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "PlayStation 2 (wireless PS2 dongle)",
-          "next": "Q_MOD_PS2_NATIVE",
+          "next": "Q_MOD_UNIVERSAL",
           "image": null,
           "flags": [
             "kramer-ps2"
@@ -1948,7 +1900,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "PlayStation 2 (wireless PS2 dongle)",
-          "next": "Q_MOD_PS2_NATIVE",
+          "next": "Q_MOD_UNIVERSAL",
           "image": null,
           "flags": [
             "mayflash-ps2"
@@ -1963,7 +1915,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "Xbox 360 (wireless, proprietary connection)",
-          "next": "Q_MOD_UNIVERSAL",
+          "next": "R_360_RECEIVER",
           "image": null,
           "flags": [
             "wor-x360"
@@ -1971,7 +1923,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "PlayStation 3 (wireless USB dongle)",
-          "next": "Q_MOD_UNIVERSAL",
+          "next": "R_MINIHOST",
           "image": null,
           "flags": [
             "wor-ps3"
@@ -1979,7 +1931,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "Wii (wireless via Wiimote Nunchuk)",
-          "next": "Q_MOD_UNIVERSAL",
+          "next": "R_V3",
           "image": null,
           "flags": [
             "wor-wii"
@@ -1994,7 +1946,7 @@ const QUIZ_DATA = {
       "answers": [
         {
           "label": "PlayStation 2 / PS3 \u2014 Wired USB",
-          "next": "Q_MOD_UNIVERSAL",
+          "next": "R_MINIHOST",
           "image": null,
           "flags": [
             "rbs-ps3-wired"
@@ -2002,7 +1954,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "PlayStation 2 / PS3 \u2014 Wireless (USB dongle)",
-          "next": "Q_MOD_UNIVERSAL",
+          "next": "R_MINIHOST",
           "image": null,
           "flags": [
             "rbs-ps3-wireless"
@@ -2010,7 +1962,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "Xbox 360 \u2014 Wired USB",
-          "next": "Q_MOD_UNIVERSAL",
+          "next": "R_MINIHOST",
           "image": null,
           "flags": [
             "rbs-x360-wired"
@@ -2018,7 +1970,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "Xbox 360 \u2014 Wireless (proprietary connection)",
-          "next": "Q_MOD_UNIVERSAL",
+          "next": "R_360_RECEIVER",
           "image": null,
           "flags": [
             "rbs-x360-wireless"
@@ -2026,7 +1978,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "Wii \u2014 Wired USB",
-          "next": "Q_MOD_UNIVERSAL",
+          "next": "R_MINIHOST",
           "image": null,
           "flags": [
             "rbs-wii-wired"
@@ -2034,7 +1986,7 @@ const QUIZ_DATA = {
         },
         {
           "label": "Wii \u2014 Wireless (USB dongle)",
-          "next": "Q_MOD_UNIVERSAL",
+          "next": "R_MINIHOST",
           "image": null,
           "flags": [
             "rbs-wii-wireless"
@@ -2043,48 +1995,116 @@ const QUIZ_DATA = {
       ]
     },
     {
-      "id": "Q_VARIANT_RIFFMASTER",
-      "text": "Which variant of the Riffmaster do you have?",
+      "id": "Q_MOD_X360_WIRELESS",
+      "text": "Would you like to mod your guitar?",
       "multiSelect": false,
       "answers": [
         {
-          "label": "Xbox One / Series (wireless USB dongle)",
-          "next": "Q_MOD_UNIVERSAL",
+          "label": "Yes \u2014 mod it",
+          "next": "Q_RGB_STRUM",
           "image": null,
-          "flags": [
-            "riffmaster-xone"
-          ]
+          "flags": null
         },
         {
-          "label": "PlayStation 4 / 5 (wireless USB dongle)",
-          "next": "Q_MOD_UNIVERSAL",
+          "label": "No \u2014 keep it stock",
+          "next": "R_360_RECEIVER",
           "image": null,
-          "flags": [
-            "riffmaster-ps4"
-          ]
+          "flags": null
         }
       ]
     },
     {
-      "id": "Q_VARIANT_CRKD",
-      "text": "Which variant of the CRKD Guitar do you have?",
+      "id": "Q_MOD_WII",
+      "text": "Would you like to mod your guitar?",
       "multiSelect": false,
       "answers": [
         {
-          "label": "Wired USB",
-          "next": "Q_MOD_UNIVERSAL",
+          "label": "Yes \u2014 mod it",
+          "next": "Q_RGB_STRUM",
           "image": null,
-          "flags": [
-            "crkd-wired"
-          ]
+          "flags": null
         },
         {
-          "label": "Wireless (Bluetooth or dongle)",
-          "next": "Q_MOD_UNIVERSAL",
+          "label": "No \u2014 keep it stock",
+          "next": "R_NATIVE_NO_ADAPTER",
           "image": null,
-          "flags": [
-            "crkd-wireless"
-          ]
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_MOD_WT_PS2",
+      "text": "Would you like to mod your World Tour Guitar?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 mod it",
+          "next": "Q_RGB_STRUM",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "No \u2014 keep it stock",
+          "next": "R_PS2_TO_USB",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_VARIANT_RIFFMASTER",
+      "text": "Which version of the Riffmaster do you have?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Xbox Riffmaster",
+          "next": "Q_RIFFMASTER_XBOX",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "PlayStation Riffmaster",
+          "next": "Q_RIFFMASTER_PS",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_RIFFMASTER_XBOX",
+      "text": "Are you playing on Xbox One or Series?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 Xbox One or Series",
+          "next": "R_NATIVE_NO_ADAPTER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "No \u2014 PC, Mac, or another platform",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
+        }
+      ]
+    },
+    {
+      "id": "Q_RIFFMASTER_PS",
+      "text": "Are you playing on PlayStation 4 or 5?",
+      "multiSelect": false,
+      "answers": [
+        {
+          "label": "Yes \u2014 PS4 or PS5",
+          "next": "R_NATIVE_NO_ADAPTER",
+          "image": null,
+          "flags": null
+        },
+        {
+          "label": "No \u2014 another platform (MiniHost Adapter required)",
+          "next": "R_MINIHOST",
+          "image": null,
+          "flags": null
         }
       ]
     }
@@ -2361,7 +2381,7 @@ const QUIZ_DATA = {
       ]
     }
   ]
-}
+};
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 //  END OF QUIZ DATA — do not edit below this line unless you know what you're doing
@@ -2371,11 +2391,13 @@ let history = [];
 let currentId = null;
 let totalSteps = 0;
 let multiSelected = new Set();
+let activeFlags = new Set(); // accumulates flag tags as user answers
 
 function startQuiz() {
   history = [];
   currentId = QUIZ_DATA.startId;
   multiSelected = new Set();
+  activeFlags = new Set();
   totalSteps = estimateSteps();
   goTo(currentId);
 }
@@ -2419,13 +2441,13 @@ function goBack() {
 function renderSingleQuestion(q) {
   const step = history.length + 1;
   const pct = Math.min(100, Math.round((history.length / totalSteps) * 100));
-  const indicators = 'ABCDEFGHIJ';
+  const indicators = 'ABCDEFGHIJKL';
   const hasImages = q.answers.some(a => a.image);
 
   const answersHTML = q.answers.map((a, i) => {
     if (hasImages) {
       return `
-        <button class="answer-btn" onclick="pickSingle('${a.next}')">
+        <button class="answer-btn" data-ans-index="${i}" onclick="pickSingleByIndex(${i})">
           <div class="ans-img-wrap">
             ${a.image ? `<img class="ans-img" src="${a.image}" alt="${a.label}">` : `<span style="font-size:11px;color:var(--muted)">No image</span>`}
           </div>
@@ -2436,7 +2458,7 @@ function renderSingleQuestion(q) {
         </button>`;
     }
     return `
-      <button class="answer-btn" onclick="pickSingle('${a.next}')">
+      <button class="answer-btn" data-ans-index="${i}" onclick="pickSingleByIndex(${i})">
         <div class="answer-indicator">${indicators[i]}</div>
         <span>${a.label}</span>
       </button>`;
@@ -2455,10 +2477,14 @@ function renderSingleQuestion(q) {
     </div>`;
 }
 
-function pickSingle(nextId) {
-  if (!nextId) return;
+function pickSingleByIndex(idx) {
+  const q = findQuestion(currentId);
+  if (!q) return;
+  const a = q.answers[idx];
+  if (!a || !a.next) return;
+  if (a.flags) a.flags.forEach(f => activeFlags.add(f));
   history.push(currentId);
-  goTo(nextId);
+  goTo(a.next);
 }
 
 // ─── MULTI SELECT ─────────────────────────────────────────────────────────────
@@ -2533,24 +2559,25 @@ function submitMulti() {
   const q = findQuestion(currentId);
   const selectedSorted = [...multiSelected].map(String).sort();
 
-  // Collect all matching rules, then pick the most specific (most selectedIds)
+  // Collect flags from all selected answers
+  selectedSorted.forEach(idx => {
+    const ans = q.answers[parseInt(idx)];
+    if (ans && ans.flags) ans.flags.forEach(f => activeFlags.add(f));
+  });
+
+  // Find matching combo rule
   const matchingRules = (q.comboRules || []).filter(rule => {
     const mode = rule.mode || 'exact';
     const ruleIds = [...rule.selectedIds].sort();
     if (mode === 'exact') {
-      // User selection must match the rule ids precisely
-      return ruleIds.length === selectedSorted.length &&
-             ruleIds.every(id => selectedSorted.includes(id));
+      return ruleIds.length === selectedSorted.length && ruleIds.every(id => selectedSorted.includes(id));
     } else {
-      // 'includes' — user must have selected at least these ids (can have extras)
       return ruleIds.every(id => selectedSorted.includes(id));
     }
   }).filter(r => r.next);
 
-  // Most specific = most selectedIds defined in the rule
   matchingRules.sort((a, b) => b.selectedIds.length - a.selectedIds.length);
   let matched = matchingRules[0]?.next || null;
-
   if (!matched && q.fallback) matched = q.fallback;
 
   if (!matched) {
@@ -2567,7 +2594,35 @@ function renderResult(r) {
   const imgHTML = r.image ? `<img class="result-img" src="${r.image}" alt="${r.title}">` : '';
   const subtitleHTML = r.subtitle ? `<div class="result-subtitle">${r.subtitle}</div>` : '';
   const descHTML = r.description ? `<div class="result-description">${r.description}</div>` : '';
-  const ctaHTML = r.link ? `<a class="cta-btn" href="${r.link}" target="_blank">View Product →</a>` : '';
+
+  // CTAs: support ctas array (new format) and legacy link field
+  let ctasHTML = '';
+  let ctas = [];
+  if (r.ctas && r.ctas.length) {
+    ctas = r.ctas;
+  } else if (r.link) {
+    ctas = [{ label: 'View Product →', url: r.link, style: 'primary' }];
+  }
+  ctas.forEach((cta) => {
+    if (!cta.url) return; // skip empty URLs
+    const cls = cta.style === 'secondary' ? 'cta-btn secondary' : 'cta-btn';
+    ctasHTML += `<a class="${cls}" href="${cta.url}" target="_blank">${cta.label || 'Learn More'}</a>`;
+  });
+
+  // Flag notes: look up any flag notes defined on this result that match active flags
+  let flagNotesHTML = '';
+  if (r.flagNotes && activeFlags.size > 0) {
+    const matchedNotes = r.flagNotes.filter(fn => activeFlags.has(fn.flag));
+    if (matchedNotes.length) {
+      flagNotesHTML = `<div class="flag-notes">${
+        matchedNotes.map(fn => `
+          <div class="flag-note">
+            <span class="flag-note-icon">${fn.icon || '⚠️'}</span>
+            <span>${fn.note}</span>
+          </div>`).join('')
+      }</div>`;
+    }
+  }
 
   document.getElementById('quizRoot').innerHTML = `
     <div class="quiz-card animate-in">
@@ -2575,9 +2630,10 @@ function renderResult(r) {
       ${imgHTML}
       <div class="result-title">${r.title}</div>
       ${subtitleHTML}${descHTML}
+      ${flagNotesHTML}
       <div class="divider"></div>
       <div class="result-actions">
-        ${ctaHTML}
+        ${ctasHTML}
         <button class="restart-btn" onclick="startQuiz()">↺ Start over</button>
       </div>
     </div>`;
