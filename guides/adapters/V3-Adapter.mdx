@@ -1640,6 +1640,13 @@ Let's get the V3 Adapter working on those games and emulators!
   <Accordion title="The RCM Programming Tool is not seeing my device on Linux">
     If the RCM Programming Tool is not seeing your device, it is likely due to a permissions issue in Linux.
 
-    Navigate to /etc/udev/rules.d/, then drop
+    You will need the following file:
+
+    > # [CLICK HERE TO DOWNLOAD](https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/user-downloads/68-RCM.rules)\
+    > [68-RCM.rules](https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/user-downloads/68-RCM.rules)
+
+    Navigate to /etc/udev/rules.d/, then drop 68-RCM.rules into the folder.
+
+    Once you've done that, open the RCM Programming Tool. Your device should appear now! If not, try unplugging and plugging back in.
   </Accordion>
 </AccordionGroup>
