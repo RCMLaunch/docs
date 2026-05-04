@@ -647,6 +647,8 @@ Note: Fortnite Festival requires specific instructions to be used with RetroCult
       <Step>
         Connect the licensed Xbox controller into the female USB-A port on the V3 Adapter.
 
+        If one model doesn't work, try another. Sometimes these things just don't like to authenticate.
+
         <Tip>
           - **~~Xbox One – models 1537, 1697, and 1698~~**
           - **Xbox One S – models 1708 and 1797**
@@ -1590,20 +1592,17 @@ Let's get the V3 Adapter working on those games and emulators!
 
     - The instrument plugged into your V3 Adapter may be causing the adapter to go into a different mode. Unplug the instrument, then plug the V3 adapter back into your computer.
     - Faulty USB cable or USB port. Using the same cable, try a different port, then switch the cable.
-    - Lastly, you may just need to hard reset the device. Holding the reset button (small button inside pinhole on the front of the V3 Adapter) while plugging the adapter in will put it into recovery mode, which you can then open the [RCM Programming Tool](https://retrocultmods.com/programming-tool/) and erase and reset to factory.
+    - Lastly, you may just need to hard reset the device. **Holding the reset button** (small button inside pinhole on the front of the V3 Adapter) **while** plugging the adapter in will put it into recovery mode, which will make a drive named "RPI-RP2" appear on your computer. \
+      \
+      Drop this file into that folder.\
+      [CLICK HERE TO DOWNLOAD FLASH NUKE FILE](https://www.dropbox.com/scl/fi/tjhb43eau8xxk2mmzdnga/FLASHNUKE.UF2?rlkey=nrzjsbisdgloj5iutc2esto44&st=kq6rh58z&dl=1)\
+       \
+      After you drop the file in,  open the [RCM Programming Tool](https://retrocultmods.com/programming-tool/) and attempt to reprogram.
 
     If you continue to run into issues, send us an email at [support@retrocultmods.com](mailto:support@retrocultmods.com)
   </Accordion>
 
-  <Accordion title="My V3 Adapter is not working in BetterGH3 on SteamOS/Bazzite/Linux">
-    If you haven't done this already, add this to your Steam Launch Options:
-
-    <Info>
-      WINEDLLOVERRIDES="xinput1\_3=n,b" %command%
-    </Info>
-  </Accordion>
-
-  <Accordion title="The RCM Programming Tool isn't opening on my Mac">
+  <Accordion title="The RCM Programming Tool isn't opening on macOS">
     If you are experiencing the following pop-up, macOS is detecting the RCM Programming Tool as a false-positive for being malware.
 
     <Frame>
@@ -1642,11 +1641,20 @@ Let's get the V3 Adapter working on those games and emulators!
 
     You will need the following file:
 
-    > # [CLICK HERE TO DOWNLOAD](https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/user-downloads/68-RCM.rules)\
+    > # [CLICK HERE TO DOWNLOAD](https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/user-downloads/68-RCM.rules)\\
+    >
     > [68-RCM.rules](https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/user-downloads/68-RCM.rules)
 
     Navigate to /etc/udev/rules.d/, then drop 68-RCM.rules into the folder.
 
     Once you've done that, open the RCM Programming Tool. Your device should appear now! If not, try unplugging and plugging back in.
+  </Accordion>
+
+  <Accordion title="My V3 Adapter is not working in BetterGH3 on SteamOS/Bazzite/Linux">
+    Add this to your Steam Launch Options:
+
+    <Info>
+      WINEDLLOVERRIDES="xinput1\_3=n,b" %command%
+    </Info>
   </Accordion>
 </AccordionGroup>

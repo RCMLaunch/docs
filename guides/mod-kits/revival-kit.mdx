@@ -365,7 +365,7 @@ Click on the pictures to be taken to the respective guitar's build guide!
 ## Troubleshooting
 
 <AccordionGroup>
-<Accordion title="The RCM Programming Tool isn't opening on my Mac">
+  <Accordion title="The RCM Programming Tool isn't opening on MacOS">
     If you are experiencing the following pop-up, macOS is detecting the RCM Programming Tool as a false-positive for being malware.
 
     <Frame>
@@ -398,9 +398,21 @@ Click on the pictures to be taken to the respective guitar's build guide!
 
     Say you had 10.7.11 instead of 10.7.10, you would need to do this process again.
   </Accordion>
+
   <Accordion>
   </Accordion>
 
-  <Accordion>
+  <Accordion title="The RCM Programming Tool is not seeing my device on Linux">
+    If the RCM Programming Tool is not seeing your device, it is likely due to a permissions issue in Linux.
+
+    You will need the following file:
+
+    > # [CLICK HERE TO DOWNLOAD](https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/user-downloads/68-RCM.rules)\\
+    >
+    > [68-RCM.rules](https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/user-downloads/68-RCM.rules)
+
+    Navigate to /etc/udev/rules.d/, then drop 68-RCM.rules into the folder.
+
+    Once you've done that, open the RCM Programming Tool. Your device should appear now! If not, try unplugging and plugging back in.
   </Accordion>
 </AccordionGroup>

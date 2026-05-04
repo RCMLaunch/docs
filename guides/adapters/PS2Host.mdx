@@ -16,6 +16,7 @@ description: "The PS2 Host Adapter is a device for using USB Guitars and Gamepad
       - **XBOX EDITION LES PAUL**, USE PC MODE, KNOB 8
       - **SG**, Legacy Mode
   </Accordion>
+
   <Accordion title="Guitar Hero Controllers">
     - **Wired**
       - RetroCultMods Revival Kit Guitar
@@ -33,6 +34,7 @@ description: "The PS2 Host Adapter is a device for using USB Guitars and Gamepad
       - RedOctane “Guitar Hero 5/Band Hero” for PS3
       - RedOctane Warriors of Rock guitar for PS3
   </Accordion>
+
   <Accordion title="Rock Band Controllers">
     - **Wired**
       - RB1 Wired Stratocaster for Xbox 360
@@ -57,6 +59,7 @@ description: "The PS2 Host Adapter is a device for using USB Guitars and Gamepad
       - RB Beatles Gretsch for Wii
       - RB3 Precision Bass Wireless for Wii
   </Accordion>
+
   <Accordion title="Gamepads">
     Most USB Gamepads will work, but YMMV. (some third party gamepads will not work)
 
@@ -156,7 +159,6 @@ description: "The PS2 Host Adapter is a device for using USB Guitars and Gamepad
 <AccordionGroup>
   <Accordion title="Whammy Calibration/Tuning">
     1. Open the USB Host Inputs dropdown menu.
-
        <img
          src="/images/image-3.png"
          alt="Image"
@@ -165,7 +167,6 @@ description: "The PS2 Host Adapter is a device for using USB Guitars and Gamepad
          style={{ width:"50%" }}
        />
     2. Scroll down to the guitar whammy section. You’ll see this:
-
        <img
          src="/images/image-4.png"
          alt="Image"
@@ -178,7 +179,6 @@ description: "The PS2 Host Adapter is a device for using USB Guitars and Gamepad
     5. After that, push your whammy bar down as far as it can go without overdoing it. Hold it there, then click Next.
     6. Now you have to set Deadzone. Push the whammy bar in a little bit and you can see the value go up a little bit. Look for a point where the whammy won’t activate on it’s own. Hold it there, then click Next.
     7. You’re done! Click Save Settings on the left side. After it’s done, give it a try! You can manually adjust the deadzone with the sliders as well if you’d like to tweak your settings.
-
        <img
          src="/images/image-5.png"
          alt="Image"
@@ -187,6 +187,7 @@ description: "The PS2 Host Adapter is a device for using USB Guitars and Gamepad
          style={{ width:"98%" }}
        />
   </Accordion>
+
   <Accordion title="Gamepad Thumbstick Tuning">
     <Steps>
       <Step>
@@ -228,5 +229,19 @@ description: "The PS2 Host Adapter is a device for using USB Guitars and Gamepad
     - Lastly, you may just need to hard reset the device. Holding the reset button while plugging the adapter in will put it into recovery mode, which you can then open the [RCM Programming Tool](https://retrocultmods.com/programming-tool/) and erase and reset to factory.
 
     If you continue to run into issues, send us an email at [support@retrocultmods.com](mailto:support@retrocultmods.com)
+  </Accordion>
+
+  <Accordion title="[LINUX] RCM Programming Tool is not seeing any devices">
+    If the RCM Programming Tool is not seeing your device, it is likely due to a permissions issue in Linux.
+
+    You will need the following file:
+
+    > # [CLICK HERE TO DOWNLOAD](https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/user-downloads/68-RCM.rules)\\
+    >
+    > [68-RCM.rules](https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/user-downloads/68-RCM.rules)
+
+    Navigate to /etc/udev/rules.d/, then drop 68-RCM.rules into the folder.
+
+    Once you've done that, open the RCM Programming Tool. Your device should appear now! If not, try unplugging and plugging back in.
   </Accordion>
 </AccordionGroup>
