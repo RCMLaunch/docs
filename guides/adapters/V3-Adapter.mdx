@@ -1611,6 +1611,12 @@ Let's get the V3 Adapter working on those games and emulators!
     If you continue to run into issues, send us an email at [support@retrocultmods.com](mailto:support@retrocultmods.com)
   </Accordion>
 
+  <Accordion title="Windows Defender is stopping the RCM Programming Tool from opening">
+    The RCM Programming Tool will sometimes get blocked by Windows Defender or other antivirus software. This is a false positive. The pop-up tends to occur due to the tool being freshly made (we have to recompile the programmer every time we update revisions).
+
+    You can just click Run Anyway.
+  </Accordion>
+
   <Accordion title="The RCM Programming Tool isn't opening on macOS">
     If you are experiencing the following pop-up, macOS is detecting the RCM Programming Tool as a false-positive for being malware.
 
@@ -1650,9 +1656,9 @@ Let's get the V3 Adapter working on those games and emulators!
 
     You will need the following file:
 
-    > # [CLICK HERE TO DOWNLOAD](https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/user-downloads/68-RCM.rules)\\
-    >
-    > [68-RCM.rules](https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/user-downloads/68-RCM.rules)
+    <Info>
+      [CLICK HERE TO DOWNLOAD 68-RCM.rules](https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/user-downloads/68-RCM.rules)
+    </Info>
 
     Navigate to /etc/udev/rules.d/, then drop 68-RCM.rules into the folder.
 
