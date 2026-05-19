@@ -404,7 +404,7 @@ I personally use the hotter temperature with leaded solder.
       Tin your solder tip, then clean it with the brass wool.
     </Step>
     <Step>
-      Carefully solder the two metal legs of both switches to their sockets.
+      Apply a little bit of solder, then carefully solder the two metal legs of both switches to their sockets.
     </Step>
   </Steps>
 </Accordion>
@@ -449,7 +449,7 @@ I personally use the hotter temperature with leaded solder.
       Tin your solder tip and clean it with brass wool.
     </Step>
     <Step>
-      Begin soldering each wire/pad, making sure that the solder joints are not bridging.
+      Apply flux to each pad, then begin soldering each wire/pad, making sure that the solder joints are not bridging.
 
       <Danger>
         **MAKE SURE YOU ARE MATCHING BOTH ENDS OF THE WIRE TO THEIR RESPECTIVE SOCKETS. GREEN TO GREEN, RED TO RED, ETC.**
@@ -463,7 +463,7 @@ I personally use the hotter temperature with leaded solder.
     <Step>
       Once you've verified that all five frets and ground have been soldered, plug the Zeroboard into your computer and test each input. Take this time to test the strum inputs as well. 
     </Step>
-    <Step title="THE NEXT STEPS ONLY APPLY IF YOU ARE INSTALLING THE RGB FRET KIT">
+    <Step>
       **THE NEXT STEPS ONLY APPLY IF YOU ARE INSTALLING THE RGB FRET KIT**\
       **THE NEXT STEPS ONLY APPLY IF YOU ARE INSTALLING THE RGB FRET KIT**\
       **THE NEXT STEPS ONLY APPLY IF YOU ARE INSTALLING THE RGB FRET KIT**\
@@ -529,7 +529,7 @@ I personally use the hotter temperature with leaded solder.
       Tin your solder tip and clean it with brass wool.
     </Step>
     <Step>
-      Solder the wires onto the pads.
+      Apply a bit of solder to each pad, then solder the wires onto the pads.
     </Step>
     <Step>
       Flip the Zeroboard over and use the flush cutters to trim the excess wire.
@@ -581,7 +581,7 @@ I personally use the hotter temperature with leaded solder.
       Tin your solder tip and clean it with brass wool.
     </Step>
     <Step>
-      Solder the wires onto the pads.
+      Apply flux to the pads, then solder the wires onto the pads.
     </Step>
     <Step>
       Open the RCM Programming Tool and test the start/select inputs.
@@ -589,43 +589,50 @@ I personally use the hotter temperature with leaded solder.
   </Steps>
 </Accordion>
 
-### D-Pad Board
+### D-Pad Board - REPLACEMENT ONLY
 
 <Badge color="orange" stroke>RGB Frets DIY Kit</Badge> <Badge color="green" stroke>Standard DIY Kit</Badge>
 
 <Note>
-  Only the **Xbox 360 and PS3 variants** of the **Les Paul, World Tour, and GH5 models** have D-Pads. It is highly recommended to use a replacement D-Pad Board, as the stock ones can be difficult to work with.\
+  Only the **Xbox 360 and PS3 variants** of the **Les Paul, World Tour, and GH5 models** have D-Pads. We do not provide soldering instruction for the stock d-pads of those guitars. \
   [Replacements D-Pad Boards can be purchased here.](https://shop.retrocultmods.com/products/dpad-replacement-boards-for-guitar-hero-controllers)
 </Note>
 
-<Accordion title="D-Pad Board Soldering Guide">
+<Accordion title="D-Pad Replacement Board Soldering Guide">
   <Info>
     Tools used:
 
     - Soldering Gear
     - Flush Cutters
     - Wire Strippers
-    - 26AWG Wire (if using replacement board. RECOMMENDED!!!)
+    - 26AWG Wire
 
     Components:
 
-    - Original D-Pad Board or Replacement
+    - Replacement D-Pad Board
     - Zeroboard
   </Info>
 
   <Danger>
-    This part is DIFFICULT. We highly suggest you purchase a replacement D-Pad board.
+    We do not provide support for the following D-Pad boards:
+
+    - Xbox 360 Les Paul
+    - PS3 Les Paul
+    - Xbox World Tour/Sunburst
+    - PS2 World Tour/Sunburst
+    - PS3 World Tour/Sunburst
+    - Xbox GH5
+    - PS2 GH5
+    - PS3 GH5
+    - Xbox 360 Xplorer
   </Danger>
 
   <Steps>
     <Step>
-      Snip the wires connected to the D-Pad Board, on the far end so that you have a lot of wire to work with, shown below.
     </Step>
     <Step>
-      Strip the ends of the wires, splitting them if needed, then twist the ends of the wires to prevent frayed wires from touching other solder pads.
     </Step>
     <Step>
-      **This is the hardest part.** You must now figure out which wire goes to which pad.
     </Step>
   </Steps>
 </Accordion>
@@ -642,8 +649,43 @@ I personally use the hotter temperature with leaded solder.
 
     Components:
 
-    - Authentication Cable
+    - [Authentication Cable (purchase here)](https://shop.retrocultmods.com/products/controller-authentication-upgrade-for-diy-solderless-kits)
+    - Zeroboard
   </Info>
+
+  <Steps>
+    <Step>
+      Observe these four pads on the Zeroboard
+    </Step>
+    <Step>
+      Insert the pins from the Authentication Cable into the pads on the Zeroboard, in this order:
+
+      - BLACK
+      - RED
+      - WHITE
+      - YELLOW
+
+      (image)
+    </Step>
+    <Step>
+      Bend the pins 90 degrees, so that you can access the pads to solder the pins to the Zeroboard.
+    </Step>
+    <Step>
+      Tin your solder tip and clean it with brass wool.
+    </Step>
+    <Step>
+      Solder the pins to the sockets.
+    </Step>
+    <Step>
+      To test the authentication cable:
+
+      1. Open the RCM Programming Tool
+      2. Plug the Zeroboard into your computer
+      3. On the configuration screen, observe the USB Host dropdown menu.
+      4. Plug a gamepad into the authentication cable
+      5. A device should appear on the USB Host dropdown menu.
+    </Step>
+  </Steps>
 </Accordion>
 
 ### USB-C Port (sold separately, from Revival Kit)
@@ -656,11 +698,43 @@ I personally use the hotter temperature with leaded solder.
 
     - Screwdriver Kit
     - Soldering Gear
+    - 26AWG Wire
 
     Components:
 
     - USB-C Daughterboard
+    - Zeroboard
   </Info>
+
+  <Steps>
+    <Step>
+      Observe these pads on the Zeroboard:
+    </Step>
+    <Step>
+      Observe the solder pads on the USB-C daughterboard, they match the pads on the Zeroboard.
+    </Step>
+    <Step>
+      Prepare four wires with stripped ends, in different colors.
+    </Step>
+    <Step>
+      You will need to solder each cable one by one carefully.
+
+      Tin your soldering iron and clean it with brass wool.
+    </Step>
+    <Step>
+      Apply a small amount of flux to the pad you're soldering to, making sure to be careful as to not touch anything but the wire, pad, and solder during the soldering process.
+    </Step>
+    <Step>
+      Repeat this for all four wires.
+    </Step>
+    <Step>
+      <Badge color="red" size="lg" shape="pill" stroke icon="exclamation" iconType="sharp-solid">IMPORTANT</Badge>\
+      Do a thorough check of each solder joint to make sure nothing is bridging.
+    </Step>
+    <Step>
+      Test the new USB-C port by plugging the USB cable into the daughterboard, then into your computer. It should work in the same way as the USB-C port on the strumboard.
+    </Step>
+  </Steps>
 </Accordion>
 
 ## Setup
