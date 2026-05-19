@@ -92,6 +92,10 @@
       {
         "label": "Support",
         "href": "https://retrocultmods.freshdesk.com/support/tickets/new"
+      },
+      {
+        "href": "/guides/mod-kits/revival-kit",
+        "label": "Revival Kit Guides"
       }
     ],
   "primary": {
