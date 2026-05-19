@@ -875,3 +875,35 @@ I personally use the hotter temperature with leaded solder.
 </AccordionGroup>
 
 ## Troubleshooting
+
+<AccordionGroup>
+  <Accordion>
+    e
+  </Accordion>
+
+  <Accordion title="Windows Defender is stopping the RCM Programming Tool from opening">
+    The RCM Programming Tool will sometimes get blocked by Windows Defender or other antivirus software. This is a false positive. The pop-up tends to occur due to the tool being freshly made (we have to recompile the programmer every time we update revisions).You can just click Run Anyway.
+  </Accordion>
+
+  <Accordion>
+    e
+  </Accordion>
+
+  <Accordion>
+    If the RCM Programming Tool is not seeing your device, it is likely due to a permissions issue in [Linux.You](http://Linux.You) will need the following file:
+
+    <Info>
+      [CLICK HERE TO DOWNLOAD 68-RCM.rules](https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/user-downloads/68-RCM.rules)
+    </Info>
+
+    Navigate to /etc/udev/rules.d/, then drop 68-RCM.rules into the folder.Once you’ve done that, open the RCM Programming Tool. Your device should appear now! If not, try unplugging and plugging back in.
+  </Accordion>
+
+  <Accordion>
+    Add this to your Steam Launch Options:
+
+    ```text
+    WINEDLLOVERRIDES=“xinput1_3=n,b” %command%
+    ```
+  </Accordion>
+</AccordionGroup>
