@@ -6,49 +6,6 @@ icon: "v"
 mode: "default"
 ---
 
-import NintendoSwitch from '/snippets/NintendoSwitch.mdx';
-
-Note: Fortnite Festival requires specific instructions to be used with RetroCultMods products. [Click here to be taken to that section.](#fortnite-festival)
-
-## Supported Controllers
-
-### Wiimote Nunchuk Connection
-
-<Columns cols={3}>
-  <Card title="Les Paul" img="/images/Instruments/WiiLesPaul.png">
-    Guitar Hero 3\
-    Guitar Hero Aerosmith
-  </Card>
-
-  <Card title="Sunburst / World Tour" img="/images/Instruments/WiiSunburst.png">
-    Guitar Hero World Tour\
-    Guitar Hero Metallica
-  </Card>
-
-  <Card title="GH5" img="/images/Instruments/WiiGH5.png">
-    Guitar Hero 5\
-    Band Hero
-  </Card>
-</Columns>
-
-<Columns cols={3}>
-  <Card title="Warriors of Rock (WoRtar)" img="/images/Instruments/WiiWoR.png">
-    Guitar Hero Warriors of Rock
-  </Card>
-
-  <Card title="Guitar Hero Drums" img="/images/Instruments/WiiGHDrums.png">
-    Guitar Hero World Tour\
-    Guitar Hero 5\
-    Band Hero\
-    Guitar Hero Warriors of Rock
-  </Card>
-
-  <Card title="DJ Hero Turntable" img="/images/Instruments/djh.png">
-    DJ Hero\
-    DJ Hero 2
-  </Card>
-</Columns>
-
 Note: Third party guitars may or may not work. We cannot guarantee support, so we highly suggest purchasing a first party guitar. If you need help figuring out if the one you're planning on getting is a first party guitar, feel free to send us an email!
 
 ### USB Connection
@@ -388,7 +345,43 @@ Note: Third party guitars may or may not work. We cannot guarantee support, so w
 ### Tuning and Calibration
 
 <AccordionGroup>
-  <Accordion title="Tilt Calibration/Tuning" description="***You will ONLY need to do this with USB guitars. Wiimote Nunchuk connected guitars rely on the V3’s internal tilt sensors.">
+  <Accordion title="Tilt Calibration/Tuning [For V3 Adapters with NEW tilt chip]" description="***You will ONLY need to do this with USB guitars. Wiimote Nunchuk connected guitars rely on the V3’s internal tilt sensors.">
+    Click here for a step-by-step Tilt Tuning guide.
+
+    <Steps>
+      <Step>
+        First, we must open the Tilt dropdown menu in the RCM Programing Tool.
+
+        <Frame>
+        </Frame>
+      </Step>
+      <Step>
+        This menu will appear when you click the dropdown:
+
+        <Frame>
+          ![Tiltcalibration](/images/Programmer/tiltcalibration.png)
+        </Frame>
+      </Step>
+      <Step>
+        Click Calibrate!
+      </Step>
+      <Step>
+        Then, position your guitar in the position you play in. Click Next.
+      </Step>
+      <Step>
+        After that, tilt your guitar up to the position you would like tilt to activate. Hold it there and click next.
+      </Step>
+      <Step>
+        Once you’re satisfied with calibration, click “Save Settings” on the left side of the window. Once the programming tool has finished writing the firmware, it will show “Status: Done” and 100%. Close the software.
+
+        <Frame>
+          ![Program Done](/images/Programmer/ProgramDone.png)
+        </Frame>
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="Tilt Calibration/Tuning [FOR USB DEVICES]" description="***You will ONLY need to do this with USB guitars. Wiimote Nunchuk connected guitars rely on the V3’s internal tilt sensors.">
     Click here for a step-by-step Tilt Tuning guide.
 
     <Steps>
