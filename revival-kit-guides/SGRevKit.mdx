@@ -1,23 +1,22 @@
 ---
 title: "SG Revival Kit Installation Guide"
-description: "Written instructions, video coming soon!"
 sidebarTitle: "SG"
 ---
 
 # Introduction
 
-This is an instructional guide for the RetroCultMods Revival Kit for the Playstation 2 Gibson SG. This build can be completed in under an hour and a half, but can take longer if you are thorough with the cleaning process. If you run into any issues during the build or have questions, [click here!](https://retrocultmods.freshdesk.com/support/tickets/new)
+This is an instructional guide for the RetroCultMods Revival Kit for the PlayStation 2 Gibson SG guitar. This build can be completed in under an hour and a half, but can take longer if you are thorough with the cleaning process. If you run into any issues during the build or have questions, [click here!](https://retrocultmods.freshdesk.com/support/tickets/new)
 
 ## Parts Included
 
 - Revival Kit Zeroboard (Strumboard/PCB)
 - Revival Kit Fretboard
-- Replacement Start/Select Board for SG
-- 3D Printed Translucent Strumbar for SG
 - 5x 3D Printed Translucent Frets
+- 3D Printed Translucent Strumbar for SG
 - 3D Printed Kit Hardware
-- Twintail USB-C and Authentication Cable
-- New Whammy Assembly \+ Whammy Potentiometer
+- Replacement Start/Select board for SG
+- TwinTail USB-C and Authentication Cable
+- New Whammy Assembly
 - Switch Puller
 - Color Coded Wires
 - 10 foot nylon braided USB-A to USB-C cable
@@ -29,7 +28,8 @@ This is an instructional guide for the RetroCultMods Revival Kit for the Playsta
 
 ## Required Tools (not included)
 
-- [Screwdriver with PH1 and PH2 bits](https://www.amazon.com/gp/product/B0CCTNX9GY)
+- [Screwdriver with PH1, PH2, T10, and T6(sometimes) bits](https://www.amazon.com/gp/product/B0CCTNX9GY)
+- [Flush Cutters (optional)](https://www.amazon.com/IGAN-P6-Precision-Clippers-Spring-loaded-Handmade/dp/B087P191LP)
 
 # Step-by-Step Installation Guide
 
@@ -38,10 +38,16 @@ This is an instructional guide for the RetroCultMods Revival Kit for the Playsta
 Flip the controller over so the **Red Octane** sticker on the back of the body is visible.
 
 <Columns cols={2}>
-  <Card title="Body Screws" icon="sparkles">
+  <Card title="Body Screws" img="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/SG/SGBodyScrews.png">
+    <Tip>
+      Rear body shell –**11x screws**
+    </Tip>
   </Card>
 
-  <Card title="Neck Screws" icon="sparkles">
+  <Card title="Neck Screws" img="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/SG/SGNeckScrews.png">
+    <Danger>
+      Rear neck shell – 5x screws
+    </Danger>
   </Card>
 </Columns>
 
@@ -57,36 +63,35 @@ If the shell seems to gets stuck, **DO NOT FORCE IT**. Check to make sure you ha
 Now its time to remove the stock boards that will be replaced with the new boards included in the kit.
 
 <Columns cols={2}>
-  <Card title="Internal Body Screws">
-    <Callout icon="screwdriver" iconType="regular" color="#FF0000">
-      Remove the **4x screws** on the stock Strumboard.
-    </Callout>
+  <Column>
+    <Card img="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/SG/SGInternalScrews.png">
+      <Danger>
+        Strum Board - 4x PH1 Screws
+      </Danger>
 
-    <Callout icon="screwdriver" iconType="regular" color="#FFEA00">
-      Remove the **2x screws** on the RJ11 port. (This board will not be replaced, so if you’d like to leave it in so there is no open hole in the shell after completing the kit, leave this board installed and cut the wires coming from it instead)
-    </Callout>
-
-    <Callout icon="screwdriver" iconType="regular" color="#009DFF">
-      Remove the **4x screws** on the stock input board.
-    </Callout>
-
-    <Callout icon="screwdriver" iconType="regular" color="#FFAE00">
-      Remove the **2x screws** on the headset port.
-    </Callout>
-  </Card>
-
-  <Card title="Internal Neck Screws">
-    <Callout icon="screwdriver" iconType="regular" color="#09FF00">
-      Remove the **2x screws** from the stock Fretboard.
-    </Callout>
-  </Card>
+      <Check>
+        Start/Select board - 3x PH1 Screws
+      </Check>
+    </Card>
+  </Column>
+  <Column>
+    <Card img="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/SG/SGFretboardScrews.png">
+      <Warning>
+        Fretboard  - 2x PH1 Screws
+      </Warning>
+    </Card>
+  </Column>
 </Columns>
 
 Once all the screws are removed, remove all of the stock boards along with the whammy assembly from the shell.
 
 **You will need to keep the following parts of the whammy assembly:**
 
+\[INSERT IMAGE HERE\]
+
 ## 3. (Optional) Clean Your Guitar
+
+<iframe src="https://www.youtube.com/embed/btX9tRJN9nk" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
 In this step, I took a little bit of time to clean some parts of the guitar. I suggest being more thorough in your build, as your guitar may have finger grime from way back in the day!
 
@@ -96,6 +101,8 @@ Pro tip: Toothbrush, Dawn soap, and water.
 
 ## 4. Test Your Revival Kit
 
+<iframe src="https://www.youtube.com/embed/9KKaXZ-08fA" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
 Before installing the Revival Zeroboard/Strumboard and Revival Fretboard, they should be tested for proper functionality.
 
 <Steps>
@@ -103,18 +110,25 @@ Before installing the Revival Zeroboard/Strumboard and Revival Fretboard, they s
     Plug the Revival Fretboard into the Revival Zeroboard/Strumboard using the three included white cables. Make sure that each connection goes to the proper port. It is suggested to go one by one while installing.
 
     <Columns cols={2}>
-      <Card img="/images/Revival-Kit-Installation/Test-Revival-Kit/testkit1.png">
-      </Card>
-
-      <Card img="/images/Revival-Kit-Installation/Test-Revival-Kit/testkit2.png">
-      </Card>
+      <Column>
+        <img
+          src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/Test-Revival-Kit/testkit1.png"
+          className="mx-auto"
+        />
+      </Column>
+      <Column>
+        <img
+          src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/Test-Revival-Kit/testkit2.png"
+          className="mx-auto"
+        />
+      </Column>
     </Columns>
   </Step>
   <Step>
     Plug your Revival Zeroboard/Strumboard into your computer, using the USB-C to USB-A cable included in the Revival Kit. You will plug it into the vertical USB-C port on the Zeroboard.
 
     <img
-      src="/images/Revival-Kit-Installation/Test-Revival-Kit/testkit3.png"
+      src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/Test-Revival-Kit/testkit3.png"
       alt="Testkit3"
       title="Testkit3"
       className="mx-auto"
@@ -122,10 +136,10 @@ Before installing the Revival Zeroboard/Strumboard and Revival Fretboard, they s
     />
   </Step>
   <Step>
-    Open the [RCM Programming Tool (click here to go to the download page)](https://retrocultmods.com/programming-tool/). If the following screen appears for you, make sure to switch the DEVICE TYPE to \*\*“Revival Kit”.\*\*\_ Click Erase and Configure. Do not touch the device while it is being programmed.\_
+    Open the [RCM Programming Tool (click here to go to the download page)](https://retrocultmods.com/programming-tool/). If the following screen appears for you, make sure to switch the DEVICE TYPE to “Revival Kit”. Click Erase and Configure. Do not touch the device while it is being programmed.
 
     <img
-      src="/images/Revival-Kit-Installation/Test-Revival-Kit/testkit4.png"
+      src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/Test-Revival-Kit/testkit4.png"
       alt="Testkit4"
       title="Testkit4"
       className="mx-auto"
@@ -136,7 +150,7 @@ Before installing the Revival Zeroboard/Strumboard and Revival Fretboard, they s
     Once the firmware writing is complete, this screen will appear:
 
     <img
-      src="/images/Revival-Kit-Installation/Test-Revival-Kit/testkit5.png"
+      src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/Test-Revival-Kit/testkit5.png"
       alt="Testkit5"
       title="Testkit5"
       className="mx-auto"
@@ -147,7 +161,7 @@ Before installing the Revival Zeroboard/Strumboard and Revival Fretboard, they s
     Scroll down to the list of all inputs and then start pressing the fret and strum switches. The respective switches will light up and so will the input in the RCM Programming Tool. Verify that all of the inputs and switches work properly. If not, contact support.
 
     <img
-      src="/images/Revival-Kit-Installation/Test-Revival-Kit/testkit6.png"
+      src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/Test-Revival-Kit/testkit6.png"
       alt="Testkit6"
       title="Testkit6"
       className="mx-auto"
@@ -156,112 +170,9 @@ Before installing the Revival Zeroboard/Strumboard and Revival Fretboard, they s
   </Step>
 </Steps>
 
-## 5. Prepping the New Strumbar (RGB Only)
-
-**IF YOU DID NOT ORDER THE 3D PRINTED CLEAR STRUM BAR, SKIP THIS STEP.**
-
-Before installing the new Strumboard, we need to transfer some pieces of the stock strumbar over to the new one:
-
-<Steps>
-  <Step>
-    Remove the metal strumrod by pulling it out of the stock strumbar.
-
-    <img
-      src="/images/Revival-Kit-Installation/Xplorer/Xplorer-Rev-RGB-Strumbar-Install/rgbstrumbar1.png"
-      alt="Rgbstrumbar1"
-      title="Rgbstrumbar1"
-      className="mx-auto"
-      style={{ width:"33%" }}
-    />
-  </Step>
-  <Step>
-    Remove both of the circular spacers on each end of the strumbar. You can easily remove these by pushing them out with your finger from the inside of the strumbar.
-
-    <img
-      src="/images/Revival-Kit-Installation/Xplorer/Xplorer-Rev-RGB-Strumbar-Install/rgbstrumbar2.png"
-      alt="Rgbstrumbar2"
-      title="Rgbstrumbar2"
-      className="mx-auto"
-      style={{ width:"30%" }}
-    />
-  </Step>
-  <Step>
-    Remove the four rubber pads on each foot of the strumbar. These can be lifted straight out of their slots.
-
-    <img
-      src="/images/Revival-Kit-Installation/Xplorer/Xplorer-Rev-RGB-Strumbar-Install/rgbstrumbar3.png"
-      alt="Rgbstrumbar3"
-      title="Rgbstrumbar3"
-      className="mx-auto"
-      style={{ width:"36%" }}
-    />
-  </Step>
-  <Step>
-    Make sure you have all the stock parts you need:
-
-    - 1x Metal strumrod
-    - 2x Circular spacers
-    - 4x Rubber pads
-
-    <img
-      src="/images/Revival-Kit-Installation/Xplorer/Xplorer-Rev-RGB-Strumbar-Install/rgbstrumbar4.png"
-      alt="Rgbstrumbar4"
-      title="Rgbstrumbar4"
-      className="mx-auto"
-      style={{ width:"41%" }}
-    />
-  </Step>
-  <Step>
-    Find the white tube of lubricant and apply a very small amount on each end of the metal strumrod, where it makes contacts with the circular spacers. Use for finger or a qtip to spread the lubricant out; we want only a thin layer of lubricant on the ends of the strumrod!
-
-    <img
-      src="/images/Revival-Kit-Installation/Xplorer/Xplorer-Rev-RGB-Strumbar-Install/rgbstrumbar5.png"
-      alt="Rgbstrumbar5"
-      title="Rgbstrumbar5"
-      className="mx-auto"
-      style={{ width:"55%" }}
-    />
-  </Step>
-  <Step>
-    Put all of these parts into the new strumbar, in the same places as the stock strumbar. Insert the rubber pads into the slots in each of the feet of the new strumbar, insert the spacers into the circular cutouts on each end of the new strumbar, then insert the metal strumrod through the spacers.
-
-    <img
-      src="/images/Revival-Kit-Installation/Xplorer/Xplorer-Rev-RGB-Strumbar-Install/rgbstrumbar6.png"
-      alt="Rgbstrumbar6"
-      title="Rgbstrumbar6"
-      className="mx-auto"
-      style={{ width:"49%" }}
-    />
-  </Step>
-  <Step>
-    If the strumbar slides up and down the metal rod too much for your liking, then you can install the wide, thin spacers included on the end of the component piece to fill in the gap. Place these under the stock strumbar spacers. You may need to stack multiple on each end to get your desired tolerance!
-
-    <img
-      src="/images/Revival-Kit-Installation/Xplorer/Xplorer-Rev-RGB-Strumbar-Install/rgbstrumbar7.png"
-      alt="Rgbstrumbar7"
-      title="Rgbstrumbar7"
-      className="mx-auto"
-      style={{ width:"51%" }}
-    />
-  </Step>
-</Steps>
-
 ## 6. Installing the Revival Zeroboard (strumboard)
 
-k
-
 <Steps>
-  <Step>
-    Slide the metal rod into the new strumbar. Then place the new strumbar into the slot that the stock strumbar sat in. Put the black brackets back into place.
-
-    <img
-      src="/images/Revival-Kit-Installation/Xplorer/Xplorer-Rev-ZB-Install/revzbinstall1.png"
-      alt="Revzbinstall1"
-      title="Revzbinstall1"
-      className="mx-auto"
-      style={{ width:"62%" }}
-    />
-  </Step>
   <Step>
     Separate the small strum keycaps from the component piece and slot them into the stems of the strum switches. This is needed for a tighter strumbar feel.
 
@@ -287,6 +198,8 @@ k
 </Steps>
 
 ## 7. Installing the Revival Fretboard
+
+<iframe src="https://www.youtube.com/embed/onVrWBbpTLA" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
 <Steps>
   <Step>
@@ -341,98 +254,200 @@ k
   </Step>
 </Steps>
 
-## 8. Installing the Start/Select Board
+## Installing the Start/Select Board
 
 <Steps>
   <Step>
     Swap the silicone domes on the stock start/select board onto the new board.
+
+    <Frame>
+      <img
+        src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/MayFlash/MayFlashStartSelect1.png"
+        alt="MayFlashStartSelect1"
+        className="mx-auto"
+        style={{ width:"82%" }}
+      />
+    </Frame>
   </Step>
   <Step>
     Secure the new Start/Select board in the place of the stock Start/Select board, positioned with the white connector closest to the Strumboard. The original screws will likely be too small to cover the slots of the new board, so the provided screws can be used instead.
+
+    <Frame>
+      <img
+        src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/MayFlash/MayFlashStartSelect2.png"
+        alt="MayFlashStartSelect2"
+        className="mx-auto"
+        style={{ width:"78%" }}
+      />
+    </Frame>
   </Step>
   <Step>
-    Connect one end of the Red Wire into the white connector on the new Start/Select board. Connect the other end of the Red Wire into the white ST/SEL connector on the Strumboard.
+    Connect one end of the Red Wire into the white connector on the new Start/Select board. 
+
+    <Frame>
+      <img
+        src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/SG/SGStartSelectBoard.png"
+        alt="MayFlashStartSelect3"
+        className="mx-auto"
+        style={{ width:"70%" }}
+      />
+    </Frame>
+  </Step>
+  <Step>
+    Connect the other end of the Red Wire into the white ST/SEL connector on the Strumboard.
+
+    <Frame>
+      <img
+        src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/MayFlash/MayFlashStartSelect3.png"
+        className="mx-auto"
+        style={{ width:"58%" }}
+      />
+    </Frame>
   </Step>
 </Steps>
 
 ## 9. Assembling and Installing the Whammy
 
-This part is a little complicated. We suggest watching the video along with following the guide.
-
-<iframe src="https://www.youtube.com/embed/13T3d4n7_5o" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+UNIQUE
 
 <Steps>
   <Step>
-    Gather the whammy potentiometer, 3D printed whammy assembly, 2x spring arms, whammy spring, main whammy pivot (with bar attached), and white whammy frame piece
-  </Step>
-  <Step>
-    Starting with the main whammy pivot, attach the one of the spring arms to the post on the side with the blocker piece sticking out. Pictured below:
-  </Step>
-  <Step>
-    Put the spring onto the hook on the both spring arms, then put the other spring arm onto the post. It should be able to hold itself in place and not fall off. It should look like this:
-  </Step>
-  <Step>
-    Moving onto the whammy assembly, we need to determine which assembly pieces we need.
+    Gather your new whammy potentiometer, the circular whammy cap, and the potentiometer holder.
 
-    There are two sets of assemblies, one for left mounted whammies and one for right mounted whammies. You can determine which side you need by the original potentiometer's location. This graphic can show you which side to pick:
+    <Frame>
+      <img
+        src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/MayFlash/MayFlashNewWhammy1.png"
+        alt="MayFlashNewWhammy1"
+        title="MayFlashNewWhammy1"
+        className="mx-auto"
+        style={{ width:"59%" }}
+      />
+    </Frame>
   </Step>
   <Step>
-    Now that you've figured out which side you need, separate the two halves of the assemblies. They are labeled with a R and L. Now, insert the new whammy potentiometer into the bottom assembly piece. We'll come back to the top assembly piece later.
-  </Step>
-  <Step>
-    Insert the whammy potentiometer's turning pin into the main whammy pivot on the side you installed the spring arms. The 3D printed whammy assembly piece holding the potentiometer will feel loose. This is intentional.
-  </Step>
-  <Step>
-    Now take the white whammy frame piece and insert it onto the other side of the main whammy pivot. The side that is closer to the post should be matching height with the 3D printed assembly we've already installed.
+    Push the whammy cap onto the new potentiometer.
 
-    <Columns cols={2}>
-      <Column>
-      </Column>
-      <Column>
-      </Column>
-    </Columns>
+    <Frame>
+      <img
+        src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/MayFlash/MayFlashNewWhammy2.png"
+        alt="MayFlashNewWhammy2"
+        title="MayFlashNewWhammy2"
+        className="mx-auto"
+        style={{ width:"58%" }}
+      />
+    </Frame>
   </Step>
   <Step>
-    Carefully insert the entire assembly into the whammy slot. It should look like this:
-  </Step>
-  <Step>
-    Now for the hard part. We need to install the upper 3D printed whammy assembly piece.
+    Press the new potentiometer into the potentiometer holder.
 
-    How you go about this is slightly lifting the whammy assembly out of the guitar and sliding the upper 3D printed whammy assembly piece in. This may take a few attempts.
+    <Frame>
+      <img
+        src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/MayFlash/MayFlashNewWhammy3.png"
+        alt="MayFlashNewWhammy3"
+        title="MayFlashNewWhammy3"
+        className="mx-auto"
+        style={{ width:"66%" }}
+      />
+    </Frame>
   </Step>
   <Step>
-    Once you get the upper 3D printed assembly piece in, it will look flush with the lower 3d printed assembly piece.
+    Remove the small black rubber piece from the center of the whammy slot. Use your flush cutters to remove the bottom part of the whammy slot. Snip both sides, then wiggle the plastic back and forth until it snaps away.
+
+    <Frame>
+      <img
+        src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/MayFlash/MayFlashNewWhammy4.png"
+        alt="MayFlashNewWhammy4"
+        title="MayFlashNewWhammy4"
+        className="mx-auto"
+        style={{ width:"59%" }}
+      />
+    </Frame>
   </Step>
   <Step>
-    Now that the assembly is finished, you can test the pivot motion by holding down the assembly on both sides while holding the guitar body.
+    Push the top of the whammy cap into the whammy bar.
+
+    <Frame>
+      <img
+        src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/MayFlash/MayFlashNewWhammy5.png"
+        alt="MayFlashNewWhammy5"
+        title="MayFlashNewWhammy5"
+        className="mx-auto"
+        style={{ width:"60%" }}
+      />
+    </Frame>
   </Step>
   <Step>
-    Plug the new whammy potentiometer into the Revival Strumboard via the labeled socket.
+    Push the potentiometer holder down, aligning the slot in the holder to the outer body shell.
+
+    <Frame>
+      <img
+        src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/MayFlash/MayFlashNewWhammy6.png"
+        alt="MayFlashNewWhammy6"
+        title="MayFlashNewWhammy6"
+        className="mx-auto"
+        style={{ width:"61%" }}
+      />
+    </Frame>
   </Step>
   <Step>
-    Plug the new whammy potentiometer into the Revival Strumboard via the labeled socket.
+    Make sure everything is seated securely. There may be a very small amount of play in the bracket and cap!
+
+    <Frame>
+      <img
+        src="images/Revival-Kit-Installation/MayFlash/MayFlashNewWhammy7.png"
+        alt="MayFlashNewWhammy7"
+        title="MayFlashNewWhammy7"
+        className="mx-auto"
+        style={{ width:"67%" }}
+      />
+    </Frame>
   </Step>
 </Steps>
 
-## 10. Installing the Twintail USB-C \+ Authentication Cable
+## 10. Installing the USB-C Port \+ Authentication Twintail Cable
 
 <Steps>
   <Step>
     Plug the larger white connector on the other end of the cable into the USB connector on the new strumboard. Connect the smaller one into AUTH.
+
+    <Frame>
+      <img
+        src="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/MayFlash/MayFlashTwinTailConnectors.png"
+        alt="MayFlashTwinTailConnectors"
+        title="MayFlashTwinTailConnectors"
+        className="mx-auto"
+        style={{ width:"71%" }}
+      />
+    </Frame>
   </Step>
   <Step>
     The cables must be inserted through the bottom strap peg hole like below. Make sure that the cables are not in the way of any screw holes or posts.
+
+    \[IMAGE COMING SOON\]
   </Step>
 </Steps>
 
 ## 11. Test Inputs
+
+<iframe src="https://www.youtube.com/embed/vC6Fxk_Y5ek" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
 <Steps>
   <Step>
     Plug your guitar into your computer using the new USB-C port you installed!
   </Step>
   <Step>
-    Open the [RCM Programming Tool on your computer (click here to go to the download page)](https://retrocultmods.com/programming-tool/)\_ If the following screen appears for you, make sure to switch the DEVICE TYPE to **“Revival Kit”**.\_ \_Click Erase and Configure. Do not touch the device while it is being programmed.\_
+    Open the [RCM Programming Tool on your computer (click here to go to the download page)](https://retrocultmods.com/programming-tool/) If the following screen appears for you, make sure to switch the DEVICE TYPE to “Revival Kit”. Click Erase and Configure. Do not touch the device while it is being programmed.
+
+    <img
+      src="/images/Revival-Kit-Installation/Test-Revival-Kit/testkit4.png"
+      alt="Testkit4"
+      title="Testkit4"
+      className="mx-auto"
+      style={{ width:"85%" }}
+    />
+  </Step>
+  <Step>
+    Open the [RCM Programming Tool on your computer (click here to go to the download page)](https://retrocultmods.com/programming-tool/) If the following screen appears for you, make sure to switch the DEVICE TYPE to “Revival Kit”. Click Erase and Configure. Do not touch the device while it is being programmed.
 
     <img
       src="/images/Revival-Kit-Installation/Test-Revival-Kit/testkit4.png"
@@ -470,29 +485,23 @@ This part is a little complicated. We suggest watching the video along with foll
 
 You’re almost done! Once you have ensured that each input works, we can close up the guitar!
 
-Make sure none of the wires are in the way of any plastic standoffs, as this will damage them when closing the shell. I would recommend taping down the wires to ensure they are out of the way and not draped across any of the boards.
+Make sure none of the wires are in the way of any plastic standoffs, as this will damage them when closing the shell. I would recommend taping down the wires to ensure they are out of the way and not draped across any of the boardsMake sure none of the wires are in the way of any plastic standoffs, as this will damage them when closing the shell. I would recommend taping down the wires to ensure they are out of the way and not draped across any of the boards.
 
-With the front body and neck shell facing down, put the rear neck shell onto the front neck shell. You may need to apply pressure to close the shell. If you feel like part of the shell will not snap into place, open it up and double check that there is nothing blocking the standoffs. Repeat for the body shell.
+With the front body and neck shell facing down, put the rear neck shell onto the front neck shell. You may need to apply pressure to close the shell. If you feel like part of the shell will not snap into place, open it up and double check that there is nothing blocking the standoffs. Repeat for the body shell.With the front body and neck shell facing down, put the rear neck shell onto the front neck shell. You may need to apply pressure to close the shell. If you feel like part of the shell will not snap into place, open it up and double check that there is nothing blocking the standoffs. Repeat for the body shell.
 
-**DON’T FORGET THE STRAP PEGS!**
-
-After both sides of the body are connected, install all of the screws you removed earlier:
+After both sides of the body are connected, install all of the screws you removed earlier
 
 <Columns cols={2}>
-  <Card title="Body Screws">
-    <Danger>
-      The screw marked in red is sometimes **longer**\_ than the others; remember this for when you put everything back together!\_
-    </Danger>
-
+  <Card title="Body Screws" img="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/MayFlash/MayFlashBodyScrews.png">
     <Tip>
-      Rear body shell –**11x screws**
+      Rear body shell –**12x screws**
     </Tip>
   </Card>
 
-  <Card title="Neck Screws">
-    <Warning>
-      Rear neck shell – **5x screws**
-    </Warning>
+  <Card title="Neck Screws" img="https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Revival-Kit-Installation/MayFlash/MayFlashNeckScrews.png">
+    <Danger>
+      Rear neck shell – 6x screws
+    </Danger>
   </Card>
 </Columns>
 
@@ -500,7 +509,54 @@ After both sides of the body are connected, install all of the screws you remove
 
 <iframe src="https://www.youtube.com/embed/Cnkyi0-vD1U" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
-Plug the guitar back into your computer and open RCM Programming Tool. Click Configure.
+### Tilt
+
+<Steps>
+  <Step>
+    Open RCM Programming Tool if you do not already have it open
+  </Step>
+  <Step>
+    Scroll to the Tilt section. Click on it to open the dropdown menu.
+
+    <Frame>
+      ![tiltcalibration](https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Programmer/tiltcalibration.png)
+    </Frame>
+  </Step>
+  <Step>
+    Click the calibrate button.
+  </Step>
+  <Step>
+    Hold the guitar in the position you would play in normally. Click Next while holding it there.
+  </Step>
+  <Step>
+    Tilt to the angle you want the Star Power/Overdrive to activate at. Click Next while holding it there.
+  </Step>
+</Steps>
+
+### Whammy
+
+<Steps>
+  <Step>
+    Open RCM Programming Tool if you do not already have it open
+  </Step>
+  <Step>
+    Scroll to the Whammy section. Click on it to open the dropdown menu.
+  </Step>
+  <Step>
+    Leave the whammy in it's resting position (as in don't press it down). Click Next.
+  </Step>
+  <Step>
+    Press the whammy down into its lowest position until it comes to a stopping point. Hold it there and click Next. You can release the whammy bar now.
+  </Step>
+  <Step>
+    Now you're setting the Deadzone. Push the whammy bar down ever so slightly to observe the value moving around. You want it to have a little bit of force required before the whammy begins activating. Once you've found the sweet spot for your guitar, hold it there and click Next.
+
+    ![](https://raw.githubusercontent.com/RCMLaunch/docs/refs/heads/main/images/Programmer/whammy%20deadzone.png)
+  </Step>
+  <Step>
+    You're done calibrating! You'll see the Calibrated Value go up and down and you press your whammy. What you want is for the Calibrated Value to not display anything when you're not touching the whammy bar.
+  </Step>
+</Steps>
 
 ## 14. Configure Fret and Strum Bar Colors
 
